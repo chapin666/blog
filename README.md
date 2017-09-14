@@ -15,6 +15,7 @@
 
 - [白话文理解 Node.js](https://github.com/chapin666/blog/issues/3)
 - [用Async解决回调问题](https://code.tutsplus.com/zh-hans/tutorials/solving-callback-problems-with-async--cms-26591?_ga=2.140530800.357237057.1505119485-1462772948.1505119484)
+- [深入理解Promise](http://coderlt.coding.me/2016/12/03/promise-in-depth-an-introduction-1/)
 
 ### Golang
 - [Daisy-chain](https://github.com/chapin666/blog/issues/5)
