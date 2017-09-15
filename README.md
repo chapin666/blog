@@ -19,6 +19,7 @@
 >>> #### Promise
 
 - [深入理解Promise](http://coderlt.coding.me/2016/12/03/promise-in-depth-an-introduction-1/)
+- [实现Promise的两种思路](https://github.com/chapin666/blog/issues/6)
 
 ### Golang
 
