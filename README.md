@@ -23,7 +23,7 @@
 
 ### Golang
 
->>> #### 并发
+>>> #### goroutine & channel
 - [Daisy-chain](https://github.com/chapin666/blog/issues/5)
 
 ### WebRTC
