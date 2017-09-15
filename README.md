@@ -16,22 +16,22 @@
 - [白话文理解 Node.js](https://github.com/chapin666/blog/issues/3)
 - [用Async解决回调问题](https://code.tutsplus.com/zh-hans/tutorials/solving-callback-problems-with-async--cms-26591?_ga=2.140530800.357237057.1505119485-1462772948.1505119484)
 
->>> #### Promise系列
+>>> #### Promise
 
 - [深入理解Promise](http://coderlt.coding.me/2016/12/03/promise-in-depth-an-introduction-1/)
 
 ### Golang
 
-### 并发系列
+>>> ### 并发
 - [Daisy-chain](https://github.com/chapin666/blog/issues/5)
 
 ### WebRTC
 
->>> #### Kurento系列
+>>> #### Kurento
 
 - [Kurento Media Server 源码安装](https://github.com/chapin666/blog/issues/1)
 - [Kurento Media Server 穿透服务(STUN/TURN) 安装](https://github.com/chapin666/blog/issues/2)
 
 ### JAVA
->>> #### Spring boot系列
+>>> #### Spring boot
 - [Spring Boot 快速构建应用](https://github.com/chapin666/blog/issues/4)
