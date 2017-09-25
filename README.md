@@ -14,7 +14,7 @@
 ### Node
 
 - [白话文理解 Node.js](https://github.com/chapin666/blog/issues/3)
-- [bluebird中的常用 Promsie API整理] (http://www.dengzhr.com/node-js/1278)
+- [bluebird中的常用 Promsie API整理](http://www.dengzhr.com/node-js/1278)
 - [用Async解决回调问题](https://code.tutsplus.com/zh-hans/tutorials/solving-callback-problems-with-async--cms-26591?_ga=2.140530800.357237057.1505119485-1462772948.1505119484)
 - [Node文字转图片](https://cnodejs.org/topic/583c5d9fba57ffba06c24a89)
 - [Node Debug](http://i5ting.github.io/node-debug-tutorial/)
