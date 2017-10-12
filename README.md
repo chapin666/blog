@@ -23,6 +23,7 @@
 - [Node Debug](http://i5ting.github.io/node-debug-tutorial/)
 - [modern-nodejs](https://i5ting.github.io/modern-nodejs/)
 - [高质量 Node.js 微服务实例的编写和部署](https://github.com/Carrotzpc/docker_web_app)
+- [Node操作mongodb](http://zetcode.com/db/mongodbjavascript)
 
 >>> #### Promise
 
