@@ -14,6 +14,11 @@
 
 - [系统设计入门](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md)
 
+### 直播技术
+
+- [深度了解视频直播 CDN 技术](https://ruby-china.org/topics/33544)
+- [视频内容谁来保护？阿里云视频加密解决方案架构及实现原理解析](https://ruby-china.org/topics/34102) 
+
 ### Node
 
 - [白话文理解 Node.js](https://github.com/chapin666/blog/issues/3)
