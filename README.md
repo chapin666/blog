@@ -55,3 +55,6 @@
 ### PHP
 >>> #### 环境搭建
 - [宝塔面板](https://www.bt.cn)
+
+### k8s
+- [k8s中文文档](http://docs.kubernetes.org.cn/)
