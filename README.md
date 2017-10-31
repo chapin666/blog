@@ -10,6 +10,13 @@
 - [如何保障无服务架构下的数据一致性](http://mp.weixin.qq.com/s/i1pnrORZzec6Zp0tmljD8Q)
 - [使用Docker来支撑微服务架构部署及维护](https://mp.weixin.qq.com/s?__biz=MzIwMzg1ODcwMw==&mid=2247486899&idx=1&sn=0c4b48280e5749bde236810f207bbb41&chksm=96c9bbd3a1be32c5b68a29e3d21c7d46c12ffdac9b6332a3282153840ec50235cb8d304bd37b&mpshare=1&scene=23&srcid=0929iCwIipdHrPRzjgBaxpVR#rd)
 
+>>> #### 认证鉴权与api权限控制
+
+-[认证鉴权与API权限控制在微服务架构中的设计与实现（一）](http://blueskykong.com/2017/10/19/security1/)
+-[认证鉴权与API权限控制在微服务架构中的设计与实现（二）](http://blueskykong.com/2017/10/22/security2/)
+-[认证鉴权与API权限控制在微服务架构中的设计与实现（三）](http://blueskykong.com/2017/10/24/security3/)
+-[认证鉴权与API权限控制在微服务架构中的设计与实现（四）](http://blueskykong.com/2017/10/26/security4/)
+
 ### 系统架构
 
 - [系统设计入门](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md)
