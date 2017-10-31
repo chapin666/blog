@@ -70,3 +70,4 @@
 - [集中式日志系统 ELK 协议栈详解](https://www.ibm.com/developerworks/cn/opensource/os-cn-elk/)
 - [ELK+Filebeat 集中式日志解决方案详解](https://www.ibm.com/developerworks/cn/opensource/os-cn-elk-filebeat/index.html)
 - [quickly search in your logs with Elasticsearch, Kibana and Fluentd](https://wiki.deimos.fr/Fluentd:_quickly_search_in_your_logs_with_Elasticsearch,_Kibana_and_Fluentd)
+- [Kubernetes容器集群中的日志系统集成实践](http://dockone.io/article/1600)
