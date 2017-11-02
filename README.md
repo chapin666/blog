@@ -76,5 +76,6 @@
 - [ELK部署详解](https://segmentfault.com/a/1190000007728789)
 - [ELK+Filebeat 集中式日志解决方案详解](https://www.ibm.com/developerworks/cn/opensource/os-cn-elk-filebeat/index.html)
 - [quickly search in your logs with Elasticsearch, Kibana and Fluentd](https://wiki.deimos.fr/Fluentd:_quickly_search_in_your_logs_with_Elasticsearch,_Kibana_and_Fluentd)
+- [Logstash Filebeat 安装配置之使用 Kibana 分析日志数据](https://www.renwole.com/archives/661)
 - [Kubernetes容器集群中的日志系统集成实践](http://dockone.io/article/1600)
 - [ELK-使用消息队列进行扩展 Logstash](http://jaminzhang.github.io/elk/ELK-use-MQ-to-scale-Logstash/)
