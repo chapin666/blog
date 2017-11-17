@@ -56,6 +56,8 @@
 >>> #### goroutine & channel
 - [Daisy-chain](https://github.com/chapin666/blog/issues/5)
 - [Getting Started with Microservices using Go, gRPC and Kubernetes](https://outcrawl.com/getting-started-microservices-go-grpc-kubernetes/)
+- [用Golang写一个搜索引擎](https://segmentfault.com/u/wyh267/articles?page=3)
+- [Building Blockchain in Go](https://jeiwan.cc/tags/blockchain/)
 
 >>> #### [Build a Todo List with Angular and Google App Engine]
 - [Build a Todo List with Angular and Google App Engine - Part 1](https://outcrawl.com/todo-list-angular-google-app-engine-part-1/)
