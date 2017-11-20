@@ -51,6 +51,7 @@
 >>> #### goroutine & channel
 - [Daisy-chain](https://github.com/chapin666/blog/issues/5)
 - [Getting Started with Microservices using Go, gRPC and Kubernetes](https://outcrawl.com/getting-started-microservices-go-grpc-kubernetes/)
+- [implementation-of-golang](https://tracymacding.gitbooks.io/implementation-of-golang/content/)
 - [用Golang写一个搜索引擎](https://segmentfault.com/u/wyh267/articles?page=3)
 - [Building Blockchain in Go](https://jeiwan.cc/tags/blockchain/)
 
