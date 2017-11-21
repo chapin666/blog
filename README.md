@@ -16,6 +16,10 @@
 
 - [系统设计入门](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md)
 
+### 数据结构与算法基础
+
+- [Dijkstra](http://www.cnblogs.com/nigang/p/3658990.html)
+
 ### 直播技术
 
 - [深度了解视频直播 CDN 技术](https://ruby-china.org/topics/33544)
