@@ -2,7 +2,9 @@
 
 ### 微服务架构
 
-[《微服务：从设计到部署》](https://github.com/oopsguy/microservices-from-design-to-deployment-chinese/blob/master/7-refactoring-a-monolith-into-microservices.md#strategy-2-split-frontend-and-backend)
+- [《微服务：从设计到部署》](https://github.com/oopsguy/microservices-from-design-to-deployment-chinese/blob/master/7-refactoring-a-monolith-into-microservices.md#strategy-2-split-frontend-and-backend)
+
+- [那些年不加班的开发团队的秘密，原因竟是因为持续集成](https://mp.weixin.qq.com/s?__biz=MzU0OTE4MzYzMw==&mid=2247483882&idx=1&sn=b7f1fed0dc5c4cffc9b51bbdc7876424&chksm=fbb28814ccc5010210c85e77caeab69e9697167e2ee0f3d3363d8e3e972a4591d04286199d1f&scene=21#wechat_redirect)
 
 >>> #### 苏槐系列文章
 
@@ -19,6 +21,10 @@
 ### 数据结构与算法基础
 
 - [Dijkstra](http://www.cnblogs.com/nigang/p/3658990.html)
+
+### 数据库
+
+- [高效sql性能优化极简教程](https://mp.weixin.qq.com/s/Sqp-gD7mh1luXancnzE2Nw)
 
 ### 直播技术
 
