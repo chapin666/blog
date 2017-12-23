@@ -92,6 +92,9 @@
 - [Kubernetes容器集群中的日志系统集成实践](http://dockone.io/article/1600)
 - [ELK-使用消息队列进行扩展 Logstash](http://jaminzhang.github.io/elk/ELK-use-MQ-to-scale-Logstash/)
 
+### 机器学习
+- [机器学习实战](http://ml.apachecn.org/)
+
 ### PHP
 >>> #### 工具
 - [宝塔面板](https://www.bt.cn)
