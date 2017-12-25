@@ -93,6 +93,7 @@
 - [ELK-使用消息队列进行扩展 Logstash](http://jaminzhang.github.io/elk/ELK-use-MQ-to-scale-Logstash/)
 
 ### 机器学习
+- [机器学习理论篇1：机器学习的数学基础](https://zhuanlan.zhihu.com/p/25197792)
 - [机器学习实战](http://ml.apachecn.org/)
 
 ### PHP
