@@ -64,6 +64,7 @@
 - [implementation-of-golang](https://tracymacding.gitbooks.io/implementation-of-golang/content/)
 - [用Golang写一个搜索引擎](https://segmentfault.com/u/wyh267/articles?page=3)
 - [Building Blockchain in Go](https://jeiwan.cc/tags/blockchain/)
+- [](Building a Real-time Collaborative Drawing App in Go)(https://outcrawl.com/realtime-collaborative-drawing-go/)
 
 >>> #### [Build a Todo List with Angular and Google App Engine]
 - [Build a Todo List with Angular and Google App Engine - Part 1](https://outcrawl.com/todo-list-angular-google-app-engine-part-1/)
