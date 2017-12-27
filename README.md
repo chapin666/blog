@@ -77,6 +77,13 @@
 >>> #### Spring boot
 - [Spring Boot 快速构建应用](https://github.com/chapin666/blog/issues/4)
 
+### 机器学习
+- [机器学习理论篇1：机器学习的数学基础](https://zhuanlan.zhihu.com/p/25197792)
+- [机器学习实战](http://ml.apachecn.org/)
+
+### 区块链
+- [区块链入门教程](http://www.ruanyifeng.com/blog/2017/12/blockchain-tutorial.html)
+
 ### GraphQL
 - [REST 2.0 Is Here and Its Name Is GraphQL](https://www.sitepoint.com/rest-2-0-graphql/)
 - [GraphQL系列](http://www.zhaiqianfeng.com/2017/06/learn-graphql-first-demo.html)
@@ -92,10 +99,6 @@
 - [Logstash Filebeat 安装配置之使用 Kibana 分析日志数据](https://www.renwole.com/archives/661)
 - [Kubernetes容器集群中的日志系统集成实践](http://dockone.io/article/1600)
 - [ELK-使用消息队列进行扩展 Logstash](http://jaminzhang.github.io/elk/ELK-use-MQ-to-scale-Logstash/)
-
-### 机器学习
-- [机器学习理论篇1：机器学习的数学基础](https://zhuanlan.zhihu.com/p/25197792)
-- [机器学习实战](http://ml.apachecn.org/)
 
 ### PHP
 >>> #### 工具
