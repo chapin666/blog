@@ -92,6 +92,9 @@
 ### 区块链
 - [区块链入门教程](http://www.ruanyifeng.com/blog/2017/12/blockchain-tutorial.html)
 
+### 工具
+- [Pika CPU火焰图](http://kernelmaker.github.io/Pika_Fire)
+
 ### GraphQL
 - [REST 2.0 Is Here and Its Name Is GraphQL](https://www.sitepoint.com/rest-2-0-graphql/)
 - [GraphQL系列](http://www.zhaiqianfeng.com/2017/06/learn-graphql-first-demo.html)
