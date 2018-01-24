@@ -29,6 +29,7 @@
 ### 数据库
 
 - [高效sql性能优化极简教程](https://mp.weixin.qq.com/s/Sqp-gD7mh1luXancnzE2Nw)
+- [Mongo高级 之 性能](http://yl33643.coding.me/2017/06/07/2017-06-07-mongo-advanced-performance/)
 
 ### 直播技术
 
