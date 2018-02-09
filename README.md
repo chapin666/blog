@@ -86,6 +86,11 @@
 >>> #### Spring boot
 - [Spring Boot 快速构建应用](https://github.com/chapin666/blog/issues/4)
 
+### Nginx 基础
+- [Nginx 教程（1）：基本概念](https://mp.weixin.qq.com/s/CbW4zT1zG6aQBofWFUKzDg)
+- [Nginx 教程（2）：性能](https://mp.weixin.qq.com/s/_MTc5N-TXlOUbrCMLRnhBQ)
+- [Nginx 教程（3）：SSL 设置](https://mp.weixin.qq.com/s/AdrCrohTRt2E1KNG4v3uKg)
+
 ### 机器学习
 - [机器学习理论篇1：机器学习的数学基础](https://zhuanlan.zhihu.com/p/25197792)
 - [机器学习实战](http://ml.apachecn.org/)
