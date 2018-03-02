@@ -45,6 +45,10 @@
 - [Kurento Media Server 穿透服务(STUN/TURN) 安装](https://github.com/chapin666/blog/issues/2)
 - [基于Kurento搭建WebRTC服务器](https://blog.gmem.cc/webrtc-server-basedon-kurento)
 
+### 网络协议
+
+- [Web协议未来优化指南](https://zhuanlan.zhihu.com/p/33940885)
+
 ### Node
 
 - [白话文理解 Node.js](https://github.com/chapin666/blog/issues/3)
