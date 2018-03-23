@@ -104,6 +104,7 @@
 ### 区块链
 - [区块链入门教程](http://www.ruanyifeng.com/blog/2017/12/blockchain-tutorial.html)
 - [一个故事告诉你比特币的原理及运作机制](http://blog.codinglabs.org/articles/bitcoin-mechanism-make-easy.html)
+- [以太坊智能合约编程之菜鸟教程](https://ethfans.org/posts/101-noob-intro)
 
 ### 工具
 - [Pika CPU火焰图](http://kernelmaker.github.io/Pika_Fire)
