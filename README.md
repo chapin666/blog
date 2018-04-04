@@ -25,6 +25,7 @@
 - [系统设计入门](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md)
 
 ### 数据结构与算法基础
+- [通过金矿模型介绍动态规划](http://www.cnblogs.com/SDJL/archive/2008/08/22/1274312.html)
 - [漫画：什么是动态规划？](http://www.sohu.com/a/153858619_466939)
 - [Dijkstra](http://www.cnblogs.com/nigang/p/3658990.html)
 
