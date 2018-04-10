@@ -90,6 +90,7 @@
 - [鸟窝](http://colobu.com/)
 
 ### JAVA
+- [关于Jvm知识看这一篇就够了](https://mp.weixin.qq.com/s/sFnMxEwJiYRjwTiBIjfcZg)
 >>> #### Spring boot
 - [Spring Boot 快速构建应用](https://github.com/chapin666/blog/issues/4)
 
