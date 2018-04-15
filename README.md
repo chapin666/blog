@@ -33,6 +33,9 @@
 
 - [高效sql性能优化极简教程](https://mp.weixin.qq.com/s/Sqp-gD7mh1luXancnzE2Nw)
 - [Mongo高级 之 性能](http://yl33643.coding.me/2017/06/07/2017-06-07-mongo-advanced-performance/)
+- [非小型电子商务系统设计经验分享](http://www.cnblogs.com/mmmjiang13/archive/2012/07/05/2575538.html)
+- [电商商品数据库设计](http://www.3xmq.com/article/1516670505597)
+- [商品SKU分析和设计](http://www.cnblogs.com/winstonyan/archive/2011/12/17/b2c_research_product_sku_analyse_design.html)
 
 ### 直播技术
 
