@@ -36,6 +36,7 @@
 - [非小型电子商务系统设计经验分享](http://www.cnblogs.com/mmmjiang13/archive/2012/07/05/2575538.html)
 - [电商商品数据库设计](http://www.3xmq.com/article/1516670505597)
 - [商品SKU分析和设计](http://www.cnblogs.com/winstonyan/archive/2011/12/17/b2c_research_product_sku_analyse_design.html)
+- [RBAC权限管理](https://blog.csdn.net/painsonline/article/details/7183613)
 
 ### 直播技术
 
