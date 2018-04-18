@@ -122,6 +122,7 @@
 
 ### k8s
 - [k8s中文文档](http://docs.kubernetes.org.cn/)
+- [利用 K8S 技术栈打造个人私有云](https://www.jianshu.com/p/9bc87b5380e8)
 
 ### ELK/EFK
 - [集中式日志系统 ELK 协议栈详解](https://www.ibm.com/developerworks/cn/opensource/os-cn-elk/)
