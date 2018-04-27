@@ -37,6 +37,10 @@
 - [电商商品数据库设计](http://www.3xmq.com/article/1516670505597)
 - [商品SKU分析和设计](http://www.cnblogs.com/winstonyan/archive/2011/12/17/b2c_research_product_sku_analyse_design.html)
 - [RBAC权限管理](https://blog.csdn.net/painsonline/article/details/7183613)
+>>> ### MongoDB数据库设计中6条重要的经验法则
+- [MongoDB数据库设计中6条重要的经验法则，part 1](http://xiaosheng.me/2016/07/26/article21/) 
+- [MongoDB数据库设计中6条重要的经验法则，part 2](http://xiaosheng.me/2016/07/26/article22/) 
+- [MongoDB数据库设计中6条重要的经验法则，part 3](http://xiaosheng.me/2016/07/26/article23/) 
 
 ### 直播技术
 
