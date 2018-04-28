@@ -2,6 +2,10 @@
 
 - [系统设计的一些原则](https://github.com/chapin666/blog/issues/7)
 
+### DevOps
+
+[devopsbookmarks](http://www.devopsbookmarks.com/)
+
 ### 微服务架构
 
 - [《微服务：从设计到部署》](https://github.com/oopsguy/microservices-from-design-to-deployment-chinese/blob/master/7-refactoring-a-monolith-into-microservices.md#strategy-2-split-frontend-and-backend)
