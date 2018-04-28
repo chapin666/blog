@@ -4,7 +4,7 @@
 
 ### DevOps
 
-[devopsbookmarks](http://www.devopsbookmarks.com/)
+- [devopsbookmarks](http://www.devopsbookmarks.com/)
 
 ### 微服务架构
 
