@@ -12,6 +12,8 @@
 
 - [Go微服务架构模版](http://alimrz.com/2018/01/02/golang-microservice-boilerplate/)
 
+- [Build You Own Web Framework In Go](https://www.nicolasmerouze.com/build-web-framework-golang/)
+
 - [那些年不加班的开发团队的秘密，原因竟是因为持续集成](https://mp.weixin.qq.com/s?__biz=MzU0OTE4MzYzMw==&mid=2247483882&idx=1&sn=b7f1fed0dc5c4cffc9b51bbdc7876424&chksm=fbb28814ccc5010210c85e77caeab69e9697167e2ee0f3d3363d8e3e972a4591d04286199d1f&scene=21#wechat_redirect)
 
 - [四层、七层负载均衡的区别](http://mp.weixin.qq.com/s/9POrwe3jrE1kChps6r-osQ)
