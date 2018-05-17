@@ -98,6 +98,8 @@
 - [Build a Todo List with Angular and Google App Engine - Part 1](https://outcrawl.com/todo-list-angular-google-app-engine-part-1/)
 - [Build a Todo List with Angular and Google App Engine - Part 2](https://outcrawl.com/todo-list-angular-google-app-engine-part-2/)
 
+- [Go Microservices blog series](http://callistaenterprise.se/blogg/teknik/2017/02/17/go-blog-series-part1/)
+
 >>> #### tools
 - [URL Shortener Golang Web Service tutorial with Mongodb](http://www.minaandrawos.com/2015/09/05/link-shortener-golang-web-service-tutorial-mongodb/#GOHTTPREST)
 
