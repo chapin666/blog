@@ -111,6 +111,10 @@
 >>> #### Spring boot
 - [Spring Boot 快速构建应用](https://github.com/chapin666/blog/issues/4)
 
+### Erlang
+- [Erlang开发指南](http://real-world-eralng-pragramming.readthedocs.io/en/latest/index.html)
+- [Elixir教程](https://elixirschool.com/cn/)
+
 ### Nginx 基础
 - [Nginx 教程（1）：基本概念](https://mp.weixin.qq.com/s/CbW4zT1zG6aQBofWFUKzDg)
 - [Nginx 教程（2）：性能](https://mp.weixin.qq.com/s/_MTc5N-TXlOUbrCMLRnhBQ)
