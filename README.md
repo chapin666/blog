@@ -4,6 +4,7 @@
 
 ### DevOps
 
+- [你大概走了假敏捷：认真说说敏捷的实现和问题（手绘版）](https://mp.weixin.qq.com/s/dV3OfWEbgEl88wXmG5MA3g)
 - [devopsbookmarks](http://www.devopsbookmarks.com/)
 
 ### 微服务架构
