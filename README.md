@@ -123,6 +123,8 @@
 
 ### 机器学习
 - [机器学习理论篇1：机器学习的数学基础](https://zhuanlan.zhihu.com/p/25197792)
+- [机器学习常用「微积分」知识速查手册](http://gitbook.cn/books/59ee907516fc0231837614e3/index.html)
+- [机器学习常用「线性代数」知识速查手册](http://gitbook.cn/books/59ed598e991df70ecd5a0049/index.html)
 - [机器学习实战](http://ml.apachecn.org/)
 
 ### 区块链
