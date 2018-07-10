@@ -6,6 +6,11 @@
 
 - [你大概走了假敏捷：认真说说敏捷的实现和问题（手绘版）](https://mp.weixin.qq.com/s/dV3OfWEbgEl88wXmG5MA3g)
 - [devopsbookmarks](http://www.devopsbookmarks.com/)
+>>> #### k8s
+- [k8s中文文档](http://docs.kubernetes.org.cn/)
+- [利用 K8S 技术栈打造个人私有云](https://www.jianshu.com/p/9bc87b5380e8)
+>>> ### Service Mesh
+- [ docker for desktop 安装并使用 istio 0.8 ]()
 
 ### 微服务架构
 
@@ -139,10 +144,6 @@
 ### GraphQL
 - [REST 2.0 Is Here and Its Name Is GraphQL](https://www.sitepoint.com/rest-2-0-graphql/)
 - [GraphQL系列](http://www.zhaiqianfeng.com/2017/06/learn-graphql-first-demo.html)
-
-### k8s
-- [k8s中文文档](http://docs.kubernetes.org.cn/)
-- [利用 K8S 技术栈打造个人私有云](https://www.jianshu.com/p/9bc87b5380e8)
 
 ### ELK/EFK
 - [集中式日志系统 ELK 协议栈详解](https://www.ibm.com/developerworks/cn/opensource/os-cn-elk/)
