@@ -10,7 +10,7 @@
 - [k8s中文文档](http://docs.kubernetes.org.cn/)
 - [利用 K8S 技术栈打造个人私有云](https://www.jianshu.com/p/9bc87b5380e8)
 >>> #### Service Mesh
-- [ docker for desktop 安装并使用 istio 0.8 ]()
+- [ docker for desktop 安装并使用 istio 0.8 ](https://github.com/chapin666/books/blob/master/k8s/adersberger-istio-playground-180621060536.pdf)
 
 ### 微服务架构
 
