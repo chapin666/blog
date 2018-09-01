@@ -110,6 +110,7 @@
 - [URL Shortener Golang Web Service tutorial with Mongodb](http://www.minaandrawos.com/2015/09/05/link-shortener-golang-web-service-tutorial-mongodb/#GOHTTPREST)
 
 >>> #### Blog
+- [advanced-go-programming-book](https://chai2010.gitbooks.io/advanced-go-programming-book/content/)
 - [Go Microservices blog series](http://callistaenterprise.se/blogg/teknik/2017/02/17/go-blog-series-part1/)
 - [鸟窝](http://colobu.com/)
 - [Making Pusher](https://making.pusher.com/) 
