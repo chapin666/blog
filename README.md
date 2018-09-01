@@ -105,6 +105,7 @@
 - [Build a Todo List with Angular and Google App Engine - Part 2](https://outcrawl.com/todo-list-angular-google-app-engine-part-2/)
 
 >>> #### tools
+- [Playing with Go module proxies](https://roberto.selbach.ca/go-proxies/)
 - [Introduction to Go Modules](https://roberto.selbach.ca/intro-to-go-modules/)
 - [URL Shortener Golang Web Service tutorial with Mongodb](http://www.minaandrawos.com/2015/09/05/link-shortener-golang-web-service-tutorial-mongodb/#GOHTTPREST)
 
