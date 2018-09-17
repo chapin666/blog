@@ -145,6 +145,7 @@
 - [Pika CPU火焰图](http://kernelmaker.github.io/Pika_Fire)
 
 ### GraphQL
+- [GraphQL 在微服务架构中的实践](https://mp.weixin.qq.com/s/1-Q7Qx2M-Q5DRThUXWurMQ)
 - [REST 2.0 Is Here and Its Name Is GraphQL](https://www.sitepoint.com/rest-2-0-graphql/)
 - [GraphQL系列](http://www.zhaiqianfeng.com/2017/06/learn-graphql-first-demo.html)
 
