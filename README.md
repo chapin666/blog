@@ -124,6 +124,7 @@
 ### Erlang
 - [Erlang开发指南](http://real-world-eralng-pragramming.readthedocs.io/en/latest/index.html)
 - [Elixir教程](https://elixirschool.com/cn/)
+- [an Erlang concurrency profiling tool](http://huiqing.github.io/percept2/overview-summary.html)
 
 ### Nginx 基础
 - [Nginx 教程（1）：基本概念](https://mp.weixin.qq.com/s/CbW4zT1zG6aQBofWFUKzDg)
