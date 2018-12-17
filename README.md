@@ -100,6 +100,7 @@
 - [Building a Real-time Collaborative Drawing App in Go](https://outcrawl.com/realtime-collaborative-drawing-go/)
 - [Go语言经典面试题](https://goquiz.github.io/)
 - [golangs-real-time-gc-in-theory-and-practice](https://making.pusher.com/golangs-real-time-gc-in-theory-and-practice/)
+- [Golang在Kubernetes语境下的编程范式](https://mp.weixin.qq.com/s/UqqgJml9g-GFJQSTYyLVPQ)
 
 >>> #### [Build a Todo List with Angular and Google App Engine]
 - [Build a Todo List with Angular and Google App Engine - Part 1](https://outcrawl.com/todo-list-angular-google-app-engine-part-1/)
