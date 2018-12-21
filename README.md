@@ -2,7 +2,7 @@
 
 - [系统设计的一些原则](https://github.com/chapin666/blog/issues/7)
 
-### DevOps
+### 微服务架构 & DevOps
 
 - [你大概走了假敏捷：认真说说敏捷的实现和问题（手绘版）](https://mp.weixin.qq.com/s/dV3OfWEbgEl88wXmG5MA3g)
 - [devopsbookmarks](http://www.devopsbookmarks.com/)
@@ -11,8 +11,6 @@
 - [利用 K8S 技术栈打造个人私有云](https://www.jianshu.com/p/9bc87b5380e8)
 >>> #### Service Mesh
 - [ docker for desktop 安装并使用 istio 0.8 ](https://github.com/chapin666/books/blob/master/k8s/adersberger-istio-playground-180621060536.pdf)
-
-### 微服务架构
 
 - [《微服务：从设计到部署》](https://github.com/oopsguy/microservices-from-design-to-deployment-chinese/blob/master/7-refactoring-a-monolith-into-microservices.md#strategy-2-split-frontend-and-backend)
 
@@ -30,9 +28,10 @@
 - [如何保障无服务架构下的数据一致性](http://mp.weixin.qq.com/s/i1pnrORZzec6Zp0tmljD8Q)
 - [使用Docker来支撑微服务架构部署及维护](https://mp.weixin.qq.com/s?__biz=MzIwMzg1ODcwMw==&mid=2247486899&idx=1&sn=0c4b48280e5749bde236810f207bbb41&chksm=96c9bbd3a1be32c5b68a29e3d21c7d46c12ffdac9b6332a3282153840ec50235cb8d304bd37b&mpshare=1&scene=23&srcid=0929iCwIipdHrPRzjgBaxpVR#rd)
 
-### 系统架构
+### 架构设计
 
 - [系统设计入门](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md)
+- [PERM 模型](http://www.cnblogs.com/wang_yb/archive/2018/11/20/9987397.html)
 
 ### 数据结构与算法基础
 - [通过金矿模型介绍动态规划](http://www.cnblogs.com/SDJL/archive/2008/08/22/1274312.html)
