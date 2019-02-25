@@ -37,9 +37,20 @@
 - [分布式事务](http://www.tianshouzhi.com/api/tutorials/distributed_transaction/383)
 
 ### 数据结构与算法基础
-- [通过金矿模型介绍动态规划](http://www.cnblogs.com/SDJL/archive/2008/08/22/1274312.html)
-- [漫画：什么是动态规划？](http://www.sohu.com/a/153858619_466939)
 - [Dijkstra](http://www.cnblogs.com/nigang/p/3658990.html)
+- [什么是 Bitmap 算法？](https://mp.weixin.qq.com/s/96Iv8ZKAm6ozob4YCnFWqA)
+- [Bitmap算法（进阶篇）](https://mp.weixin.qq.com/s/mcDWN4X6OQtwuljTU2Hiiw)
+- [最小栈的实现](https://mp.weixin.qq.com/s?__biz=MzI1MTIzMzI2MA==&mid=2650560419&idx=1&sn=535073d4d69cf7fc45074ccb8c25ba1e&chksm=f1fee120c68968367597137515f21ef8d7a8ab68c9f4fce051dae5f2631afdc48ec11a30dd0e&scene=21#wechat_redirect)
+- [判断 2 的乘方](https://mp.weixin.qq.com/s?__biz=MzI1MTIzMzI2MA==&mid=2650560448&idx=1&sn=b4ca3d01a438fac78be4077f270974ca&chksm=f1fee143c6896855179eff005164be47c7c662d4c8badf571a79c4acd9e2aca9fd84839ca093&scene=21#wechat_redirect)
+- [找出缺失的整数](https://mp.weixin.qq.com/s?__biz=MzI1MTIzMzI2MA==&mid=2650560411&idx=1&sn=2e655df46f082a50a4657a40f292d63a&chksm=f1fee118c689680eba2b9ba965780387aeafd08a72eecb2c748eece85b77631b0a5511f2833b&scene=21#wechat_redirect)
+- [辗转相除法是什么鬼？](https://mp.weixin.qq.com/s?__biz=MzI1MTIzMzI2MA==&mid=2650560408&idx=1&sn=db553ce9deedf38c44841e16cb095d2e&chksm=f1fee11bc689680d83ff71d40dc191ee9899b8e5ef4bf9b98001ebb4daf13059a5961586ea1a&scene=21#wechat_redirect)
+- [什么是动态规划？](https://mp.weixin.qq.com/s?__biz=MzI1MTIzMzI2MA==&mid=2650561168&idx=1&sn=9d1c6f7ba6d651c75399c4aa5254a7d8&chksm=f1feec13c6896505f7886d9455278ad39749d377a63908c59c1fdceb11241e577ff6d66931e4&scene=21#wechat_redirect)
+- [通过金矿模型介绍动态规划](http://www.cnblogs.com/SDJL/archive/2008/08/22/1274312.html)
+- [什么是跳跃表？](https://mp.weixin.qq.com/s?__biz=MzI1MTIzMzI2MA==&mid=2650561205&idx=1&sn=3c4feb6339e00e13bdd8cc6a11eb0304&chksm=f1feec36c689652085b1b89acd6ca07316140f1c7478249e4b251c204b6cf3a5bb276b0275be&scene=21#wechat_redirect)
+- [什么是 B- 树？](https://mp.weixin.qq.com/s?__biz=MzI1MTIzMzI2MA==&mid=2650561220&idx=1&sn=2a6d8a0290f967027b1d54456f586405&chksm=f1feec47c689655113fa65f7911a1f59bbd994030ad685152b30e53d643049f969eefaa13058&scene=21#wechat_redirect)
+- [什么是 B+ 树？](https://mp.weixin.qq.com/s?__biz=MzI1MTIzMzI2MA==&mid=2650561244&idx=1&sn=df3abafd3aa2f5a3abfe507bfc26982f&chksm=f1feec5fc6896549f89cbb82ee3d8010c63da76814030b285fa29322795de512ccca207064ee&scene=21#wechat_redirect)
+- [什么是一致性哈希？](https://mp.weixin.qq.com/s?__biz=MzI1MTIzMzI2MA==&mid=2650561254&idx=1&sn=7500e3e54a573b19ce2fbfa0a82f2b13&chksm=f1feec65c689657386c8913f819bb5253bece3bd56f7fcc725201c925723e2fbc5bfcb962b9c&scene=21#wechat_redirect)
+- [无序数组排序后的最大相邻差值](https://mp.weixin.qq.com/s?__biz=MzI1MTIzMzI2MA==&mid=2650560503&idx=1&sn=461c62e9c88fb6fbd30a0a4a59bce76f&chksm=f1fee174c68968628afbcdc7fdbba04daef811dd94de94bf90a6a4e0b907d1b67638eaabe2ff&scene=21#wechat_redirect)
 
 ### 数据库
 
