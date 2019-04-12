@@ -164,6 +164,7 @@
 - [GraphQL 在微服务架构中的实践](https://mp.weixin.qq.com/s/1-Q7Qx2M-Q5DRThUXWurMQ)
 - [REST 2.0 Is Here and Its Name Is GraphQL](https://www.sitepoint.com/rest-2-0-graphql/)
 - [GraphQL系列](http://www.zhaiqianfeng.com/2017/06/learn-graphql-first-demo.html)
+- [GraphQL in a Micro Services Architecture](https://itnext.io/graphql-in-a-microservices-architecture-d17922b886eb?from=timeline)
 
 ### ELK/EFK
 - [集中式日志系统 ELK 协议栈详解](https://www.ibm.com/developerworks/cn/opensource/os-cn-elk/)
