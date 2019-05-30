@@ -116,6 +116,7 @@
 - [golangs-real-time-gc-in-theory-and-practice](https://making.pusher.com/golangs-real-time-gc-in-theory-and-practice/)
 - [Golang在Kubernetes语境下的编程范式](https://mp.weixin.qq.com/s/UqqgJml9g-GFJQSTYyLVPQ)
 - [图解Golang的GC算法](https://mp.weixin.qq.com/s?__biz=MzUzMjk0ODI0OA==&mid=2247483727&idx=1&sn=abe1e6896cb398bde2517b469d07afa0&chksm=faaa3538cdddbc2e81e146f74fd7050a6ac9a89a13b024717c9d56888de4a19cb0973f6bbe94&mpshare=1&scene=24&srcid=04105l1DG5QXbS4dfUB6aWeX&key=fb1dd35c5489928a678ed39df498f0d7f7ce5ef29135addb7c0573a4d19220f05d9c2522d44eb6315eaa9b6590d1f3afaaf06a3e96a1abeb1fb22d2870f9185f446a1e704aa2b16bd0775cd7be370a43&ascene=14&uin=Mjg4MTE5ODIzMA%3D%3D&devicetype=Windows+10&version=62060739&lang=zh_CN&pass_ticket=bqbjocTiytbymxqE%2FkEqbcTWuMs1uh6W%2BK2eHz3sKwLI%2BWRx6of4k%2BmAlALLk8iH)
+- [如何写出优雅的 Golang 代码](https://draveness.me/golang-101)
 
 >>> #### [Build a Todo List with Angular and Google App Engine]
 - [Build a Todo List with Angular and Google App Engine - Part 1](https://outcrawl.com/todo-list-angular-google-app-engine-part-1/)
