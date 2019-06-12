@@ -71,6 +71,8 @@
 - [深度了解视频直播 CDN 技术](https://ruby-china.org/topics/33544)
 - [视频内容谁来保护？阿里云视频加密解决方案架构及实现原理解析](https://ruby-china.org/topics/34102) 
 - [RTMP](https://www.villainhr.com/page/2017/08/05/RTMP%20H5%20%E7%9B%B4%E6%92%AD%E6%B5%81%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90)
+- [通过 wireshark 抓包了解直播流媒体 RTMP 协议基本过程](https://juejin.im/post/5d009c8b6fb9a07ec63b0cfd?utm_source=gold_browser_extension)
+
 
 ### WebRTC
 
