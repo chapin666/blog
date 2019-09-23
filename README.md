@@ -36,6 +36,7 @@
 
 ### 分布式
 - [分布式事务](http://www.tianshouzhi.com/api/tutorials/distributed_transaction/383)
+- [etcd 的实现原理](https://draveness.me/etcd-introduction)
 
 ### 数据结构与算法基础
 - [Dijkstra](http://www.cnblogs.com/nigang/p/3658990.html)
