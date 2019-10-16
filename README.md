@@ -33,6 +33,7 @@
 - [系统设计入门](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md)
 - [PERM 模型](http://www.cnblogs.com/wang_yb/archive/2018/11/20/9987397.html)
 - [一套高可用实时消息系统实现](https://alexstocks.github.io/html/pubsub.html)
+- [基于 Go 开源项目 MIMIO 的对象存储方案在探探的实践](https://mp.weixin.qq.com/s/YIKB_qAqqy6ydtFT_a_Ieg)
 
 ### 分布式
 - [分布式事务](http://www.tianshouzhi.com/api/tutorials/distributed_transaction/383)
