@@ -69,6 +69,7 @@
 - [MongoDB数据库设计中6条重要的经验法则，part 2](http://xiaosheng.me/2016/07/26/article22/) 
 - [MongoDB数据库设计中6条重要的经验法则，part 3](http://xiaosheng.me/2016/07/26/article23/) 
 - [使用模式构建](http://mongoing.com/archives/26406)
+- [MongoDB 进阶模式设计](http://www.mongoing.com/mongodb-advanced-pattern-design)
 
 ### 直播技术
 
