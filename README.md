@@ -173,6 +173,7 @@
 
 ### 工具
 - [Pika CPU火焰图](http://kernelmaker.github.io/Pika_Fire)
+- [wrk压测工具使用](https://www.cnblogs.com/garfieldcgf/p/10002698.html)
 
 ### GraphQL
 - [GraphQL 在微服务架构中的实践](https://mp.weixin.qq.com/s/1-Q7Qx2M-Q5DRThUXWurMQ)
@@ -188,8 +189,4 @@
 - [Logstash Filebeat 安装配置之使用 Kibana 分析日志数据](https://www.renwole.com/archives/661)
 - [Kubernetes容器集群中的日志系统集成实践](http://dockone.io/article/1600)
 - [ELK-使用消息队列进行扩展 Logstash](http://jaminzhang.github.io/elk/ELK-use-MQ-to-scale-Logstash/)
-
-### PHP
->>> #### 工具
-- [宝塔面板](https://www.bt.cn)
 
