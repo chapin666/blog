@@ -170,6 +170,8 @@
 - [一个故事告诉你比特币的原理及运作机制](http://blog.codinglabs.org/articles/bitcoin-mechanism-make-easy.html)
 - [以太坊智能合约编程之菜鸟教程](https://ethfans.org/posts/101-noob-intro)
 - [如何成为区块链开发者：速成课！](https://ethfans.org/posts/blockchain-developer-crash-course)
+- [北京大学肖臻老师《区块链技术与应用》笔记 - BTC篇](https://www.cnblogs.com/coderzjz/p/13788649.html)
+- [北京大学肖臻老师《区块链技术与应用》笔记 - ETH篇](https://www.cnblogs.com/coderzjz/p/14025979.html)
 
 ### 工具
 - [Pika CPU火焰图](http://kernelmaker.github.io/Pika_Fire)
