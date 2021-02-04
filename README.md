@@ -148,6 +148,7 @@
 - [关于Jvm知识看这一篇就够了](https://mp.weixin.qq.com/s/sFnMxEwJiYRjwTiBIjfcZg)
 >>> #### Spring boot
 - [Spring Boot 快速构建应用](https://github.com/chapin666/blog/issues/4)
+- [互联网 Java 工程师进阶知识完全扫盲](http://advjava.woshinlper.com/)
 
 ### Erlang
 - [Erlang开发指南](http://real-world-eralng-pragramming.readthedocs.io/en/latest/index.html)
