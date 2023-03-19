@@ -25,7 +25,7 @@
     
     
       
-        <title>数据通信 - chapin666 Blog</title>
+        <title>数据通信 - chapin666</title>
       
     
     
@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -86,7 +91,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../index.html" title="chapin666 Blog" class="md-header__button md-logo" aria-label="chapin666 Blog" data-md-component="logo">
+    <a href="../../index.html" title="chapin666" class="md-header__button md-logo" aria-label="chapin666" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg>
@@ -99,7 +104,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            chapin666 Blog
+            chapin666
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -290,13 +295,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../index.html" title="chapin666 Blog" class="md-nav__button md-logo" aria-label="chapin666 Blog" data-md-component="logo">
+    <a href="../../index.html" title="chapin666" class="md-nav__button md-logo" aria-label="chapin666" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg>
 
     </a>
-    chapin666 Blog
+    chapin666
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -667,10 +672,317 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          数据通信
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="007.html" class="md-nav__link md-nav__link--active">
         数据通信
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#webrtc" class="md-nav__link">
+    我可以从 WebRTC 的数据通信中获得什么？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    它是如何工作的？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dcep" class="md-nav__link">
+    DCEP
+  </a>
+  
+    <nav class="md-nav" aria-label="DCEP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data_channel_open" class="md-nav__link">
+    DATA_CHANNEL_OPEN
+  </a>
+  
+    <nav class="md-nav" aria-label="DATA_CHANNEL_OPEN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    封包格式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-type" class="md-nav__link">
+    消息类型（Message Type）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-type" class="md-nav__link">
+    通道类型（Channel Type）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#priority" class="md-nav__link">
+    优先级（Priority）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    可靠性参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#label" class="md-nav__link">
+    标签（Label）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protocol" class="md-nav__link">
+    协议（Protocol）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data_channel_ack" class="md-nav__link">
+    DATA_CHANNEL_ACK
+  </a>
+  
+    <nav class="md-nav" aria-label="DATA_CHANNEL_ACK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    封包格式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sctp" class="md-nav__link">
+    流控传输协议（SCTP）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    概念
+  </a>
+  
+    <nav class="md-nav" aria-label="概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#association" class="md-nav__link">
+    关联（Association）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    流
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    基于数据报
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chunks" class="md-nav__link">
+    块（Chunks）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    传输序列号
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    流标识符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    有效负载协议标识符
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    协议
+  </a>
+  
+    <nav class="md-nav" aria-label="协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    DATA 块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init" class="md-nav__link">
+    INIT 块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sack" class="md-nav__link">
+    SACK 块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heartbeat" class="md-nav__link">
+    HEARTBEAT 块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abort" class="md-nav__link">
+    ABORT 块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shutdown" class="md-nav__link">
+    SHUTDOWN 块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error" class="md-nav__link">
+    ERROR 块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forward-tsn" class="md-nav__link">
+    FORWARD TSN 块
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    状态机
+  </a>
+  
+    <nav class="md-nav" aria-label="状态机">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    连接建立流程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    连接关闭流程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keep-alive" class="md-nav__link">
+    Keep-Alive（保持活动）机制
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -699,6 +1011,62 @@
     <li class="md-nav__item">
       <a href="009.html" class="md-nav__link">
         调试
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="010.html" class="md-nav__link">
+        历史
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="011.html" class="md-nav__link">
+        常见问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="012.html" class="md-nav__link">
+        术语
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="013.html" class="md-nav__link">
+        Reference
       </a>
     </li>
   
@@ -1356,6 +1724,297 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#webrtc" class="md-nav__link">
+    我可以从 WebRTC 的数据通信中获得什么？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    它是如何工作的？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dcep" class="md-nav__link">
+    DCEP
+  </a>
+  
+    <nav class="md-nav" aria-label="DCEP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data_channel_open" class="md-nav__link">
+    DATA_CHANNEL_OPEN
+  </a>
+  
+    <nav class="md-nav" aria-label="DATA_CHANNEL_OPEN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    封包格式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-type" class="md-nav__link">
+    消息类型（Message Type）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-type" class="md-nav__link">
+    通道类型（Channel Type）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#priority" class="md-nav__link">
+    优先级（Priority）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    可靠性参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#label" class="md-nav__link">
+    标签（Label）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protocol" class="md-nav__link">
+    协议（Protocol）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data_channel_ack" class="md-nav__link">
+    DATA_CHANNEL_ACK
+  </a>
+  
+    <nav class="md-nav" aria-label="DATA_CHANNEL_ACK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    封包格式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sctp" class="md-nav__link">
+    流控传输协议（SCTP）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    概念
+  </a>
+  
+    <nav class="md-nav" aria-label="概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#association" class="md-nav__link">
+    关联（Association）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    流
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    基于数据报
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chunks" class="md-nav__link">
+    块（Chunks）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    传输序列号
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    流标识符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    有效负载协议标识符
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    协议
+  </a>
+  
+    <nav class="md-nav" aria-label="协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    DATA 块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init" class="md-nav__link">
+    INIT 块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sack" class="md-nav__link">
+    SACK 块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heartbeat" class="md-nav__link">
+    HEARTBEAT 块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abort" class="md-nav__link">
+    ABORT 块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shutdown" class="md-nav__link">
+    SHUTDOWN 块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error" class="md-nav__link">
+    ERROR 块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forward-tsn" class="md-nav__link">
+    FORWARD TSN 块
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    状态机
+  </a>
+  
+    <nav class="md-nav" aria-label="状态机">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    连接建立流程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    连接关闭流程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keep-alive" class="md-nav__link">
+    Keep-Alive（保持活动）机制
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1373,9 +2032,296 @@
 
 
 
-  <h1>数据通信</h1>
-
-
+<h1 id="_1">数据通信</h1>
+<h2 id="webrtc">我可以从 WebRTC 的数据通信中获得什么？</h2>
+<p>WebRTC 提供用于数据通信的数据通道。在两个 peer 之间，你可以打开 65,534 个数据通道。
+数据通道基于数据报，并且每个通道都有其自己的持久性设置。默认设置下，每个数据通道都能保证有序交付。</p>
+<p>如果你从传递媒体数据的角度开始接触 WebRTC，可能数据通道看起来是一种浪费。当我只使用 HTTP 或 WebSocket 就能传递数据的时候，为什么需要整个数据通道子系统呢？</p>
+<p>数据通道的真正强大之处在于，你可以将它们配置为像 UDP 一样进行无序 / 有损传递。
+对于低延迟和高性能的情况，这是必需的。你可以测量背压，并确保你仅发送网络支持的最大数据量。</p>
+<h2 id="_2">它是如何工作的？</h2>
+<p>WebRTC 使用<a href="https://tools.ietf.org/html/rfc4960">RFC 4960</a>中定义的流控制传输协议（SCTP）。SCTP 是一种传输层协议，旨在替代 TCP 或 UDP。对于 WebRTC，我们将 SCTP 用作在 DTLS 连接上运行的应用层协议。</p>
+<p>SCTP 为你提供流，并且每个流都可以独立配置。WebRTC 数据通道只是基于流的简单抽象。有关持久性和顺序的设置会被直接传递到 SCTP Agent 中。</p>
+<p>数据通道具有 SCTP 无法表达的某些功能，例如通道标签。为了解决该问题，WebRTC 使用了<a href="https://tools.ietf.org/html/rfc8832">RFC 8832</a>中定义的数据通道建立协议（DCEP）。DCEP 定义了一条消息，用于传递通道标签和协议。</p>
+<h2 id="dcep">DCEP</h2>
+<p>DCEP 只有两个消息 <code>DATA_CHANNEL_OPEN</code> 和 <code>DATA_CHANNEL_ACK</code>。对于打开的每个数据通道，远端必须以 ack 响应。</p>
+<h3 id="data_channel_open">DATA_CHANNEL_OPEN</h3>
+<p>该消息由希望打开数据通道的 WebRTC Agent 发送。</p>
+<h4 id="_3">封包格式</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> 0                   1                   2                   3
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>|  Message Type |  Channel Type |            Priority           |
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>|                    Reliability Parameter                      |
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>|         Label Length          |       Protocol Length         |
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>\                                                               \
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>/                             Label                             /
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>\                                                               \
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>\                                                               \
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>/                            Protocol                           /
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>\                                                               \
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></code></pre></div>
+<h4 id="message-type">消息类型（Message Type）</h4>
+<p>消息类型是一个静态值 <code>0x03</code>。</p>
+<h4 id="channel-type">通道类型（Channel Type）</h4>
+<p>Channel Type controls durability/ordering attributes of the channel. It may have the following values:
+通道类型控制通道的持久性 / 排序属性。它可能具有以下值：</p>
+<ul>
+<li><code>DATA_CHANNEL_RELIABLE</code> (<code>0x00</code>) - 没有消息丢失，消息依序到达。</li>
+<li><code>DATA_CHANNEL_RELIABLE_UNORDERED</code> (<code>0x80</code>) - 没有消息丢失，但消息可能乱序到达。</li>
+<li><code>DATA_CHANNEL_PARTIAL_RELIABLE_REXMIT</code> (<code>0x01</code>) - 按照请求中的次数重试发送后，消息可能会丢失，但消息将依序到达。</li>
+<li><code>DATA_CHANNEL_PARTIAL_RELIABLE_REXMIT_UNORDERED</code> (<code>0x81</code>) - 按照请求中的次数重试发送后，消息可能会丢失，且消息可能乱序到达。</li>
+<li><code>DATA_CHANNEL_PARTIAL_RELIABLE_TIMED</code> (<code>0x02</code>) - 如果没有在请求的时间内到达，消息可能会丢失，但消息将依序到达。</li>
+<li><code>DATA_CHANNEL_PARTIAL_RELIABLE_TIMED_UNORDERED</code> (<code>0x82</code>) - 如果没有在请求的时间内到达，消息可能会丢失，且消息可能乱序到达。</li>
+</ul>
+<h4 id="priority">优先级（Priority）</h4>
+<p>数据通道的优先级。具有较高优先级的数据通道将首先被调度。较大的低优先级用户消息不会耽误高优先级用户消息的发送。</p>
+<h4 id="_4">可靠性参数</h4>
+<p>如果数据通道类型的前缀为 <code>DATA_CHANNEL_PARTIAL_RELIABLE</code>，则不同的后缀对应的参数配置如下：</p>
+<ul>
+<li><code>REXMIT</code> - 定义发送方重试发送消息的次数，超出此次数将放弃尝试。</li>
+<li><code>TIMED</code> - 定义发送方重试发送消息的时间（以毫秒为单位），超出此时间将放弃尝试。</li>
+</ul>
+<h4 id="label">标签（Label）</h4>
+<p>一个包含数据通道名称的 UTF-8 编码的字符串。可能为空。</p>
+<h4 id="protocol">协议（Protocol）</h4>
+<p>如果这里为空字符串，则协议未指定。如果是非空字符串，则这里应指定一个协议，可指定的协议请参考<a href="https://tools.ietf.org/html/rfc6455#page-61">RFC 6455</a>中定义的 "WebSocket 子协议名称注册表 " 中的注册协议。</p>
+<h3 id="data_channel_ack">DATA_CHANNEL_ACK</h3>
+<p>WebRTC Agent 发送此消息以确认此数据通道已打开。</p>
+<h4 id="_5">封包格式</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a> 0                   1                   2                   3
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>|  Message Type |
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>+-+-+-+-+-+-+-+-+
+</span></code></pre></div>
+<h2 id="sctp">流控传输协议（SCTP）</h2>
+<p>SCTP 是 WebRTC 数据通道背后的真正动力。它提供了数据通道的以下所有功能：</p>
+<ul>
+<li>多路复用</li>
+<li>使用类似 TCP 的重传机制进行可靠传递</li>
+<li>部分可靠性选项</li>
+<li>避免拥塞</li>
+<li>流量控制</li>
+</ul>
+<p>为了理解 SCTP，我们将分三个部分进行探讨。我们的目标是，在本章之后，你将拥有足够的知识来自行调试和学习 SCTP 的详细信息。</p>
+<h2 id="_6">概念</h2>
+<p>SCTP 协议功能很多。本节仅涵盖 WebRTC 使用的 SCTP 部分。
+SCTP 中，WebRTC 不使用的功能包括多宿主（multi-homing）和路径选择。</p>
+<p>经过 20 多年的发展，SCTP 变得难以完全掌握。</p>
+<h3 id="association">关联（Association）</h3>
+<p>关联是用于 SCTP 会话的术语。这是两个 SCTP Agent 在通信时共享的状态。</p>
+<h3 id="_7">流</h3>
+<p>一个流是用户数据的一个双向序列。创建数据通道时，实际上只是在创建一个 SCTP 流。每个 SCTP 关联都包含一个流列表。可以为每个流配置不同的可靠性类型。</p>
+<p>WebRTC 只允许你在创建流时进行配置，而 SCTP 实际上允许随时更改配置。</p>
+<h3 id="_8">基于数据报</h3>
+<p>SCTP 将数据构造为数据报，而不是字节流。发送和接收数据就像是使用 UDP 而不是 TCP。
+你无需添加任何额外的代码即可通过一个流传输多个文件。</p>
+<p>SCTP 消息没有像 UDP 这样的大小限制。单个 SCTP 消息的大小可以达到几个 GB。</p>
+<h3 id="chunks">块（Chunks）</h3>
+<p>SCTP 协议由块组成。有许多不同类型的块。这些块用于所有通信。
+用户数据，连接初始化，拥塞控制等，全部通过块完成。</p>
+<p>每个 SCTP 数据包都包含一个块列表。因此，在一个 UDP 数据包中，你可以有多个块承载来自不同流的消息。</p>
+<h3 id="_9">传输序列号</h3>
+<p>传输序列号（TSN）是 DATA 块的全局唯一标识符。DATA 块承载用户希望发送的所有消息。TSN 很重要，因为它可以帮助接收方确定数据包是否丢失或乱序。</p>
+<p>如果接收方注意到缺少 TSN，则在数据完整获取之前，它不应将数据提供给用户。</p>
+<h3 id="_10">流标识符</h3>
+<p>每个流都有一个唯一的标识符。当你创建带有显式 ID 的数据通道时，实际上是将其作为流标识符直接传递到 SCTP 中。如果你没有传递 ID，则会为你自动选择流标识符。</p>
+<h3 id="_11">有效负载协议标识符</h3>
+<p>每个 DATA 块还具有一个有效负载协议标识符（PPID）。这用于唯一地标识正在交换的数据类型。
+SCTP 具有许多 PPID，但是 WebRTC 仅使用以下五种：</p>
+<ul>
+<li><code>WebRTC DCEP</code> (<code>50</code>) - DCEP 消息。</li>
+<li><code>WebRTC String</code> (<code>51</code>) - Datachannel 字符串消息。</li>
+<li><code>WebRTC Binary</code> (<code>53</code>) - Datachannel 二进制消息。</li>
+<li><code>WebRTC String Empty</code> (<code>56</code>) - 长度为 0 的 Datachannel 字符串消息。</li>
+<li><code>WebRTC Binary Empty</code> (<code>57</code>) - 长度为 0 的 Datachannel 二进制消息。</li>
+</ul>
+<h2 id="_12">协议</h2>
+<p>以下是 SCTP 协议使用的一些块。这不是一个详尽的演示。只提供了足够的结构让状态机运作起来。</p>
+<p>每个块均以 <code>type</code> 字段开头。在块列表之前，还有一个头字段。</p>
+<h3 id="data">DATA 块</h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a> 0                   1                   2                   3
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>|   Type = 0    | Reserved|U|B|E|    Length                     |
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>|                              TSN                              |
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>|      Stream Identifier        |   Stream Sequence Number      |
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>|                  Payload Protocol Identifier                  |
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>\                                                               \
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>/                            User Data                          /
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>\                                                               \
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></code></pre></div>
+DATA 块是交换所有用户数据的方式。下面是对 DATA 块更详细的说明，数据就是这样通过数据通道被发送的。</p>
+<p>如果是无序数据包，则将 <code>U</code> 位设置为 1。我们可以忽略流序列号（Stream Sequence Number）。</p>
+<p><code>B</code> 和 <code>E</code> 是开始位和结束位。如果要发送的消息对于单个 DATA 块而言太大，则需要将其分片成多个 DATA 块发送。
+SCTP 使用 比特位 <code>B</code> 和 <code>E</code> 以及序列号（TSN）来描述消息分包。</p>
+<ul>
+<li><code>B=1</code>, <code>E=0</code> - 用户消息的第一个分片。</li>
+<li><code>B=0</code>, <code>E=0</code> - 用户消息的中间的分片。</li>
+<li><code>B=0</code>, <code>E=1</code> - 用户消息的最后一个分片。</li>
+<li><code>B=1</code>, <code>E=1</code> - 未分片的用户消息。</li>
+</ul>
+<p><code>TSN</code> 是 <code>Transmission Sequence Number</code>，一个 DATA chunk 的唯一标识符。它是一个递增的 32-bit 数，在达到最大值 4,294,967,295 之后，继续从 0 开始递增。</p>
+<p><code>Stream Identifier</code>（流标识符）是该数据所属流的唯一标识符。</p>
+<p><code>Stream Sequence Number</code> , 标识一个用户消息。它是一个递增的 16-bit 数，在 达到最大值 65535 之后，继续从 0 开始递增。
+比特位 <code>U</code> 设置为 1 时，表示无序消息包，<code>Stream Sequence Number</code> 可以忽略。
+比特位 <code>U</code> 设置为 0 时，表示有序消息包，该编号用于确定消息包的顺序。
+与 TSN 类似，但是 <code>Stream Sequence Number</code> 以一个用户消息的粒度递增，TSN 以一个 Chunk 的粒度递增。</p>
+<p><code>Payload Protocol Identifier</code>（有效负载协议标识符）是流过此流的数据类型。对于 WebRTC 而言，它可能是 DCEP，String 或 Binary。</p>
+<p><code>User Data</code>（用户数据）就是你要发送的内容。通过 WebRTC Data Channel 发送的所有数据均通过 DATA 块传输。</p>
+<h3 id="init">INIT 块</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a> 0                   1                   2                   3
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>|   Type = 1    |  Chunk Flags  |      Chunk Length             |
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>|                         Initiate Tag                          |
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>|           Advertised Receiver Window Credit (a_rwnd)          |
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>|  Number of Outbound Streams   |  Number of Inbound Streams    |
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>|                          Initial TSN                          |
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>\                                                               \
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>/              Optional/Variable-Length Parameters              /
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>\                                                               \
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></code></pre></div>
+<p>INIT 块开始创建一个关联（association）的过程。</p>
+<p><code>Initiate Tag</code>（启动标签）用于生成 Cookie。Cookies 技术在中间人攻击和 DoS 保护中可能会被用到。在状态机章节中对它们进行了更详细的描述。</p>
+<p><code>Advertised Receiver Window Credit</code>（广播接收者窗口信用值）用于 SCTP 的拥塞控制。它传达了接收方已为此关联分配了多大的缓冲区。</p>
+<p><code>Number of Outbound/Inbound Streams</code>（出站 / 入站流的数量）通知该 Agent 支持多少个流。</p>
+<p><code>Initial TSN</code>（初始 TSN）是随机的 <code>uint32</code>，本地 TSN 以这个值开始计数。</p>
+<p><code>Optional Parameters</code>（可选参数）允许 SCTP 向协议引入新功能。</p>
+<h3 id="sack">SACK 块</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a> 0                   1                   2                   3
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>|   Type = 3    |Chunk  Flags   |      Chunk Length             |
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>|                      Cumulative TSN Ack                       |
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>|          Advertised Receiver Window Credit (a_rwnd)           |
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>| Number of Gap Ack Blocks = N  |  Number of Duplicate TSNs = X |
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>|  Gap Ack Block #1 Start       |   Gap Ack Block #1 End        |
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>/                                                               /
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>\                              ...                              \
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>/                                                               /
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>|   Gap Ack Block #N Start      |  Gap Ack Block #N End         |
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>|                       Duplicate TSN 1                         |
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>/                                                               /
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>\                              ...                              \
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>/                                                               /
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>|                       Duplicate TSN X                         |
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></code></pre></div>
+<p>SACK（选择性确认）块是接收方通知发送方它已收到数据包信息的方式。在发送方获得针对 TSN 的 SACK 之前，它将重新发送有问题的 DATA 块。然而，SACK 的作用不只是更新 TSN 信息。</p>
+<p><code>Cumulative TSN ACK</code>（累积 TSN ACK）是已收到的最高 TSN。</p>
+<p><code>Advertised Receiver Window Credit</code>（广播接收者窗口信用值）是接收方的缓冲区大小。如果可用内存增加，接收方可以在会话期间更改此设置。</p>
+<p>在 <code>Cumulative TSN ACK</code>（累积 TSN ACK）后面，是 <code>Ack Blocks</code> 的 TSN。
+这个方法用来解决传送的数据包中有缺口的问题。假设我们收到了带有 TSN<code>100</code>,<code>102</code>,<code>103</code> 和 <code>104</code> 的 DATA 块。<code>Cumulative TSN ACK</code> 应该是 <code>100</code>，但可以使用 <code>Ack Blocks</code> 来告诉发送方不需要重新发送 <code>102</code>,<code>103</code> 或 <code>104</code>。</p>
+<p><code>Duplicate TSN</code>（重复 TSN）会通知发送方，它已经不止一次的接收了哪些 DATA 数据块。</p>
+<h3 id="heartbeat">HEARTBEAT 块</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a> 0                   1                   2                   3
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>|   Type = 4    | Chunk  Flags  |      Heartbeat Length         |
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>\                                                               \
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>/            Heartbeat Information TLV (Variable-Length)        /
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>\                                                               \
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></code></pre></div>
+<p>HEARTBEAT 块用于断言远端仍能响应。
+当你不发送任何 DATA 数据块，且需要保持 NAT 映射打开时，这很有用。</p>
+<h3 id="abort">ABORT 块</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a> 0                   1                   2                   3
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>|   Type = 6    |Reserved     |T|           Length              |
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>/                                                               /
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>\               Zero or more Error Causes                       \
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>/                                                               /
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></code></pre></div>
+<p>ABORT 块用于关联的突然关闭。当一侧进入错误状态时使用。正常结束连接使用 SHUTDOWN 块。</p>
+<h3 id="shutdown">SHUTDOWN 块</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a> 0                   1                   2                   3
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>|   Type = 7    | Chunk  Flags  |      Length = 8               |
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>|                      Cumulative TSN Ack                       |
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></code></pre></div>
+<p>SHUTDOWN 块将正常关闭 SCTP 关联。
+每个 Agent 将其发送的最后一个 TSN 通知给远端。这样可以确保不会丢失任何数据包。（如果有资源仍在使用中的话，）WebRTC 不能正常关闭 SCTP 关联。你需要自行关闭所有数据通道。</p>
+<p><code>Cumulative TSN ACK</code>（累积 TSN ACK）是发送的最后一个 TSN。双方都知道在接收到此 TSN 对应的 DATA 块之前不要终止。</p>
+<h3 id="error">ERROR 块</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a> 0                   1                   2                   3
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>|   Type = 9    | Chunk  Flags  |           Length              |
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>\                                                               \
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>/                    One or more Error Causes                   /
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>\                                                               \
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></code></pre></div>
+<p>ERROR 块用于通知远端 SCTP Agent：本端发生了非致命错误。</p>
+<h3 id="forward-tsn">FORWARD TSN 块</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a> 0                   1                   2                   3
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>|   Type = 192  |  Flags = 0x00 |        Length = Variable      |
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>|                      New Cumulative TSN                       |
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>|         Stream-1              |       Stream Sequence-1       |
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>\                                                               /
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>/                                                               \
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>|         Stream-N              |       Stream Sequence-N       |
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></code></pre></div>
+<p><code>FORWARD TSN</code> 块将全局 TSN 向前移动。SCTP 这样做是为了允许跳过一些你不再关心的数据包。假设你发送了 <code>10 11 12 13 14 15</code>，这些数据包只有在它们全部到达后才有意义。而这些数据又对实时性很敏感，在这种情况下，如果数据收晚了，它们就没有用了。</p>
+<p>如果你丢失了 <code>12</code> 和 <code>13</code>，则不需要再发送 <code>14</code> 和 <code>15</code>！
+SCTP 使用 <code>FORWARD TSN</code> 块来实现这一点。它告诉接收方，<code>14</code> 和 <code>15</code> 将不再传递。</p>
+<p><code>New Cumulative TSN</code>（新的累积 TSN），是连接的新 TSN。此 TSN 之前的任何数据包都不会被保留。</p>
+<p><code>Stream</code>（流）和 <code>Stream Sequence</code>（流序列）用于将 <code>Stream Sequence Number</code> 的编号向前跳转。请参阅前面的 <code>DATA 块</code>以了解该字段的重要性。</p>
+<h2 id="_13">状态机</h2>
+<p>这里是 SCTP 状态机中一些有趣的部分。WebRTC 并未使用 SCTP 状态机的所有功能，因此我们将没有用到的部分排除在外。我们还简化了一些组件，使它们更易于理解。</p>
+<h3 id="_14">连接建立流程</h3>
+<p><code>INIT</code> 和 <code>INIT ACK</code> 块用于交换 peer 的能力和配置。SCTP 在握手期间使用 cookie 来验证与之通信的 peer。
+这是为了确保握手不会被拦截并防止 DoS 攻击。</p>
+<p><code>INIT ACK</code> 块包含 cookie。然后，使用 <code>COOKIE ECHO</code> 将 cookie 返回给其创建者。如果 cookie 验证成功，则发送 <code>COOKIE ACK</code>，并且准备交换 DATA 块。</p>
+<p><img alt="连接的建立" src="images/07-connection-establishment.png" title="连接的建立" /></p>
+<h3 id="_15">连接关闭流程</h3>
+<p>SCTP 使用 <code>SHUTDOWN</code> 块。当 Agent 收到 <code>SHUTDOWN</code> 块时，它将等待直到收到请求的 <code>Cumulative TSN ACK</code>。这样，即使连接有损，用户也可以确保传送了所有数据。</p>
+<h3 id="keep-alive">Keep-Alive（保持活动）机制</h3>
+<p>SCTP 使用 <code>HEARTBEAT REQUEST</code> 和 <code>HEARTBEAT ACK</code> 块使连接保持活动状态。它们以固定间隔发送，间隔时间可配置。如果数据包尚未到达，SCTP 还会将指数回退。</p>
+<p><code>HEARTBEAT</code> 块还包含一个时间值。两个关联可以用此来计算两个 Agent 之间的数据传递时间。</p>
 
 
 
@@ -1481,7 +2427,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "search.share", "header.autohide", "content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "toc.follow", "search.share", "header.autohide", "content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.efa0ade1.min.js"></script>

@@ -25,7 +25,7 @@
     
     
       
-        <title>连接 - chapin666 Blog</title>
+        <title>连接 - chapin666</title>
       
     
     
@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -86,7 +91,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../index.html" title="chapin666 Blog" class="md-header__button md-logo" aria-label="chapin666 Blog" data-md-component="logo">
+    <a href="../../index.html" title="chapin666" class="md-header__button md-logo" aria-label="chapin666" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg>
@@ -99,7 +104,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            chapin666 Blog
+            chapin666
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -290,13 +295,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../index.html" title="chapin666 Blog" class="md-nav__button md-logo" aria-label="chapin666 Blog" data-md-component="logo">
+    <a href="../../index.html" title="chapin666" class="md-nav__button md-logo" aria-label="chapin666" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg>
 
     </a>
-    chapin666 Blog
+    chapin666
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -611,10 +616,451 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          连接
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="003.html" class="md-nav__link md-nav__link--active">
         连接
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#webrtc" class="md-nav__link">
+    为什么 WebRTC 需要专用的子系统进行连接？
+  </a>
+  
+    <nav class="md-nav" aria-label="为什么 WebRTC 需要专用的子系统进行连接？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    降低带宽成本
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    更低延迟
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    安全的端到端通信
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    它是如何工作的？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    现实世界的网络限制
+  </a>
+  
+    <nav class="md-nav" aria-label="现实世界的网络限制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    不在同一个网络中
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    协议限制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ids" class="md-nav__link">
+    防火墙 /IDS 规则
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nat" class="md-nav__link">
+    NAT 映射
+  </a>
+  
+    <nav class="md-nav" aria-label="NAT 映射">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    创建映射
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    映射创建的行为
+  </a>
+  
+    <nav class="md-nav" aria-label="映射创建的行为">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    端点无关的映射
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    地址相关的映射
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    地址和端口相关的映射
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    映射过滤行为
+  </a>
+  
+    <nav class="md-nav" aria-label="映射过滤行为">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    端点无关的过滤
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    地址相关的过滤
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    地址和端口相关的过滤
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    映射的刷新
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stun" class="md-nav__link">
+    STUN
+  </a>
+  
+    <nav class="md-nav" aria-label="STUN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    协议结构
+  </a>
+  
+    <nav class="md-nav" aria-label="协议结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stun_1" class="md-nav__link">
+    STUN 消息类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    消息长度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magic-cookie" class="md-nav__link">
+    Magic Cookie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transactionid" class="md-nav__link">
+    交互（Transaction）ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    数据
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat_1" class="md-nav__link">
+    创建 NAT 映射
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat_2" class="md-nav__link">
+    确定 NAT 类型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#turn" class="md-nav__link">
+    TURN
+  </a>
+  
+    <nav class="md-nav" aria-label="TURN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#turn_1" class="md-nav__link">
+    TURN 生命周期
+  </a>
+  
+    <nav class="md-nav" aria-label="TURN 生命周期">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allocations" class="md-nav__link">
+    Allocations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    权限
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendindicationchanneldata" class="md-nav__link">
+    SendIndication/ChannelData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    刷新
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turn_2" class="md-nav__link">
+    TURN 使用方法
+  </a>
+  
+    <nav class="md-nav" aria-label="TURN 使用方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#turn-allocation" class="md-nav__link">
+    单个 TURN Allocation 通信
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turn-allocation_1" class="md-nav__link">
+    双重 TURN Allocation 通信
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ice" class="md-nav__link">
+    ICE
+  </a>
+  
+    <nav class="md-nav" aria-label="ICE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ice-agent" class="md-nav__link">
+    创建 ICE Agent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    候选地址收集
+  </a>
+  
+    <nav class="md-nav" aria-label="候选地址收集">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    主机
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mdns" class="md-nav__link">
+    mDNS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-reflextive" class="md-nav__link">
+    服务器自反（Server Reflextive）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peer" class="md-nav__link">
+    Peer 自反
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    中继
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    连通性检查
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    候选地址选择
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    重新启动
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -699,6 +1145,62 @@
     <li class="md-nav__item">
       <a href="009.html" class="md-nav__link">
         调试
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="010.html" class="md-nav__link">
+        历史
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="011.html" class="md-nav__link">
+        常见问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="012.html" class="md-nav__link">
+        术语
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="013.html" class="md-nav__link">
+        Reference
       </a>
     </li>
   
@@ -1356,6 +1858,431 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#webrtc" class="md-nav__link">
+    为什么 WebRTC 需要专用的子系统进行连接？
+  </a>
+  
+    <nav class="md-nav" aria-label="为什么 WebRTC 需要专用的子系统进行连接？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    降低带宽成本
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    更低延迟
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    安全的端到端通信
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    它是如何工作的？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    现实世界的网络限制
+  </a>
+  
+    <nav class="md-nav" aria-label="现实世界的网络限制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    不在同一个网络中
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    协议限制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ids" class="md-nav__link">
+    防火墙 /IDS 规则
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nat" class="md-nav__link">
+    NAT 映射
+  </a>
+  
+    <nav class="md-nav" aria-label="NAT 映射">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    创建映射
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    映射创建的行为
+  </a>
+  
+    <nav class="md-nav" aria-label="映射创建的行为">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    端点无关的映射
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    地址相关的映射
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    地址和端口相关的映射
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    映射过滤行为
+  </a>
+  
+    <nav class="md-nav" aria-label="映射过滤行为">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    端点无关的过滤
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    地址相关的过滤
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    地址和端口相关的过滤
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    映射的刷新
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stun" class="md-nav__link">
+    STUN
+  </a>
+  
+    <nav class="md-nav" aria-label="STUN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    协议结构
+  </a>
+  
+    <nav class="md-nav" aria-label="协议结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stun_1" class="md-nav__link">
+    STUN 消息类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    消息长度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magic-cookie" class="md-nav__link">
+    Magic Cookie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transactionid" class="md-nav__link">
+    交互（Transaction）ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    数据
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat_1" class="md-nav__link">
+    创建 NAT 映射
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat_2" class="md-nav__link">
+    确定 NAT 类型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#turn" class="md-nav__link">
+    TURN
+  </a>
+  
+    <nav class="md-nav" aria-label="TURN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#turn_1" class="md-nav__link">
+    TURN 生命周期
+  </a>
+  
+    <nav class="md-nav" aria-label="TURN 生命周期">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allocations" class="md-nav__link">
+    Allocations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    权限
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendindicationchanneldata" class="md-nav__link">
+    SendIndication/ChannelData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    刷新
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turn_2" class="md-nav__link">
+    TURN 使用方法
+  </a>
+  
+    <nav class="md-nav" aria-label="TURN 使用方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#turn-allocation" class="md-nav__link">
+    单个 TURN Allocation 通信
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turn-allocation_1" class="md-nav__link">
+    双重 TURN Allocation 通信
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ice" class="md-nav__link">
+    ICE
+  </a>
+  
+    <nav class="md-nav" aria-label="ICE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ice-agent" class="md-nav__link">
+    创建 ICE Agent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    候选地址收集
+  </a>
+  
+    <nav class="md-nav" aria-label="候选地址收集">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    主机
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mdns" class="md-nav__link">
+    mDNS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-reflextive" class="md-nav__link">
+    服务器自反（Server Reflextive）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peer" class="md-nav__link">
+    Peer 自反
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    中继
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    连通性检查
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    候选地址选择
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    重新启动
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1373,9 +2300,200 @@
 
 
 
-  <h1>连接</h1>
-
-
+<h1 id="_1">连接</h1>
+<h2 id="webrtc">为什么 WebRTC 需要专用的子系统进行连接？</h2>
+<p>目前，大多数部署的应用程序都通过客户端 / 服务器方式进行连接。客户端 / 服务器方式连接要求服务器具有稳定且公开可用的传输地址。客户端与服务器联系，然后服务器做出响应。</p>
+<p>WebRTC 不使用客户端 / 服务器模型，它建立点对点（P2P）连接。 在 P2P 连接中，创建连接的任务被平均分配给两个对等方。这是因为无法猜测 WebRTC 中的传输地址（IP 和端口），而且，在会话过程中，传输地址甚至可能会变更。WebRTC 将收集所有可能收集的信息，并将尽力实现两个 WebRTC Agent 之间的双向通信。</p>
+<p>听起来简单，建立点对点连接实际上可能会非常困难。这些 Agent 可能位于没有直接连接的不同网络中。即使在两个 Agent 可以直接连接的情况下，你可能还会遇到其他问题。比如在某些情况下，两个客户端使用不同的网络协议（UDP &lt;-&gt; TCP）或使用不同的 IP 版本（IPv4 &lt;-&gt; IPv6）。</p>
+<p>尽管在建立点对点连接方面存在一些困难，在 WebRTC 提供的下面这些属性的帮助下，你仍然可以获得相对于传统客户端 / 服务器技术的一些优势。</p>
+<h3 id="_2">降低带宽成本</h3>
+<p>由于媒体通信直接发生在 peer 之间，因此你无需为之付费，也无需托管一个单独的服务器来转发媒体。</p>
+<h3 id="_3">更低延迟</h3>
+<p>直接通信时速度更快！当用户必须通过你的服务器运行所有内容时，这会使传输速度变慢。</p>
+<h3 id="_4">安全的端到端通信</h3>
+<p>直接通信更安全。由于用户数据根本没有通过你的服务器，因此用户压根不需要考虑你的服务器会不会解密其数据。</p>
+<h2 id="_5">它是如何工作的？</h2>
+<p>上面描述的连接过程是通过 Interactive Connectivity Establishment（<a href="https://tools.ietf.org/html/rfc8445">交互式连接建立 /ICE</a>） 实现的。这是另一个在 WebRTC 之前就已经出现的协议。</p>
+<p>ICE 是一种用来寻找两个 ICE Agent 之间通信的最佳方式的协议。每个 ICE Agent 都会发布如何访问自己的方式，这些路径被称为候选地址（candidates）。候选地址本质上是一个传输地址，ICE Agent 认为这个传输地址可能可以被对端访问到。接下来 ICE 将确定候选地址的最佳搭配。</p>
+<p>本章稍后将详细介绍实际的 ICE 过程。要了解 ICE 为什么存在，最好先了解我们要面临的网络特性。</p>
+<h2 id="_6">现实世界的网络限制</h2>
+<p>ICE 就是克服现实世界网络限制的方法。在我们开始讨论 ICE 如何解决问题之前，先讨论一下有哪些实际问题。</p>
+<h3 id="_7">不在同一个网络中</h3>
+<p>在大多数情况下，两个 WebRTC Agent 不在同一个网络中。典型的呼叫通常是在没有直接连接的不同网络中的两个 WebRTC Agent 之间进行的。</p>
+<p>下面是通过公共互联网连接的两个不同网络的示意图。在每个网络中，你拥有两个主机。</p>
+<p><img alt="两个网络" src="images/03-two-networks.png" title="两个网络" /></p>
+<p>对于同一网络中的主机来说，互相连接非常容易。例如在 <code>192.168.0.1 -&gt; 192.168.0.2</code> 之间通讯就很容易！这两个主机无需任何外部帮助即可相互连接。</p>
+<p>但是，使用 <code>Router B</code> 的主机无法直接访问 <code>Router A</code> 背后的任何主机。你如何区分 <code>Router A</code> 后面的 <code>192.168.0.1</code> 主机和 <code>Router B</code> 后面相同 IP 的主机之间的区别呢？它们都使用内网 IP！使用 <code>Router B</code> 的主机可以将数据直接发送到 <code>Router A</code>，但是请求在那里就结束了。<code>Router A</code> 怎么知道它应该将消息转发给哪台主机呢？</p>
+<h3 id="_8">协议限制</h3>
+<p>有些网络不允许 UDP 通信，或者也有可能不允许 TCP。有些网络的 MTU（Maximum Transmission Unit/ 最大传输单元）可能非常低。网络管理员可以更改许多变量，这些修改可能会使通信变得困难。</p>
+<h3 id="ids">防火墙 /IDS 规则</h3>
+<p>另一个问题是<code>深度数据包检查</code>和其他智能过滤方式。某些网络管理员将运行一些软件，这些软件会试图处理每个数据包。很多时候，这些软件无法识别 WebRTC 的数据包，由于它们不知道如何处理，它们可能会阻拦这些数据包，例如，它们可能将 WebRTC 数据包视为不在端口白名单上的可疑 UDP 数据包。</p>
+<h2 id="nat">NAT 映射</h2>
+<p>NAT（网络地址转换）映射是使得 WebRTC 连接成为可能的魔法。WebRTC 就是使用 NAT 让处于完全不同的子网中的两个 peer 进行通信，从而解决了上述 " 不在同一网络中 " 的问题。尽管它带来了新的挑战，但让我们先来解释一下 NAT 映射是如何工作的。</p>
+<p>NAT 映射不使用中继，代理或服务器。跟上一个例子一样，我们有 <code>Agent 1</code> 和 <code>Agent 2</code>，它们位于不同的网络中。然而，流量穿透了路由器。看起来就像这样：</p>
+<p><img alt="NAT 映射" src="images/03-nat-mapping.png" title="NAT映射" /></p>
+<p>想要这样通信的话，你需要创建一个 NAT 映射。Agent 1 使用端口 7000 与 Agent 2 建立 WebRTC 连接。这将创建一个 <code>192.168.0.1:7000</code> 到 <code>5.0.0.1:7000</code> 的绑定。然后，Agent 2 将数据包发送到 <code>5.0.0.1:7000</code> 时，数据包会被转发给 Agent 1。在这个例子中，创建一个 NAT 映射，就像是在路由器中做了一次自动化的端口转发。</p>
+<p>NAT 映射的缺点是：映射的形式不止一种（例如静态端口转发），并且映射的实现方式在不同的网络中也是不一样的。ISP 和硬件制造商可能会以不同的方式来实现 NAT 映射。在某些情况下，网络管理员甚至可能禁用它。</p>
+<p>好消息是，NAT 映射的所有行为都是可以理解和观察到的，因此 ICE Agent 能够确认其创建了 NAT 映射，并确认该映射的属性。</p>
+<p>描述这些行为的文档是 <a href="https://tools.ietf.org/html/rfc4787">RFC 4787</a>。</p>
+<h3 id="_9">创建映射</h3>
+<p>创建映射是最简单的部分。当你将数据包发送到网络外部的地址时，一个映射就被创建出来了！NAT 映射只是由 NAT 分配的一个临时的公共 IP 和端口。出站的消息将被重写，使得其源地址变为新创建的映射地址。如果有消息被成功发到映射地址，消息会被自动路由返回给 NAT 网络中创建这个映射地址的主机。说到映射相关的细节，这就开始变得复杂了。</p>
+<h3 id="_10">映射创建的行为</h3>
+<p>映射创建分为三类：</p>
+<h4 id="_11">端点无关的映射</h4>
+<p>这种创建方式为 NAT 网络中的所有发送者只创建一个映射。如果你将两个数据包发送到两个不同的远程地址，这个 NAT 映射将被重用。两个远程主机将看到相同的源 IP 和端口。如果远程主机响应，它将被发送回相同的本地侦听器。</p>
+<p>这是最好的情况。要使得呼叫能够建立起来，至少一侧必须是这种类型。</p>
+<h4 id="_12">地址相关的映射</h4>
+<p>每次将数据包发送到新地址时，都会创建一个新的映射。如果你将两个数据包发送到不同的主机，则会创建两个映射。如果将两个数据包发送到同一远程主机，但目标端口不同，则不会创建新的映射。</p>
+<h4 id="_13">地址和端口相关的映射</h4>
+<p>如果远程 IP 或端口不同，则会创建一个新的映射。如果将两个数据包发送到同一远程主机，但目标端口不同，则将创建一个新的映射。</p>
+<h3 id="_14">映射过滤行为</h3>
+<p>映射过滤是关于允许谁使用映射的规则。它们分为三个类似的类别：</p>
+<h4 id="_15">端点无关的过滤</h4>
+<p>任何人都可以使用该映射。你可以与其他多个 peer 共享该映射，他们都可以向该映射发送流量。</p>
+<h4 id="_16">地址相关的过滤</h4>
+<p>只有为其创建映射的主机才能使用该映射。如果你将数据包发送到主机 <code>A</code>，则它可以根据需要响应任意数量的数据包。如果主机 <code>B</code> 尝试将数据包发送到该映射，将被忽略。</p>
+<h4 id="_17">地址和端口相关的过滤</h4>
+<p>仅有创建映射的主机和端口可以使用该映射。如果你将数据包发送到主机 <code>A:5000</code>，则它可以根据需要响应任意数量的数据包。如果主机 <code>A：5001</code> 尝试将数据包发送到该映射，将被忽略。</p>
+<h3 id="_18">映射的刷新</h3>
+<p>通常的建议是，如果 5 分钟未使用映射，则应将其销毁。但这完全取决于 ISP 或硬件制造商。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>译注：换个说法，NAT 映射的创建即是 NAT 网络中的主机<code>发送</code>数据时，路由器的处理方式；而过滤即是<code>接收</code>数据时，路由器的处理方式。映射的刷新即是路由器<code>释放</code>映射的处理方式。不同网络情况不同，因此某些特定的搭配会导致两个网络间无法建立 P2P 连接。在穿透相关的技术中，将不同的情况称为不同的<code>锥形</code>。</p>
+</div>
+<h2 id="stun">STUN</h2>
+<p>STUN（NAT 会话传输实用程序）是一种用来配合 NAT 使用的协议。这是 WebRTC（和 ICE！）之前的另一项技术。它由<a href="https://tools.ietf.org/html/rfc8489">RFC 8489</a>定义，该文件还定义了 STUN 数据包结构。STUN 协议也在 ICE/TURN 中被使用。</p>
+<p>STUN 很有用，因为它允许以编程方式创建 NAT 映射。在 STUN 之前，我们能够创建 NAT 映射，但是我们不知道映射的 IP 和端口是什么！STUN 不仅使你能够创建映射，还可以让你获取映射的详细信息，你可以他人分享这些详细信息，然后他们便可以通过你刚刚创建的映射向你传回数据。</p>
+<p>让我们从对 STUN 的基本描述开始。稍后，我们再将话题扩展到 TURN 和 ICE 的用法。现在，我们只打算描述请求 / 响应流程来创建映射。然后，我们将讨论如何获取该映射的详细信息以便与他人共享。当你在 ICE URLs 中有一个用于 WebRTC PeerConnection 的 <code>stun:</code> 服务器时，此过程就会发生。简而言之，STUN 向 NAT 外部的 STUN 服务器发送请求，服务器返回其在请求中观察到的内容，STUN 根据这些内容来帮助 NAT 后面的端点找出已创建的映射。</p>
+<h3 id="_19">协议结构</h3>
+<p>每个 STUN 数据包都具有以下结构：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> 0                   1                   2                   3
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>|0 0|     STUN Message Type     |         Message Length        |
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>|                         Magic Cookie                          |
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>|                                                               |
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>|                     Transaction ID (96 bits)                  |
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>|                                                               |
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>|                             Data                              |
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></code></pre></div>
+<h4 id="stun_1">STUN 消息类型</h4>
+<p>每个 STUN 数据包都有一个类型。目前，我们仅关心以下几种：</p>
+<ul>
+<li>Binding Request - <code>0x0001</code></li>
+<li>Binding Response - <code>0x0101</code></li>
+</ul>
+<p>为了创建一个 NAT 映射，我们发出一个 <code>Binding Request</code>。然后服务器回应一个 <code>Binding Response</code>。</p>
+<h4 id="_20">消息长度</h4>
+<p>这就是 <code>Data</code> 段的长度。这一段中包含由<code>消息类型</code>所定义的任意数据。</p>
+<h4 id="magic-cookie">Magic Cookie</h4>
+<p>指的是固定值 <code>0x2112A442</code>，以网络字节顺序发送。这个值有助于将 STUN 流量与其他协议区分开。</p>
+<h4 id="transactionid">交互（Transaction）ID</h4>
+<p>一个 96-bit 的标识符，用于唯一标识一个请求 / 响应对。这可以帮助你配对请求和响应。</p>
+<h4 id="_21">数据</h4>
+<p>数据将包含一个 STUN 属性的列表。一个 STUN 属性具有以下结构：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>0                   1                   2                   3
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>|         Type                  |            Length             |
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>|                         Value (variable)                ....
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></code></pre></div>
+<p><code>STUN Binding Request</code> 不使用任何属性。这意味着一个 <code>STUN Binding Request</code> 仅包含 header。</p>
+<p><code>STUN Binding Response</code> 使用一个 <code>XOR-MAPPED-ADDRESS (0x0020)</code>。此属性包含一个 IP 和一个端口。这正是所创建的 NAT 映射的 IP 和端口！</p>
+<h3 id="nat_1">创建 NAT 映射</h3>
+<p>使用 STUN 创建 NAT 映射只需要发送一个请求！你向 STUN 服务器发送一个 <code>STUN Binding Request</code>。然后，STUN 服务器回应一个 <code>STUN Binding Response</code>。
+该 <code>STUN Binding Response</code> 将包含<code>映射地址</code>。<code>映射地址</code>是 STUN 服务器看到你的方式，也是你的 <code>NAT 映射</code>。
+如果你希望某人向你发送数据包，那么你应该共享该<code>映射地址</code>。</p>
+<p>人们还会将<code>映射地址</code>称为<code>公网 IP</code> 或 <code>Server Reflexive Candidate</code>。</p>
+<h3 id="nat_2">确定 NAT 类型</h3>
+<p>不幸的是，<code>映射地址</code>可能并非在所有情况下都可用。如果是<code>地址相关的映射</code>，则只有 STUN 服务器才能将流量发送回给你。如果你共享它，那么另一个 peer 尝试向该地址发送的消息将被丢弃。这使得该 peer 无法与别的 peer 交流。如果 STUN 服务器还可以为你将数据包转发给对端 peer，你可能会发现<code>地址相关的映射</code>问题实际上是可以解决的！这也就是下面将要说到的 TURN 解决方案。</p>
+<p><a href="https://tools.ietf.org/html/rfc5780">RFC 5780</a>定义了一种方法，可以运行一个测试来确定你的 NAT 类型。这很有用，因为你可能会提前知道是否可以进行直接连接。</p>
+<h2 id="turn">TURN</h2>
+<p>在无法建立直接连接的情况下，<a href="https://tools.ietf.org/html/rfc8656">RFC 8656</a>中定义了 TURN（使用中继穿透 NAT）。当你的两个 peer 的 NAT 类型不兼容，或者双方使用不同协议时，就需要使用 TURN！TURN 也可以被用于保护隐私的目的。如果通过 TURN 运行所有通讯，客户的真实地址在对端是被隐藏的。</p>
+<p>TURN 使用专用服务器。该服务器充当客户端的代理。客户端连接到 TURN 服务器并创建一个对应的 <code>Allocation</code>。通过创建该 <code>Allocation</code>，客户端将获得一个临时 <code>IP/ 端口 / 协议</code>三元组，其他 peer 可以使用该 <code>IP/ 端口 / 协议</code>将数据发送给该客户端。这个新的监听地址被称为<code>中继传输地址</code>。你可将其视为转发地址并分享给他人，以便其他人可以通过 TURN 向你发送流量！对于每个将获得该<code>中继传输地址</code>的 peer，你必须为其创建一个新的 <code>Permission</code>，以允许它与你进行通信。</p>
+<p>当你通过 TURN 发送出站流量时，它会通过<code>中继传输地址</code>发送。当远程 peer 获得该出站流量时，他们会看到数据来自 TURN 服务器。</p>
+<h3 id="turn_1">TURN 生命周期</h3>
+<p>下面就是一个客户端创建 TURN <code>allocation</code> 时必须做的所有事情。对于其他 peer 而言，与使用 TURN 服务器的客户端进行通信和其他客户端没有任何区别，先获得 IP 和端口，然后像跟其他任何主机一样通信。</p>
+<h4 id="allocations">Allocations</h4>
+<p>Allocations 是 TURN 的核心。本质上，一个 <code>allocation</code> 就是一个 "TURN 会话 "。要创建一个 TURN allocation，你需要与 TURN <code>Server Transport Address</code>（服务器传输地址，通常在 3478 端口）进行通信。</p>
+<p>创建 allocation 时，你需要提供 / 确定以下内容：
+* 用户名 / 密码 - 创建 TURN allocation 时需要身份验证。
+* Allocation 传输方式 - 服务器（<code>中继传输地址</code>）与 peer 之间的传输协议， 可以是 UDP 或 TCP。
+* 连续端口 - 你可以为多个 allocation 请求顺序排列的一系列端口，这点与 WebRTC 无关。</p>
+<p>如果请求成功，你将在 TURN 服务器上获得响应，在响应的数据部分，包含以下的 STUN 属性：
+* <code>XOR-MAPPED-ADDRESS</code> - <code>TURN Client</code> 的 <code>Mapped Address</code>。当有人将数据发送到<code>中继传输地址</code>时，数据将被转发到该地址。
+* <code>RELAYED-ADDRESS</code> - 这是你提供给其他客户端的地址。如果有人将数据包发送到该地址，数据包会被转发到 TURN 客户端。
+* <code>LIFETIME</code> - Allocation 被销毁的时间。你可以通过发送 <code>Refresh</code> 请求来延长这一时间。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>译注：上面两个地址很拗口，但实际上理解起来并不复杂。<code>Mapped Address</code> 是 Turn Client 的实际地址，也就是 Turn Server 收到数据包时的<code>目标地址</code>。而 <code>Relayed Address</code> 是 Turn Client 的名义地址，也就是其他 WebRTC Agent 要发送数据给这个 Turn Client 时，所使用的地址。</p>
+</div>
+<h4 id="_22">权限</h4>
+<p>在你为远程主机创建权限之前，远程主机是无法通过你的<code>中继传输地址</code>发送数据的。所谓创建权限，即是告知 TURN 服务器一个 " 可以用来发送入站流量 " 的 IP 和端口。</p>
+<p>远程主机需要先为你提供 TURN 服务器上使用的 IP 和端口。这意味着它应该先向 TURN 服务器发送一个 <code>STUN 绑定请求</code>。 有时会发生这样一个常见的错误情况，即是远程主机发送 <code>STUN 绑定请求</code>到另外一台服务器，然后再要求 TURN 服务器为此 IP 创建权限。</p>
+<p>对于上面那种错误情况，假设你要为一个使用<code>地址相关的映射</code>的 NAT 网络的主机创建权限，如果你从其他 TURN 服务器生成<code>映射地址</code>，则所有入站流量都将被丢弃。因为每次他们与其他主机通信时，它都会生成一个新的映射。如果未被刷新，权限将在 5 分钟后过期。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>译注：对于这个常见的错误情况，实际指的是被连接的主机从 TURN 服务器以外的 STUN/TURN 服务器获取本机 IP，再告知发起连接的主机这样的情况。当被连接的主机使用<code>地址相关的映射</code>类型的 NAT 时，它获取的 IP 在当前的 TURN 服务器上是无效的。</p>
+</div>
+<h4 id="sendindicationchanneldata">SendIndication/ChannelData</h4>
+<p>这是 TURN 客户端将消息发送到远端 peer 时所使用的两个消息。</p>
+<p>SendIndication 是一个自包含的消息。它包含你希望发送的数据，以及你希望发送的目标。如果你要向远端 peer 发送大量消息的话，这种方式很昂贵。因为如果要发送 1,000 条消息，目标 IP 地址就被重复了 1,000 次！</p>
+<p>ChannelData 允许你发送数据，但不需要重复 IP 地址。你需要先创建一个具有 IP 和端口的通道（Channel）。然后使用 ChannelId 发送，IP 和端口将在服务器端被填充进去。如果你要发送大量消息，这是更好的选择。</p>
+<h4 id="_23">刷新</h4>
+<p>Allocations 将自动销毁。要避免其过早销毁，TURN 客户端必须在创建 allocation 时指定的 <code>LIFETIME</code> 到来之前，及时刷新它们。</p>
+<h3 id="turn_2">TURN 使用方法</h3>
+<p>TURN 有两种用法。通常情况下，一个 peer 会作为 "TURN 客户端 " 连接，而另一方则直接进行通信。在某些情况下，你可能在两侧都需要使用 TURN 服务。举例来说，当两个客户端都位于在禁用 UDP 的网络中时，只能通过 TCP 连接到各自的 TURN 服务器来建立连接。</p>
+<p>下面这些图有助于说明 TURN 的用法。</p>
+<h4 id="turn-allocation">单个 TURN Allocation 通信</h4>
+<p><img alt="单个 TURN Allocation" src="images/03-one-turn-allocation.png" title="单个 TURN Allocation" /></p>
+<h4 id="turn-allocation_1">双重 TURN Allocation 通信</h4>
+<p><img alt="双重 TURN Allocation" src="images/03-two-turn-allocations.png" title="双重 TURN Allocation" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>译注：单个 TURN Allocation 的情况，指的是一个 TURN Client 和另一个可访问的 UDP Client 的通信。双重 TURN Allocation 的情况，指的是两个 TURN Client 之间通信。</p>
+</div>
+<h2 id="ice">ICE</h2>
+<p>ICE（交互式连接建立）是 WebRTC 连接两个 Agent 的方式。这也是一项 WebRTC 前就有的技术，在<a href="https://tools.ietf.org/html/rfc8445">RFC 8445</a>中定义！ICE 是用于建立连接的协议。它会确定两个 peer 之间所有可能的路由，然后确保你保持连接状态。</p>
+<p>这些路由被称为 <code>Candidate Pair（候选地址对）</code>，也就是本地地址和远程地址的配对。这就是 STUN 和 TURN 在 ICE 中发挥作用的地方。这些地址可以是你的本地 IP 地址，<code>NAT 映射</code>或<code>中继传输地址</code>。通信双方需要收集它们要使用的所有地址，交换这些地址，然后尝试连接！</p>
+<p>两个 ICE Agent 使用 ICE ping 数据包（正式名称为连通性检查）通信以建立连接。一旦建立连接后，他们就可以发送任何数据。感觉就像使用普通 socket 一样。连通性检查使用 STUN 协议。</p>
+<h3 id="ice-agent">创建 ICE Agent</h3>
+<p>ICE Agent 要么处于<code>控制中</code>，要么处于<code>受控中</code>。<code>控制中</code>的 Agent 是决定选择<code>候选对</code>的 Agent。通常来说，发送 offer 的 peer 是<code>控制中</code>的一方。</p>
+<p>每一方都必须有一个<code>用户片段</code>和一个<code>密码</code>。必须先交换这两个值，接下来才能进行连接性检查。<code>用户片段</code>以纯文本形式发送，用于多个 ICE 会话的解复用（demux）。
+<code>密码</code>用于生成 <code>MESSAGE-INTEGRITY</code> 属性。在每个 STUN 数据包的末尾，都有这个属性，该属性是使用<code>密码</code>作为密钥的整个数据包的哈希值。这用于验证数据包并确保它未被篡改。</p>
+<p>对于 WebRTC，所有这些值都通过上一章中所述的<code>会话描述</code>进行分发。</p>
+<h3 id="_24">候选地址收集</h3>
+<p>现在，我们需要收集所有可能联通的地址。这些地址被称为候选地址 (Candidate)。</p>
+<h4 id="_25">主机</h4>
+<p>主机候选地址直接在本地接口上侦听。可以是 UDP 或 TCP 方式。</p>
+<h4 id="mdns">mDNS</h4>
+<p>mDNS 候选地址类似于主机候选地址，但是其 IP 地址是隐藏的。你不必给对方提供你的 IP 地址，只需要给他们提供一个 UUID 作为主机名。然后设置一个多播监听器，并在有人请求你发布的 UUID 时进行响应。</p>
+<p>如果你与 Agent 位于同一网络中，则可以通过多播找到彼此。如果不在同一网络中，则将无法连接（除非网络管理员明确配置网络以允许多播数据包通过）。</p>
+<p>这对于保护隐私很有用。以前，用户可以通过 WebRTC 使用主机候选地址（甚至无需尝试与你连接）来找出你的本地 IP 地址。而使用 mDNS 候选地址的话，他们只能获得随机的 UUID。</p>
+<h4 id="server-reflextive">服务器自反（Server Reflextive）</h4>
+<p>服务器自反候选地址是通过对 STUN 服务器执行 <code>STUN 绑定请求</code>时生成的。</p>
+<p>当你收到 <code>STUN 绑定响应</code>时，<code>XOR-MAPPED-ADDRESS</code> 就是你的服务器自反候选地址。</p>
+<h4 id="peer">Peer 自反</h4>
+<p>Peer 自反候选地址是指，当你从你不知道的地址收到入站请求时，由于 ICE 是经过身份验证的协议，因此你知道这些传输是合法的，这只是意味着远端 Peer 是通过它也不知道的地址与你通信。</p>
+<p>这通常会发生在这样的情况下，当<code>主机候选地址</code>与<code>服务器自反候选地址</code>进行通信时，由于你是在子网外部进行通信，因此创建了一个新的 <code>NAT 映射</code>。还记得我们说过的连通性检查实际上是 STUN 数据包吗？STUN 响应的格式自然允许 peer 报告 Peer 自反地址。</p>
+<h4 id="_26">中继</h4>
+<p>中继候选地址是通过使用 TURN 服务器生成的。</p>
+<p>在与 TURN 服务器进行初始握手之后，你将获得 <code>RELAYED-ADDRESS</code>，这就是你的中继候选地址。</p>
+<h3 id="_27">连通性检查</h3>
+<p>现在我们知道了远程 Agent 的<code>用户片段</code>，<code>密码</code>和候选地址。我们可以尝试连接了！ 候选地址可以相互配对。因此，如果每边有 3 个候选地址，那么现在就有 9 个候选地址对。</p>
+<p>看起来像这样</p>
+<p><img alt="连通性检查" src="images/03-connectivity-checks.png" title="连通性检查" /></p>
+<h3 id="_28">候选地址选择</h3>
+<p><code>控制中</code>的 Agent 和<code>受控中</code>的 Agent 都开始在每个候选地址对上发送流量数据。这样是必须的，因为如果一个 Agent 位于一个<code>地址相关映射</code>的网络中，这样会创建 <code>Peer 自反候选地址</code>。</p>
+<p>每个收到流量数据的<code>候选地址对</code>，会被提升为<code>有效候选地址</code>对。接下来，<code>控制中</code>的 Agent 将指定一个<code>有效候选地址</code>对。这就是<code>提名候选地址对</code>。然后，<code>控制中</code>的 Agent 和<code>受控中</code>的 Agent 再尝试进行一轮双向通信。如果成功，则<code>提名候选地址对</code>将成为<code>选定的候选地址对</code>！它将被用于后面的会话中。</p>
+<h3 id="_29">重新启动</h3>
+<p>如果<code>选定的候选地址对</code>由于任何原因停止工作（如：NAT 映射到期，TURN 服务器崩溃等），则 ICEAgent 将进入<code>失败</code>状态。此时可以重新启动两个 Agent，然后重新完整执行整个过程。</p>
 
 
 
@@ -1481,7 +2599,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "search.share", "header.autohide", "content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "toc.follow", "search.share", "header.autohide", "content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.efa0ade1.min.js"></script>

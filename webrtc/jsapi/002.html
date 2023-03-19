@@ -25,7 +25,7 @@
     
     
       
-        <title>从摄像头获取视频流（二） - chapin666 Blog</title>
+        <title>从摄像头获取视频流（二） - chapin666</title>
       
     
     
@@ -86,7 +86,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../index.html" title="chapin666 Blog" class="md-header__button md-logo" aria-label="chapin666 Blog" data-md-component="logo">
+    <a href="../../index.html" title="chapin666" class="md-header__button md-logo" aria-label="chapin666" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg>
@@ -99,7 +99,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            chapin666 Blog
+            chapin666
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -290,13 +290,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../index.html" title="chapin666 Blog" class="md-nav__button md-logo" aria-label="chapin666 Blog" data-md-component="logo">
+    <a href="../../index.html" title="chapin666" class="md-nav__button md-logo" aria-label="chapin666" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg>
 
     </a>
-    chapin666 Blog
+    chapin666
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -689,6 +689,62 @@
     <li class="md-nav__item">
       <a href="../forcurious/009.html" class="md-nav__link">
         调试
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forcurious/010.html" class="md-nav__link">
+        历史
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forcurious/011.html" class="md-nav__link">
+        常见问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forcurious/012.html" class="md-nav__link">
+        术语
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forcurious/013.html" class="md-nav__link">
+        Reference
       </a>
     </li>
   
@@ -1375,7 +1431,134 @@
 
   <h1>从摄像头获取视频流（二）</h1>
 
-
+<p><strong>你会学到什么</strong></p>
+<p>在这一步中，您将了解：</p>
+<ul>
+<li>从您的摄像头获取视频流</li>
+<li>操纵流播放</li>
+<li>使用CSS和SVG来处理视频</li>
+</ul>
+<p>此步骤的完整版本位于step-01文件夹中。</p>
+<p><strong>一小段HTML代码</strong></p>
+<p>将video元素和javascript元素添加到工作目录中的index.html文件：
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">&lt;!</span><span class="nx">DOCTYPE</span><span class="w"> </span><span class="nx">html</span><span class="o">&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">Realtime</span><span class="w"> </span><span class="nx">communication</span><span class="w"> </span><span class="kd">with</span><span class="w"> </span><span class="nx">WebRTC</span><span class="o">&lt;</span><span class="err">/title&gt;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="o">&lt;</span><span class="nx">link</span><span class="w"> </span><span class="nx">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span><span class="w"> </span><span class="nx">href</span><span class="o">=</span><span class="s2">&quot;css/main.css&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="o">&lt;</span><span class="err">/head&gt;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Realtime</span><span class="w"> </span><span class="nx">communication</span><span class="w"> </span><span class="kd">with</span><span class="w"> </span><span class="nx">WebRTC</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="o">&lt;</span><span class="nx">video</span><span class="w"> </span><span class="nx">autoplay</span><span class="o">&gt;&lt;</span><span class="err">/video&gt;</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="o">&lt;</span><span class="nx">script</span><span class="w"> </span><span class="nx">src</span><span class="o">=</span><span class="s2">&quot;js/main.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="o">&lt;</span><span class="err">/body&gt;</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="o">&lt;</span><span class="err">/html&gt;</span>
+</span></code></pre></div></p>
+<p><strong>少量JavaScript</strong></p>
+<p>将以下内容添加到js文件夹的main.js文件中：
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nx">navigator</span><span class="p">.</span><span class="nx">getUserMedia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">navigator</span><span class="p">.</span><span class="nx">getUserMedia</span><span class="w"> </span><span class="o">||</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nx">navigator</span><span class="p">.</span><span class="nx">webkitGetUserMedia</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">navigator</span><span class="p">.</span><span class="nx">mozGetUserMedia</span><span class="p">;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="kd">var</span><span class="w"> </span><span class="nx">constraints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nx">audio</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nx">video</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">};</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="kd">var</span><span class="w"> </span><span class="nx">video</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;video&#39;</span><span class="p">);</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="kd">function</span><span class="w"> </span><span class="nx">successCallback</span><span class="p">(</span><span class="nx">stream</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nb">window</span><span class="p">.</span><span class="nx">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">stream</span><span class="p">;</span><span class="w"> </span><span class="c1">// stream available to console</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">URL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="nx">video</span><span class="p">.</span><span class="nx">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">URL</span><span class="p">.</span><span class="nx">createObjectURL</span><span class="p">(</span><span class="nx">stream</span><span class="p">);</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nx">video</span><span class="p">.</span><span class="nx">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">stream</span><span class="p">;</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="p">}</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="kd">function</span><span class="w"> </span><span class="nx">errorCallback</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;navigator.getUserMedia error: &#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="p">}</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="nx">navigator</span><span class="p">.</span><span class="nx">getUserMedia</span><span class="p">(</span><span class="nx">constraints</span><span class="p">,</span><span class="w"> </span><span class="nx">successCallback</span><span class="p">,</span><span class="w"> </span><span class="nx">errorCallback</span><span class="p">);</span>
+</span></code></pre></div></p>
+<blockquote>
+<p>这里的所有JavaScript示例都使用“use strict”; 避免常见的编码问题。详细请了解<a href="http://ejohn.org/blog/ecmascript-5-strict-mode-json-and-more/">ECMAScript 5 Strict Mode，JSON和更多内容</a>。</p>
+</blockquote>
+<p><strong>Try it out</strong></p>
+<p>在你的浏览器中打开index.html，你会看到类似的东西（当然还包括你的摄像头的视图！）：</p>
+<p><img alt="" src="https://pic1.zhimg.com/v2-6bfdf5e3a9180bd4511d487ac58eedb0_b.jpg" /></p>
+<p><img alt="" src="https://pic1.zhimg.com/80/v2-6bfdf5e3a9180bd4511d487ac58eedb0_1440w.webp" /></p>
+<p><strong>运行原理</strong></p>
+<p>getUserMedia()是这样调用的：</p>
+<div class="language-text highlight"><pre><span></span><code>navigator.getUserMedia(constraints, successCallback, errorCallback);
+</code></pre></div>
+<p>这项技术还是比较新的，所以浏览器仍然使用getUserMedia的前缀名称。 在main.js的顶部填充此代码！</p>
+<p>constraints参数允许您指定要获取的媒体 - 在本例中为视频而不是音频：
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">constraints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nx">audio</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nx">video</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">};</span>
+</span></code></pre></div></p>
+<p>如果getUserMedia()调用成功，则摄像头的视频流将被设置为视频元素的source：
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">successCallback</span><span class="p">(</span><span class="nx">stream</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nb">window</span><span class="p">.</span><span class="nx">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">stream</span><span class="p">;</span><span class="w"> </span><span class="c1">// stream available to console</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">URL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nx">video</span><span class="p">.</span><span class="nx">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">URL</span><span class="p">.</span><span class="nx">createObjectURL</span><span class="p">(</span><span class="nx">stream</span><span class="p">);</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nx">video</span><span class="p">.</span><span class="nx">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">stream</span><span class="p">;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<p><strong>知识扩展：</strong></p>
+<ul>
+<li>传递给getUserMedia()的流对象在全局范围内，因此您可以从浏览器控制台检查它：打开控制台，键入流并按回车键。 （要在Chrome中查看控制台，请按Ctrl-Shift-J或Command-Option-J（假如你是Mac）</li>
+<li>stream.getVideoTracks() 返回什么？</li>
+<li>尝试调用stream.getVideoTracks()[0].stop()。</li>
+<li>查看constraints对象：将其更改为 {audio：true，video：true} 时会发生什么？</li>
+<li>视频元素的大小是多少？ 如何从JavaScript获得视频的自然大小，而不是显示大小？ 使用Chrome开发工具进行检查。</li>
+<li>尝试将CSS过滤器添加到视频元素。 例如：
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nx">video</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">-</span><span class="nx">webkit</span><span class="o">-</span><span class="nx">filter</span><span class="o">:</span><span class="w"> </span><span class="nx">blur</span><span class="p">(</span><span class="mf">4</span><span class="nx">px</span><span class="p">)</span><span class="w"> </span><span class="nx">invert</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="nx">opacity</span><span class="p">(</span><span class="mf">0.5</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div></li>
+<li>尝试添加SVG过滤器。 例如：
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nx">video</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nx">filter</span><span class="o">:</span><span class="w"> </span><span class="nx">hue</span><span class="o">-</span><span class="nx">rotate</span><span class="p">(</span><span class="mf">180</span><span class="nx">deg</span><span class="p">)</span><span class="w"> </span><span class="nx">saturate</span><span class="p">(</span><span class="mf">200</span><span class="o">%</span><span class="p">);</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="o">-</span><span class="nx">moz</span><span class="o">-</span><span class="nx">filter</span><span class="o">:</span><span class="w"> </span><span class="nx">hue</span><span class="o">-</span><span class="nx">rotate</span><span class="p">(</span><span class="mf">180</span><span class="nx">deg</span><span class="p">)</span><span class="w"> </span><span class="nx">saturate</span><span class="p">(</span><span class="mf">200</span><span class="o">%</span><span class="p">);</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="o">-</span><span class="nx">webkit</span><span class="o">-</span><span class="nx">filter</span><span class="o">:</span><span class="w"> </span><span class="nx">hue</span><span class="o">-</span><span class="nx">rotate</span><span class="p">(</span><span class="mf">180</span><span class="nx">deg</span><span class="p">)</span><span class="w"> </span><span class="nx">saturate</span><span class="p">(</span><span class="mf">200</span><span class="o">%</span><span class="p">);</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">}</span>
+</span></code></pre></div></li>
+</ul>
+<p><strong>你学到了什么</strong></p>
+<p>在这一步你学会了如何：</p>
+<ul>
+<li>从您的摄像头获取视频。</li>
+<li>设置媒体约束。</li>
+<li>与视频元素混淆。</li>
+</ul>
+<p>此步骤的完整版本位于step-01文件夹中。</p>
+<p><strong>Tips</strong></p>
+<ul>
+<li>不要忘记视频元素上的自动播放属性。 如果没有这个，你只会看到一个框架！</li>
+<li>getUserMedia() 约束有很多选项。 看看<a href="https://webrtc.github.io/samples/src/content/peerconnection/constraints/">webrtc.github.io/samples/src/content/peerconnection/constraints</a> 上的文档。 如您所见，该站点上有许多有趣的WebRTC示例。</li>
+</ul>
+<p><strong>最佳实践</strong></p>
+<p>确保您的视频元素不会溢出其容器。 我们已经添加了宽度和最大宽度来为视频设置首选大小和最大大小。 浏览器会自动计算高度：
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nx">video</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nx">max</span><span class="o">-</span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span><span class="o">%</span><span class="p">;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="mf">320</span><span class="nx">px</span><span class="p">;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">}</span>
+</span></code></pre></div>
+有了视频流，但你怎么发送流呢？</p>
 
 
 
@@ -1481,7 +1664,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "search.share", "header.autohide", "content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "toc.follow", "search.share", "header.autohide", "content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.efa0ade1.min.js"></script>

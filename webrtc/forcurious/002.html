@@ -25,7 +25,7 @@
     
     
       
-        <title>信令 - chapin666 Blog</title>
+        <title>信令 - chapin666</title>
       
     
     
@@ -91,7 +91,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../index.html" title="chapin666 Blog" class="md-header__button md-logo" aria-label="chapin666 Blog" data-md-component="logo">
+    <a href="../../index.html" title="chapin666" class="md-header__button md-logo" aria-label="chapin666" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg>
@@ -104,7 +104,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            chapin666 Blog
+            chapin666
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -295,13 +295,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../index.html" title="chapin666 Blog" class="md-nav__button md-logo" aria-label="chapin666 Blog" data-md-component="logo">
+    <a href="../../index.html" title="chapin666" class="md-nav__button md-logo" aria-label="chapin666" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg>
 
     </a>
-    chapin666 Blog
+    chapin666
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -909,6 +909,62 @@
     <li class="md-nav__item">
       <a href="009.html" class="md-nav__link">
         调试
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="010.html" class="md-nav__link">
+        历史
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="011.html" class="md-nav__link">
+        常见问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="012.html" class="md-nav__link">
+        术语
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="013.html" class="md-nav__link">
+        Reference
       </a>
     </li>
   
@@ -1819,8 +1875,8 @@ RTP 和 RTP 有效负载类型的重要性将在后面的媒体章节中讨论�
 </span></code></pre></div>
 <p>这里面有两个媒体描述，第一个是音频，格式为 <code>111</code>，另一个是视频，格式为 <code>96</code>。第一个媒体描述只有一个属性。该属性将有效载荷类型 <code>111</code> 映射到 Opus 编解码器。
 第二个媒体描述具有两个属性。第一个属性将有效负载类型 <code>96</code> 映射到 VP8 编解码器，第二个属性只是 <code>my-sdp-value</code>。</p>
-<div class="admonition notion">
-<p class="admonition-title">Notion</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>译注：参照前面 key 的定义，第 1 行的 v=0 表示版本为 0，第 2/3 行是第一个媒体描述，第 4/5/6 行是第二个媒体描述</p>
 </div>
 <h3 id="_3">完整示例</h3>
@@ -1861,8 +1917,8 @@ RTP 和 RTP 有效负载类型的重要性将在后面的媒体章节中讨论�
 <p>BUNDLE 是一种在单个连接上传输多种类型流量的行为。一些 WebRTC 实现对每个媒体流会使用专用的连接。但 BUNDLE 方式应该是首选。</p>
 <h4 id="fingerprintsha-256"><code>fingerprint:sha-256</code></h4>
 <p>该属性是 peer 用于 DTLS 证书的哈希值。DTLS 握手完成后，你可以将其与实际证书进行比较，以确认你正在与预期的对象进行通信。</p>
-<div class="admonition notion">
-<p class="admonition-title">Notion</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>译注：下面是<a href="https://tools.ietf.org/html/rfc4572">RFC 4572</a>中的一个例子
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">a</span><span class="o">=</span><span class="nx">fingerprint</span><span class="o">:</span><span class="nx">SHA</span><span class="o">-</span><span class="mf">1</span><span class="w"> </span><span class="o">\</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">        </span><span class="mf">4</span><span class="nx">A</span><span class="o">:</span><span class="nx">AD</span><span class="o">:</span><span class="nx">B9</span><span class="o">:</span><span class="nx">B1</span><span class="o">:</span><span class="mf">3</span><span class="nx">F</span><span class="o">:</span><span class="mf">82</span><span class="o">:</span><span class="mf">18</span><span class="o">:</span><span class="mf">3</span><span class="nx">B</span><span class="o">:</span><span class="mf">54</span><span class="o">:</span><span class="mo">02</span><span class="o">:</span><span class="mf">12</span><span class="o">:</span><span class="nx">DF</span><span class="o">:</span><span class="mf">3</span><span class="nx">E</span><span class="o">:</span><span class="mf">5</span><span class="nx">D</span><span class="o">:</span><span class="mf">49</span><span class="o">:</span><span class="mf">6</span><span class="nx">B</span><span class="o">:</span><span class="mf">19</span><span class="o">:</span><span class="nx">E5</span><span class="o">:</span><span class="mf">7</span><span class="nx">C</span><span class="o">:</span><span class="nx">AB</span>
@@ -1942,8 +1998,8 @@ RTP 和 RTP 有效负载类型的重要性将在后面的媒体章节中讨论�
 <li>我们有 ICE 候选地址和身份验证的详细信息，因此我们可以尝试连接</li>
 <li>我们有一个证书指纹，因此我们可以进行安全的呼叫</li>
 </ul>
-<div class="admonition notion">
-<p class="admonition-title">Notion</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>译注：对照以上 4 点
 * 两个媒体描述即是两个 <code>m=</code> 段
 * 两个 m 段中都有 <code>a=sendrecv</code>，即是说可以收也可以发
@@ -2061,7 +2117,7 @@ RTP 和 RTP 有效负载类型的重要性将在后面的媒体章节中讨论�
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "search.share", "header.autohide", "content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "toc.follow", "search.share", "header.autohide", "content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.efa0ade1.min.js"></script>

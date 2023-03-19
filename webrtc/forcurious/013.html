@@ -1,0 +1,1799 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="WebRTC, 音视频, Rust, Golang, Node">
+      
+      
+        <meta name="author" content="chapin666">
+      
+      
+        <link rel="canonical" href="http://chapin666.github.io/blog/webrtc/forcurious/013.html">
+      
+      
+        <link rel="prev" href="012.html">
+      
+      
+        <link rel="next" href="../jsapi/001.html">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+    
+    
+      
+        <title>Reference - chapin666</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c4a75a56.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="black">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reference" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../index.html" title="chapin666" class="md-header__button md-logo" aria-label="chapin666" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            chapin666
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="black"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="black"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../codec/001.html" class="md-tabs__link">
+        AVCodec
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="001.html" class="md-tabs__link md-tabs__link--active">
+        WebRTC
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../rust/fromzero/001.html" class="md-tabs__link">
+        Rust
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="chapin666" class="md-nav__button md-logo" aria-label="chapin666" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg>
+
+    </a>
+    chapin666
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          AVCodec
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          AVCodec
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          音视频基础系列
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          音视频基础系列
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codec/001.html" class="md-nav__link">
+        第一讲：音频要素
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codec/002.html" class="md-nav__link">
+        第二讲：回声消除
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codec/003.html" class="md-nav__link">
+        第三讲：噪声抑制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codec/004.html" class="md-nav__link">
+        第四讲：音频自动增益控制 AGC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codec/005.html" class="md-nav__link">
+        第五讲：音频编解码的必要性解读与格式选取
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codec/006_1.html" class="md-nav__link">
+        第六讲：色彩和色彩空间·上篇
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codec/006_2.html" class="md-nav__link">
+        第六讲：色彩和色彩空间·中篇
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codec/006_3.html" class="md-nav__link">
+        第六讲：色彩和色彩空间·下篇
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codec/007_1.html" class="md-nav__link">
+        第七讲：分辨率与帧率·上篇
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          WebRTC
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          WebRTC
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          写给好奇者的webrtc系列
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          写给好奇者的webrtc系列
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="001.html" class="md-nav__link">
+        是什么，为什么，如何使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="002.html" class="md-nav__link">
+        信令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="003.html" class="md-nav__link">
+        连接
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="004.html" class="md-nav__link">
+        安全性
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="005.html" class="md-nav__link">
+        实时网络
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="006.html" class="md-nav__link">
+        媒体通信
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="007.html" class="md-nav__link">
+        数据通信
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="008.html" class="md-nav__link">
+        应用场景
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="009.html" class="md-nav__link">
+        调试
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="010.html" class="md-nav__link">
+        历史
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="011.html" class="md-nav__link">
+        常见问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="012.html" class="md-nav__link">
+        术语
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="013.html" class="md-nav__link md-nav__link--active">
+        Reference
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#webrtcw3c" class="md-nav__link">
+    WebRTC(W3C)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webrtcrfc" class="md-nav__link">
+    WebRTC(RFC)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dtls" class="md-nav__link">
+    DTLS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datachannel" class="md-nav__link">
+    DataChannel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mediatransport" class="md-nav__link">
+    MediaTransport
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sctp" class="md-nav__link">
+    SCTP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sdp" class="md-nav__link">
+    SDP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rtp" class="md-nav__link">
+    RTP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ice-turn-and-stun" class="md-nav__link">
+    ICE, TURN and STUN
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          WebRTC构建实时通信系列
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          WebRTC构建实时通信系列
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jsapi/001.html" class="md-nav__link">
+        概述及环境搭建（一）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jsapi/002.html" class="md-nav__link">
+        从摄像头获取视频流（二）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jsapi/003.html" class="md-nav__link">
+        RTCPeerConnection传输视频流（三）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jsapi/004.html" class="md-nav__link">
+        RTCDataChannel交换数据（四）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jsapi/005.html" class="md-nav__link">
+        搭建信令服务交换消息（五）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jsapi/006.html" class="md-nav__link">
+        对等连接和信令整合（六）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jsapi/007.html" class="md-nav__link">
+        data channel共享照片（七）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jsapi/008.html" class="md-nav__link">
+        总结（八）
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Rust
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Rust
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          从零蛋开始学Rust
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          从零蛋开始学Rust
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/001.html" class="md-nav__link">
+        01-语言简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/002.html" class="md-nav__link">
+        02-开发环境配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/003.html" class="md-nav__link">
+        03-Hello World
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/004.html" class="md-nav__link">
+        04-数据类型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/005.html" class="md-nav__link">
+        05-变量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/006.html" class="md-nav__link">
+        06-常量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/007.html" class="md-nav__link">
+        07-字符串
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/008.html" class="md-nav__link">
+        08-运算符
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/009.html" class="md-nav__link">
+        09-条件判断
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/010.html" class="md-nav__link">
+        10-循环语句
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/011.html" class="md-nav__link">
+        11-函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/012.html" class="md-nav__link">
+        12-元组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/013.html" class="md-nav__link">
+        13-数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/014.html" class="md-nav__link">
+        14-所有权
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/015.html" class="md-nav__link">
+        15-借用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/016.html" class="md-nav__link">
+        16-切片
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/017.html" class="md-nav__link">
+        17-结构体
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/018.html" class="md-nav__link">
+        18-枚举
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/019.html" class="md-nav__link">
+        19-模块
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/020.html" class="md-nav__link">
+        20-容器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/021.html" class="md-nav__link">
+        21-错误处理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/022.html" class="md-nav__link">
+        22-泛型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/023.html" class="md-nav__link">
+        23-IO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/024.html" class="md-nav__link">
+        24-文件读写
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/025.html" class="md-nav__link">
+        25-Cargo包管理器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/026.html" class="md-nav__link">
+        26-迭代器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/027.html" class="md-nav__link">
+        27-闭包
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/028.html" class="md-nav__link">
+        28-智能指针
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/029.html" class="md-nav__link">
+        29-多线程并发编程
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#webrtcw3c" class="md-nav__link">
+    WebRTC(W3C)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webrtcrfc" class="md-nav__link">
+    WebRTC(RFC)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dtls" class="md-nav__link">
+    DTLS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datachannel" class="md-nav__link">
+    DataChannel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mediatransport" class="md-nav__link">
+    MediaTransport
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sctp" class="md-nav__link">
+    SCTP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sdp" class="md-nav__link">
+    SDP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rtp" class="md-nav__link">
+    RTP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ice-turn-and-stun" class="md-nav__link">
+    ICE, TURN and STUN
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+
+<h1 id="reference">Reference</h1>
+<h2 id="webrtcw3c">WebRTC(W3C)</h2>
+<ul>
+<li><a href="https://www.w3.org/TR/webrtc/">WebRTC 1.0: Real-Time Communication Between Browsers</a> [26 January 2021] (Status: Recommendation)</li>
+<li><a href="https://www.w3.org/groups/wg/webrtc/publications">Web Real-Time Communications Working Group - Publications</a></li>
+</ul>
+<h2 id="webrtcrfc">WebRTC(RFC)</h2>
+<ul>
+<li><a href="http://www.rfc-editor.org/info/rfc8825">RFC8825</a>: Overview: Real-Time Protocols for Browser-Based Applications H. Alvestrand [January 2021] (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8826">RFC8826</a>: Security Considerations for WebRTC E. Rescorla [January 2021] (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8836">RFC8836</a>: Congestion Control Requirements for Interactive Real-Time Media R. Jesup, Z. Sarker [January 2021] (Status: INFORMATIONAL)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8854">RFC8854</a>: WebRTC Forward Error Correction Requirements J. Uberti [January 2021] (Status: PROPOSED STANDARD)</li>
+</ul>
+<h2 id="dtls">DTLS</h2>
+<ul>
+<li><a href="http://www.rfc-editor.org/info/rfc6347">RFC6347</a>: Datagram Transport Layer Security Version 1.2 E. Rescorla, N. Modadugu [January 2012] (Obsoletes <a href="http://www.rfc-editor.org/info/rfc4347">RFC4347</a>) (Obsoleted-By <a href="http://www.rfc-editor.org/info/rfc9147">RFC9147</a>) (Updated-By <a href="http://www.rfc-editor.org/info/rfc7507">RFC7507</a>, <a href="http://www.rfc-editor.org/info/rfc7905">RFC7905</a>, <a href="http://www.rfc-editor.org/info/rfc8996">RFC8996</a>, <a href="http://www.rfc-editor.org/info/rfc9146">RFC9146</a>) (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc9147">RFC9147</a>: The Datagram Transport Layer Security (DTLS) Protocol Version 1.3 E. Rescorla, H. Tschofenig, N. Modadugu [April 2022] (Obsoletes <a href="http://www.rfc-editor.org/info/rfc6347">RFC6347</a>) (Status: PROPOSED STANDARD) (See also: <a href="https://github.com/openssl/openssl/issues/13900">OpenSSL DTLS 1.3 status</a>)</li>
+</ul>
+<h2 id="datachannel">DataChannel</h2>
+<ul>
+<li><a href="http://www.rfc-editor.org/info/rfc8831">RFC8831</a>: WebRTC Data Channels R. Jesup, S. Loreto, M. Tüxen [January 2021] (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8832">RFC8832</a>: WebRTC Data Channel Establishment Protocol R. Jesup, S. Loreto, M. Tüxen [January 2021] (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8864">RFC8864</a>: Negotiation Data Channels Using the Session Description Protocol (SDP) K. Drage, M. Makaraju, R. Ejzak, J. Marcon, R. Even [January 2021] (Status: PROPOSED STANDARD)</li>
+</ul>
+<h2 id="mediatransport">MediaTransport</h2>
+<ul>
+<li><a href="http://www.rfc-editor.org/info/rfc8834">RFC8834</a>: Media Transport and Use of RTP in WebRTC C. Perkins, M. Westerlund, J. Ott [January 2021] (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8837">RFC8837</a>: Differentiated Services Code Point (DSCP) Packet Markings for WebRTC QoS P. Jones, S. Dhesikan, C. Jennings, D. Druta [January 2021] (Status: PROPOSED STANDARD)</li>
+</ul>
+<h2 id="sctp">SCTP</h2>
+<ul>
+<li><a href="http://www.rfc-editor.org/info/rfc3758">RFC3758</a>: Stream Control Transmission Protocol (SCTP) Partial Reliability Extension R. Stewart, M. Ramalho, Q. Xie, M. Tuexen, P. Conrad [May 2004] (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc5061">RFC5061</a>: Stream Control Transmission Protocol (SCTP) Dynamic Address Reconfiguration R. Stewart, Q. Xie, M. Tuexen, S. Maruyama, M. Kozuka [September 2007] (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc5827">RFC5827</a>: Early Retransmit for TCP and Stream Control Transmission Protocol (SCTP) M. Allman, K. Avrachenkov, U. Ayesta, J. Blanton, P. Hurtig [May 2010] (Status: EXPERIMENTAL)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc6083">RFC6083</a>: Datagram Transport Layer Security (DTLS) for Stream Control Transmission Protocol (SCTP) M. Tuexen, R. Seggelmann, E. Rescorla [January 2011] (Updated-By <a href="http://www.rfc-editor.org/info/rfc8996">RFC8996</a>) (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc6525">RFC6525</a>: Stream Control Transmission Protocol (SCTP) Stream Reconfiguration R. Stewart, M. Tuexen, P. Lei [February 2012] (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc6951">RFC6951</a>: UDP Encapsulation of Stream Control Transmission Protocol (SCTP) Packets for End-Host to End-Host Communication M. Tuexen, R. Stewart [May 2013] (Updated-By <a href="http://www.rfc-editor.org/info/rfc8899">RFC8899</a>) (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc7765">RFC7765</a>: TCP and Stream Control Transmission Protocol (SCTP) RTO Restart P. Hurtig, A. Brunstrom, A. Petlund, M. Welzl [February 2016] (Status: EXPERIMENTAL)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8260">RFC8260</a>: Stream Schedulers and User Message Interleaving for the Stream Control Transmission Protocol R. Stewart, M. Tuexen, S. Loreto, R. Seggelmann [November 2017] (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8261">RFC8261</a>: Datagram Transport Layer Security (DTLS) Encapsulation of SCTP Packets M. Tuexen, R. Stewart, R. Jesup, S. Loreto [November 2017] (Updated-By <a href="http://www.rfc-editor.org/info/rfc8899">RFC8899</a>, <a href="http://www.rfc-editor.org/info/rfc8996">RFC8996</a>) (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8841">RFC8841</a>: Session Description Protocol (SDP) Offer/Answer Procedures for Stream Control Transmission Protocol (SCTP) over Datagram Transport Layer Security (DTLS) Transport C. Holmberg, R. Shpount, S. Loreto, G. Camarillo [January 2021] (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8899">RFC8899</a>: Packetization Layer Path MTU Discovery for Datagram Transports G. Fairhurst, T. Jones, M. Tüxen, I. Rüngeler, T. Völker [September 2020] (Updates <a href="http://www.rfc-editor.org/info/rfc4821">RFC4821</a>, <a href="http://www.rfc-editor.org/info/rfc4960">RFC4960</a>, <a href="http://www.rfc-editor.org/info/rfc6951">RFC6951</a>, <a href="http://www.rfc-editor.org/info/rfc8085">RFC8085</a>, <a href="http://www.rfc-editor.org/info/rfc8261">RFC8261</a>) (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc9260">RFC9260</a>: Stream Control Transmission Protocol R. Stewart, M. Tüxen, K. Nielsen [June 2022] (Obsoletes <a href="http://www.rfc-editor.org/info/rfc4460">RFC4460</a>, <a href="http://www.rfc-editor.org/info/rfc4960">RFC4960</a>, <a href="http://www.rfc-editor.org/info/rfc6096">RFC6096</a>, <a href="http://www.rfc-editor.org/info/rfc7053">RFC7053</a>, <a href="http://www.rfc-editor.org/info/rfc8540">RFC8540</a>) (Status: PROPOSED STANDARD)</li>
+</ul>
+<h2 id="sdp">SDP</h2>
+<ul>
+<li><a href="http://www.rfc-editor.org/info/rfc8829">RFC8829</a>: JavaScript Session Establishment Protocol (JSEP) J. Uberti, C. Jennings, E. Rescorla [January 2021] (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8830">RFC8830</a>: WebRTC MediaStream Identification in the Session Description Protocol H. Alvestrand [January 2021] (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8839">RFC8839</a>: Session Description Protocol (SDP) Offer/Answer Procedures for Interactive Connectivity Establishment (ICE) M. Petit-Huguenin, S. Nandakumar, C. Holmberg, A. Keränen, R. Shpount [January 2021] (Obsoletes <a href="http://www.rfc-editor.org/info/rfc5245">RFC5245</a>, <a href="http://www.rfc-editor.org/info/rfc6336">RFC6336</a>) (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8841">RFC8841</a>: Session Description Protocol (SDP) Offer/Answer Procedures for Stream Control Transmission Protocol (SCTP) over Datagram Transport Layer Security (DTLS) Transport C. Holmberg, R. Shpount, S. Loreto, G. Camarillo [January 2021] (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8843">RFC8843</a>: Negotiating Media Multiplexing Using the Session Description Protocol (SDP) C. Holmberg, H. Alvestrand, C. Jennings [January 2021] (Obsoleted-By <a href="http://www.rfc-editor.org/info/rfc9143">RFC9143</a>) (Updates <a href="http://www.rfc-editor.org/info/rfc3264">RFC3264</a>, <a href="http://www.rfc-editor.org/info/rfc5888">RFC5888</a>, <a href="http://www.rfc-editor.org/info/rfc7941">RFC7941</a>) (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8844">RFC8844</a>: Unknown Key-Share Attacks on Uses of TLS with the Session Description Protocol (SDP) M. Thomson, E. Rescorla [January 2021] (Updates <a href="http://www.rfc-editor.org/info/rfc8122">RFC8122</a>) (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8851">RFC8851</a>: RTP Payload Format Restrictions A.B. Roach [January 2021] (Updates <a href="http://www.rfc-editor.org/info/rfc4855">RFC4855</a>) (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8852">RFC8852</a>: RTP Stream Identifier Source Description (SDES) A.B. Roach, S. Nandakumar, P. Thatcher [January 2021] (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8853">RFC8853</a>: Using Simulcast in Session Description Protocol (SDP) and RTP Sessions B. Burman, M. Westerlund, S. Nandakumar, M. Zanaty [January 2021] (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8866">RFC8866</a>: SDP: Session Description Protocol A. Begen, P. Kyzivat, C. Perkins, M. Handley [January 2021] (Obsoletes <a href="http://www.rfc-editor.org/info/rfc4566">RFC4566</a>) (Status: PROPOSED STANDARD)</li>
+</ul>
+<h2 id="rtp">RTP</h2>
+<ul>
+<li><a href="http://www.rfc-editor.org/info/rfc3550">RFC3550</a>: RTP: A Transport Protocol for Real-Time Applications H. Schulzrinne, S. Casner, R. Frederick, V. Jacobson [July 2003] (Obsoletes <a href="http://www.rfc-editor.org/info/rfc1889">RFC1889</a>) (Updated-By <a href="http://www.rfc-editor.org/info/rfc5506">RFC5506</a>, <a href="http://www.rfc-editor.org/info/rfc5761">RFC5761</a>, <a href="http://www.rfc-editor.org/info/rfc6051">RFC6051</a>, <a href="http://www.rfc-editor.org/info/rfc6222">RFC6222</a>, <a href="http://www.rfc-editor.org/info/rfc7022">RFC7022</a>, <a href="http://www.rfc-editor.org/info/rfc7160">RFC7160</a>, <a href="http://www.rfc-editor.org/info/rfc7164">RFC7164</a>, <a href="http://www.rfc-editor.org/info/rfc8083">RFC8083</a>, <a href="http://www.rfc-editor.org/info/rfc8108">RFC8108</a>, <a href="http://www.rfc-editor.org/info/rfc8860">RFC8860</a>) (Also <a href="http://www.rfc-editor.org/info/std0064">STD0064</a>) (Status: INTERNET STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc3611">RFC3611</a>: RTP Control Protocol Extended Reports (RTCP XR) T. Friedman, R. Caceres, A. Clark [November 2003] (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc3711">RFC3711</a>: The Secure Real-time Transport Protocol (SRTP) M. Baugher, D. McGrew, M. Naslund, E. Carrara, K. Norrman [March 2004] (Updated-By <a href="http://www.rfc-editor.org/info/rfc5506">RFC5506</a>, <a href="http://www.rfc-editor.org/info/rfc6904">RFC6904</a>) (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc4585">RFC4585</a>: Extended RTP Profile for Real-time Transport Control Protocol (RTCP)-Based Feedback (RTP/AVPF) J. Ott, S. Wenger, N. Sato, C. Burmeister, J. Rey [July 2006] (Updated-By <a href="http://www.rfc-editor.org/info/rfc5506">RFC5506</a>, <a href="http://www.rfc-editor.org/info/rfc8108">RFC8108</a>) (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc5104">RFC5104</a>: Codec Control Messages in the RTP Audio-Visual Profile with Feedback (AVPF) S. Wenger, U. Chandra, M. Westerlund, B. Burman [February 2008] (Updated-By <a href="http://www.rfc-editor.org/info/rfc7728">RFC7728</a>, <a href="http://www.rfc-editor.org/info/rfc8082">RFC8082</a>) (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc5764">RFC5764</a>: Datagram Transport Layer Security (DTLS) Extension to Establish Keys for the Secure Real-time Transport Protocol (SRTP) D. McGrew, E. Rescorla [May 2010] (Updated-By <a href="http://www.rfc-editor.org/info/rfc7983">RFC7983</a>) (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc6904">RFC6904</a>: Encryption of Header Extensions in the Secure Real-time Transport Protocol (SRTP) J. Lennox [April 2013] (Updates <a href="http://www.rfc-editor.org/info/rfc3711">RFC3711</a>) (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc7741">RFC7741</a>: RTP Payload Format for VP8 Video P. Westin, H. Lundin, M. Glover, J. Uberti, F. Galligan [March 2016] (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8285">RFC8285</a>: A General Mechanism for RTP Header Extensions D. Singer, H. Desineni, R. Even [October 2017] (Obsoletes <a href="http://www.rfc-editor.org/info/rfc5285">RFC5285</a>) (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8852">RFC8852</a>: RTP Stream Identifier Source Description (SDES) A.B. Roach, S. Nandakumar, P. Thatcher [January 2021] (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8858">RFC8858</a>: Indicating Exclusive Support of RTP and RTP Control Protocol (RTCP) Multiplexing Using the Session Description Protocol (SDP) C. Holmberg [January 2021] (Updates <a href="http://www.rfc-editor.org/info/rfc5761">RFC5761</a>) (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8860">RFC8860</a>: Sending Multiple Types of Media in a Single RTP Session M. Westerlund, C. Perkins, J. Lennox [January 2021] (Updates <a href="http://www.rfc-editor.org/info/rfc3550">RFC3550</a>, <a href="http://www.rfc-editor.org/info/rfc3551">RFC3551</a>) (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8867">RFC8867</a>: Test Cases for Evaluating Congestion Control for Interactive Real-Time Media Z. Sarker, V. Singh, X. Zhu, M. Ramalho [January 2021] (Status: INFORMATIONAL)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8868">RFC8868</a>: Evaluating Congestion Control for Interactive Real-Time Media V. Singh, J. Ott, S. Holmer [January 2021] (Status: INFORMATIONAL)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8869">RFC8869</a>: Evaluation Test Cases for Interactive Real-Time Media over Wireless Networks Z. Sarker, X. Zhu, J. Fu [January 2021] (Status: INFORMATIONAL)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8872">RFC8872</a>: Guidelines for Using the Multiplexing Features of RTP to Support Multiple Media Streams M. Westerlund, B. Burman, C. Perkins, H. Alvestrand, R. Even [January 2021] (Status: INFORMATIONAL)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8888">RFC8888</a>: RTP Control Protocol (RTCP) Feedback for Congestion Control Z. Sarker, C. Perkins, V. Singh, M. Ramalho [January 2021] (Status: PROPOSED STANDARD)</li>
+</ul>
+<h2 id="ice-turn-and-stun">ICE, TURN and STUN</h2>
+<ul>
+<li><a href="http://www.rfc-editor.org/info/rfc5780">RFC5780</a>: NAT Behavior Discovery Using Session Traversal Utilities for NAT (STUN) D. MacDonald, B. Lowekamp [May 2010] (Updated-By <a href="http://www.rfc-editor.org/info/rfc8553">RFC8553</a>) (Status: EXPERIMENTAL)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8445">RFC8445</a>: Interactive Connectivity Establishment (ICE): A Protocol for Network Address Translator (NAT) Traversal A. Keranen, C. Holmberg, J. Rosenberg [July 2018] (Obsoletes <a href="http://www.rfc-editor.org/info/rfc5245">RFC5245</a>) (Updated-By <a href="http://www.rfc-editor.org/info/rfc8863">RFC8863</a>) (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8489">RFC8489</a>: Session Traversal Utilities for NAT (STUN) M. Petit-Huguenin, G. Salgueiro, J. Rosenberg, D. Wing, R. Mahy, P. Matthews [February 2020] (Obsoletes <a href="http://www.rfc-editor.org/info/rfc5389">RFC5389</a>) (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8656">RFC8656</a>: Traversal Using Relays around NAT (TURN): Relay Extensions to Session Traversal Utilities for NAT (STUN) T. Reddy, A. Johnston, P. Matthews, J. Rosenberg [February 2020] (Obsoletes <a href="http://www.rfc-editor.org/info/rfc5766">RFC5766</a>, <a href="http://www.rfc-editor.org/info/rfc6156">RFC6156</a>) (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8835">RFC8835</a>: Transports for WebRTC H. Alvestrand [January 2021] (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8838">RFC8838</a>: Trickle ICE: Incremental Provisioning of Candidates for the Interactive Connectivity Establishment (ICE) Protocol E. Ivov, J. Uberti, P. Saint-Andre [January 2021] (Updated-By <a href="http://www.rfc-editor.org/info/rfc8863">RFC8863</a>) (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8839">RFC8839</a>: Session Description Protocol (SDP) Offer/Answer Procedures for Interactive Connectivity Establishment (ICE) M. Petit-Huguenin, S. Nandakumar, C. Holmberg, A. Keränen, R. Shpount [January 2021] (Obsoletes <a href="http://www.rfc-editor.org/info/rfc5245">RFC5245</a>, <a href="http://www.rfc-editor.org/info/rfc6336">RFC6336</a>) (Status: PROPOSED STANDARD)</li>
+<li><a href="http://www.rfc-editor.org/info/rfc8863">RFC8863</a>: Interactive Connectivity Establishment Patiently Awaiting Connectivity (ICE PAC) C. Holmberg, J. Uberti [January 2021] (Updates <a href="http://www.rfc-editor.org/info/rfc8445">RFC8445</a>, <a href="http://www.rfc-editor.org/info/rfc8838">RFC8838</a>) (Status: PROPOSED STANDARD)</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="012.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: 术语" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  上一页
+                </span>
+                术语
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../jsapi/001.html" class="md-footer__link md-footer__link--next" aria-label="下一页: 概述及环境搭建（一）" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  下一页
+                </span>
+                概述及环境搭建（一）
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 chapin666
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/chapin666" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.zhihu.com/people/chapin666" target="_blank" rel="noopener" title="www.zhihu.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.721 0C2.251 0 0 2.25 0 5.719V18.28C0 21.751 2.252 24 5.721 24h12.56C21.751 24 24 21.75 24 18.281V5.72C24 2.249 21.75 0 18.281 0zm1.964 4.078c-.271.73-.5 1.434-.68 2.11h4.587c.545-.006.445 1.168.445 1.171H9.384a58.104 58.104 0 0 1-.112 3.797h2.712c.388.023.393 1.251.393 1.266H9.183a9.223 9.223 0 0 1-.408 2.102l.757-.604c.452.456 1.512 1.712 1.906 2.177.473.681.063 2.081.063 2.081l-2.794-3.382c-.653 2.518-1.845 3.607-1.845 3.607-.523.468-1.58.82-2.64.516 2.218-1.73 3.44-3.917 3.667-6.497H4.491c0-.015.197-1.243.806-1.266h2.71c.024-.32.086-3.254.086-3.797H6.598c-.136.406-.158.447-.268.753-.594 1.095-1.603 1.122-1.907 1.155.906-1.821 1.416-3.6 1.591-4.064.425-1.124 1.671-1.125 1.671-1.125zM13.078 6h6.377v11.33h-2.573l-2.184 1.373-.401-1.373h-1.219zm1.313 1.219v8.86h.623l.263.937 1.455-.938h1.456v-8.86z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "toc.follow", "search.share", "header.autohide", "content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      
+    
+  </body>
+</html>
