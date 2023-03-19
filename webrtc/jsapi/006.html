@@ -1431,7 +1431,82 @@
 
   <h1>对等连接和信令整合（六）</h1>
 
-
+<p><strong>你会学到什么</strong></p>
+<p>在这一步中，您将了解如何：</p>
+<ul>
+<li>Node环境下使用<a href="http://Socket.IO">http://Socket.IO</a>运行WebRTC信令服务。</li>
+<li>使用该服务在对等体之间交换WebRTC元数据。</li>
+</ul>
+<p>此步骤的完整版本位于step-05文件夹中。</p>
+<p><strong>替换HTML和JavaScript</strong></p>
+<p>将index.html的内容替换为以下内容：</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Realtime communication with WebRTC<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/css/main.css&quot;</span> <span class="p">/&gt;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Realtime communication with WebRTC<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;videos&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="p">&lt;</span><span class="nt">video</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;localVideo&quot;</span> <span class="na">autoplay</span> <span class="na">muted</span><span class="p">&gt;&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    <span class="p">&lt;</span><span class="nt">video</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;remoteVideo&quot;</span> <span class="na">autoplay</span><span class="p">&gt;&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/socket.io/socket.io.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/lib/adapter.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/main.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>将js/main.js替换为step-05/js/main.js的内容。</p>
+<p><strong>运行Node.js服务器</strong></p>
+<p>如果您的Node.js服务器没有运行，请在工作目录中调用以下命令来启动它
+<code>shell
+node index.js</code>   </p>
+<p>（确保你使用的是上一步实现<a href="http://Socket.IO">http://Socket.IO</a>的index.js版本。）</p>
+<p>在浏览器中打开localhost:8080。</p>
+<p>在新的选项卡或窗口中再次打开 localhost:8080。 一个视频元素将显示来自getUserMedia() 的本地流，另一个将显示RTCPeerconnection传输的“远程”视频流。</p>
+<blockquote>
+<p>每次关闭客户端选项卡或窗口时，都需要重新启动Node.js服务器。</p>
+</blockquote>
+<p>在浏览器控制台中查看日志。</p>
+<p><strong>知识扩展</strong></p>
+<ul>
+<li>此应用程序只支持一对一的视频聊天。 如何设计成让多个人共享同一个视频聊天室？</li>
+<li>这个例子的房间名称foo是硬编码的。 设置其他房间名称最好的方式是什么？</li>
+<li>用户如何分享房间名称？ 尝试构建一个分享房间名称的方案。</li>
+<li>你想怎么改变这个应用程序</li>
+</ul>
+<p><strong>你学到了什么</strong></p>
+<p>在这一步你学会了如何：</p>
+<ul>
+<li>Node环境下使用<a href="http://Socket.IO">http://Socket.IO</a>运行WebRTC信令服务。</li>
+<li>使用该服务在对等方之间交换WebRTC元数据。</li>
+</ul>
+<p>此步骤的完整版本位于step-05文件夹中。</p>
+<p><strong>提示</strong></p>
+<ul>
+<li>WebRTC统计信息和调试数据可以从chrome://webrtc-internals中获得。</li>
+<li><a href="http://test.webrtc.org">http://test.webrtc.org</a>可用于检查您本地环境并测试您的相机和麦克风。</li>
+<li>如果您在缓存方面遇到奇怪的麻烦，请尝试以下操作：</li>
+</ul>
+<blockquote>
+<p>按住ctrl键并点击Reload按钮，进行硬刷新<br />
+重新启动浏览器<br />
+从命令行运行npm cache clean。</p>
+</blockquote>
+<p><strong>下一步</strong></p>
+<p>了解如何拍照，获取图像数据，以及如何在对等体之间远程共享图像。</p>
 
 
 
