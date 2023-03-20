@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -856,9 +861,87 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          搭建信令服务交换消息（五）
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="005.html" class="md-nav__link md-nav__link--active">
         搭建信令服务交换消息（五）
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    你会学到什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    一些概念
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nodejs" class="md-nav__link">
+    先决条件：安装Node.js
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    关于应用程序
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    知识扩展
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    你学到了什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    了解更多
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    下一步
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1413,6 +1496,70 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    你会学到什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    一些概念
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nodejs" class="md-nav__link">
+    先决条件：安装Node.js
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    关于应用程序
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    知识扩展
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    你学到了什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    了解更多
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    下一步
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1431,7 +1578,7 @@
 
   <h1>搭建信令服务交换消息（五）</h1>
 
-<p><strong>你会学到什么</strong></p>
+<h2 id="_1">你会学到什么</h2>
 <p>在这一步中，您将了解如何：</p>
 <ul>
 <li>使用npm来安装package.json中指定的项目依赖关系</li>
@@ -1440,7 +1587,7 @@
 <li>用它来创建“房间”并交换信息。</li>
 </ul>
 <p>此步骤的完整版本位于step-04文件夹中。</p>
-<p><strong>一些概念</strong></p>
+<h2 id="_2">一些概念</h2>
 <p>为了建立和维护WebRTC呼叫，WebRTC客户（对等）需要交换元数据：</p>
 <p>Candidate（网络）信息。</p>
 <p><strong>Offer</strong> 和 <strong>answer</strong> 支持媒体信息的消息，如分辨率和编解码器。</p>
@@ -1448,11 +1595,11 @@
 <p>在前面的步骤中，发送者和接收者的 RTCPeerConnection 对象在同一个页面上，所以“信号”就是在对象之间传递元数据。</p>
 <p>在真实世界的应用程序中，发送者和接收者RTCPeerConnections在不同设备上的网页中运行，您需要一种方式让他们交流元数据。</p>
 <p>为此，您使用信令服务器：可以在WebRTC客户端（对等端）之间传递消息的服务器。 实际的消息是纯文本：字符串格式的JavaScript对象。</p>
-<p><strong>先决条件：安装Node.js</strong></p>
+<h2 id="nodejs">先决条件：安装Node.js</h2>
 <p>为了运行这个代码（文件夹step-04到step-06），你将需要使用Node.js在本地上运行一个服务器。</p>
 <p>您可以从<a href="https://nodejs.org/en/download/">此链接</a>下载并安装Node.js，也可以通过首选的<a href="https://nodejs.org/en/download/package-manager/">包管理器</a>进行安装。</p>
 <p>安装完成后，您将能够导入（运行npm install）所需的依赖关系，并在本地主机运行一个小型服务器来执行代码（运行节点index.js）。 这些命令稍后将会需要。</p>
-<p><strong>关于应用程序</strong></p>
+<h2 id="_3">关于应用程序</h2>
 <p>WebRTC使用客户端JavaScript API，但是对于真实世界的使用还需要一个信令（消息）服务器，以及STUN和TURN服务器。 你可以在<a href="https://www.html5rocks.com/en/tutorials/webrtc/infrastructure/">这里</a>找到更多。</p>
 <p>在这一步中，您将构建一个简单的 Node.js 信令服务器，<a href="http://xn--socket-vt9i248w.io/">使用Socket.IO</a> Node.js模块和JavaScript库进行消息传递。 使用Node.js和Socket.IO的经验将是有用的，但不是关键; 消息传递组件非常简单。</p>
 <blockquote>
@@ -1635,13 +1782,13 @@
 <p>打开一个新的标签页，并再次打开localhost:8080。 选择相同的房间名称。</p>
 <p>在另外一个选项卡或窗口中打开localhost:8080。 再次选择相同的房间名称。</p>
 <p>检查每个选项卡中的控制台：您应该从上面的JavaScript中看到日志记录。</p>
-<p><strong>知识扩展</strong></p>
+<h2 id="_4">知识扩展</h2>
 <ul>
 <li>还有哪些可能的消息传递机制？ 使用“纯”的WebSocket可能遇到什么问题？</li>
 <li>扩展这个应用程序可能涉及哪些问题？ 你能开发一种方法来测试数千或数百万个同时的房间请求吗？</li>
 <li>这个应用程序使用JavaScript提示来获取房间名称。 找出从URL获取房间名称的方法。 例如localhost:8080/foo会给出房间名称foo。</li>
 </ul>
-<p><strong>你学到了什么</strong></p>
+<h2 id="_5">你学到了什么</h2>
 <p>在这一步中，您学习了如何：</p>
 <ul>
 <li>使用npm来安装package.json中指定的项目依赖关系</li>
@@ -1650,13 +1797,13 @@
 <li>用它来创建“房间”并交换信息。</li>
 </ul>
 <p>此步骤的完整版本位于step-04文件夹中。</p>
-<p><strong>了解更多</strong></p>
+<h2 id="_6">了解更多</h2>
 <ul>
 <li><a href="https://github.com/rauchg/chat-example">Socket.io chat-example repo</a></li>
 <li><a href="http://www.html5rocks.com/en/tutorials/webrtc/infrastructure/">WebRTC in the real world: STUN, TURN and signaling</a></li>
 <li><a href="https://www.webrtc-experiment.com/docs/WebRTC-Signaling-Concepts.html">The term 'signaling' in WebRTC</a></li>
 </ul>
-<p><strong>下一步</strong></p>
+<h2 id="_7">下一步</h2>
 <p>了解如何使用信令将两个用户建立对等连接。</p>
 
 

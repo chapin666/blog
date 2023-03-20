@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -884,9 +889,73 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          data channel共享照片（七）
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="007.html" class="md-nav__link md-nav__link--active">
         data channel共享照片（七）
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    你会学到什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    工作原理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    获取代码
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    知识扩展
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    了解更多
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    你学到了什么
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1413,6 +1482,56 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    你会学到什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    工作原理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    获取代码
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    知识扩展
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    了解更多
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    你学到了什么
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1431,14 +1550,14 @@
 
   <h1>data channel共享照片（七）</h1>
 
-<p><strong>你会学到什么</strong></p>
+<h2 id="_1">你会学到什么</h2>
 <p>在这一步中，您将学习如何：</p>
 <ul>
 <li>拍摄一张照片，并画布元素从中获取数据。</li>
 <li>与远程用户交换图像数据。</li>
 </ul>
 <p>此步骤的完整版本位于step-06文件夹中。</p>
-<p><strong>工作原理</strong></p>
+<h2 id="_2">工作原理</h2>
 <p>在之前，您学习了如何使用 RTCDataChannel 交换文本消息。</p>
 <p>这一步可以共享整个文件：在这个例子中，通过getUserMedia()获取照片。</p>
 <p>这一步的核心部分如下：</p>
@@ -1543,7 +1662,7 @@
 </span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="w">    </span><span class="nx">context</span><span class="p">.</span><span class="nx">putImageData</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
 </span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="p">}</span>
 </span></code></pre></div>
-<p><strong>获取代码</strong></p>
+<h2 id="_3">获取代码</h2>
 <p>将工作文件夹的内容替换为步骤06的内容。 你的index.html文件现在应该看起来像这样：</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
@@ -1589,7 +1708,7 @@
 </span><span id="__span-4-42"><a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </span></code></pre></div>
 <p>如果您的Node.js服务器没有运行，请从您的工作目录调用以下命令来启动它：</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">    </span>node<span class="w"> </span>index.js<span class="w"> </span>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>node<span class="w"> </span>index.js<span class="w"> </span>
 </span></code></pre></div>
 <blockquote>
 <p>确保index.js文件中使用的是实现<a href="http://Socket.IO">http://Socket.IO</a> - 如果你做了修改，记得重新启动你的Node.js服务器。）</p>
@@ -1599,16 +1718,16 @@
 <p>点击 Snap &amp; Send 按钮，然后查看页面底部的“传入”区域。 该应用程序在tab之间传输照片。</p>
 <p>您应该看到如下所示：</p>
 <p><img alt="" src="https://pic4.zhimg.com/v2-35de715b47ac67173bc21f90ab002413_b.jpg" /></p>
-<p><strong>知识扩展</strong></p>
+<h2 id="_4">知识扩展</h2>
 <ul>
 <li>假如要共享任何类型的文件，怎样改变代码？</li>
 </ul>
-<p><strong>了解更多</strong></p>
+<h2 id="_5">了解更多</h2>
 <ul>
 <li><a href="https://www.chromestatus.com/features/4843864737185792">The MediaStream Image Capture API</a>: 用于拍摄照片和控制相机的API - 即将推出到您附近的浏览器！</li>
 <li>MediaRecorder API, 用于录制音频和视频：<a href="https://webrtc.github.io/samples/src/content/getusermedia/record/">demo</a>, <a href="https://www.chromestatus.com/features/5929649028726784">documentation</a>。</li>
 </ul>
-<p><strong>你学到了什么</strong></p>
+<h2 id="_6">你学到了什么</h2>
 <ul>
 <li>如何将照片显示到画布元素并从中获取数据。</li>
 <li>如何与远程用户交换数据。</li>

@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -828,9 +833,114 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          RTCPeerConnection传输视频流（三）
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="003.html" class="md-nav__link md-nav__link--active">
         RTCPeerConnection传输视频流（三）
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    你会学到什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rtcpeerconnection" class="md-nav__link">
+    什么是RTCPeerConnection？
+  </a>
+  
+    <nav class="md-nav" aria-label="什么是RTCPeerConnection？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#video" class="md-nav__link">
+    添加video元素和控制按钮
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adapterjs-shim" class="md-nav__link">
+    添加 adapter.js shim
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rtcpeerconnection_1" class="md-nav__link">
+    安装RTCPeerConnection代码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call" class="md-nav__link">
+    调用call
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    工作原理：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    知识扩展
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    你学到了什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    最佳实践
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    下一步
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1413,6 +1523,97 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    你会学到什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rtcpeerconnection" class="md-nav__link">
+    什么是RTCPeerConnection？
+  </a>
+  
+    <nav class="md-nav" aria-label="什么是RTCPeerConnection？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#video" class="md-nav__link">
+    添加video元素和控制按钮
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adapterjs-shim" class="md-nav__link">
+    添加 adapter.js shim
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rtcpeerconnection_1" class="md-nav__link">
+    安装RTCPeerConnection代码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call" class="md-nav__link">
+    调用call
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    工作原理：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    知识扩展
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    你学到了什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    最佳实践
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    下一步
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1431,7 +1632,7 @@
 
   <h1>RTCPeerConnection传输视频流（三）</h1>
 
-<p><strong>你会学到什么</strong></p>
+<h2 id="_1">你会学到什么</h2>
 <p>在这一步中，您将了解如何：</p>
 <ul>
 <li>使用WebRTC Shim(adapter.js)兼容浏览器差异。</li>
@@ -1439,11 +1640,11 @@
 <li>控制媒体捕捉和流媒体。</li>
 </ul>
 <p>此步骤的完整版本位于step-2文件夹中。</p>
-<p><strong>什么是RTCPeerConnection？</strong></p>
+<h2 id="rtcpeerconnection">什么是RTCPeerConnection？</h2>
 <p>RTCPeerConnection是一个用于使WebRTC调用视频和音频流并交换数据的API。</p>
 <p>本示例在同一页上设置两个RTCPeerConnection对象（称为对等）之间的连接。</p>
 <p>没有多少实际用途，但可以很好理解RTCPeerConnection的工作原理。</p>
-<p><strong>添加video元素和控制按钮</strong></p>
+<h3 id="video">添加video元素和控制按钮</h3>
 <p>在index.html中用两个视频元素和三个按钮替换单个视频元素：
 <div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">video</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;localVideo&quot;</span> <span class="na">autoplay</span><span class="p">&gt;&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">&lt;</span><span class="nt">video</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;remoteVideo&quot;</span> <span class="na">autoplay</span><span class="p">&gt;&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
@@ -1455,7 +1656,7 @@
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></code></pre></div>
 一个video元素将显示来自getUserMedia()的流，另一个将显示通过RTCPeerconnection传输的到本地相同的视频流。 （在现实世界的应用程序中，一个video元素将显示本地流，而另一个video元素则显示远程流。）</p>
-<p><strong>添加 adapter.js shim</strong></p>
+<h3 id="adapterjs-shim">添加 adapter.js shim</h3>
 <p>在main.js文件的上方添加一个adapter.js的链接：
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">&lt;</span><span class="nx">script</span><span class="w"> </span><span class="nx">src</span><span class="o">=</span><span class="s2">&quot;js/lib/adapter.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
 </span></code></pre></div></p>
@@ -1497,11 +1698,11 @@
 </span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>
 </span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </span></code></pre></div></p>
-<p><strong>安装RTCPeerConnection代码</strong></p>
+<h3 id="rtcpeerconnection_1">安装RTCPeerConnection代码</h3>
 <p>将main.js替换为step-02文件夹中的版本。</p>
-<p><strong>调用call</strong></p>
+<h3 id="call">调用call</h3>
 <p>打开index.html，单击“开始”按钮从网络摄像机获取视频，然后单击“call”以建立对等连接。 您应该在两个视频元素中看到相同的视频（来自网络摄像头）。 查看浏览器控制台以显示WebRTC日志记录。</p>
-<p><strong>工作原理：</strong></p>
+<h3 id="_2">工作原理：</h3>
 <p>这一步做了很多...</p>
 <blockquote>
 <p>如果你想跳过下面的解释，那很好。<br />
@@ -1613,7 +1814,7 @@
 <p>Ping!</p>
 </li>
 </ul>
-<p><strong>知识扩展</strong></p>
+<h2 id="_3">知识扩展</h2>
 <ul>
 <li>打开 chrome://webrtc-internals , 这里提供了WebRTC统计和调试数据。 （Chrome网址的完整列表位于chrome://about）</li>
 <li>使用CSS设置页面样式：</li>
@@ -1627,7 +1828,7 @@
 <li>在Chrome开发工具控制台中，查看pc1和pc2的localStream</li>
 <li>从控制台查看 pc1.localDescription的SDP格式是什么样？</li>
 </ul>
-<p><strong>你学到了什么</strong></p>
+<h2 id="_4">你学到了什么</h2>
 <p>在这一步你学会了如何：</p>
 <ul>
 <li>使用WebRTC Shim adapter.js shim 兼容浏览器差异。</li>
@@ -1640,9 +1841,9 @@
 <p>这一步有很多东西要学习！ 要更详细的内容参考RTCPeerConnection的其他资源，<a href="http://xn--webrtc-2i5my41hhm3b.org/start%25E3%2580%2582">请查看webrtc.org/start。</a> 本页面包含JavaScript框架的建议 - 如果您想使用WebRTC，但不想围绕API。</p>
 <p>从adapter.js GitHub仓库中找到更多关于adapter.js shim 程序的信息。</p>
 <p>想看看世界上最好的视频聊天应用程序是什么样子？ 看看AppRTC，WebRTC项目的WebRTC调用规范应用程序：<a href="https://appr.tc/">app</a>，<a href="https://github.com/webrtc/apprtc">code</a>。 呼叫建立时间小于500毫秒。</p>
-<p><strong>最佳实践</strong></p>
+<h2 id="_5">最佳实践</h2>
 <p>为了使您的代码具有前瞻性，请使用新的基于Promise的API，并通过使用adapter.js启用不支持它们（webrtc）的浏览器。</p>
-<p><strong>下一步</strong></p>
+<h2 id="_6">下一步</h2>
 <p>这一步展示了如何使用WebRTC在对等体之间传输视频 - 但是这个实验也是关于数据的！</p>
 <p>在下一步中，将了解如何使用RTCDataChannel传输任意数据流。</p>
 

@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -870,9 +875,73 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          对等连接和信令整合（六）
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="006.html" class="md-nav__link md-nav__link--active">
         对等连接和信令整合（六）
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    你会学到什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#htmljavascript" class="md-nav__link">
+    替换HTML和JavaScript
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nodejs" class="md-nav__link">
+    运行Node.js服务器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    知识扩展
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    你学到了什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    下一步
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1413,6 +1482,56 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    你会学到什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#htmljavascript" class="md-nav__link">
+    替换HTML和JavaScript
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nodejs" class="md-nav__link">
+    运行Node.js服务器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    知识扩展
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    你学到了什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    下一步
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1431,14 +1550,14 @@
 
   <h1>对等连接和信令整合（六）</h1>
 
-<p><strong>你会学到什么</strong></p>
+<h2 id="_1">你会学到什么</h2>
 <p>在这一步中，您将了解如何：</p>
 <ul>
 <li>Node环境下使用<a href="http://Socket.IO">http://Socket.IO</a>运行WebRTC信令服务。</li>
 <li>使用该服务在对等体之间交换WebRTC元数据。</li>
 </ul>
 <p>此步骤的完整版本位于step-05文件夹中。</p>
-<p><strong>替换HTML和JavaScript</strong></p>
+<h2 id="htmljavascript">替换HTML和JavaScript</h2>
 <p>将index.html的内容替换为以下内容：</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
@@ -1469,7 +1588,7 @@
 </span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </span></code></pre></div>
 <p>将js/main.js替换为step-05/js/main.js的内容。</p>
-<p><strong>运行Node.js服务器</strong></p>
+<h2 id="nodejs">运行Node.js服务器</h2>
 <p>如果您的Node.js服务器没有运行，请在工作目录中调用以下命令来启动它
 <code>shell
 node index.js</code>   </p>
@@ -1480,14 +1599,14 @@ node index.js</code>   </p>
 <p>每次关闭客户端选项卡或窗口时，都需要重新启动Node.js服务器。</p>
 </blockquote>
 <p>在浏览器控制台中查看日志。</p>
-<p><strong>知识扩展</strong></p>
+<h2 id="_2">知识扩展</h2>
 <ul>
 <li>此应用程序只支持一对一的视频聊天。 如何设计成让多个人共享同一个视频聊天室？</li>
 <li>这个例子的房间名称foo是硬编码的。 设置其他房间名称最好的方式是什么？</li>
 <li>用户如何分享房间名称？ 尝试构建一个分享房间名称的方案。</li>
 <li>你想怎么改变这个应用程序</li>
 </ul>
-<p><strong>你学到了什么</strong></p>
+<h2 id="_3">你学到了什么</h2>
 <p>在这一步你学会了如何：</p>
 <ul>
 <li>Node环境下使用<a href="http://Socket.IO">http://Socket.IO</a>运行WebRTC信令服务。</li>
@@ -1505,7 +1624,7 @@ node index.js</code>   </p>
 重新启动浏览器<br />
 从命令行运行npm cache clean。</p>
 </blockquote>
-<p><strong>下一步</strong></p>
+<h2 id="_4">下一步</h2>
 <p>了解如何拍照，获取图像数据，以及如何在对等体之间远程共享图像。</p>
 
 

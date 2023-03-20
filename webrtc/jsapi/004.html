@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -842,9 +847,87 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          RTCDataChannel交换数据（四）
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="004.html" class="md-nav__link md-nav__link--active">
         RTCDataChannel交换数据（四）
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    你将会学到什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html" class="md-nav__link">
+    更新HTML代码
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript" class="md-nav__link">
+    更新javascript代码
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    工作原理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    知识扩展
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    学到了什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    了解更多
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    下一步
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1413,6 +1496,70 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    你将会学到什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html" class="md-nav__link">
+    更新HTML代码
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript" class="md-nav__link">
+    更新javascript代码
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    工作原理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    知识扩展
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    学到了什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    了解更多
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    下一步
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1431,12 +1578,12 @@
 
   <h1>RTCDataChannel交换数据（四）</h1>
 
-<p><strong>你将会学到什么</strong></p>
+<h2 id="_1">你将会学到什么</h2>
 <blockquote>
 <p>如何在WebRTC端点（对等体）之间交换数据。</p>
 </blockquote>
 <p>此步骤的完整版本位于step-03文件夹中。</p>
-<p><strong>更新HTML代码</strong></p>
+<h2 id="html">更新HTML代码</h2>
 <p>对于这一步，您将使用WebRTC data channels 在同一页面上的两个textarea元素之间发送文本。 这并不是非常有用，但它确实展示了如何使用WebRTC来共享数据以及视频流传输。</p>
 <p>从index.html中删除视频和按钮元素，并将其替换为以下HTML：
 <div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;dataChannelSend&quot;</span> <span class="na">disabled</span>
@@ -1482,14 +1629,14 @@
 </span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
 </span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</span></code></pre></div>
-更新javascript代码</p>
+</span></code></pre></div></p>
+<h2 id="javascript">更新javascript代码</h2>
 <p>将main.js替换为step-03/js/main.js文件中的内容。</p>
 <blockquote>
 <p>和上一步一样，在代码中使用大块代码进行剪切和粘贴并不理想，但是（和RTCPeerConnection一样），没有其他选择。</p>
 </blockquote>
 <p>尝试对等体之间传输数据流：打开index.html，按start启动对等连接，在左边的textarea中输入一些文本，然后点击发送，使用WebRTC data channels 传输文本。</p>
-<p><strong>工作原理</strong></p>
+<h2 id="_2">工作原理</h2>
 <p>此代码使用RTCPeerConnection和RTCDataChannel来启用文本消息的交换。</p>
 <p>这一步中的大部分代码与RTCPeerConnection示例相同。</p>
 <p>sendData() 和 createConnection() 函数具有大部分新代码：</p>
@@ -1546,25 +1693,25 @@
 <p>了解有关constraints的更多信息和选项：<br />
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/RTCPeerConnection">RTCPeerConnection</a> <a href="https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/createDataChannel">RTCDataChannel</a> <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia">MediaDevices.getUserMedia()</a></p>
 </blockquote>
-<p><strong>知识扩展：</strong></p>
+<h2 id="_3">知识扩展</h2>
 <ul>
 <li>WebRTC data channels 所使用的协议是SCTP，在默认情况下数据的可靠和有序性处于打开状态。 什么时候RTCDataChannel需要提供可靠的数据交换，什么时候性能会更重要 —— 哪怕意味着丢失一些数据？</li>
 <li>使用CSS来改善页面布局，并添加一个占位符属性到 “dataChannelReceive” textarea。</li>
 <li>在移动设备上测试页面。</li>
 </ul>
-<p><strong>学到了什么</strong></p>
+<h2 id="_4">学到了什么</h2>
 <p>在这一步你学会了如何：</p>
 <ul>
 <li>建立两个WebRTC对等体之间的连接。</li>
 <li>交换对等体之间的文本数据。</li>
 </ul>
 <p>此步骤的完整版本位于step-03文件夹中。</p>
-<p><strong>了解更多</strong></p>
+<h2 id="_5">了解更多</h2>
 <ul>
 <li><a href="http://www.html5rocks.com/en/tutorials/webrtc/datachannels/">WebRTC data channels</a> (很旧，但是仍然值得一读)</li>
 <li><a href="https://bloggeek.me/sctp-data-channel/">Why was SCTP Selected for WebRTC's Data Channel?</a></li>
 </ul>
-<p><strong>下一步</strong></p>
+<h2 id="_6">下一步</h2>
 <p>你已经学会了如何在同一页面上的对等体之间交换数据，但是如何在不同的机器之间做这件事？ 首先，你需要建立一个信令通道来交换<strong>元数据</strong>消息。 了解如何在下一步！</p>
 
 
