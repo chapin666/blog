@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#51-rust" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1049,9 +1054,92 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          05-变量
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="005.html" class="md-nav__link md-nav__link--active">
         05-变量
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-rust" class="md-nav__link">
+    5.1 Rust 语言中变量的命名规则
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-rust" class="md-nav__link">
+    5.2 Rust 中变量的声明语法
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 Rust 中变量的声明语法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#521" class="md-nav__link">
+    5.2.1 范例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-let" class="md-nav__link">
+    5.3 let 变量的不可变性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    5.4 可变变量
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4 可变变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#541" class="md-nav__link">
+    5.4.1 可更变量的声明语法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#542" class="md-nav__link">
+    5.4.2 范例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1425,6 +1513,75 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-rust" class="md-nav__link">
+    5.1 Rust 语言中变量的命名规则
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-rust" class="md-nav__link">
+    5.2 Rust 中变量的声明语法
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 Rust 中变量的声明语法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#521" class="md-nav__link">
+    5.2.1 范例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-let" class="md-nav__link">
+    5.3 let 变量的不可变性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    5.4 可变变量
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4 可变变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#541" class="md-nav__link">
+    5.4.1 可更变量的声明语法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#542" class="md-nav__link">
+    5.4.2 范例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1443,7 +1600,118 @@
 
   <h1>05-变量</h1>
 
-
+<p>现实生活中，我们肯定不会使用 隔壁邻居的儿子、隔壁的隔壁邻居的女儿 、隔壁的隔壁的隔壁邻居的儿子这种称呼，多难记啊。</p>
+<p>我们都习惯于给别人取一个小名，比如 小明 = 隔壁邻居的儿子、小红 = 隔壁的隔壁邻居的女儿、小王 = 隔壁的隔壁的隔壁邻居的儿子。</p>
+<p>在计算机中，在编程时也是一样的。</p>
+<p>我们肯定不会使用 内存位置1、内存位置2、内存位置3 这种形式来记录内存中存储的数据。</p>
+<p>我们喜欢对内存进行标记，比如 name = 内存位置1、age = 内存位置2、address = 内存位置3</p>
+<p>我们把 name、age 和 address 这种标记称之为 <strong>变量</strong></p>
+<p><strong>变量</strong> 是对 <strong>内存</strong> 的标记。</p>
+<p>因为内存中存储的数据是有数据类型的，所以变量也是有数据类型的。</p>
+<p>变量的数据类型不仅用于标识内存中存储的数据类型，还用于标识内存中存储的数据的大小。同时也标识内存中存储的数据可以进行的操作。</p>
+<h2 id="51-rust">5.1 Rust 语言中变量的命名规则</h2>
+<p>Rust 中的变量名并不是随便什么字符都可以的，它遵循着一套规则</p>
+<ol>
+<li>
+<p>变量名中可以包含 字母、数字 和 下划线。也就只能是 abcdefghijklmnopqrstuvwxyz013456789_ 以及大写字母。  </p>
+</li>
+<li>
+<p>变量名必须以 字母 或 下划线 开头。  </p>
+</li>
+<li>
+<p>也就是不能以 数字 开头。  </p>
+</li>
+<li>
+<p>变量名是 区分大小 写的。也就是大写的 A 和小写的 a 是两个不同的字符</p>
+</li>
+</ol>
+<h2 id="52-rust">5.2 Rust 中变量的声明语法</h2>
+<p>Rust 语言中声明变量时的 数据类型 是可选的，也就是可以忽略的。如果忽略了，那么 Rust 就会自动通过 <strong>值</strong> 来推断变量的类型。</p>
+<p>就像我们平时说 1 ，大家默认都会把它当作数字看待那样。</p>
+<p>Rust 语言中声明变量的语法格式如下</p>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">let</span><span class="w"> </span><span class="n">variable_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">            </span><span class="c1">// 不指定变量类型</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">let</span><span class="w"> </span><span class="n">variable_name</span>:<span class="nc">dataType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">   </span><span class="c1">// 指定变量类型</span>
+</span></code></pre></div>
+<h3 id="521">5.2.1 范例</h3>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">fees</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25_000</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">salary</span>:<span class="kt">f64</span> <span class="o">=</span><span class="w"> </span><span class="mf">35_000.00</span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;fees is {} and salary is {}&quot;</span><span class="p">,</span><span class="n">fees</span><span class="p">,</span><span class="n">salary</span><span class="p">);</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>编译运行以上 Rust 代码，输出结果如下</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span>fees<span class="w"> </span>is<span class="w"> </span><span class="m">25000</span><span class="w"> </span>and<span class="w"> </span>salary<span class="w"> </span>is<span class="w"> </span><span class="m">35000</span>
+</span></code></pre></div>
+<h2 id="53-let">5.3 let 变量的不可变性</h2>
+<p>默认情况下，Rust 语言中的变量是不可变的。</p>
+<p>Rust 语言中使用 let 声明的变量，在第一次赋值之后，是不可变更不可重新赋值的，变成了 <strong>只读</strong> 状态。</p>
+<p>就像我们身份证上的名字，不是轻易能够改变的，不是自己涂涂写写就能改变的。</p>
+<p>这点不同于很多语言，倒是跟 Erlang 有点像。</p>
+<p>如果你觉得有点难以理解，那么上代码来的更直接</p>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">fees</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25_000</span><span class="p">;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;fees is {} &quot;</span><span class="p">,</span><span class="n">fees</span><span class="p">);</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="n">fees</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">35_000</span><span class="p">;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;fees changed is {}&quot;</span><span class="p">,</span><span class="n">fees</span><span class="p">);</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>编译上面这段 Rust 代码，是会报错的</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>error<span class="o">[</span>E0384<span class="o">]</span>:<span class="w"> </span>re-assignment<span class="w"> </span>of<span class="w"> </span>immutable<span class="w"> </span>variable<span class="w"> </span><span class="sb">`</span>fees<span class="sb">`</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span>--&gt;<span class="w"> </span>main.rs:6:3
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="p">|</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="m">3</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nb">let</span><span class="w"> </span><span class="nv">fees</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>25_000<span class="p">;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="p">|</span><span class="w"> </span>----<span class="w"> </span>first<span class="w"> </span>assignment<span class="w"> </span>to<span class="w"> </span><span class="sb">`</span>fees<span class="sb">`</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>...
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="m">6</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nv">fees</span><span class="o">=</span>35_000<span class="p">;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="p">|</span><span class="w"> </span>^^^^^^^^^^^<span class="w"> </span>re-assignment<span class="w"> </span>of<span class="w"> </span>immutable<span class="w"> </span>variable
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>error:<span class="w"> </span>aborting<span class="w"> </span>due<span class="w"> </span>to<span class="w"> </span>previous<span class="w"> </span>error<span class="o">(</span>s<span class="o">)</span>
+</span></code></pre></div>
+<p>上面这段错误消息告诉我们：我们不能对变量 fees 进行第二次赋值。</p>
+<p>这估计是 Rust 语言中最大的变更了。也是并发编程安全性的重要组成部分。</p>
+<p>但也是 Rust 程序员最容易出错的地方。</p>
+<h2 id="54">5.4 可变变量</h2>
+<p>let 关键字声明的变量默认情况下是 <strong>不可变更</strong> 的，在定义了一个变量之后，默认情况下我们是不能通过赋值再改变它的值的。</p>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">fees</span>:<span class="kt">i32</span> <span class="o">=</span><span class="w"> </span><span class="mi">25_000</span><span class="p">;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;fees is {} &quot;</span><span class="p">,</span><span class="n">fees</span><span class="p">);</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="n">fees</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">35_000</span><span class="p">;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;fees changed is {}&quot;</span><span class="p">,</span><span class="n">fees</span><span class="p">);</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>上面这段代码，编译会报错的。</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>error<span class="o">[</span>E0384<span class="o">]</span>:<span class="w"> </span>re-assignment<span class="w"> </span>of<span class="w"> </span>immutable<span class="w"> </span>variable<span class="w"> </span><span class="sb">`</span>fees<span class="sb">`</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span>--&gt;<span class="w"> </span>main.rs:6:3
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="p">|</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="m">3</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nb">let</span><span class="w"> </span><span class="nv">fees</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>25_000<span class="p">;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="p">|</span><span class="w"> </span>----<span class="w"> </span>first<span class="w"> </span>assignment<span class="w"> </span>to<span class="w"> </span><span class="sb">`</span>fees<span class="sb">`</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>...
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="m">6</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nv">fees</span><span class="o">=</span>35_000<span class="p">;</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="p">|</span><span class="w"> </span>^^^^^^^^^^^<span class="w"> </span>re-assignment<span class="w"> </span>of<span class="w"> </span>immutable<span class="w"> </span>variable
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>error:<span class="w"> </span>aborting<span class="w"> </span>due<span class="w"> </span>to<span class="w"> </span>previous<span class="w"> </span>error<span class="o">(</span>s<span class="o">)</span>
+</span></code></pre></div>
+<p>但有时候，我们又需要给一个变量重新赋值，这要怎么做呢 ？</p>
+<p>Rust 语言提供了 <strong>mut</strong> 关键字表示 <strong>可变更</strong>。 我们可以在变量名的前面加上 mut 关键字来告诉编译器这个变量是可以重新赋值的。</p>
+<h3 id="541">5.4.1 可更变量的声明语法</h3>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">variable_name</span>:<span class="nc">dataType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+</span></code></pre></div>
+<p>或者让编译器自动推断类型
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">variable_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+</span></code></pre></div></p>
+<h3 id="542">5.4.2 范例</h3>
+<p>我们使用 mut 关键字定义一个变量 fees 然后再重新赋值</p>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">fees</span>:<span class="kt">i32</span> <span class="o">=</span><span class="w"> </span><span class="mi">25_000</span><span class="p">;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;fees is {} &quot;</span><span class="p">,</span><span class="n">fees</span><span class="p">);</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="n">fees</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">35_000</span><span class="p">;</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;fees changed is {}&quot;</span><span class="p">,</span><span class="n">fees</span><span class="p">);</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>编译运行以上 Rust 代码，输出结果如下</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>fees<span class="w"> </span>is<span class="w"> </span><span class="m">25000</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>fees<span class="w"> </span>changed<span class="w"> </span>is<span class="w"> </span><span class="m">35000</span>
+</span></code></pre></div>
 
 
   

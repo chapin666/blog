@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#61" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1063,9 +1068,86 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          06-常量
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="006.html" class="md-nav__link md-nav__link--active">
         06-常量
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    6.1 定义常量的语法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-rust" class="md-nav__link">
+    6.2 Rust 常量命名规则
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-rust" class="md-nav__link">
+    6.3 Rust 中常量与变量的不同之处
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    6.4 常量和变量的隐藏/屏蔽
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65" class="md-nav__link">
+    6.5 同名变量可以有不同的数据类型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66" class="md-nav__link">
+    6.6 不能出现同名常量
+  </a>
+  
+    <nav class="md-nav" aria-label="6.6 不能出现同名常量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#661" class="md-nav__link">
+    6.6.1 范例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1425,6 +1507,69 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    6.1 定义常量的语法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-rust" class="md-nav__link">
+    6.2 Rust 常量命名规则
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-rust" class="md-nav__link">
+    6.3 Rust 中常量与变量的不同之处
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    6.4 常量和变量的隐藏/屏蔽
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65" class="md-nav__link">
+    6.5 同名变量可以有不同的数据类型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66" class="md-nav__link">
+    6.6 不能出现同名常量
+  </a>
+  
+    <nav class="md-nav" aria-label="6.6 不能出现同名常量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#661" class="md-nav__link">
+    6.6.1 范例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1443,7 +1588,90 @@
 
   <h1>06-常量</h1>
 
-
+<p>常量就是那些值不能被改变的变量。一旦我们定义了一个常量，那么就再也没有任何方法可以改变常量的值了。</p>
+<p>Rust 语言中使用 const 关键字来定义一个常量。定义常量时需要明确指定常量的数据类型。</p>
+<h2 id="61">6.1 定义常量的语法</h2>
+<p>Rust 中定义常量的语法格式如下
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">const</span><span class="w"> </span><span class="n">VARIABLE_NAME</span>:<span class="nc">dataType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+</span></code></pre></div></p>
+<p>从语法上来看，定义常量和定义变量的语法是类似的： - 定义常量的关键字是 const ，而定义变量的关键字是 let。 - 定义常量时必须指定数据类型，而定义变量时数据类型可以省略，因为会自动推导。 - 常量名的命名规则可变量的命名规则一样，但常量名一般都是 大写字母。</p>
+<h2 id="62-rust">6.2 Rust 常量命名规则</h2>
+<p>有点重复了，不过我们还是得重复说一下 常量的命名规则，常量命名规则和变量的命名规则是类似的，除了以下几点： - 常量名通常都是 大写字母。 - 使用 const 关键字而不是 let 关键字来定义一个常量。 - 根据这些命名规则，我们来看一些定义常量的范例</p>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">USER_LIMIT</span>:<span class="kt">i32</span> <span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w">    </span><span class="c1">// 定义了一个 i32 类型的常量</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">PI</span>:<span class="kt">f32</span> <span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span><span class="w">           </span><span class="c1">// 定义了一个 float 类型的常量</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;user limit is {}&quot;</span><span class="p">,</span><span class="n">USER_LIMIT</span><span class="p">);</span><span class="w">  </span><span class="c1">// 显示常量的值</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;pi value is {}&quot;</span><span class="p">,</span><span class="n">PI</span><span class="p">);</span><span class="w">            </span><span class="c1">// 显示常量的值</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="63-rust">6.3 Rust 中常量与变量的不同之处</h2>
+<p>Rust 中常量与变量的不同之处是面试必问的经典题目之一。</p>
+<p>下面我们就来详细讲讲这个面试题的答案吧。</p>
+<ol>
+<li>
+<p>声明常量使用的是 const 关键字，声明变量使用的是 let 关键字。  </p>
+</li>
+<li>
+<p>声明变量时 数据类型可以忽略，但声明常量时数据类型不可以忽略。这就意味着 const USER_LIMIT=100 这种常量声明会导致编译错误。  </p>
+</li>
+<li>
+<p>虽然声明变量时使用 let 关键字也会导致 变量不可以重新赋值，但我们可以加上 mut 关键字来让变量可以被重新赋值。然而常量却没有这种机制，常量一旦定义就永远不可变更和重新赋值。  </p>
+</li>
+<li>
+<p>常量只能 被赋值为 常量表达式/数学表达式，不能是 函数返回值 或者其它只有在运行时才能确定的值。这是因为 常量 只是一个符号，会在 编译时 替换为具体的值，这个有点类似于 C 语言中的 #define 定义的符号。  </p>
+</li>
+<li>
+<p>常量可以在任意作用域里定义，包括全局作用域。也就是可以在任何地方定义。因此我们可以在需要的地方定义，以明确我们为什么需要定义一个常量。  </p>
+</li>
+<li>
+<p>不能出现同名常量，变量可以（隐藏/屏蔽）</p>
+</li>
+</ol>
+<h2 id="64">6.4 常量和变量的隐藏/屏蔽</h2>
+<p>Rust 语言中允许重复定义一个相同变量名的变量。这种重名的变量的规则是 后面定义的变量会重写/屏蔽 前面定义的同名变量。</p>
+<p>我们使用一个范例来演示下</p>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100.00</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.50</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="c1">// 输出薪水</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;salary 变量的值为:{}&quot;</span><span class="p">,</span><span class="n">salary</span><span class="p">);</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>编译运行以上 Rust 代码，输出结果如下</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>salary<span class="w"> </span>变量的值为:1.5
+</span></code></pre></div>
+<p>上面的代码，我们定义了两个同名的变量 salary，第一次 salary 我们赋值 100.00 ，第二次 salary 我们赋值为 1.5。</p>
+<p>从输出结果中可以看出，第二个 salary 会隐藏/屏蔽第一次定义的变量。</p>
+<h2 id="65">6.5 同名变量可以有不同的数据类型</h2>
+<p>Rust 支持在同一个作用域/内层作用域内定义多个同名变量，而且每个同名变量的类型还可以不一样。</p>
+<p>我们使用一个简单的范例来演示下 同名变量可以有不同的数据类型</p>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">uname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Mohtashim&quot;</span><span class="p">;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">uname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">uname</span><span class="p">.</span><span class="n">len</span><span class="p">();</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;uname 字符串的字符数是: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">uname</span><span class="p">);</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>编译运行以上 Rust 代码，输出结果如下</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>uname<span class="w"> </span>字符串的字符数是:<span class="w"> </span><span class="m">9</span>
+</span></code></pre></div>
+<p>在上面这个范例中，我们定义了两个同名变量 uname，但它们有着不同的数据类型。第一次 uname 的数据类型是 string 也就是字符串，而第二次则变成了 i32 是一个整数了。</p>
+<blockquote>
+<p>len() 函数返回字符串中字符的个数。  </p>
+</blockquote>
+<h2 id="66">6.6 不能出现同名常量</h2>
+<p>常量与变量的另一个不同点是： 常量不能被屏蔽/遮挡，也不能被重复定义。</p>
+<p>也就是说不存在内层/后面作用域定义的常量屏蔽外层/前面定义的同名常量。</p>
+<p>这是因为 Rust 语言中不允许有同名的常量。</p>
+<h3 id="661">6.6.1 范例</h3>
+<p>我们将上面的范例改造下，使用 const 关键字来定义同名的常量</p>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">    </span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">       </span><span class="k">const</span><span class="w"> </span><span class="n">NAME</span>:<span class="kp">&amp;</span><span class="kt">str</span> <span class="o">=</span><span class="w"> </span><span class="s">&quot;Mohtashim&quot;</span><span class="p">;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">       </span><span class="k">const</span><span class="w"> </span><span class="n">NAME</span>:<span class="kt">usize</span> <span class="o">=</span><span class="w"> </span><span class="n">NAME</span><span class="p">.</span><span class="n">len</span><span class="p">();</span><span class="w"> </span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">       </span><span class="c1">//Error : `NAME` already defined</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">       </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;改变 name 常量的类型: {}&quot;</span><span class="p">,</span><span class="n">NAME</span><span class="p">);</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="p">}</span>
+</span></code></pre></div>
 
 
   
