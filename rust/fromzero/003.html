@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#31-hello-world" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1021,9 +1026,85 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          03-Hello World
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="003.html" class="md-nav__link md-nav__link--active">
         03-Hello World
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-hello-world" class="md-nav__link">
+    3.1 Hello World
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2 什么是宏 ？
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 什么是宏 ？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321" class="md-nav__link">
+    3.2.1 范例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-rust" class="md-nav__link">
+    3.3 Rust 语言中的注释
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Rust 语言中的注释">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321_1" class="md-nav__link">
+    3.2.1 单行注释 / 行内注释
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322" class="md-nav__link">
+    3.2.2 多行注释 / 块注释
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1425,6 +1506,68 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-hello-world" class="md-nav__link">
+    3.1 Hello World
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2 什么是宏 ？
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 什么是宏 ？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321" class="md-nav__link">
+    3.2.1 范例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-rust" class="md-nav__link">
+    3.3 Rust 语言中的注释
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Rust 语言中的注释">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321_1" class="md-nav__link">
+    3.2.1 单行注释 / 行内注释
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322" class="md-nav__link">
+    3.2.2 多行注释 / 块注释
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1443,7 +1586,83 @@
 
   <h1>03-Hello World</h1>
 
-
+<h2 id="31-hello-world">3.1 Hello World</h2>
+<p>本章节我们通过一个小小的 Hello World 程序来看看和解释 Rust 最小程序的构成。</p>
+<p>首先创建一个 helloworld 的目录并在 命令行/终端 中使用 cd 命令并进入到 helloworld 目录</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>helloworld
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>helloworld
+</span></code></pre></div>
+<p>使用你趁手的编辑器创建一个文件 hello.rs，比如我使用 Visual Studo Code 作为代码编辑器</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>code<span class="w"> </span>hello.rs
+</span></code></pre></div>
+<p>Rust 语言的源代码文件以 .rs 作为文件扩展名。</p>
+<p>上面的命令会在当前目录下创建一个 hello.rs 的空文件，并在 Visual Studo Code 中打开。</p>
+<p>在 hello.rs 文件中输入以下代码，然后保存。</p>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">(){</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Hello World&quot;</span><span class="p">);</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;你好，零基础教程&quot;</span><span class="p">);</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>上面这段代码定义了一个名为 main 的函数。Rust 语言使用 fn 关键字定义函数。</p>
+<p>main() 函数是一个预定义函数，充当 Rust 程序的入口点，类似于 C 语言 中的 main() 函数。</p>
+<p>接下来的 println!() 是 Rust 语言中的一个 <strong>预定义的宏</strong>。这个 println!() 用于将传递给它的参数输出到 标准输出。</p>
+<p>Rust 语言中的 宏 都会以 <strong>感叹号( ! )</strong> 结尾。也就是说，你以后看到以 ! 结尾的类似函数调用，都是 <strong>宏调用</strong>。</p>
+<p>使用 rustc 编译工具编译我们刚刚的 hello.rs</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>rustc<span class="w"> </span>hello.rs
+</span></code></pre></div>
+<p>如果编译成功，rustc 命令会生成一个跟 <strong>源代码文件</strong> 同名的二进制可执行文件。比如上面的命令会生成一个 hello 文件。</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ls<span class="w"> </span>-al<span class="w">  </span><span class="c1">#列出当前目录下的文件</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>hello.rs
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>hello
+</span></code></pre></div>
+<p>为了检查编译是否成功，你可以执行如下命令查看运行结果。</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>chmod<span class="w"> </span>+x<span class="w"> </span>./hello<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./hello
+</span></code></pre></div>
+<h2 id="32">3.2 什么是宏 ？</h2>
+<p>Rust 提供了一个功能非常强大的 <strong>宏</strong> 体系，通过这些 宏，我们可以很方便的进行<strong>元编程</strong>。</p>
+<p>Rust 中的 <strong>宏</strong> 有点类似于 <strong>函数</strong>。它们跟函数还是有很大的区别的：</p>
+<ol>
+<li>宏以感叹号 (!) 结尾，正如上面我们所见到的那样。</li>
+<li>宏在编译时并不会生成一个 <strong>函数调用</strong>，而是直接对 宏 的源代码进行展开。这个和 C 语言 中宏是一样的。</li>
+</ol>
+<p>从某些方面说，我们可以将 <strong>宏</strong> 理解为 <strong>函数的加强版</strong></p>
+<h3 id="321">3.2.1 范例</h3>
+<p>下面的三行代码，演示了宏的使用</p>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="fm">println!</span><span class="p">();</span><span class="w"> </span><span class="c1">// 输出一个空行</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;hello &quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 新的一行输出 hello</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;format {} arguments&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;some&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 新的一行输出 format some arguments</span>
+</span></code></pre></div>
+<h2 id="33-rust">3.3 Rust 语言中的注释</h2>
+<p>注释有助于改善程序代码的可读性。注释类似于我们读书时做的评注。</p>
+<p>程序中的注释一般用于标注程序的一些基本信息，对一些难以理解的代码、类、函数或返回值进行说明等。</p>
+<p>Rust 编译器会在编译程序的时候 主动忽略 代码中的注释，也就是说，注释不会影响代码的编译和执行。</p>
+<p>Rust 语言支持以下两种注释，也是很多语言都有的默认注释方法</p>
+<h3 id="321_1">3.2.1 单行注释 / 行内注释</h3>
+<p>单行注释以 // 开头，之后说有的文字包括代码都属于注释。</p>
+<p>也就是说，以 // 开头，直到行尾的所有文字都属于注释，包括中间的任何 //</p>
+<p>例如:
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// 这个单行注释单独一行</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// 这是注释，但前面的 1+1; 是正常的代码</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1">// 1+1; // 这个整行也是注释，// 可以任意多个</span>
+</span></code></pre></div></p>
+<h3 id="322">3.2.2 多行注释 / 块注释</h3>
+<p>多行注释 就是可以跨越多行，当然也可以只有一行。</p>
+<p>多行注释以 / <em>开头，以</em> / 结尾。</p>
+<p>块注释中可以有任意数量的 /<em>，但是，一旦遇到</em> / 则表示 块注释结束</p>
+<p>例如:
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cm">/* 这是块注释 */</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="cm">/* 这</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="cm">        是</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="cm">        多行</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="cm">            注释 */</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="cm">/* /* /* </span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="cm">    这也是多行注释</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="cm">*/</span>
+</span></code></pre></div></p>
 
 
   

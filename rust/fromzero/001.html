@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#11-rust" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -993,9 +998,86 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          01-语言简介
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="001.html" class="md-nav__link md-nav__link--active">
         01-语言简介
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-rust" class="md-nav__link">
+    1.1 Rust 语言简介
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 应用程序及所采用的语言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-rust" class="md-nav__link">
+    1.3 为什么选择 Rust ?
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 为什么选择 Rust ?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    1.3.1 高性能
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132" class="md-nav__link">
+    1.3.2 编译时内存安全
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133" class="md-nav__link">
+    1.3.3 天生多线程安全运行程序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134-rust-web-assembly-wasm" class="md-nav__link">
+    1.3.4 Rust 语言支持 Web Assembly (WASM) 语言
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1425,6 +1507,69 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-rust" class="md-nav__link">
+    1.1 Rust 语言简介
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 应用程序及所采用的语言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-rust" class="md-nav__link">
+    1.3 为什么选择 Rust ?
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 为什么选择 Rust ?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    1.3.1 高性能
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132" class="md-nav__link">
+    1.3.2 编译时内存安全
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133" class="md-nav__link">
+    1.3.3 天生多线程安全运行程序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134-rust-web-assembly-wasm" class="md-nav__link">
+    1.3.4 Rust 语言支持 Web Assembly (WASM) 语言
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1443,7 +1588,42 @@
 
   <h1>01-语言简介</h1>
 
-
+<h2 id="11-rust">1.1 Rust 语言简介</h2>
+<p>Rust 是一门系统级别的编程语言。</p>
+<p>Rust 由 Graydon Hoare 开发并在被 Mozilla 实验室收购后发扬光大。</p>
+<h2 id="12">1.2 应用程序及所采用的语言</h2>
+<p>总所周知，Java 和 C# 语言 一般用于构建面向用户服务的软件。比如电子表格，文字处理器，Web 应用程序或移动应用程序等业务应用程序。</p>
+<p>至于面向机器的那些系统级别应用程序，因为对性能和并发由极高的要求，系统、软件以及软件平台所采用的语言几乎都是清一色的 C 语言 和 C++ 语言，比如它们操作系统，游戏引擎，编译器等。这些编程语言需要很大程度的硬件交互。</p>
+<p>系统级别和应用程序级别编程语言面临两个主要问题：</p>
+<ul>
+<li>难以写出高安全的语言，尤其是 C/C++ 指针带来的悬空指针，缓冲区溢出和内存泄漏等问题</li>
+<li>缺少语言级别的高并发特性。</li>
+</ul>
+<h2 id="13-rust">1.3 为什么选择 Rust ?</h2>
+<p>为什么选择 Rust ?</p>
+<p>估计我们能说出一大堆理由来，然而，对我来说，最大的理由就是 字节跳动公司的飞聊团队已经用上了 Rust 语言了。这意味着学好 Rust 语言就有机会找到高薪的工作。</p>
+<p>此外，正如 Rust 语言自己说的那样，Rust 语言有三大愿景：</p>
+<ul>
+<li>高安全</li>
+<li>高性能</li>
+<li>高并发</li>
+</ul>
+<p>Rust 语言旨在以简单的方式开发高度可靠和快速的软件。</p>
+<p>Rust 语言支持用现代语言特性来写一些系统级别乃至机器级别的程序。</p>
+<h3 id="131">1.3.1 高性能</h3>
+<p>高性能是所有语言的最高追求，Rust 也不例外。</p>
+<p>为了追求极致的性能，Rust 抛弃了 C/C++ 之外的语言都有的 垃圾回收器（ Garbage Collector (GC)）。</p>
+<p>也就是消除了垃圾回收机制带来的性能损耗。</p>
+<h3 id="132">1.3.2 编译时内存安全</h3>
+<p>Rust 虽然也有指针的概念，但这个概念被大大的弱化，因此它没有 C/C++ 那种悬空指针，缓冲区溢出和内存泄漏等等问题。</p>
+<h3 id="133">1.3.3 天生多线程安全运行程序</h3>
+<p>Rust 是为多线程高并发而设计的系统级别语言</p>
+<p>Rust 的 <strong>拥有者(ownership)</strong> 概念和 <strong>内存安全</strong> 规则使得它天生支持高并发，而且是支持没有数据竞争的高并发。</p>
+<h3 id="134-rust-web-assembly-wasm">1.3.4 Rust 语言支持 Web Assembly (WASM) 语言</h3>
+<p>Rust 的目标是成为高并发且高安全的系统级语言，但这并不代表它就不能开发 Web 应用。</p>
+<p>Rust 支持通过把代码编译成 <strong>Web Assembly (WASM)</strong> 语言从而能够在浏览器端以实现快速，可靠的运行。</p>
+<p><strong>Web Assembly (WASM)</strong> 语言是被设计用来在浏览器端/嵌入式设别上运行的，用于执行 CPU 计算密集型的语言。</p>
+<p>也就是说 <strong>Web Assembly (WASM) 语言</strong> 的目标是和 Javascript 一样能够在浏览器里运行，但因为是编译型，所以更高效。</p>
 
 
   

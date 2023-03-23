@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#21-windows-rust" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1007,9 +1012,45 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          02-开发环境配置
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="002.html" class="md-nav__link md-nav__link--active">
         02-开发环境配置
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-windows-rust" class="md-nav__link">
+    2.1 Windows 上安装 Rust
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-linux-mac" class="md-nav__link">
+    2.2 Linux 或 Mac 上安装
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1425,6 +1466,28 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-windows-rust" class="md-nav__link">
+    2.1 Windows 上安装 Rust
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-linux-mac" class="md-nav__link">
+    2.2 Linux 或 Mac 上安装
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1443,7 +1506,78 @@
 
   <h1>02-开发环境配置</h1>
 
-
+<p>Rust 语言的环境配置还是相对简单的，因为官方提供了 rustup 这个一步配置工具。rustup 是 Rust 官方推出的基于 终端/控制台/shell 的工具，可用于管理 Rust 版本和相关工具</p>
+<h2 id="21-windows-rust">2.1 Windows 上安装 Rust</h2>
+<p>Windows 上安装任何语言的开发环境都有一点复杂，Rust 也无法避免这一点：</p>
+<ol>
+<li>Windows 上运行 Rust 编译器需要 C++ 开发环境。</li>
+</ol>
+<p>我们推荐的做法是安装 Visual Studio 2013 或更高的版本。你可以点击 <a href="https://download.microsoft.com/download/2/5/5/255DCCB6-F364-4ED8-9758-EF0734CA86B8/vs2013.3_dskexp_ENU.iso">VS 2013 Express</a> 链接下载 Visual Studio 2013 并安装，详细的安装流程请参考 <a href="https://support.microsoft.com/zh-cn/help/2899270/visual-studio-2013-setup-common-issues-and-workarounds">Visual Studio 2013</a>。</p>
+<ol>
+<li>
+<p>点击 <a href="https://www.rust-lang.org/tools/install">Rust 安装工具</a> 下载 Windows 版本的 rustup-init.exe 工具。</p>
+</li>
+<li>
+<p>双击下载好的 rustup-init.exe 文件，然后你就会看到如下的界面。</p>
+</li>
+</ol>
+<p><img alt="" src="https://pic2.zhimg.com/80/v2-9d9098ebbd4471f84d49a34b71ef829d_1440w.webp" /></p>
+<ol>
+<li>
+<p>从上面的界面中我们可以看到三个安装选项，一般情况下我们选择默认，也就是1。 选择默认什么都不要做，直接按下 <strong>回车键</strong> 就好。按下回车键后，Rust 就会开始安装，一般情况下，只要静静地等待安装完成即可。</p>
+</li>
+<li>
+<p>安装完成后会出现如下界面。</p>
+</li>
+</ol>
+<p><img alt="" src="https://pic3.zhimg.com/80/v2-27e1feb70a573ea2e311848b20bb242e_1440w.webp" /></p>
+<ol>
+<li>从安装成功后的提示来看，Rust 被安装到目录 C:\Users{PC}.cargo\bin 里打开你自己的 C:\Users{PC}.cargo\bin 目录，可以看到下面的文件列表</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cargo-fmt.exe
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cargo.exe
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>rls.exe
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>rust-gdb.exe
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>rust-lldb.exe
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>rustc.exe<span class="w"> </span>//<span class="w"> </span>this<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>compiler<span class="w"> </span><span class="k">for</span><span class="w"> </span>rust
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>rustdoc.exe
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>rustfmt.exe
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>rustup.exe
+</span></code></pre></div>
+<p>我们简单的对上面的文件做个介绍</p>
+<ul>
+<li>
+<p>Cargo 是 Rust 的包管理器。类似于 Nodejs 中的 npm 或 Python 中的 pip 或者 PHP 中的 composer。 我们可以通过运行下面的命令来检查 Cargo 是否安装正确和已经安装的版本。
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>C:<span class="se">\U</span>sers<span class="se">\A</span>dmin&gt;cargo<span class="w"> </span>-V
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>cargo<span class="w"> </span><span class="m">1</span>.59.0<span class="w"> </span><span class="o">(</span>49d8809dc<span class="w"> </span><span class="m">2022</span>-02-10<span class="o">)</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>rustc 是 Rust 的编译器，类似于 Java 中的 Javac 或 C/C++ 中的 gcc。 我们可以通过下面的命令来检查 rustc 是否安装正确和已经安装的版本。
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>C:<span class="se">\U</span>sers<span class="se">\A</span>dmin&gt;rustc<span class="w"> </span>-V
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>rustc<span class="w"> </span><span class="m">1</span>.59.0<span class="w"> </span><span class="o">(</span>9d1b2106e<span class="w"> </span><span class="m">2022</span>-02-23<span class="o">)</span>
+</span></code></pre></div></p>
+</li>
+</ul>
+<h2 id="22-linux-mac">2.2 Linux 或 Mac 上安装</h2>
+<p>Linux 或 Mac 上安装 Rust 和 rustup 真的是再简单不过了，只要打开 终端 / Shell 输入下面的命令然后按下回车键</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span>https://sh.rustup.rs<span class="w"> </span>-sSf<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+</span></code></pre></div>
+<p>上面那段脚本命令<code>curl https://sh.rustup.rs -sSf | sh</code>会下载必须的脚本并开始安装 rustup 工具，同时会安装当前最新的稳定版的的 Rust。</p>
+<p>因为安装可能需要管理权限，因此可能会询问你的登陆密码。</p>
+<p>安装完成后 终端 / shell 中会出现一下文字</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Rust is installed now. Great!
+</span></code></pre></div>
+<p>上面这个安装命令会自动将 rustc 和 cargo 等命令添加到 <strong>PATH</strong> 路径中，我们只要重启终端 /shell 就能立即使用。</p>
+<p>如果你不想重启终端，那么你只需要运行下面的 shell 命令重新加载 <strong>环境变量</strong> 即可</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">source</span><span class="w"> </span><span class="nv">$HOME</span>/.cargo/env
+</span></code></pre></div>
+<p>或者，你可以运行下面的命令手动将 rust 的安装目录临时添加到 <strong>PATH</strong> 中</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">    </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.cargo/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+</span></code></pre></div>
+<blockquote>
+<p>注意: 因为安装过程中可能出现各种错误。如果你尝试编译 Rust 程序却输出链接器无法执行的错误时，意味着你的系统上未安装链接器，这个需要我们手动安装。</p>
+</blockquote>
 
 
   
