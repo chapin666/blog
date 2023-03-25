@@ -1649,204 +1649,202 @@
 <p>当然了，cargo 不仅仅是一个包管理器，它还是 Rust 的项目管理利器。</p>
 <h2 id="251-cargo">25.1 检查 cargo 是否安装和安装的版本</h2>
 <p>打开终端或命令行提示符或 Shell，输入下面的命令然后回车</p>
-<div class="language-text highlight"><pre><span></span><code>cargo --version
-</code></pre></div>
-<p>如果已经安装，则输出结果类似于</p>
-<div class="language-text highlight"><pre><span></span><code>cargo 1.35.0
-</code></pre></div>
+<p><div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cargo<span class="w"> </span>--version
+</span></code></pre></div>
+如果已经安装，则输出结果类似于</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cargo<span class="w"> </span><span class="m">1</span>.35.0
+</span></code></pre></div>
 <p>cargo 包管理器的版本和 Rust 语言是同步的。</p>
 <h2 id="252-cargo">25.2 cargo 的帮助信息</h2>
 <p>如果想要查看 cargo 的帮助信息或查看 cargo 提供了哪些命令和功能，可以在 终端 中输入 cargo 或 cargo -h 然后回车</p>
 <p>输出结果类似于</p>
-<div class="language-text highlight"><pre><span></span><code>Rust&#39;s package manager
-
-USAGE:
-    cargo [OPTIONS] [SUBCOMMAND]
-
-OPTIONS:
-    -V, --version           Print version info and exit
-        --list              List installed commands
-        --explain &lt;CODE&gt;    Run `rustc --explain CODE`
-    -v, --verbose           Use verbose output (-vv very verbose/build.rs output)
-    -q, --quiet             No output printed to stdout
-        --color &lt;WHEN&gt;      Coloring: auto, always, never
-        --frozen            Require Cargo.lock and cache are up to date
-        --locked            Require Cargo.lock is up to date
-    -Z &lt;FLAG&gt;...            Unstable (nightly-only) flags to Cargo, see &#39;cargo -Z help&#39; for details
-    -h, --help              Prints help information
-
-Some common cargo commands are (see all commands with --list):
-    build       Compile the current package
-    check       Analyze the current package and report errors, but don&#39;t build object files
-    clean       Remove the target directory
-    doc         Build this package&#39;s and its dependencies&#39; documentation
-    new         Create a new cargo package
-    init        Create a new cargo package in an existing directory
-    run         Run a binary or example of the local package
-    test        Run the tests
-    bench       Run the benchmarks
-    update      Update dependencies listed in Cargo.lock
-    search      Search registry for crates
-    publish     Package and upload this package to the registry
-    install     Install a Rust binary. Default location is $HOME/.cargo/bin
-    uninstall   Uninstall a Rust binary
-
-See &#39;cargo help &lt;command&gt;&#39; for more information on a specific command.
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Rust<span class="s1">&#39;s package manager</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="s1">USAGE:</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="s1">    cargo [OPTIONS] [SUBCOMMAND]</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="s1">OPTIONS:</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="s1">    -V, --version           Print version info and exit</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="s1">        --list              List installed commands</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="s1">        --explain &lt;CODE&gt;    Run `rustc --explain CODE`</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="s1">    -v, --verbose           Use verbose output (-vv very verbose/build.rs output)</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="s1">    -q, --quiet             No output printed to stdout</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="s1">        --color &lt;WHEN&gt;      Coloring: auto, always, never</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="s1">        --frozen            Require Cargo.lock and cache are up to date</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="s1">        --locked            Require Cargo.lock is up to date</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="s1">    -Z &lt;FLAG&gt;...            Unstable (nightly-only) flags to Cargo, see &#39;</span>cargo<span class="w"> </span>-Z<span class="w"> </span>help<span class="s1">&#39; for details</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="s1">    -h, --help              Prints help information</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="s1">Some common cargo commands are (see all commands with --list):</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="s1">    build       Compile the current package</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="s1">    check       Analyze the current package and report errors, but don&#39;</span>t<span class="w"> </span>build<span class="w"> </span>object<span class="w"> </span>files
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span>clean<span class="w">       </span>Remove<span class="w"> </span>the<span class="w"> </span>target<span class="w"> </span>directory
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span>doc<span class="w">         </span>Build<span class="w"> </span>this<span class="w"> </span>package<span class="s1">&#39;s and its dependencies&#39;</span><span class="w"> </span>documentation
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span>new<span class="w">         </span>Create<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>cargo<span class="w"> </span>package
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span>init<span class="w">        </span>Create<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>cargo<span class="w"> </span>package<span class="w"> </span><span class="k">in</span><span class="w"> </span>an<span class="w"> </span>existing<span class="w"> </span>directory
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">    </span>run<span class="w">         </span>Run<span class="w"> </span>a<span class="w"> </span>binary<span class="w"> </span>or<span class="w"> </span>example<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span><span class="nb">local</span><span class="w"> </span>package
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">    </span><span class="nb">test</span><span class="w">        </span>Run<span class="w"> </span>the<span class="w"> </span>tests
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">    </span>bench<span class="w">       </span>Run<span class="w"> </span>the<span class="w"> </span>benchmarks
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">    </span>update<span class="w">      </span>Update<span class="w"> </span>dependencies<span class="w"> </span>listed<span class="w"> </span><span class="k">in</span><span class="w"> </span>Cargo.lock
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">    </span>search<span class="w">      </span>Search<span class="w"> </span>registry<span class="w"> </span><span class="k">for</span><span class="w"> </span>crates
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">    </span>publish<span class="w">     </span>Package<span class="w"> </span>and<span class="w"> </span>upload<span class="w"> </span>this<span class="w"> </span>package<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>registry
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">    </span>install<span class="w">     </span>Install<span class="w"> </span>a<span class="w"> </span>Rust<span class="w"> </span>binary.<span class="w"> </span>Default<span class="w"> </span>location<span class="w"> </span>is<span class="w"> </span><span class="nv">$HOME</span>/.cargo/bin
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">    </span>uninstall<span class="w">   </span>Uninstall<span class="w"> </span>a<span class="w"> </span>Rust<span class="w"> </span>binary
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>See<span class="w"> </span><span class="s1">&#39;cargo help &lt;command&gt;&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>more<span class="w"> </span>information<span class="w"> </span>on<span class="w"> </span>a<span class="w"> </span>specific<span class="w"> </span>command.
+</span></code></pre></div>
 <h2 id="253-cargo">25.3 cargo 提供的命令</h2>
 <p>正如上面 cargo 帮助信息中所描述的那样，如果我们想要查看 cargo 提供的所有命令，可以直接在终端里输入</p>
-<div class="language-text highlight"><pre><span></span><code>cargo --list
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cargo<span class="w"> </span>--list
+</span></code></pre></div>
 <p>输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>Installed Commands:
-    bench                Execute all benchmarks of a local package
-    build                Compile a local package and all of its dependencies
-    check                Check a local package and all of its dependencies for errors
-    clean                Remove artifacts that cargo has generated in the past
-    clippy-preview       Checks a package to catch common mistakes and improve your Rust code.
-    doc                  Build a package&#39;s documentation
-    fetch                Fetch dependencies of a package from the network
-    fix                  Automatically fix lint warnings reported by rustc
-    generate-lockfile    Generate the lockfile for a package
-    git-checkout         Checkout a copy of a Git repository
-    init                 Create a new cargo package in an existing directory
-    install              Install a Rust binary. Default location is $HOME/.cargo/bin
-    locate-project       Print a JSON representation of a Cargo.toml file&#39;s location
-    login                Save an api token from the registry locally. If token is not specified, it will be read from stdin.
-    metadata             Output the resolved dependencies of a package, the concrete used versions including overrides, in machine-readable format
-    new                  Create a new cargo package at &lt;path&gt;
-    owner                Manage the owners of a crate on the registry
-    package              Assemble the local package into a distributable tarball
-    pkgid                Print a fully qualified package specification
-    publish              Upload a package to the registry
-    read-manifest        Print a JSON representation of a Cargo.toml manifest.
-    run                  Run a binary or example of the local package
-    rustc                Compile a package and all of its dependencies
-    rustdoc              Build a package&#39;s documentation, using specified custom flags.
-    search               Search packages in crates.io
-    test                 Execute all unit and integration tests and build examples of a local package
-    uninstall            Remove a Rust binary
-    update               Update dependencies as recorded in the local lock file
-    verify-project       Check correctness of crate manifest
-    version              Show version information
-    yank                 Remove a pushed crate from the index
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Installed<span class="w"> </span>Commands:
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>bench<span class="w">                </span>Execute<span class="w"> </span>all<span class="w"> </span>benchmarks<span class="w"> </span>of<span class="w"> </span>a<span class="w"> </span><span class="nb">local</span><span class="w"> </span>package
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>build<span class="w">                </span>Compile<span class="w"> </span>a<span class="w"> </span><span class="nb">local</span><span class="w"> </span>package<span class="w"> </span>and<span class="w"> </span>all<span class="w"> </span>of<span class="w"> </span>its<span class="w"> </span>dependencies
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>check<span class="w">                </span>Check<span class="w"> </span>a<span class="w"> </span><span class="nb">local</span><span class="w"> </span>package<span class="w"> </span>and<span class="w"> </span>all<span class="w"> </span>of<span class="w"> </span>its<span class="w"> </span>dependencies<span class="w"> </span><span class="k">for</span><span class="w"> </span>errors
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>clean<span class="w">                </span>Remove<span class="w"> </span>artifacts<span class="w"> </span>that<span class="w"> </span>cargo<span class="w"> </span>has<span class="w"> </span>generated<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>past
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>clippy-preview<span class="w">       </span>Checks<span class="w"> </span>a<span class="w"> </span>package<span class="w"> </span>to<span class="w"> </span>catch<span class="w"> </span>common<span class="w"> </span>mistakes<span class="w"> </span>and<span class="w"> </span>improve<span class="w"> </span>your<span class="w"> </span>Rust<span class="w"> </span>code.
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>doc<span class="w">                  </span>Build<span class="w"> </span>a<span class="w"> </span>package<span class="s1">&#39;s documentation</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="s1">fetch                Fetch dependencies of a package from the network</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="s1">fix                  Automatically fix lint warnings reported by rustc</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="s1">generate-lockfile    Generate the lockfile for a package</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="s1">git-checkout         Checkout a copy of a Git repository</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="s1">init                 Create a new cargo package in an existing directory</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="s1">install              Install a Rust binary. Default location is $HOME/.cargo/bin</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="s1">locate-project       Print a JSON representation of a Cargo.toml file&#39;</span>s<span class="w"> </span>location
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>login<span class="w">                </span>Save<span class="w"> </span>an<span class="w"> </span>api<span class="w"> </span>token<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>registry<span class="w"> </span>locally.<span class="w"> </span>If<span class="w"> </span>token<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>specified,<span class="w"> </span>it<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span><span class="nb">read</span><span class="w"> </span>from<span class="w"> </span>stdin.
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>metadata<span class="w">             </span>Output<span class="w"> </span>the<span class="w"> </span>resolved<span class="w"> </span>dependencies<span class="w"> </span>of<span class="w"> </span>a<span class="w"> </span>package,<span class="w"> </span>the<span class="w"> </span>concrete<span class="w"> </span>used<span class="w"> </span>versions<span class="w"> </span>including<span class="w"> </span>overrides,<span class="w"> </span><span class="k">in</span><span class="w"> </span>machine-readable<span class="w"> </span>format
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>new<span class="w">                  </span>Create<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>cargo<span class="w"> </span>package<span class="w"> </span>at<span class="w"> </span>&lt;path&gt;
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>owner<span class="w">                </span>Manage<span class="w"> </span>the<span class="w"> </span>owners<span class="w"> </span>of<span class="w"> </span>a<span class="w"> </span>crate<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>registry
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>package<span class="w">              </span>Assemble<span class="w"> </span>the<span class="w"> </span><span class="nb">local</span><span class="w"> </span>package<span class="w"> </span>into<span class="w"> </span>a<span class="w"> </span>distributable<span class="w"> </span>tarball
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>pkgid<span class="w">                </span>Print<span class="w"> </span>a<span class="w"> </span>fully<span class="w"> </span>qualified<span class="w"> </span>package<span class="w"> </span>specification
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>publish<span class="w">              </span>Upload<span class="w"> </span>a<span class="w"> </span>package<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>registry
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>read-manifest<span class="w">        </span>Print<span class="w"> </span>a<span class="w"> </span>JSON<span class="w"> </span>representation<span class="w"> </span>of<span class="w"> </span>a<span class="w"> </span>Cargo.toml<span class="w"> </span>manifest.
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>run<span class="w">                  </span>Run<span class="w"> </span>a<span class="w"> </span>binary<span class="w"> </span>or<span class="w"> </span>example<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span><span class="nb">local</span><span class="w"> </span>package
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>rustc<span class="w">                </span>Compile<span class="w"> </span>a<span class="w"> </span>package<span class="w"> </span>and<span class="w"> </span>all<span class="w"> </span>of<span class="w"> </span>its<span class="w"> </span>dependencies
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>rustdoc<span class="w">              </span>Build<span class="w"> </span>a<span class="w"> </span>package<span class="err">&#39;</span>s<span class="w"> </span>documentation,<span class="w"> </span>using<span class="w"> </span>specified<span class="w"> </span>custom<span class="w"> </span>flags.
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>search<span class="w">               </span>Search<span class="w"> </span>packages<span class="w"> </span><span class="k">in</span><span class="w"> </span>crates.io
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="nb">test</span><span class="w">                 </span>Execute<span class="w"> </span>all<span class="w"> </span>unit<span class="w"> </span>and<span class="w"> </span>integration<span class="w"> </span>tests<span class="w"> </span>and<span class="w"> </span>build<span class="w"> </span>examples<span class="w"> </span>of<span class="w"> </span>a<span class="w"> </span><span class="nb">local</span><span class="w"> </span>package
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>uninstall<span class="w">            </span>Remove<span class="w"> </span>a<span class="w"> </span>Rust<span class="w"> </span>binary
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>update<span class="w">               </span>Update<span class="w"> </span>dependencies<span class="w"> </span>as<span class="w"> </span>recorded<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span><span class="nb">local</span><span class="w"> </span>lock<span class="w"> </span>file
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>verify-project<span class="w">       </span>Check<span class="w"> </span>correctness<span class="w"> </span>of<span class="w"> </span>crate<span class="w"> </span>manifest
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>version<span class="w">              </span>Show<span class="w"> </span>version<span class="w"> </span>information
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>yank<span class="w">                 </span>Remove<span class="w"> </span>a<span class="w"> </span>pushed<span class="w"> </span>crate<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>index
+</span></code></pre></div>
 <p>命令很多，我们就不逐一介绍了，挑几个常用的命令介绍下</p>
 <p><img alt="" src="https://pic1.zhimg.com/v2-9109d959bb0cf88cb931a2833464160c_b.jpg" /></p>
-<p><img alt="" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='1184' height='544'&gt;&lt;/svg&gt;" /></p>
 <p>如果你对某个命令不甚熟悉，可以直接使用 cargo help 语法显示命令的帮助信息。</p>
 <p>比如要详细了解 new 命令，可以直接输入 cargo help new，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>cargo-new 
-Create a new cargo package at &lt;path&gt;
-
-USAGE:
-    cargo new [OPTIONS] &lt;path&gt;
-
-OPTIONS:
-    -q, --quiet                  No output printed to stdout
-        --registry &lt;REGISTRY&gt;    Registry to use
-        --vcs &lt;VCS&gt;              Initialize a new repository for the given version control system (git, hg, pijul, or
-                                 fossil) or do not initialize any version control at all (none), overriding a global
-                                 configuration. [possible values: git, hg, pijul, fossil, none]
-        --bin                    Use a binary (application) template [default]
-        --lib                    Use a library template
-        --edition &lt;YEAR&gt;         Edition to set for the crate generated [possible values: 2015, 2018]
-        --name &lt;NAME&gt;            Set the resulting package name, defaults to the directory name
-    -v, --verbose                Use verbose output (-vv very verbose/build.rs output)
-        --color &lt;WHEN&gt;           Coloring: auto, always, never
-        --frozen                 Require Cargo.lock and cache are up to date
-        --locked                 Require Cargo.lock is up to date
-    -Z &lt;FLAG&gt;...                 Unstable (nightly-only) flags to Cargo, see &#39;cargo -Z help&#39; for details
-    -h, --help                   Prints help information
-
-ARGS:
-    &lt;path&gt;
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>cargo-new<span class="w"> </span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Create<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>cargo<span class="w"> </span>package<span class="w"> </span>at<span class="w"> </span>&lt;path&gt;
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>USAGE:
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span>cargo<span class="w"> </span>new<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>&lt;path&gt;
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>OPTIONS:
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span>-q,<span class="w"> </span>--quiet<span class="w">                  </span>No<span class="w"> </span>output<span class="w"> </span>printed<span class="w"> </span>to<span class="w"> </span>stdout
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">        </span>--registry<span class="w"> </span>&lt;REGISTRY&gt;<span class="w">    </span>Registry<span class="w"> </span>to<span class="w"> </span>use
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">        </span>--vcs<span class="w"> </span>&lt;VCS&gt;<span class="w">              </span>Initialize<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>repository<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>given<span class="w"> </span>version<span class="w"> </span>control<span class="w"> </span>system<span class="w"> </span><span class="o">(</span>git,<span class="w"> </span>hg,<span class="w"> </span>pijul,<span class="w"> </span>or
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">                                    </span>fossil<span class="o">)</span><span class="w"> </span>or<span class="w"> </span><span class="k">do</span><span class="w"> </span>not<span class="w"> </span>initialize<span class="w"> </span>any<span class="w"> </span>version<span class="w"> </span>control<span class="w"> </span>at<span class="w"> </span>all<span class="w"> </span><span class="o">(</span>none<span class="o">)</span>,<span class="w"> </span>overriding<span class="w"> </span>a<span class="w"> </span>global
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">                                    </span>configuration.<span class="w"> </span><span class="o">[</span>possible<span class="w"> </span>values:<span class="w"> </span>git,<span class="w"> </span>hg,<span class="w"> </span>pijul,<span class="w"> </span>fossil,<span class="w"> </span>none<span class="o">]</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">        </span>--bin<span class="w">                    </span>Use<span class="w"> </span>a<span class="w"> </span>binary<span class="w"> </span><span class="o">(</span>application<span class="o">)</span><span class="w"> </span>template<span class="w"> </span><span class="o">[</span>default<span class="o">]</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">        </span>--lib<span class="w">                    </span>Use<span class="w"> </span>a<span class="w"> </span>library<span class="w"> </span>template
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">        </span>--edition<span class="w"> </span>&lt;YEAR&gt;<span class="w">         </span>Edition<span class="w"> </span>to<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>crate<span class="w"> </span>generated<span class="w"> </span><span class="o">[</span>possible<span class="w"> </span>values:<span class="w"> </span><span class="m">2015</span>,<span class="w"> </span><span class="m">2018</span><span class="o">]</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">        </span>--name<span class="w"> </span>&lt;NAME&gt;<span class="w">            </span>Set<span class="w"> </span>the<span class="w"> </span>resulting<span class="w"> </span>package<span class="w"> </span>name,<span class="w"> </span>defaults<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>directory<span class="w"> </span>name
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span>-v,<span class="w"> </span>--verbose<span class="w">                </span>Use<span class="w"> </span>verbose<span class="w"> </span>output<span class="w"> </span><span class="o">(</span>-vv<span class="w"> </span>very<span class="w"> </span>verbose/build.rs<span class="w"> </span>output<span class="o">)</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">        </span>--color<span class="w"> </span>&lt;WHEN&gt;<span class="w">           </span>Coloring:<span class="w"> </span>auto,<span class="w"> </span>always,<span class="w"> </span>never
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">        </span>--frozen<span class="w">                 </span>Require<span class="w"> </span>Cargo.lock<span class="w"> </span>and<span class="w"> </span>cache<span class="w"> </span>are<span class="w"> </span>up<span class="w"> </span>to<span class="w"> </span>date
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">        </span>--locked<span class="w">                 </span>Require<span class="w"> </span>Cargo.lock<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span>to<span class="w"> </span>date
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">    </span>-Z<span class="w"> </span>&lt;FLAG&gt;...<span class="w">                 </span>Unstable<span class="w"> </span><span class="o">(</span>nightly-only<span class="o">)</span><span class="w"> </span>flags<span class="w"> </span>to<span class="w"> </span>Cargo,<span class="w"> </span>see<span class="w"> </span><span class="s1">&#39;cargo -Z help&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>details
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">    </span>-h,<span class="w"> </span>--help<span class="w">                   </span>Prints<span class="w"> </span><span class="nb">help</span><span class="w"> </span>information
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>ARGS:
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">    </span>&lt;path&gt;
+</span></code></pre></div>
 <h2 id="254-cargo-rust">25.4 cargo 创建 Rust 项目</h2>
 <p>作为包管理器，cargo 可以帮助我们下载第三方库。但这仅仅是 cargo 功能的冰山一角。</p>
 <p>我们还可以使用 cargo 来构建自己的 库，然后发布到 Cargo 的官方仓库中。</p>
 <p>cargo 可以创建两种类型的项目：<strong>可执行的二进制程序</strong> 和 <strong>库</strong>。</p>
 <p>如果要创建一个 可执行的二进制程序，可以使用下面的 cargo new 命令创建项目</p>
-<div class="language-text highlight"><pre><span></span><code>cargo new project_name --bin
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>cargo<span class="w"> </span>new<span class="w"> </span>project_name<span class="w"> </span>--bin
+</span></code></pre></div>
 <p>如果要创建一个 库，则可以使用下面的 cargo new 命令。</p>
-<div class="language-text highlight"><pre><span></span><code>cargo new project_name --lib
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cargo<span class="w"> </span>new<span class="w"> </span>project_name<span class="w"> </span>--lib
+</span></code></pre></div>
 <h2 id="255-cargo">25.5 范例： 使用 cargo 创建并构建一个完整的二进制可执行程序项目</h2>
 <p>创建项目、安装依赖、编译项目是 cargo 作为包管理器的三个最重要的功能。</p>
 <p>下面我们就以一个简单的游戏：猜数字 来演示下如何使用 cargo 创建并编译项目。</p>
 <h3 id="_1">一、 创建项目目录</h3>
 <p>打开终端或命令行提示符或 Shell 并进入到你想放项目的目录下。</p>
 <p>然后输入命令 cargo new guess-game-app --bin，如果不出意外就会输出下面的提示</p>
-<div class="language-text highlight"><pre><span></span><code>$ cargo new guess-game-app --bin
-     Created binary (application) `guess-game-app` package
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>cargo<span class="w"> </span>new<span class="w"> </span>guess-game-app<span class="w"> </span>--bin
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">        </span>Created<span class="w"> </span>binary<span class="w"> </span><span class="o">(</span>application<span class="o">)</span><span class="w"> </span><span class="sb">`</span>guess-game-app<span class="sb">`</span><span class="w"> </span>package
+</span></code></pre></div>
 <p>出现上面的提示说明项目创建成功，同时该命令会在当前目录下创建一个新的目录 guess-game-app 并创建一些必要的文件</p>
-<div class="language-text highlight"><pre><span></span><code>$ tree guess-game-app/
-guess-game-app/
-├── Cargo.toml
-└── src
-    └── main.rs
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>tree<span class="w"> </span>guess-game-app/
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>guess-game-app/
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>├──<span class="w"> </span>Cargo.toml
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>└──<span class="w"> </span>src
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span>└──<span class="w"> </span>main.rs
+</span></code></pre></div>
 <p>通过上面的篇幅可知：cargo new 命令用于创建一个新项目，--bin 选项用于指示当前项目是一个 可执行的二进制程序 项目。</p>
 <blockquote>
 <p>在 Cargo 中，通常把一个项目称之为 crates，but 我也不理解为啥...  </p>
 </blockquote>
-<p>Rust 官方为 cargo 包管理器提供了中央托管网站。网站地址为 <a href="https://link.zhihu.com/?target=https%3A//crates.io/">https://crates.io/</a>。 我们可以从该网站上找到一些我们需要的第三方库或者一些有用的第三方项目。</p>
+<p>Rust 官方为 cargo 包管理器提供了中央托管网站。网站地址为 <a href="https://crates.io/">https://crates.io/</a>。 我们可以从该网站上找到一些我们需要的第三方库或者一些有用的第三方项目。</p>
 <h3 id="_2">二、添加项目需要的第三方依赖库</h3>
 <p>我们的 <strong>猜数字</strong> 游戏需要生成 随机数。 但是 Rust 语言核心和 Rust 标准库都没有提供生成随机数的的方法或结构体。</p>
-<p>我们只能借助于 <a href="https://link.zhihu.com/?target=https%3A//crates.io/">https://crates.io/</a> 上其它开发者提供的第三方库或 crates。</p>
-<p>我们可以打开网站 <a href="https://link.zhihu.com/?target=http%3A//crates.io">http://crates.io</a> 并在顶部的搜索中输入 rand 然后回车来查找第三方随机数生成库。</p>
+<p>我们只能借助于 <a href="https://crates.io/">https://crates.io/</a> 上其它开发者提供的第三方库或 crates。</p>
+<p>我们可以打开网站 <a href="http://crates.io">http://crates.io</a> 并在顶部的搜索中输入 rand 然后回车来查找第三方随机数生成库。</p>
 <p>从搜索的结果来看，由很多和随机数生成的相关库，不过我们只使用 rand。</p>
-<p>点击搜索结果中的 rand 会跳转到 <a href="https://link.zhihu.com/?target=https%3A//crates.io/crates/rand">https://crates.io/crates/rand</a>。</p>
+<p>点击搜索结果中的 rand 会跳转到 <a href="https://crates.io/crates/rand">https://crates.io/crates/rand</a>。</p>
 <p>下图是我们需要的 <strong>随机数生成库</strong> rand 的基本信息截图。</p>
 <p><img alt="" src="https://pic2.zhimg.com/v2-06e7974e1f31b2c33ef6e948a36be72d_b.jpg" /></p>
-<p><img alt="" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='617' height='444'&gt;&lt;/svg&gt;" /></p>
 <p>了解了 rand 的基本信息后，我们就可以修改 Cargo.toml 添加 rand 依赖了。</p>
 <p>准确的说就是在 [dependencies] 节中添加 rand = "0.6.5"。</p>
 <p>编辑完成后的文件内容如下</p>
-<div class="language-text highlight"><pre><span></span><code>[package]
-name = &quot;guess-game-app&quot;
-version = &quot;0.1.0&quot;
-authors = [&quot;** &lt;noreply@xxx.com&gt;&quot;]
-edition = &quot;2018&quot;
-
-[dependencies]
-rand = &quot;0.6.5&quot;
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">[</span><span class="n">package</span><span class="p">]</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;guess-game-app&quot;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.1.0&quot;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;** &lt;noreply@xxx.com&gt;&quot;</span><span class="p">]</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">edition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2018&quot;</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="p">[</span><span class="n">dependencies</span><span class="p">]</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="n">rand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.6.5&quot;</span>
+</span></code></pre></div>
 <h3 id="_3">三、 先预编译项目</h3>
 <p>对于 Rust / C / C++ 这种静态语言，先预编译一下应该是一种习惯。</p>
 <p>因为预编译的时候会告诉我们项目配置是否正确，同时会下载第三方库，这样就可以 自动提示 了。</p>
 <p>使用 cargo 创建的项目，我们可以在终端里输入 cargo build 来预编译下项目。</p>
 <p>输出一般如下</p>
-<div class="language-text highlight"><pre><span></span><code>Updating crates.io index
-  Downloaded rand v0.6.5
-  Downloaded libc v0.2.58
-  Downloaded rand_core v0.4.0
-  Downloaded rand_hc v0.1.0
-  Downloaded rand_chacha v0.1.1
-  Downloaded rand_isaac v0.1.1
-  Downloaded rand_jitter v0.1.4
-  Downloaded rand_os v0.1.3
-  Downloaded rand_xorshift v0.1.1
-  Downloaded rand_pcg v0.1.2
-  Downloaded autocfg v0.1.4
-  Downloaded rand_core v0.3.1
-   Compiling libc v0.2.58
-   Compiling autocfg v0.1.4
-   Compiling rand_core v0.4.0
-   Compiling rand_core v0.3.1
-   Compiling rand_isaac v0.1.1
-   Compiling rand_xorshift v0.1.1
-   Compiling rand_hc v0.1.0
-   Compiling rand_pcg v0.1.2
-   Compiling rand_chacha v0.1.1
-   Compiling rand v0.6.5
-   Compiling rand_os v0.1.3
-   Compiling rand_jitter v0.1.4
-   Compiling guess-game-app v0.1.0 (/Users/Admin/Downloads/guess-game-app)
-    Finished dev [unoptimized + debuginfo] target(s) in 45.77s
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Updating<span class="w"> </span>crates.io<span class="w"> </span>index
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span>Downloaded<span class="w"> </span>rand<span class="w"> </span>v0.6.5
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span>Downloaded<span class="w"> </span>libc<span class="w"> </span>v0.2.58
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span>Downloaded<span class="w"> </span>rand_core<span class="w"> </span>v0.4.0
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span>Downloaded<span class="w"> </span>rand_hc<span class="w"> </span>v0.1.0
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span>Downloaded<span class="w"> </span>rand_chacha<span class="w"> </span>v0.1.1
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span>Downloaded<span class="w"> </span>rand_isaac<span class="w"> </span>v0.1.1
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span>Downloaded<span class="w"> </span>rand_jitter<span class="w"> </span>v0.1.4
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span>Downloaded<span class="w"> </span>rand_os<span class="w"> </span>v0.1.3
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">    </span>Downloaded<span class="w"> </span>rand_xorshift<span class="w"> </span>v0.1.1
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">    </span>Downloaded<span class="w"> </span>rand_pcg<span class="w"> </span>v0.1.2
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">    </span>Downloaded<span class="w"> </span>autocfg<span class="w"> </span>v0.1.4
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">    </span>Downloaded<span class="w"> </span>rand_core<span class="w"> </span>v0.3.1
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">    </span>Compiling<span class="w"> </span>libc<span class="w"> </span>v0.2.58
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">    </span>Compiling<span class="w"> </span>autocfg<span class="w"> </span>v0.1.4
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">    </span>Compiling<span class="w"> </span>rand_core<span class="w"> </span>v0.4.0
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">    </span>Compiling<span class="w"> </span>rand_core<span class="w"> </span>v0.3.1
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">    </span>Compiling<span class="w"> </span>rand_isaac<span class="w"> </span>v0.1.1
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="w">    </span>Compiling<span class="w"> </span>rand_xorshift<span class="w"> </span>v0.1.1
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="w">    </span>Compiling<span class="w"> </span>rand_hc<span class="w"> </span>v0.1.0
+</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="w">    </span>Compiling<span class="w"> </span>rand_pcg<span class="w"> </span>v0.1.2
+</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="w">    </span>Compiling<span class="w"> </span>rand_chacha<span class="w"> </span>v0.1.1
+</span><span id="__span-11-23"><a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="w">    </span>Compiling<span class="w"> </span>rand<span class="w"> </span>v0.6.5
+</span><span id="__span-11-24"><a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a><span class="w">    </span>Compiling<span class="w"> </span>rand_os<span class="w"> </span>v0.1.3
+</span><span id="__span-11-25"><a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a><span class="w">    </span>Compiling<span class="w"> </span>rand_jitter<span class="w"> </span>v0.1.4
+</span><span id="__span-11-26"><a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a><span class="w">    </span>Compiling<span class="w"> </span>guess-game-app<span class="w"> </span>v0.1.0<span class="w"> </span><span class="o">(</span>/Users/Admin/Downloads/guess-game-app<span class="o">)</span>
+</span><span id="__span-11-27"><a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a><span class="w">    </span>Finished<span class="w"> </span>dev<span class="w"> </span><span class="o">[</span>unoptimized<span class="w"> </span>+<span class="w"> </span>debuginfo<span class="o">]</span><span class="w"> </span>target<span class="o">(</span>s<span class="o">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">45</span>.77s
+</span></code></pre></div>
 <p>从预编译输出的信息中我们可以看到：rand 第三方库和相关的依赖都会自动被下载。</p>
 <h3 id="_4">四、 理解 猜数字 游戏逻辑</h3>
 <p>动手码代码之前，我们先来分析下 猜数字 游戏的游戏逻辑。</p>
@@ -1873,69 +1871,69 @@ rand = &quot;0.6.5&quot;
 <h3 id="mainrs">五、 修改 main.rs 文件完善游戏逻辑</h3>
 <p>猜数字 游戏逻辑很简单，前面我们已经详细的分析过了，接下来我们只要实现上面的逻辑即可。</p>
 <p>代码我们就不做做介绍了，直接复制粘贴就好</p>
-<div class="language-text highlight"><pre><span></span><code>use std::io;
-extern crate rand; // 导入当前项目下的 rand 第三方库
-
-use rand::random;
-fn get_guess() -&gt; u8 {
-   loop {
-      println!(&quot;Input guess&quot;) ;
-      let mut guess = String::new();
-      io::stdin().read_line(&amp;mut guess)
-         .expect(&quot;could not read from stdin&quot;);
-      match guess.trim().parse::&lt;u8&gt;(){ // 需要去除输入首尾的空白
-         Ok(v) =&gt; return v,
-         Err(e) =&gt; println!(&quot;could not understand input {}&quot;,e)
-      }
-   }
-}
-fn handle_guess(guess:u8,correct:u8)-&gt; bool {
-   if guess &lt; correct {
-      println!(&quot;Too low&quot;);
-      false
-
-   } else if guess&gt; correct {
-      println!(&quot;Too high&quot;);
-      false
-   } else {
-      println!(&quot;You go it ..&quot;);
-      true
-   }
-}
-fn main() {
-   println!(&quot;Welcome to no guessing game&quot;);
-
-   let correct:u8 = random();
-   println!(&quot;correct value is {}&quot;,correct);
-   loop {
-      let guess = get_guess();
-      if handle_guess(guess,correct){
-         break;
-      }
-   }
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">io</span><span class="p">;</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">extern</span><span class="w"> </span><span class="k">crate</span><span class="w"> </span><span class="n">rand</span><span class="p">;</span><span class="w"> </span><span class="c1">// 导入当前项目下的 rand 第三方库</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="k">use</span><span class="w"> </span><span class="n">rand</span>::<span class="n">random</span><span class="p">;</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="k">fn</span> <span class="nf">get_guess</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="kt">u8</span> <span class="p">{</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="k">loop</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Input guess&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">guess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">new</span><span class="p">();</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">        </span><span class="n">io</span>::<span class="n">stdin</span><span class="p">().</span><span class="n">read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">guess</span><span class="p">)</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">            </span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;could not read from stdin&quot;</span><span class="p">);</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">        </span><span class="k">match</span><span class="w"> </span><span class="n">guess</span><span class="p">.</span><span class="n">trim</span><span class="p">().</span><span class="n">parse</span>::<span class="o">&lt;</span><span class="kt">u8</span><span class="o">&gt;</span><span class="p">(){</span><span class="w"> </span><span class="c1">// 需要去除输入首尾的空白</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">            </span><span class="nb">Ok</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">v</span><span class="p">,</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">            </span><span class="nb">Err</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;could not understand input {}&quot;</span><span class="p">,</span><span class="n">e</span><span class="p">)</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="p">}</span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="k">fn</span> <span class="nf">handle_guess</span><span class="p">(</span><span class="n">guess</span>:<span class="kt">u8</span><span class="p">,</span><span class="n">correct</span>:<span class="kt">u8</span><span class="p">)</span>-&gt; <span class="kt">bool</span> <span class="p">{</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">guess</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">correct</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Too low&quot;</span><span class="p">);</span>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">        </span><span class="kc">false</span>
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">guess</span><span class="o">&gt;</span><span class="w"> </span><span class="n">correct</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Too high&quot;</span><span class="p">);</span>
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="w">        </span><span class="kc">false</span>
+</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;You go it ..&quot;</span><span class="p">);</span>
+</span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a><span class="w">        </span><span class="kc">true</span>
+</span><span id="__span-12-28"><a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-12-29"><a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a><span class="p">}</span>
+</span><span id="__span-12-30"><a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-31"><a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Welcome to no guessing game&quot;</span><span class="p">);</span>
+</span><span id="__span-12-32"><a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>
+</span><span id="__span-12-33"><a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">correct</span>:<span class="kt">u8</span> <span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">();</span>
+</span><span id="__span-12-34"><a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;correct value is {}&quot;</span><span class="p">,</span><span class="n">correct</span><span class="p">);</span>
+</span><span id="__span-12-35"><a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a><span class="w">    </span><span class="k">loop</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-36"><a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">guess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_guess</span><span class="p">();</span>
+</span><span id="__span-12-37"><a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">handle_guess</span><span class="p">(</span><span class="n">guess</span><span class="p">,</span><span class="n">correct</span><span class="p">){</span>
+</span><span id="__span-12-38"><a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-12-39"><a id="__codelineno-12-39" name="__codelineno-12-39" href="#__codelineno-12-39"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-12-40"><a id="__codelineno-12-40" name="__codelineno-12-40" href="#__codelineno-12-40"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-12-41"><a id="__codelineno-12-41" name="__codelineno-12-41" href="#__codelineno-12-41"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="_5">六、编译项目并运行可执行文件</h3>
 <p>我们可以在 终端 中输入命令 cargo run 编译并运行我们的猜数字游戏。</p>
 <p>如果没有出现任何错误，那么我们就可以简单的来玩几盘，哈哈</p>
-<div class="language-text highlight"><pre><span></span><code>Compiling guess-game-app v0.1.0 (/Users/Admin/Downloads/guess-game-app)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.67s
-     Running `target/debug/guess-game-app`
-Welcome to no guessing game
-correct value is 145
-Input guess
-20
-Too low
-Input guess
-100
-Too low
-Input guess
-97
-Too low
-Input guess
-145
-You go it ..
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="w">    </span>Compiling<span class="w"> </span>guess-game-app<span class="w"> </span>v0.1.0<span class="w"> </span><span class="o">(</span>/Users/Admin/Downloads/guess-game-app<span class="o">)</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">        </span>Finished<span class="w"> </span>dev<span class="w"> </span><span class="o">[</span>unoptimized<span class="w"> </span>+<span class="w"> </span>debuginfo<span class="o">]</span><span class="w"> </span>target<span class="o">(</span>s<span class="o">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.67s
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">         </span>Running<span class="w"> </span><span class="sb">`</span>target/debug/guess-game-app<span class="sb">`</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span>Welcome<span class="w"> </span>to<span class="w"> </span>no<span class="w"> </span>guessing<span class="w"> </span>game
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span>correct<span class="w"> </span>value<span class="w"> </span>is<span class="w"> </span><span class="m">145</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span>Input<span class="w"> </span>guess
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">    </span><span class="m">20</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span>Too<span class="w"> </span>low
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">    </span>Input<span class="w"> </span>guess
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="m">100</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span>Too<span class="w"> </span>low
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span>Input<span class="w"> </span>guess
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">    </span><span class="m">97</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">    </span>Too<span class="w"> </span>low
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">    </span>Input<span class="w"> </span>guess
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">    </span><span class="m">145</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">    </span>You<span class="w"> </span>go<span class="w"> </span>it<span class="w"> </span>..
+</span></code></pre></div>
 <p>哈哈，其实我们是有点作弊嫌疑，因为不提示结果，要猜中得很长的逻辑</p>
 
 
