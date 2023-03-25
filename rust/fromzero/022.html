@@ -1662,69 +1662,69 @@
 <h2 id="221-rust">22.1 Rust 语言中的泛型</h2>
 <p>Rust 使用使用 语法来实现泛型的东西指定数据类型。 其中 <em>T</em> 可以是任意数据类型。</p>
 <p>例如下面的两个类型</p>
-<div class="language-text highlight"><pre><span></span><code>age: i32
-age: String
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>age: i32
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>age: String
+</span></code></pre></div>
 <p>使用泛型，则可以直接声明为</p>
-<div class="language-text highlight"><pre><span></span><code>age:T
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">age</span>:<span class="nc">T</span>
+</span></code></pre></div>
 <p>然后在使用过程中指定 <em>T</em> 的类型为 <em>i32</em> 或 <em>String</em> 即可。</p>
 <h2 id="222">22.2 泛型集合</h2>
 <p>日常使用过程中，我们最常见的泛型应用莫过于 <strong>集合 ( collection )</strong> 了。</p>
 <p>比如我们一直在使用的向量 Vec。它可以是一个字符串向量，也可以是一个整形向量。</p>
 <p>下面的代码，我们声明了一个整型向量</p>
-<div class="language-text highlight"><pre><span></span><code>fn main(){
-   let mut vector_integer: Vec&lt;i32&gt; = vec![20,30];
-   vector_integer.push(40);
-   println!(&quot;{:?}&quot;,vector_integer);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">(){</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">vector_integer</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">];</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">   </span><span class="n">vector_integer</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">vector_integer</span><span class="p">);</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 范例，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>[20, 30, 40]
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">[</span><span class="m">20</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span><span class="m">40</span><span class="o">]</span>
+</span></code></pre></div>
 <p>如果向整型向量传递一个非整型参数，则会报错</p>
-<div class="language-text highlight"><pre><span></span><code>fn main() {
-   let mut vector_integer: Vec&lt;i32&gt; = vec![20,30];
-   vector_integer.push(40);
-   vector_integer.push(&quot;hello&quot;); 
-   //error[E0308]: 类型不匹配
-   println!(&quot;{:?}&quot;,vector_integer);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">vector_integer</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">];</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">   </span><span class="n">vector_integer</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">   </span><span class="n">vector_integer</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">   </span><span class="c1">//error[E0308]: 类型不匹配</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">vector_integer</span><span class="p">);</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>上面的代码中可以看出，整型的向量只能添加整型的参数，如果尝试添加一个字符串参数则会报错。</p>
 <p>从某些方面说，<strong>泛型</strong> 让集合更通用，也更安全。</p>
 <h2 id="223">22.3 泛型结构体</h2>
 <p>我们也可以把某个结构体声明为泛型的，<strong>泛型结构体</strong> 主要是结构体的成员类型可以是泛型。</p>
 <p>泛型结构体的定义语法如下</p>
-<div class="language-text highlight"><pre><span></span><code>struct struct_name&lt;T&gt; {
-   field:T,
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">struct</span> <span class="nc">struct_name</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">   </span><span class="n">field</span>:<span class="nc">T</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>例如我们可以定义一个泛型结构体 Data，它只有一个成员 value，类型是一个泛型。</p>
-<div class="language-text highlight"><pre><span></span><code>struct Data&lt;T&gt; {
-   value:T,
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">struct</span> <span class="nc">Data</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">   </span><span class="n">value</span>:<span class="nc">T</span><span class="p">,</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>把我们的泛型结构体语法和泛型结构体实例 Data 放在一起对比下，很容易区分泛型结构体和普通结构体的不同。</p>
 <h3 id="2231">22.3.1 范例</h3>
 <p>下面的范例，我们使用了刚刚定义的泛型结构体 Data，演示了如何使用泛型结构体</p>
-<div class="language-text highlight"><pre><span></span><code>fn main() {
-   // 泛型为 i32
-   let t:Data&lt;i32&gt; = Data{value:350};
-   println!(&quot;value is :{} &quot;,t.value);
-   // 泛型为 String
-   let t2:Data&lt;String&gt; = Data{value:&quot;Tom&quot;.to_string()};
-   println!(&quot;value is :{} &quot;,t2.value);
-}
-
-struct Data&lt;T&gt; {
-   value:T,
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">   </span><span class="c1">// 泛型为 i32</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">t</span>:<span class="nc">Data</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Data</span><span class="p">{</span><span class="n">value</span>:<span class="mi">350</span><span class="p">};</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;value is :{} &quot;</span><span class="p">,</span><span class="n">t</span><span class="p">.</span><span class="n">value</span><span class="p">);</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">   </span><span class="c1">// 泛型为 String</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">t2</span>:<span class="nc">Data</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Data</span><span class="p">{</span><span class="n">value</span>:<span class="s">&quot;Tom&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">()};</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;value is :{} &quot;</span><span class="p">,</span><span class="n">t2</span><span class="p">.</span><span class="n">value</span><span class="p">);</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="p">}</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="k">struct</span> <span class="nc">Data</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">   </span><span class="n">value</span>:<span class="nc">T</span><span class="p">,</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 范例，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>value is :350
-value is :Tom
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>value<span class="w"> </span>is<span class="w"> </span>:350
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>value<span class="w"> </span>is<span class="w"> </span>:Tom
+</span></code></pre></div>
 <h2 id="224-traits">22.4 特质 Traits</h2>
 <p>Rust 语言中没有 <strong>类 ( class )</strong> 这个概念，于是顺带把 <strong>接口 (interface )</strong> 这个概念也取消了。</p>
 <p>可是，没有了 <strong>接口</strong> 我们要如何证明两个结构体之间的关系呢 ？</p>
@@ -1735,17 +1735,18 @@ value is :Tom
 <h3 id="2241">22.4.1 特质的定义语法</h3>
 <p>Rust 语言提供了 trait 关键字用于定义 <strong>特质</strong>。</p>
 <p>特质 其实就是一组方法原型。它的语法格式如下</p>
-<div class="language-text highlight"><pre><span></span><code>trait some_trait {
-
-   // 没有任何实现的虚方法
-   fn method1(&amp;self);
-
-   // 有具体实现的普通方法
-   fn method2(&amp;self){
-      //方法的具体代码
-   }
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">trait</span><span class="w"> </span><span class="n">some_trait</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">   </span><span class="c1">// 没有任何实现的虚方法</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">   </span><span class="k">fn</span> <span class="nf">method1</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">);</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">   </span><span class="c1">// 有具体实现的普通方法</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">   </span><span class="k">fn</span> <span class="nf">method2</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">){</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">      </span><span class="c1">//方法的具体代码</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>从语法格式来看，特征可以包含具体方法（带实现的方法）或抽象方法（没有具体实现的方法）</p>
 <p>如果想让某个方法的定义在实现了特质的结构体所共享，那么推荐使用具体方法。</p>
 <p>如果想让某个方法的定义由实现了特质的结构体自己定义，那么推荐使用抽象方法。</p>
@@ -1757,46 +1758,46 @@ value is :Tom
 <p>如果要为某个结构体 （ struct ）实现某个特质，需要使用 <strong>impl for</strong> 语句。</p>
 <p>impl 是 implement 的缩写。impl for 语义已经很明显了，就是为 xxx 实现 xxx 的意思。</p>
 <p>impl for 语句的语法格式如下</p>
-<div class="language-text highlight"><pre><span></span><code>impl some_trait for structure_name {
-   // 实现 method1() 的具体代码
-   fn method1(&amp;self ){
-   }
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">impl</span><span class="w"> </span><span class="n">some_trait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">structure_name</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">   </span><span class="c1">// 实现 method1() 的具体代码</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">   </span><span class="k">fn</span> <span class="nf">method1</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="w"> </span><span class="p">){</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <blockquote>
 <p>注意: 特质的方法是结构体的成员方法，因此第一个参数是 &amp;self。  </p>
 </blockquote>
 <h3 id="2243-impl-for">22.4.3 范例: impl for 的简单使用</h3>
 <p>下面的范例，我们首先定义了一个结构体 Book 和一个特质 Printable。</p>
 <p>然后我们使用 impl for 语句为 Book 实现特质 Printable。</p>
-<div class="language-text highlight"><pre><span></span><code>fn main(){
-   //创建结构体 Book 的实例
-   let b1 = Book {
-      id:1001,
-      name:&quot;Rust in Action&quot;
-   };
-   b1.print();
-}
-
-//声明结构体
-struct Book {
-   name:&amp;&#39;static str,
-   id:u32
-}
-// 声明特质
-trait Printable {
-   fn print(&amp;self);
-}
-// 实现特质
-impl Printable for Book {
-   fn print(&amp;self){
-      println!(&quot;Printing book with id:{} and name {}&quot;,self.id,self.name)
-   }
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">(){</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">   </span><span class="c1">//创建结构体 Book 的实例</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">b1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Book</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">      </span><span class="n">id</span>:<span class="mi">1001</span><span class="p">,</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">      </span><span class="n">name</span>:<span class="s">&quot;Rust in Action&quot;</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">   </span><span class="p">};</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">   </span><span class="n">b1</span><span class="p">.</span><span class="n">print</span><span class="p">();</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="p">}</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="c1">//声明结构体</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="k">struct</span> <span class="nc">Book</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">   </span><span class="n">name</span>:<span class="kp">&amp;</span><span class="o">&#39;</span><span class="nb">static</span> <span class="kt">str</span><span class="p">,</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">   </span><span class="n">id</span>:<span class="kt">u32</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="p">}</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="c1">// 声明特质</span>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="k">trait</span><span class="w"> </span><span class="n">Printable</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">   </span><span class="k">fn</span> <span class="nf">print</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">);</span>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="p">}</span>
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="c1">// 实现特质</span>
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="k">impl</span><span class="w"> </span><span class="n">Printable</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Book</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="w">   </span><span class="k">fn</span> <span class="nf">print</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">){</span>
+</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="w">      </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Printing book with id:{} and name {}&quot;</span><span class="p">,</span><span class="bp">self</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+</span><span id="__span-11-23"><a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-11-24"><a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 范例，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>Printing book with id:1001 and name Rust in Action
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Printing<span class="w"> </span>book<span class="w"> </span>with<span class="w"> </span>id:1001<span class="w"> </span>and<span class="w"> </span>name<span class="w"> </span>Rust<span class="w"> </span><span class="k">in</span><span class="w"> </span>Action
+</span></code></pre></div>
 <h2 id="225">22.5 泛型函数</h2>
 <p>泛型也可以用在函数中，我们称使用了泛型的函数为 泛型函数。</p>
 <p>泛型函数 主要是指 函数的参数 是泛型。</p>
@@ -1804,42 +1805,42 @@ impl Printable for Book {
 <p>注意: 泛型函数并不要求所有参数都是泛型，而是某个参数是泛型。  </p>
 </blockquote>
 <p>泛型函数的定义语法如下</p>
-<div class="language-text highlight"><pre><span></span><code>fn function_name&lt;T[:trait_name]&gt;(param1:T, [other_params]) {
-
-   // 函数实现代码
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">fn</span> <span class="nf">function_name</span><span class="o">&lt;</span><span class="n">T</span><span class="p">[</span>:<span class="nc">trait_name</span><span class="p">]</span><span class="o">&gt;</span><span class="p">(</span><span class="n">param1</span>:<span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">other_params</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">   </span><span class="c1">// 函数实现代码</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>例如我们定义一个可以打印输出任意类型的泛型函数 print_pro</p>
-<div class="language-text highlight"><pre><span></span><code>fn print_pro&lt;T:Display&gt;(t:T){
-   println!(&quot;Inside print_pro generic function:&quot;);
-   println!(&quot;{}&quot;,t);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">fn</span> <span class="nf">print_pro</span><span class="o">&lt;</span><span class="n">T</span>:<span class="nc">Display</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span>:<span class="nc">T</span><span class="p">){</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Inside print_pro generic function:&quot;</span><span class="p">);</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="n">t</span><span class="p">);</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>对比语法和范例，泛型函数的定义就很简单了。</p>
 <h3 id="2251">22.5.1 范例</h3>
 <p>下面的范例我们使用刚刚定义的泛型函数 print_pro()，该函数会打印输出传递给它的参数。</p>
 <p>传递的参数可以是实现了 Display 特质的任意类型。</p>
-<div class="language-text highlight"><pre><span></span><code>use std::fmt::Display;
-
-fn main(){
-   print_pro(10 as u8);
-   print_pro(20 as u16);
-   print_pro(&quot;Hello TutorialsPoint&quot;);
-}
-
-fn print_pro&lt;T:Display&gt;(t:T){
-   println!(&quot;Inside print_pro generic function:&quot;);
-   println!(&quot;{}&quot;,t);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">fmt</span>::<span class="n">Display</span><span class="p">;</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">(){</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">   </span><span class="n">print_pro</span><span class="p">(</span><span class="mi">10</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">u8</span><span class="p">);</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">   </span><span class="n">print_pro</span><span class="p">(</span><span class="mi">20</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">u16</span><span class="p">);</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">   </span><span class="n">print_pro</span><span class="p">(</span><span class="s">&quot;Hello TutorialsPoint&quot;</span><span class="p">);</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="p">}</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="k">fn</span> <span class="nf">print_pro</span><span class="o">&lt;</span><span class="n">T</span>:<span class="nc">Display</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span>:<span class="nc">T</span><span class="p">){</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Inside print_pro generic function:&quot;</span><span class="p">);</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="n">t</span><span class="p">);</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 范例，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>Inside print_pro generic function:
-10
-Inside print_pro generic function:
-20
-Inside print_pro generic function:
-Hello TutorialsPoint
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Inside<span class="w"> </span>print_pro<span class="w"> </span>generic<span class="w"> </span><span class="k">function</span>:
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="m">10</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>Inside<span class="w"> </span>print_pro<span class="w"> </span>generic<span class="w"> </span><span class="k">function</span>:
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="m">20</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>Inside<span class="w"> </span>print_pro<span class="w"> </span>generic<span class="w"> </span><span class="k">function</span>:
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>Hello<span class="w"> </span>TutorialsPoint
+</span></code></pre></div>
 
 
   
