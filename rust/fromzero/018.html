@@ -1765,27 +1765,27 @@
 <h2 id="rust-enum">十八、Rust 枚举 Enum</h2>
 <p>长大的时候回去想想小时候，觉得有时候特么的太傻逼了，比如下面这道选择题</p>
 <p>下面哪个不是水果？</p>
-<div class="language-text highlight"><pre><span></span><code>A. 香蕉   B. 梨   C. 橘子  D. 茄子
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>A.<span class="w"> </span>香蕉<span class="w">   </span>B.<span class="w"> </span>梨<span class="w">   </span>C.<span class="w"> </span>橘子<span class="w">  </span>D.<span class="w"> </span>茄子
+</span></code></pre></div>
 <p>我特么的能选择 A。 原因是其它三个都吃过，可是香蕉，我家那种野香蕉树，香蕉就只有拇指大小，还特别涩，哪能吃啊。</p>
 <p>长大了之后，也会觉得过得很苦逼，比如填表格的时候</p>
 <p>请问你的婚姻状况是？</p>
-<div class="language-text highlight"><pre><span></span><code>A. 未婚  B 已婚   C 离异
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>A.<span class="w"> </span>未婚<span class="w">  </span>B<span class="w"> </span>已婚<span class="w">   </span>C<span class="w"> </span>离异
+</span></code></pre></div>
 <p>都填了二十几年的表了，选择永远是 A 。</p>
 <p>上面两个问题有啥共同点么 ？</p>
 <p>都是很傻逼.... ?</p>
 <p>哈哈，不是的，它们的共同点都是提供了 ABCD 让我们选择。</p>
 <p>编程时我们要如何保存 A B C D 这种选择题和答案呢 ？</p>
 <p>如果只利用我们之前的所学知识，大概是</p>
-<div class="language-text highlight"><pre><span></span><code>let option_a = &quot;香蕉&quot;;
-let option_b = &quot;梨&quot;;
-let option_c = &quot;橘子&quot;;
-let option_d = &quot;茄子&quot;;
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">let</span><span class="w"> </span><span class="n">option_a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;香蕉&quot;</span><span class="p">;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">let</span><span class="w"> </span><span class="n">option_b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;梨&quot;</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kd">let</span><span class="w"> </span><span class="n">option_c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;橘子&quot;</span><span class="p">;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kd">let</span><span class="w"> </span><span class="n">option_d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;茄子&quot;</span><span class="p">;</span>
+</span></code></pre></div>
 <p>大家有没有发现什么问题？ 我们为啥要傻傻的定义四个变量啊，用一个数组就搞定了</p>
-<div class="language-text highlight"><pre><span></span><code>let option = [&quot;香蕉&quot;,&quot;梨&quot;,&quot;橘子&quot;,&quot;茄子&quot;];
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">let</span><span class="w"> </span><span class="n">option</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;香蕉&quot;</span><span class="p">,</span><span class="s">&quot;梨&quot;</span><span class="p">,</span><span class="s">&quot;橘子&quot;</span><span class="p">,</span><span class="s">&quot;茄子&quot;</span><span class="p">];</span>
+</span></code></pre></div>
 <p>看起来不错的样子，可另一个问题出现了，一般做选择的时候我们都会回答<strong>香蕉</strong>或<strong>茄子</strong> ，肯定不会回答<strong>0</strong>或<strong>3</strong>。因为出题的人看不懂啊。</p>
 <p>这个说法不恰当，但目前没想到更好的。</p>
 <h2 id="181">18.1 枚举</h2>
@@ -1795,30 +1795,30 @@ let option_d = &quot;茄子&quot;;
 <h2 id="182">18.2枚举定义</h2>
 <p>Rust 语言提供了 enum 关键字用于定义枚举。</p>
 <p>定义枚举的语法格式如下</p>
-<div class="language-text highlight"><pre><span></span><code>enum enum_name {
-   variant1,
-   variant2,
-   variant3
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">enum</span> <span class="nc">enum_name</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">   </span><span class="n">variant1</span><span class="p">,</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">   </span><span class="n">variant2</span><span class="p">,</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">   </span><span class="n">variant3</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>例如上面我们的 香蕉橘子选项，我们可以定义一个枚举 Fruits</p>
-<div class="language-text highlight"><pre><span></span><code>enum Fruits {
-    Banana,     // 香蕉
-    Pear,       // 梨
-    Mandarin,   // 橘子
-    Eggplant    // 茄子
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">enum</span> <span class="nc">Fruits</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">   </span><span class="n">Banana</span><span class="p">,</span><span class="w">     </span><span class="c1">// 香蕉</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">   </span><span class="n">Pear</span><span class="p">,</span><span class="w">       </span><span class="c1">// 梨</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">   </span><span class="n">Mandarin</span><span class="p">,</span><span class="w">   </span><span class="c1">// 橘子</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">   </span><span class="n">Eggplant</span><span class="w">    </span><span class="c1">// 茄子</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">}</span>
+</span></code></pre></div>
 <h2 id="183">18.3使用枚举</h2>
 <p>枚举定义好了之后我们就要开始用它了，枚举的使用方式很简单，就是 枚举名::枚举值。语法格式如下</p>
-<div class="language-text highlight"><pre><span></span><code>enum_name::variant
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">enum_name</span>::<span class="n">variant</span>
+</span></code></pre></div>
 <p>例如上面的枚举，比如我选择了 香蕉，那么赋值的语法如下</p>
-<div class="language-text highlight"><pre><span></span><code>let selected = Fruits::Banana;
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">let</span><span class="w"> </span><span class="n">selected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Fruits</span>::<span class="n">Banana</span><span class="p">;</span>
+</span></code></pre></div>
 <p>如果需要明确指定类型，可以如下</p>
-<div class="language-text highlight"><pre><span></span><code>let selected: Fruits = Fruits::Banana;
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">let</span><span class="w"> </span><span class="n">selected</span>: <span class="nc">Fruits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Fruits</span>::<span class="n">Banana</span><span class="p">;</span>
+</span></code></pre></div>
 <h3 id="1831">18.3.1 范例</h3>
 <p>下面的范例，演示了枚举类型的基本使用方法和案例。</p>
 <p>我们首先定义了一个枚举 Fruits ，它有四个枚举值，分别是 Banana、Pear、 Mandarin 和 Eggplant。</p>
@@ -1826,49 +1826,49 @@ let option_d = &quot;茄子&quot;;
 <blockquote>
 <p>注意： 关于枚举前面的 #[derive(Debug)] 我们后面会介绍  </p>
 </blockquote>
-<div class="language-text highlight"><pre><span></span><code>#[derive(Debug)]
-enum Fruits {
-    Banana,     // 香蕉
-    Pear,       // 梨
-    Mandarin,   // 橘子
-    Eggplant    // 茄子
-}
-
-fn main() {
-   let selected = Fruits::Banana;
-   println!(&quot;{:?}&quot;,selected);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">#[derive(Debug)]</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">enum</span> <span class="nc">Fruits</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">   </span><span class="n">Banana</span><span class="p">,</span><span class="w">     </span><span class="c1">// 香蕉</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">   </span><span class="n">Pear</span><span class="p">,</span><span class="w">       </span><span class="c1">// 梨</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">   </span><span class="n">Mandarin</span><span class="p">,</span><span class="w">   </span><span class="c1">// 橘子</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">   </span><span class="n">Eggplant</span><span class="w">    </span><span class="c1">// 茄子</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">}</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">selected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Fruits</span>::<span class="n">Banana</span><span class="p">;</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">selected</span><span class="p">);</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>Banana
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Banana
+</span></code></pre></div>
 <h2 id="184-derivedebug">18.4 #[derive(Debug)] 注解</h2>
 <p>想必大家看到了 enum Fruits 前面的 #[derive(Debug)]。</p>
 <p>这个 #[derive(Debug)] 语句的作用是啥呢 ？</p>
 <p>我先不解释，我先把 #[derive(Debug)] 去掉看看</p>
-<div class="language-text highlight"><pre><span></span><code>enum Fruits {
-    Banana,     // 香蕉
-    Pear,       // 梨
-    Mandarin,   // 橘子
-    Eggplant   // 茄子
-}
-
-fn main() {
-   let selected = Fruits::Banana;
-   println!(&quot;{:?}&quot;,selected);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">enum</span> <span class="nc">Fruits</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">   </span><span class="n">Banana</span><span class="p">,</span><span class="w">     </span><span class="c1">// 香蕉</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">   </span><span class="n">Pear</span><span class="p">,</span><span class="w">       </span><span class="c1">// 梨</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">   </span><span class="n">Mandarin</span><span class="p">,</span><span class="w">   </span><span class="c1">// 橘子</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">   </span><span class="n">Eggplant</span><span class="w">   </span><span class="c1">// 茄子</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="p">}</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">selected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Fruits</span>::<span class="n">Banana</span><span class="p">;</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">selected</span><span class="p">);</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译上面的 Rust 代码，或报错，错误信息如下</p>
-<div class="language-text highlight"><pre><span></span><code>error[E0277]: `Fruits` doesn&#39;t implement `std::fmt::Debug`
-  --&gt; src/main.rs:11:20
-   |
-11 |    println!(&quot;{:?}&quot;,selected);
-   |                    ^^^^^^^^ `Fruits` cannot be formatted using `{:?}`
-   |
-   = help: the trait `std::fmt::Debug` is not implemented for `Fruits`
-   = note: add `#[derive(Debug)]` or manually implement `std::fmt::Debug`
-   = note: required by `std::fmt::Debug::fmt`
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>error<span class="o">[</span>E0277<span class="o">]</span>:<span class="w"> </span><span class="sb">`</span>Fruits<span class="sb">`</span><span class="w"> </span>doesn<span class="err">&#39;</span>t<span class="w"> </span>implement<span class="w"> </span><span class="sb">`</span>std::fmt::Debug<span class="sb">`</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>--&gt;<span class="w"> </span>src/main.rs:11:20
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">   </span><span class="p">|</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="m">11</span><span class="w"> </span><span class="p">|</span><span class="w">    </span>println!<span class="o">(</span><span class="s2">&quot;{:?}&quot;</span>,selected<span class="o">)</span><span class="p">;</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">   </span><span class="p">|</span><span class="w">                    </span>^^^^^^^^<span class="w"> </span><span class="sb">`</span>Fruits<span class="sb">`</span><span class="w"> </span>cannot<span class="w"> </span>be<span class="w"> </span>formatted<span class="w"> </span>using<span class="w"> </span><span class="sb">`</span><span class="o">{</span>:?<span class="o">}</span><span class="sb">`</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">   </span><span class="p">|</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">   </span><span class="o">=</span><span class="w"> </span>help:<span class="w"> </span>the<span class="w"> </span>trait<span class="w"> </span><span class="sb">`</span>std::fmt::Debug<span class="sb">`</span><span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>implemented<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="sb">`</span>Fruits<span class="sb">`</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">   </span><span class="o">=</span><span class="w"> </span>note:<span class="w"> </span>add<span class="w"> </span><span class="sb">`</span><span class="c1">#[derive(Debug)]` or manually implement `std::fmt::Debug`</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">   </span><span class="o">=</span><span class="w"> </span>note:<span class="w"> </span>required<span class="w"> </span>by<span class="w"> </span><span class="sb">`</span>std::fmt::Debug::fmt<span class="sb">`</span>
+</span></code></pre></div>
 <p>这段错误的意思，就是我们的 enum Fruits 枚举并没有实现 std::fmt::Debug 特质 （ trait ）。</p>
 <blockquote>
 <p>关于特质 trait 我们会在后面介绍，这里你只要把特质当作接口 interface 看待就好。  </p>
@@ -1876,43 +1876,43 @@ fn main() {
 <p>为了让编译能通过，我们需要将我们的枚举派生自或衍生自一个已经实现了 std::fmt::Debug 特质的东西。这个东西比较常见的就是 Debug 。</p>
 <p>因此 #[derive(Debug)] 注解的作用，就是让 Fruits 派生自 Debug。</p>
 <p>但，其实，即使添加了 #[derive(Debug)] 注解注解仍然会有警告</p>
-<div class="language-text highlight"><pre><span></span><code>#[derive(Debug)]
-enum Fruits {
-    Banana,     // 香蕉
-    Pear,       // 梨
-    Mandarin,   // 橘子
-    Eggplant   // 茄子
-}
-
-fn main() {
-   let selected = Fruits::Banana;
-   println!(&quot;{:?}&quot;,selected);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cp">#[derive(Debug)]</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">enum</span> <span class="nc">Fruits</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">   </span><span class="n">Banana</span><span class="p">,</span><span class="w">     </span><span class="c1">// 香蕉</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">   </span><span class="n">Pear</span><span class="p">,</span><span class="w">       </span><span class="c1">// 梨</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">   </span><span class="n">Mandarin</span><span class="p">,</span><span class="w">   </span><span class="c1">// 橘子</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">   </span><span class="n">Eggplant</span><span class="w">   </span><span class="c1">// 茄子</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="p">}</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">selected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Fruits</span>::<span class="n">Banana</span><span class="p">;</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">selected</span><span class="p">);</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>warning: variant is never constructed: `Pear`
- --&gt; main.rs:4:5
-  |
-4 |     Pear,       // 梨
-  |     ^^^^
-  |
-  = note: #[warn(dead_code)] on by default
-
-warning: variant is never constructed: `Mandarin`
- --&gt; main.rs:5:5
-  |
-5 |     Mandarin,   // 橘子
-  |     ^^^^^^^^
-
-warning: variant is never constructed: `Eggplant`
- --&gt; main.rs:6:5
-  |
-6 |     Eggplant   // 茄子
-  |     ^^^^^^^^
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>warning:<span class="w"> </span>variant<span class="w"> </span>is<span class="w"> </span>never<span class="w"> </span>constructed:<span class="w"> </span><span class="sb">`</span>Pear<span class="sb">`</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>--&gt;<span class="w"> </span>main.rs:4:5
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="p">|</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="m">4</span><span class="w"> </span><span class="p">|</span><span class="w">     </span>Pear,<span class="w">       </span>//<span class="w"> </span>梨
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="p">|</span><span class="w">     </span>^^^^
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="p">|</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="o">=</span><span class="w"> </span>note:<span class="w"> </span><span class="c1">#[warn(dead_code)] on by default</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>warning:<span class="w"> </span>variant<span class="w"> </span>is<span class="w"> </span>never<span class="w"> </span>constructed:<span class="w"> </span><span class="sb">`</span>Mandarin<span class="sb">`</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>--&gt;<span class="w"> </span>main.rs:5:5
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="p">|</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="m">5</span><span class="w"> </span><span class="p">|</span><span class="w">     </span>Mandarin,<span class="w">   </span>//<span class="w"> </span>橘子
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="p">|</span><span class="w">     </span>^^^^^^^^
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>warning:<span class="w"> </span>variant<span class="w"> </span>is<span class="w"> </span>never<span class="w"> </span>constructed:<span class="w"> </span><span class="sb">`</span>Eggplant<span class="sb">`</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>--&gt;<span class="w"> </span>main.rs:6:5
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="p">|</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="m">6</span><span class="w"> </span><span class="p">|</span><span class="w">     </span>Eggplant<span class="w">   </span>//<span class="w"> </span>茄子
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="p">|</span><span class="w">     </span>^^^^^^^^
+</span></code></pre></div>
 <p>大概的意思是说，那些我们没用到的枚举都还没有被构造呢。</p>
-<div class="language-text highlight"><pre><span></span><code>variant is never constructed: Eggplant 具体是啥意思，以后有空再来 YY 吧。
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>variant<span class="w"> </span>is<span class="w"> </span>never<span class="w"> </span>constructed:<span class="w"> </span>Eggplant<span class="w"> </span>具体是啥意思，以后有空再来<span class="w"> </span>YY<span class="w"> </span>吧。
+</span></code></pre></div>
 <h2 id="185-struct-enum">18.5 结构类型 struct 和枚举类型 enum</h2>
 <p>好了，到目前为止，我们已经学习了两个可以自定义类型的东西了， - 一个是 结构类型 struct - 另一个是 枚举类型 enum</p>
 <p>它们之间有什么关系和关联呢？</p>
@@ -1925,36 +1925,36 @@ warning: variant is never constructed: `Eggplant`
 </blockquote>
 <p>同时，我们又定义了一个结构体 Person 用于描述一个人。这个 Person 结构体使用 GenderCategory 枚举作为其成员变量 gender 的数据类型</p>
 <p>因此，Person 结构体的 gener 成员变量就只能有两个值: Male 和 Female</p>
-<div class="language-text highlight"><pre><span></span><code>// 添加 #[derive(Debug)] 省的报错
-#[derive(Debug)]
-enum GenderCategory {
-   Male,Female
-}
-
-// 添加 #[derive(Debug)] 省的报错
-#[derive(Debug)]
-struct Person {
-   name:String,
-   gender:GenderCategory
-}
-
-fn main() {
-   let p1 = Person {
-      name:String::from(&quot;零基础教程&quot;),
-      gender:GenderCategory::Female
-   };
-   let p2 = Person {
-      name:String::from(&quot;Admin&quot;),
-      gender:GenderCategory::Male
-   };
-   println!(&quot;{:?}&quot;,p1);
-   println!(&quot;{:?}&quot;,p2);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1">// 添加 #[derive(Debug)] 省的报错</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="cp">#[derive(Debug)]</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="k">enum</span> <span class="nc">GenderCategory</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">   </span><span class="n">Male</span><span class="p">,</span><span class="n">Female</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="p">}</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="c1">// 添加 #[derive(Debug)] 省的报错</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="cp">#[derive(Debug)]</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="k">struct</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">   </span><span class="n">name</span>:<span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">   </span><span class="n">gender</span>:<span class="nc">GenderCategory</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="p">}</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="w">      </span><span class="n">name</span>:<span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;零基础教程&quot;</span><span class="p">),</span>
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="w">      </span><span class="n">gender</span>:<span class="nc">GenderCategory</span>::<span class="n">Female</span>
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="w">   </span><span class="p">};</span>
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="w">      </span><span class="n">name</span>:<span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;Admin&quot;</span><span class="p">),</span>
+</span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="w">      </span><span class="n">gender</span>:<span class="nc">GenderCategory</span>::<span class="n">Male</span>
+</span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a><span class="w">   </span><span class="p">};</span>
+</span><span id="__span-16-23"><a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">p1</span><span class="p">);</span>
+</span><span id="__span-16-24"><a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">p2</span><span class="p">);</span>
+</span><span id="__span-16-25"><a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>Person { name: &quot;零基础教程&quot;, gender: Female }
-Person { name: &quot;Admin&quot;, gender: Male }
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Person<span class="w"> </span><span class="o">{</span><span class="w"> </span>name:<span class="w"> </span><span class="s2">&quot;零基础教程&quot;</span>,<span class="w"> </span>gender:<span class="w"> </span>Female<span class="w"> </span><span class="o">}</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>Person<span class="w"> </span><span class="o">{</span><span class="w"> </span>name:<span class="w"> </span><span class="s2">&quot;Admin&quot;</span>,<span class="w"> </span>gender:<span class="w"> </span>Male<span class="w"> </span><span class="o">}</span>
+</span></code></pre></div>
 <h2 id="186-option">18.6 Option 枚举</h2>
 <p>Rust 语言核心和标准库内置了很多枚举，其中有一个枚举我们会经常和它打交道，那就是 Option 枚举。</p>
 <p>Option 枚举代表了那种 可有可无 的选项。它有两个枚举值 None 和 Some(T)。</p>
@@ -1963,11 +1963,11 @@ Person { name: &quot;Admin&quot;, gender: Male }
 <li>Some(T) 表示可有可无中的 有，既然有，那么就一定有值，也就是一定有数据类型，那个 T 就表示有值时的值数据类型。</li>
 </ul>
 <h3 id="1861-option">18.6.1 Option 枚举的定义代码如下</h3>
-<div class="language-text highlight"><pre><span></span><code>enum Option&lt;T&gt; {
-   Some(T),      // 用于返回一个值 used to return a value
-   None          // 用于返回 null ，虽然 Rust 并不支持 null 
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">enum</span> <span class="nb">Option</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">   </span><span class="nb">Some</span><span class="p">(</span><span class="n">T</span><span class="p">),</span><span class="w">      </span><span class="c1">// 用于返回一个值 used to return a value</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">   </span><span class="nb">None</span><span class="w">          </span><span class="c1">// 用于返回 null ，虽然 Rust 并不支持 null </span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Rust 语言并不支持 null 关键字，取而代之的是使用 None 作为没有的意思。</p>
 <p>Option 枚举经常用在函数中作为返回值，因为它可以表示有返回且有值，也可以用于表示有返回但没有值。</p>
 <p>如果函数有返回值，那么可以返回 Some(data)，如果函数没有返回值，则可以返回 None</p>
@@ -1975,158 +1975,158 @@ Person { name: &quot;Admin&quot;, gender: Male }
 <h3 id="1862">18.6.2 范例</h3>
 <p>下面的范例，我们定义了一个函数 is_even()，使用 Option 枚举作为它的返回值类型。</p>
 <p>如果传递给 is_even() 函数的参数是个偶数，则返回传递的参数，如果是奇数则返回 None。</p>
-<div class="language-text highlight"><pre><span></span><code>fn main() {
-   let result = is_even(3);
-   println!(&quot;{:?}&quot;,result);
-   println!(&quot;{:?}&quot;,is_even(30));
-}
-fn is_even(no:i32)-&gt;Option&lt;bool&gt; {
-   if no %2 == 0 {
-      Some(true)
-   } else {
-      None
-   }
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">is_even</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">result</span><span class="p">);</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">is_even</span><span class="p">(</span><span class="mi">30</span><span class="p">));</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="p">}</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="k">fn</span> <span class="nf">is_even</span><span class="p">(</span><span class="n">no</span>:<span class="kt">i32</span><span class="p">)</span>-&gt;<span class="nb">Option</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="o">%</span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">      </span><span class="nb">Some</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">   </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">      </span><span class="nb">None</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>None
-Some(true)
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nb">None</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nb">Some</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+</span></code></pre></div>
 <h2 id="187-match">18.7 match 语句和枚举</h2>
 <p>枚举的另一个重要操作就是判断枚举值。判断一个枚举值，== 比较运算符是不起作用的。</p>
 <p>准确的说会报错</p>
-<div class="language-text highlight"><pre><span></span><code>#[derive(Debug)]
-enum Fruits {
-    Banana,     // 香蕉
-    Pear,       // 梨
-    Mandarin,   // 橘子
-    Eggplant   // 茄子
-}
-
-fn main() {
-    let selected = Fruits::Banana;
-    if selected == Fruits::Banana {
-        println!(&quot;你选择了香蕉&quot;);
-    } else {
-        println!(&quot;你选择了其它&quot;);
-    }
-   println!(&quot;{:?}&quot;,selected);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cp">#[derive(Debug)]</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="k">enum</span> <span class="nc">Fruits</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">   </span><span class="n">Banana</span><span class="p">,</span><span class="w">     </span><span class="c1">// 香蕉</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">   </span><span class="n">Pear</span><span class="p">,</span><span class="w">       </span><span class="c1">// 梨</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">   </span><span class="n">Mandarin</span><span class="p">,</span><span class="w">   </span><span class="c1">// 橘子</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">   </span><span class="n">Eggplant</span><span class="w">   </span><span class="c1">// 茄子</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="p">}</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">selected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Fruits</span>::<span class="n">Banana</span><span class="p">;</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="n">selected</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Fruits</span>::<span class="n">Banana</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">      </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;你选择了香蕉&quot;</span><span class="p">);</span>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="w">   </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="w">      </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;你选择了其它&quot;</span><span class="p">);</span>
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">selected</span><span class="p">);</span>
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译错误</p>
-<div class="language-text highlight"><pre><span></span><code>--&gt; src/main.rs:11:17
-   |
-11 |     if selected == Fruits::Banana {
-   |        -------- ^^ -------------- Fruits
-   |        |
-   |        Fruits
-   |
-   = note: an implementation of `std::cmp::PartialEq` might be missing for `Fruits`
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>--&gt;<span class="w"> </span>src/main.rs:11:17
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">   </span><span class="p">|</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="m">11</span><span class="w"> </span><span class="p">|</span><span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="nv">selected</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>Fruits::Banana<span class="w"> </span><span class="o">{</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">   </span><span class="p">|</span><span class="w">        </span>--------<span class="w"> </span>^^<span class="w"> </span>--------------<span class="w"> </span>Fruits
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">   </span><span class="p">|</span><span class="w">        </span><span class="p">|</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">   </span><span class="p">|</span><span class="w">        </span>Fruits
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">   </span><span class="p">|</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">   </span><span class="o">=</span><span class="w"> </span>note:<span class="w"> </span>an<span class="w"> </span>implementation<span class="w"> </span>of<span class="w"> </span><span class="sb">`</span>std::cmp::PartialEq<span class="sb">`</span><span class="w"> </span>might<span class="w"> </span>be<span class="w"> </span>missing<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="sb">`</span>Fruits<span class="sb">`</span>
+</span></code></pre></div>
 <p>判断一个枚举变量的值，唯一能用的操作符就是 match 语句。</p>
 <p>match 语句我们之间已经学过了，我们就不介绍了。我们直接上范例，看看如何使用 match 语句来判断枚举值</p>
 <h3 id="1871">18.7.1 范例</h3>
 <p>下面的代码，我们定义了一个枚举 CarType，同时定义了一个函数 print_size() ，它接受 CarType 枚举类型的变量，并使用 match 语句来判断枚举变量的值。</p>
-<div class="language-text highlight"><pre><span></span><code>enum CarType {
-   Hatch,
-   Sedan,
-   SUV
-}
-fn print_size(car:CarType) {
-   match car {
-      CarType::Hatch =&gt; {
-         println!(&quot;Small sized car&quot;);
-      },
-      CarType::Sedan =&gt; {
-         println!(&quot;medium sized car&quot;);
-      },
-      CarType::SUV =&gt;{
-         println!(&quot;Large sized Sports Utility car&quot;);
-      }
-   }
-}
-fn main(){
-   print_size(CarType::SUV);
-   print_size(CarType::Hatch);
-   print_size(CarType::Sedan);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">enum</span> <span class="nc">CarType</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">   </span><span class="n">Hatch</span><span class="p">,</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">   </span><span class="n">Sedan</span><span class="p">,</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">   </span><span class="n">SUV</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="p">}</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="k">fn</span> <span class="nf">print_size</span><span class="p">(</span><span class="n">car</span>:<span class="nc">CarType</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">   </span><span class="k">match</span><span class="w"> </span><span class="n">car</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">      </span><span class="n">CarType</span>::<span class="n">Hatch</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">         </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Small sized car&quot;</span><span class="p">);</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="w">      </span><span class="p">},</span>
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="w">      </span><span class="n">CarType</span>::<span class="n">Sedan</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="w">         </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;medium sized car&quot;</span><span class="p">);</span>
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="w">      </span><span class="p">},</span>
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="w">      </span><span class="n">CarType</span>::<span class="n">SUV</span><span class="w"> </span><span class="o">=&gt;</span><span class="p">{</span>
+</span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="w">         </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Large sized Sports Utility car&quot;</span><span class="p">);</span>
+</span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-23-17"><a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-23-18"><a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a><span class="p">}</span>
+</span><span id="__span-23-19"><a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">(){</span>
+</span><span id="__span-23-20"><a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a><span class="w">   </span><span class="n">print_size</span><span class="p">(</span><span class="n">CarType</span>::<span class="n">SUV</span><span class="p">);</span>
+</span><span id="__span-23-21"><a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a><span class="w">   </span><span class="n">print_size</span><span class="p">(</span><span class="n">CarType</span>::<span class="n">Hatch</span><span class="p">);</span>
+</span><span id="__span-23-22"><a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a><span class="w">   </span><span class="n">print_size</span><span class="p">(</span><span class="n">CarType</span>::<span class="n">Sedan</span><span class="p">);</span>
+</span><span id="__span-23-23"><a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>Large sized Sports Utility car
-Small sized car
-medium sized car
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>Large<span class="w"> </span>sized<span class="w"> </span>Sports<span class="w"> </span>Utility<span class="w"> </span>car
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>Small<span class="w"> </span>sized<span class="w"> </span>car
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>medium<span class="w"> </span>sized<span class="w"> </span>car
+</span></code></pre></div>
 <h2 id="188-match-option">18.8 match 语句和 Option 类型</h2>
 <p>既然 match 语句可以用于比较和判断枚举变量的值，那么对于上面提到的 Option 枚举，match 语句也使用。</p>
 <p>事实上，match 语句和 Option 类型相结合才能体现出 Option 枚举的强大之处</p>
-<div class="language-text highlight"><pre><span></span><code>fn main() {
-   match is_even(5) {
-      Some(data) =&gt; {
-         if data==true {
-            println!(&quot;Even no&quot;);
-         }
-      },
-      None =&gt; {
-         println!(&quot;not even&quot;);
-      }
-   }
-}
-fn is_even(no:i32)-&gt;Option&lt;bool&gt; {
-   if no%2 == 0 {
-      Some(true)
-   } else {
-      None
-   }
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">   </span><span class="k">match</span><span class="w"> </span><span class="n">is_even</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">      </span><span class="nb">Some</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="n">data</span><span class="o">==</span><span class="kc">true</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">            </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Even no&quot;</span><span class="p">);</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">         </span><span class="p">}</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">      </span><span class="p">},</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">      </span><span class="nb">None</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="w">         </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;not even&quot;</span><span class="p">);</span>
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="p">}</span>
+</span><span id="__span-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="k">fn</span> <span class="nf">is_even</span><span class="p">(</span><span class="n">no</span>:<span class="kt">i32</span><span class="p">)</span>-&gt;<span class="nb">Option</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-14"><a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a><span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="n">no</span><span class="o">%</span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-15"><a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a><span class="w">      </span><span class="nb">Some</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+</span><span id="__span-25-16"><a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a><span class="w">   </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-17"><a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a><span class="w">      </span><span class="nb">None</span>
+</span><span id="__span-25-18"><a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-25-19"><a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>not even
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>not<span class="w"> </span>even
+</span></code></pre></div>
 <h2 id="189-match">18.9 match 语句和带数据类型的枚举</h2>
 <p>Rust 中的枚举值可以有它们自己的数据类型。这种枚举值带数据类型的语法，彻底把 match 语句和枚举推向了史无前例的高度。</p>
 <p>更厉害的是，每一个枚举值可以有不同的数据类型。</p>
 <p>枚举值带数据类型的语法格式很简单，如下</p>
-<div class="language-text highlight"><pre><span></span><code>enum enum_name {
-   variant1(data_type1),
-   variant2(data_type2),
-   variant3(data_type1)
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">enum</span> <span class="nc">enum_name</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">   </span><span class="n">variant1</span><span class="p">(</span><span class="n">data_type1</span><span class="p">),</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">   </span><span class="n">variant2</span><span class="p">(</span><span class="n">data_type2</span><span class="p">),</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">   </span><span class="n">variant3</span><span class="p">(</span><span class="n">data_type1</span><span class="p">)</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>例如下面的枚举</p>
-<div class="language-text highlight"><pre><span></span><code>enum GenderCategory {
-   Name(String),
-   Usr_ID(i32)
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">enum</span> <span class="nc">GenderCategory</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">   </span><span class="n">Name</span><span class="p">(</span><span class="nb">String</span><span class="p">),</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">   </span><span class="n">Usr_ID</span><span class="p">(</span><span class="kt">i32</span><span class="p">)</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>枚举 GenderCategory 有两个枚举值 Name 和 User_ID，它们有着不同的数据类型：String 和 i32。</p>
 <h3 id="1891">18.9.1 范例</h3>
 <p>下面的范例，我们定义了一个带数据类型的枚举 GenderCategory。 然后演示了带数据类型枚举值的初始化和 match 语句的判断</p>
-<div class="language-text highlight"><pre><span></span><code>// 省的报错
-#[derive(Debug)]
-enum GenderCategory {
-   Name(String),Usr_ID(i32)
-}
-fn main() {
-   let p1 = GenderCategory::Name(String::from(&quot;Mohtashim&quot;));
-   let p2 = GenderCategory::Usr_ID(100);
-   println!(&quot;{:?}&quot;,p1);
-   println!(&quot;{:?}&quot;,p2);
-
-   match p1 {
-      GenderCategory::Name(val)=&gt; {
-         println!(&quot;{}&quot;,val);
-      }
-      GenderCategory::Usr_ID(val)=&gt; {
-         println!(&quot;{}&quot;,val);
-      }
-   }
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="c1">// 省的报错</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="cp">#[derive(Debug)]</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="k">enum</span> <span class="nc">GenderCategory</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">   </span><span class="n">Name</span><span class="p">(</span><span class="nb">String</span><span class="p">),</span><span class="n">Usr_ID</span><span class="p">(</span><span class="kt">i32</span><span class="p">)</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="p">}</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GenderCategory</span>::<span class="n">Name</span><span class="p">(</span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;Mohtashim&quot;</span><span class="p">));</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GenderCategory</span>::<span class="n">Usr_ID</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">p1</span><span class="p">);</span>
+</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">p2</span><span class="p">);</span>
+</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a>
+</span><span id="__span-29-12"><a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a><span class="w">   </span><span class="k">match</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-29-13"><a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="w">      </span><span class="n">GenderCategory</span>::<span class="n">Name</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-29-14"><a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="w">         </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="n">val</span><span class="p">);</span>
+</span><span id="__span-29-15"><a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-29-16"><a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a><span class="w">      </span><span class="n">GenderCategory</span>::<span class="n">Usr_ID</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-29-17"><a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a><span class="w">         </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="n">val</span><span class="p">);</span>
+</span><span id="__span-29-18"><a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-29-19"><a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-29-20"><a id="__codelineno-29-20" name="__codelineno-29-20" href="#__codelineno-29-20"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>Name(&quot;Mohtashim&quot;)
-Usr_ID(100)
-Mohtashim
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>Name<span class="o">(</span><span class="s2">&quot;Mohtashim&quot;</span><span class="o">)</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>Usr_ID<span class="o">(</span><span class="m">100</span><span class="o">)</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>Mohtashim
+</span></code></pre></div>
 
 
   

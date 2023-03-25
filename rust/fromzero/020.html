@@ -1928,31 +1928,30 @@
 <h3 id="2011">20.1.1 创建向量的语法</h3>
 <p>Rust 在标准库中定义了结构体 <strong>Vec</strong> 用于表示一个向量。同时提供了 <strong>new()</strong> 静态方法用于创建一个结构体 Vec 的实例。</p>
 <p>因此，向量的创建语法格式如下</p>
-<div class="language-text highlight"><pre><span></span><code>let mut instance_name = Vec::new();
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">instance_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Vec</span>::<span class="n">new</span><span class="p">();</span>
+</span></code></pre></div>
 <p>除了提供 <strong>new()</strong> 静态方法创建向量之外， Rust 标准库还提供了 <strong>vec!()</strong> 宏来简化向量的创建。</p>
-<div class="language-text highlight"><pre><span></span><code>let vector_name = vec![val1,val2,val3]
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">let</span><span class="w"> </span><span class="n">vector_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="n">val1</span><span class="p">,</span><span class="n">val2</span><span class="p">,</span><span class="n">val3</span><span class="p">]</span>
+</span></code></pre></div>
 <p>结构体 Vec 包含了大量的方法用于操作向量和向量中的元素，我们逻辑几个常见的于下表，并在后面做一个简单的介绍。</p>
 <p><img alt="" src="https://pic3.zhimg.com/v2-43db8048310dd308847f5bf2d9ea0c8e_b.jpg" /></p>
-<p><img alt="" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='1384' height='468'&gt;&lt;/svg&gt;" /></p>
 <h3 id="2012-vecnew">20.1.2 使用 <strong>Vec::new()</strong> 静态方法创建向量</h3>
 <p>创建向量的一般通过调用 Vec 结构的 <strong>new()</strong> 静态方法来创建。</p>
 <p>当有了向量的一个实例后，再通过 <strong>push()</strong> 方法像向量添加元素</p>
-<div class="language-text highlight"><pre><span></span><code>fn main() {
-   let mut v = Vec::new();
-   v.push(20);
-   v.push(30);
-   v.push(40);
-
-   println!(&quot;size of vector is :{}&quot;,v.len());
-   println!(&quot;{:?}&quot;,v);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Vec</span>::<span class="n">new</span><span class="p">();</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;size of vector is :{}&quot;</span><span class="p">,</span><span class="n">v</span><span class="p">.</span><span class="n">len</span><span class="p">());</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">v</span><span class="p">);</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>size of vector is :3
-[20, 30, 40]
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>size<span class="w"> </span>of<span class="w"> </span>vector<span class="w"> </span>is<span class="w"> </span>:3
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="o">[</span><span class="m">20</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span><span class="m">40</span><span class="o">]</span>
+</span></code></pre></div>
 <p>上面的代码中，我们使用结构体 <strong>Vec</strong> 提供的静态方法 <strong>new()</strong> 创建向量的一个实例。</p>
 <p>有了向量时候之后，使用 <strong>push(val)</strong> 方法像实例添加元素。</p>
 <p><strong>len()</strong> 方法用于获取向量的元素个数。</p>
@@ -1960,171 +1959,171 @@
 <p>使用 <strong>Vec::new()</strong> 方法创建一个向量的实例，然后在使用 <strong>push()</strong> 方法添加元素的操作看起来有点复杂。</p>
 <p>为了使创建向量看起来像创建数组那么简单，Rust 标准库提供了 <strong>vect!</strong> 用于简化向量的创建。</p>
 <p>使用 <strong>vect!</strong> 宏创建向量时，向量的数据类型由第一个元素自动推断出来。</p>
-<div class="language-text highlight"><pre><span></span><code>fn main() {
-   let v = vec![1,2,3];
-   println!(&quot;{:?}&quot;,v);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">v</span><span class="p">);</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>[1, 2, 3]
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">[</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span><span class="o">]</span>
+</span></code></pre></div>
 <p>向量也是相同类型元素的集合。</p>
 <p>因此，如果给向量传递了不同数据类型的值则会引发错误 error[E0308]: mismatched types 。</p>
 <p>下面的代码，编译会报错</p>
-<div class="language-text highlight"><pre><span></span><code>fn main() {
-   let v = vec![1,2,3,&quot;hello&quot;];
-   println!(&quot;{:?}&quot;,v);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s">&quot;hello&quot;</span><span class="p">];</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">v</span><span class="p">);</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>错误信息为</p>
-<div class="language-text highlight"><pre><span></span><code>error[E0308]: mismatched types
- --&gt; src/main.rs:2:23
-  |
-2 |    let v = vec![1,2,3,&quot;hello&quot;];
-  |                       ^^^^^^^ expected integer, found reference
-  |
-  = note: expected type `{integer}`
-             found type `&amp;&#39;static str`
-
-error: aborting due to previous error
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>error<span class="o">[</span>E0308<span class="o">]</span>:<span class="w"> </span>mismatched<span class="w"> </span>types
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span>--&gt;<span class="w"> </span>src/main.rs:2:23
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="p">|</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="m">2</span><span class="w"> </span><span class="p">|</span><span class="w">    </span><span class="nb">let</span><span class="w"> </span><span class="nv">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>vec!<span class="o">[</span><span class="m">1</span>,2,3,<span class="s2">&quot;hello&quot;</span><span class="o">]</span><span class="p">;</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="p">|</span><span class="w">                       </span>^^^^^^^<span class="w"> </span>expected<span class="w"> </span>integer,<span class="w"> </span>found<span class="w"> </span>reference
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="p">|</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="o">=</span><span class="w"> </span>note:<span class="w"> </span>expected<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="sb">`</span><span class="o">{</span>integer<span class="o">}</span><span class="sb">`</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">                </span>found<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="sb">`</span><span class="p">&amp;</span><span class="err">&#39;</span>static<span class="w"> </span>str<span class="sb">`</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>error:<span class="w"> </span>aborting<span class="w"> </span>due<span class="w"> </span>to<span class="w"> </span>previous<span class="w"> </span>error
+</span></code></pre></div>
 <h3 id="2014-push">20.1.4 追加元素到向量中 push()</h3>
 <p><strong>push()</strong> 方法可以将指定的值添加到向量的末尾</p>
-<div class="language-text highlight"><pre><span></span><code>fn main() {
-   let mut v = Vec::new();
-   v.push(20);
-   v.push(30);
-   v.push(40);
-
-   println!(&quot;{:?}&quot;,v);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Vec</span>::<span class="n">new</span><span class="p">();</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">v</span><span class="p">);</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>[20, 30, 40]
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="o">[</span><span class="m">20</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span><span class="m">40</span><span class="o">]</span>
+</span></code></pre></div>
 <h3 id="2015-remove">20.1.5 删除向量中的某个元素 remove()</h3>
 <p><strong>remove()</strong> 方法移除并返回向量中指定的下标索引处的元素，将其后面的所有元素移到向左移动一位。</p>
-<div class="language-text highlight"><pre><span></span><code>fn main() {
-   let mut v = vec![10,20,30];
-   v.remove(1);
-   println!(&quot;{:?}&quot;,v);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">];</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">v</span><span class="p">);</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>[10, 30]
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="o">[</span><span class="m">10</span>,<span class="w"> </span><span class="m">30</span><span class="o">]</span>
+</span></code></pre></div>
 <h3 id="2016">20.1.6 判断向量是否包含某个元素</h3>
 <p><strong>contains()</strong> 用于判断向量是否包含某个值。</p>
 <p>如果值在向量中存在则返回 <em>true</em>，否则返回 <em>false</em>。</p>
-<div class="language-text highlight"><pre><span></span><code>fn main() {
-   let v = vec![10,20,30];
-   if v.contains(&amp;10) {
-      println!(&quot;found 10&quot;);
-   }
-   println!(&quot;{:?}&quot;,v);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">];</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="o">&amp;</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;found 10&quot;</span><span class="p">);</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">v</span><span class="p">);</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>found 10
-[10, 20, 30]
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>found<span class="w"> </span><span class="m">10</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="o">[</span><span class="m">10</span>,<span class="w"> </span><span class="m">20</span>,<span class="w"> </span><span class="m">30</span><span class="o">]</span>
+</span></code></pre></div>
 <h3 id="2017">20.1.7 获取向量的长度</h3>
 <p>len() 方法可以获取向量的长度，也就是向量元素的个数。</p>
-<div class="language-text highlight"><pre><span></span><code>fn main() {
-   let v = vec![1,2,3];
-   println!(&quot;size of vector is :{}&quot;,v.len());
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;size of vector is :{}&quot;</span><span class="p">,</span><span class="n">v</span><span class="p">.</span><span class="n">len</span><span class="p">());</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>size of vector is :3
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>size<span class="w"> </span>of<span class="w"> </span>vector<span class="w"> </span>is<span class="w"> </span>:3
+</span></code></pre></div>
 <h3 id="2018">20.1.8 访问向量元素的方法</h3>
 <p>向量既然被称为是可变的数组，那么它的元素当然可以使用 <strong>下标</strong> 语法来访问。</p>
 <p>也就是可以使用 <strong>索引号</strong> 来访问向量的每一个元素。</p>
 <p>例如下面的代码，我们可以使用 <em>v[0]</em> 来访问第一个元素 20，使用 <em>v[1]</em> 来访问第二个元素。</p>
-<div class="language-text highlight"><pre><span></span><code>fn main() {
-   let mut v = Vec::new();
-   v.push(20);
-   v.push(30);
-
-   println!(&quot;{:?}&quot;,v[0]);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Vec</span>::<span class="n">new</span><span class="p">();</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>20
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="w"> </span><span class="m">20</span>
+</span></code></pre></div>
 <h3 id="2019">20.1.9 迭代/遍历向量</h3>
 <p>向量本身就实现了迭代器特质，因此可以直接使用 for in 语法来遍历向量</p>
-<div class="language-text highlight"><pre><span></span><code>fn main() {
-   let mut v = Vec::new();
-   v.push(20);
-   v.push(30);
-   v.push(40);
-   v.push(500);
-
-   for i in v {
-      println!(&quot;{}&quot;,i);
-   }
-
-   // println!(&quot;{:?}&quot;,v); // 运行出错，因为向量已经不可用
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Vec</span>::<span class="n">new</span><span class="p">();</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">);</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">    </span><span class="c1">// println!(&quot;{:?}&quot;,v); // 运行出错，因为向量已经不可用</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>20
-30
-40
-500
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="m">20</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="m">30</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="m">40</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="m">500</span>
+</span></code></pre></div>
 <p>如果把上面代码中的注释去掉，则会报编译错误</p>
-<div class="language-text highlight"><pre><span></span><code>fn main() {
-   let mut v = Vec::new();
-   v.push(20);
-   v.push(30);
-   v.push(40);
-   v.push(500);
-
-   for i in v {
-      println!(&quot;{}&quot;,i);
-   }
-
-   println!(&quot;{:?}&quot;,v); // 运行出错，因为向量已经不可用
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Vec</span>::<span class="n">new</span><span class="p">();</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">);</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">v</span><span class="p">);</span><span class="w"> </span><span class="c1">// 运行出错，因为向量已经不可用</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译出错</p>
-<div class="language-text highlight"><pre><span></span><code>error[E0382]: borrow of moved value: `v`
-  --&gt; src/main.rs:12:20
-   |
-2  |    let mut v = Vec::new();
-   |        ----- move occurs because `v` has type `std::vec::Vec&lt;i32&gt;`, which does not implement the `Copy` trait
-...
-8  |    for i in v {
-   |             - value moved here
-...
-12 |    println!(&quot;{:?}&quot;,v); // 运行出错，因为向量已经不可用
-   |                    ^ value borrowed here after move
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="w">    </span>error<span class="o">[</span>E0382<span class="o">]</span>:<span class="w"> </span>borrow<span class="w"> </span>of<span class="w"> </span>moved<span class="w"> </span>value:<span class="w"> </span><span class="sb">`</span>v<span class="sb">`</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">      </span>--&gt;<span class="w"> </span>src/main.rs:12:20
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">       </span><span class="p">|</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">    </span><span class="m">2</span><span class="w">  </span><span class="p">|</span><span class="w">    </span><span class="nb">let</span><span class="w"> </span>mut<span class="w"> </span><span class="nv">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Vec::new<span class="o">()</span><span class="p">;</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">       </span><span class="p">|</span><span class="w">        </span>-----<span class="w"> </span>move<span class="w"> </span>occurs<span class="w"> </span>because<span class="w"> </span><span class="sb">`</span>v<span class="sb">`</span><span class="w"> </span>has<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="sb">`</span>std::vec::Vec&lt;i32&gt;<span class="sb">`</span>,<span class="w"> </span>which<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>implement<span class="w"> </span>the<span class="w"> </span><span class="sb">`</span>Copy<span class="sb">`</span><span class="w"> </span>trait
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">    </span>...
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">    </span><span class="m">8</span><span class="w">  </span><span class="p">|</span><span class="w">    </span><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span>v<span class="w"> </span><span class="o">{</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">       </span><span class="p">|</span><span class="w">             </span>-<span class="w"> </span>value<span class="w"> </span>moved<span class="w"> </span>here
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">    </span>...
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">    </span><span class="m">12</span><span class="w"> </span><span class="p">|</span><span class="w">    </span>println!<span class="o">(</span><span class="s2">&quot;{:?}&quot;</span>,v<span class="o">)</span><span class="p">;</span><span class="w"> </span>//<span class="w"> </span>运行出错，因为向量已经不可用
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">       </span><span class="p">|</span><span class="w">                    </span>^<span class="w"> </span>value<span class="w"> </span>borrowed<span class="w"> </span>here<span class="w"> </span>after<span class="w"> </span>move
+</span></code></pre></div>
 <p>出错原因我们在 Rust 所有权 Ownership 章节已经提到过了，这里就不做详细介绍了。</p>
 <p>修复的方式，就是在使用使用 <em>for in</em> 来迭代向量的一个引用</p>
-<div class="language-text highlight"><pre><span></span><code>fn main() {
-   let mut v = Vec::new();
-   v.push(20);
-   v.push(30);
-   v.push(40);
-   v.push(500);
-
-   for i in &amp;v {
-      println!(&quot;{}&quot;,i);
-   }
-   println!(&quot;{:?}&quot;,v);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Vec</span>::<span class="n">new</span><span class="p">();</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">&amp;</span><span class="n">v</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">);</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">v</span><span class="p">);</span>
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>20
-30
-40
-500
-[20, 30, 40, 500]
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="m">20</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="m">30</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="m">40</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="m">500</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="o">[</span><span class="m">20</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span><span class="m">40</span>,<span class="w"> </span><span class="m">500</span><span class="o">]</span>
+</span></code></pre></div>
 <h2 id="202-hashmap">20.2 哈希表 HashMap</h2>
 <p>哈希表 HashMap 就是 <strong>键值对</strong> 的集合。哈希表中不允许有重复的键，但允许不同的键有相同的值。</p>
 <p>从另一方面说，哈希表有点像 <strong>查找表</strong>。键用于查找值。</p>
@@ -2134,8 +2133,8 @@ error: aborting due to previous error
 <h3 id="2021">20.2.1 创建哈希表的语法</h3>
 <p>Rust 语言标准库 <em>std::collections</em> 的结构体 HashMap 提供了 <em>new()</em> 静态方法用于创建哈希表的一个实例。</p>
 <p>使用 <em>HashMap::new()</em> 创建哈希表的语法格式如下</p>
-<div class="language-text highlight"><pre><span></span><code>let mut instance_name = HashMap::new();
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">instance_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HashMap</span>::<span class="n">new</span><span class="p">();</span>
+</span></code></pre></div>
 <p><em>new()</em> 方法会创建一个空的哈希表。但这个空的哈希表是不能立即使用的，因为它还没指定数据类型。当我们给哈希表添加了元素之后才能正常使用。</p>
 <p>结构体 HashMap 同时提供了大量的方法用于操作哈希表中的元素，我们将常用的几个方法罗列于此</p>
 <p><img alt="" src="https://pic2.zhimg.com/v2-721e5c13bf926c4d34915366a95af46d_b.jpg" /></p>
@@ -2143,113 +2142,113 @@ error: aborting due to previous error
 <p>insert() 方法用于插入或更新一个键值对到哈希表中。</p>
 <p>如果键已经存在，则更新为新的简直对，并则返回旧的值。</p>
 <p>如果键不存在则执行插入操作并返回 None。</p>
-<div class="language-text highlight"><pre><span></span><code>use std::collections::HashMap;
-fn main(){
-   let mut stateCodes = HashMap::new();
-   stateCodes.insert(&quot;name&quot;,&quot;从零蛋开始教程&quot;);
-   stateCodes.insert(&quot;site&quot;,&quot;https://www.baidu.com&quot;);
-   println!(&quot;{:?}&quot;,stateCodes);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">collections</span>::<span class="n">HashMap</span><span class="p">;</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">(){</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">stateCodes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HashMap</span>::<span class="n">new</span><span class="p">();</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">    </span><span class="n">stateCodes</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span><span class="s">&quot;从零蛋开始教程&quot;</span><span class="p">);</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">    </span><span class="n">stateCodes</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;site&quot;</span><span class="p">,</span><span class="s">&quot;https://www.baidu.com&quot;</span><span class="p">);</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">stateCodes</span><span class="p">);</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>{&quot;name&quot;: &quot;从零蛋开始教程&quot;, &quot;site&quot;: &quot;https://www.baidu.com&quot;}
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="o">{</span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;从零蛋开始教程&quot;</span>,<span class="w"> </span><span class="s2">&quot;site&quot;</span>:<span class="w"> </span><span class="s2">&quot;https://www.baidu.com&quot;</span><span class="o">}</span>
+</span></code></pre></div>
 <h3 id="2023-len">20.2.3 获取哈希表中键值对的个数 len()</h3>
 <p>len() 方法用于获取哈希表的长度，也就是哈希表中键值对的个数。</p>
-<div class="language-text highlight"><pre><span></span><code>use std::collections::HashMap;
-fn main() {
-   let mut stateCodes = HashMap::new();
-   stateCodes.insert(&quot;name&quot;,&quot;从零蛋开始教程&quot;);
-   stateCodes.insert(&quot;site&quot;,&quot;https://www.baidu.com&quot;);
-   println!(&quot;size of map is {}&quot;,stateCodes.len());
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">collections</span>::<span class="n">HashMap</span><span class="p">;</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">stateCodes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HashMap</span>::<span class="n">new</span><span class="p">();</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">    </span><span class="n">stateCodes</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span><span class="s">&quot;从零蛋开始教程&quot;</span><span class="p">);</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">    </span><span class="n">stateCodes</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;site&quot;</span><span class="p">,</span><span class="s">&quot;https://www.baidu.com&quot;</span><span class="p">);</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;size of map is {}&quot;</span><span class="p">,</span><span class="n">stateCodes</span><span class="p">.</span><span class="n">len</span><span class="p">());</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>size of map is 2
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>size<span class="w"> </span>of<span class="w"> </span>map<span class="w"> </span>is<span class="w"> </span><span class="m">2</span>
+</span></code></pre></div>
 <h3 id="2024-get">20.2.4 根据键从哈希表中获取相应的值 get()</h3>
 <p>get() 方法用于根据键从哈希表中获取相应的值。</p>
 <p>如果值不存在，也就是哈希表不包含参数的键则返回 None。</p>
 <p>如果值存在，则返回值的一个引用。</p>
-<div class="language-text highlight"><pre><span></span><code>use std::collections::HashMap;
-fn main() {
-   let mut stateCodes = HashMap::new();
-   stateCodes.insert(&quot;name&quot;,&quot;从零蛋开始教程&quot;);
-   stateCodes.insert(&quot;site&quot;,&quot;https://www.baidu.com&quot;);
-   println!(&quot;size of map is {}&quot;,stateCodes.len());
-   println!(&quot;{:?}&quot;,stateCodes);
-
-   match stateCodes.get(&amp;&quot;name&quot;) {
-      Some(value)=&gt; {
-         println!(&quot;Value for key name is {}&quot;,value);
-      }
-      None =&gt; {
-         println!(&quot;nothing found&quot;);
-      }
-   }
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">collections</span>::<span class="n">HashMap</span><span class="p">;</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">stateCodes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HashMap</span>::<span class="n">new</span><span class="p">();</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">    </span><span class="n">stateCodes</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span><span class="s">&quot;从零蛋开始教程&quot;</span><span class="p">);</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="w">    </span><span class="n">stateCodes</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;site&quot;</span><span class="p">,</span><span class="s">&quot;https://www.baidu.com&quot;</span><span class="p">);</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;size of map is {}&quot;</span><span class="p">,</span><span class="n">stateCodes</span><span class="p">.</span><span class="n">len</span><span class="p">());</span>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">stateCodes</span><span class="p">);</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">stateCodes</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="o">&amp;</span><span class="s">&quot;name&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="w">        </span><span class="nb">Some</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="w">            </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Value for key name is {}&quot;</span><span class="p">,</span><span class="n">value</span><span class="p">);</span>
+</span><span id="__span-29-12"><a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-29-13"><a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="w">        </span><span class="nb">None</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-29-14"><a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="w">            </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;nothing found&quot;</span><span class="p">);</span>
+</span><span id="__span-29-15"><a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-29-16"><a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-29-17"><a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>size of map is 2
-{&quot;name&quot;: &quot;从零蛋开始教程&quot;, &quot;site&quot;: &quot;https://www.baidu.com&quot;}
-Value for key name is 从零蛋开始教程
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>size<span class="w"> </span>of<span class="w"> </span>map<span class="w"> </span>is<span class="w"> </span><span class="m">2</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="o">{</span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;从零蛋开始教程&quot;</span>,<span class="w"> </span><span class="s2">&quot;site&quot;</span>:<span class="w"> </span><span class="s2">&quot;https://www.baidu.com&quot;</span><span class="o">}</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>Value<span class="w"> </span><span class="k">for</span><span class="w"> </span>key<span class="w"> </span>name<span class="w"> </span>is<span class="w"> </span>从零蛋开始教程
+</span></code></pre></div>
 <h3 id="2025-iter">20.2.5 迭代哈希表 iter()</h3>
 <p>iter() 方法会返回哈希表中 键值对的引用 组成的无序迭代器。</p>
 <p>迭代器元素的类型为 (&amp;'a K, &amp;'a V)。</p>
-<div class="language-text highlight"><pre><span></span><code>use std::collections::HashMap;
-fn main() {
-   let mut stateCodes = HashMap::new();
-    stateCodes.insert(&quot;name&quot;,&quot;从零蛋开始教程&quot;);
-    stateCodes.insert(&quot;site&quot;,&quot;https://www.baidu.com&quot;);
-
-   for (key, val) in stateCodes.iter() {
-      println!(&quot;key: {} val: {}&quot;, key, val);
-   }
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">collections</span>::<span class="n">HashMap</span><span class="p">;</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">stateCodes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HashMap</span>::<span class="n">new</span><span class="p">();</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="w">    </span><span class="n">stateCodes</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span><span class="s">&quot;从零蛋开始教程&quot;</span><span class="p">);</span>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="w">    </span><span class="n">stateCodes</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;site&quot;</span><span class="p">,</span><span class="s">&quot;https://www.baidu.com&quot;</span><span class="p">);</span>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">stateCodes</span><span class="p">.</span><span class="n">iter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;key: {} val: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
+</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-31-10"><a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>key: site val: https://www.baidu.com
-key: name val: 从零蛋开始教程
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>key:<span class="w"> </span>site<span class="w"> </span>val:<span class="w"> </span>https://www.baidu.com
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>key:<span class="w"> </span>name<span class="w"> </span>val:<span class="w"> </span>从零蛋开始教程
+</span></code></pre></div>
 <h3 id="2026-contains_key">20.2.6 是否包含指定的键 contains_key()</h3>
 <p>contains_key() 方法用于判断哈希表中是否包含指定的 <strong>键值对</strong>。</p>
 <p>如果包含指定的键，那么会返回相应的值的引用，否则返回 None。</p>
-<div class="language-text highlight"><pre><span></span><code>use std::collections::HashMap;
-fn main() {
-    let mut stateCodes = HashMap::new();
-    stateCodes.insert(&quot;name&quot;,&quot;从零蛋开始教程&quot;);
-    stateCodes.insert(&quot;site&quot;,&quot;https://www.baidu.com&quot;);
-    stateCodes.insert(&quot;slogn&quot;,&quot;从零蛋开始教程，简单编程&quot;);
-
-    if stateCodes.contains_key(&amp;&quot;name&quot;) {
-        println!(&quot;found key&quot;);
-    }
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">collections</span>::<span class="n">HashMap</span><span class="p">;</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">stateCodes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HashMap</span>::<span class="n">new</span><span class="p">();</span>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="w">    </span><span class="n">stateCodes</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span><span class="s">&quot;从零蛋开始教程&quot;</span><span class="p">);</span>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="w">    </span><span class="n">stateCodes</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;site&quot;</span><span class="p">,</span><span class="s">&quot;https://www.baidu.com&quot;</span><span class="p">);</span>
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="w">    </span><span class="n">stateCodes</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;slogn&quot;</span><span class="p">,</span><span class="s">&quot;从零蛋开始教程，简单编程&quot;</span><span class="p">);</span>
+</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>
+</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">stateCodes</span><span class="p">.</span><span class="n">contains_key</span><span class="p">(</span><span class="o">&amp;</span><span class="s">&quot;name&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-33-9"><a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;found key&quot;</span><span class="p">);</span>
+</span><span id="__span-33-10"><a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-33-11"><a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>found key
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>found<span class="w"> </span>key
+</span></code></pre></div>
 <h3 id="2027-remove">20.2.7 从哈希表中删除指定键值对 remove()</h3>
 <p><em>remove()</em> 用于从哈希表中删除指定的键值对。</p>
 <p>如果键值对存在则返回删除的键值对，返回的数据格式为 (&amp;'a K, &amp;'a V)。</p>
 <p>如果键值对不存在则返回 None</p>
-<div class="language-text highlight"><pre><span></span><code>use std::collections::HashMap;
-fn main() {
-    let mut stateCodes = HashMap::new();
-    stateCodes.insert(&quot;name&quot;,&quot;从零蛋开始教程&quot;);
-    stateCodes.insert(&quot;site&quot;,&quot;https://www.baidu.com&quot;);
-    stateCodes.insert(&quot;slogn&quot;,&quot;从零蛋开始教程，简单编程&quot;);
-
-    println!(&quot;length of the hashmap {}&quot;,stateCodes.len());
-    stateCodes.remove(&amp;&quot;site&quot;);
-    println!(&quot;length of the hashmap after remove() {}&quot;,stateCodes.len());
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">collections</span>::<span class="n">HashMap</span><span class="p">;</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">stateCodes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HashMap</span>::<span class="n">new</span><span class="p">();</span>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="w">    </span><span class="n">stateCodes</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span><span class="s">&quot;从零蛋开始教程&quot;</span><span class="p">);</span>
+</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="w">    </span><span class="n">stateCodes</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;site&quot;</span><span class="p">,</span><span class="s">&quot;https://www.baidu.com&quot;</span><span class="p">);</span>
+</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="w">    </span><span class="n">stateCodes</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;slogn&quot;</span><span class="p">,</span><span class="s">&quot;从零蛋开始教程，简单编程&quot;</span><span class="p">);</span>
+</span><span id="__span-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a>
+</span><span id="__span-35-8"><a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;length of the hashmap {}&quot;</span><span class="p">,</span><span class="n">stateCodes</span><span class="p">.</span><span class="n">len</span><span class="p">());</span>
+</span><span id="__span-35-9"><a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a><span class="w">    </span><span class="n">stateCodes</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="o">&amp;</span><span class="s">&quot;site&quot;</span><span class="p">);</span>
+</span><span id="__span-35-10"><a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;length of the hashmap after remove() {}&quot;</span><span class="p">,</span><span class="n">stateCodes</span><span class="p">.</span><span class="n">len</span><span class="p">());</span>
+</span><span id="__span-35-11"><a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>length of the hashmap 3
-length of the hashmap after remove() 2
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">length</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">hashmap</span><span class="w"> </span><span class="mi">3</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="n">length</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">hashmap</span><span class="w"> </span><span class="n">after</span><span class="w"> </span><span class="n">remove</span><span class="p">()</span><span class="w"> </span><span class="mi">2</span>
+</span></code></pre></div>
 <h2 id="203-hashset">20.3 哈希集合 HashSet</h2>
 <p>哈希集合 <strong>HashSet</strong>，简称为 <strong>集合 (set)</strong>，是没有重复值的相同数据类型的值的集合。</p>
 <p>集合的最大特征就是没有重复值。</p>
@@ -2258,157 +2257,157 @@ length of the hashmap after remove() 2
 <h3 id="2031">20.3.1 创建集合的语法</h3>
 <p>Rust 语言标准库 std::collections 的结构体 HashSet 提供了 new() 静态方法用于创建集合的一个实例。</p>
 <p>使用 HashSet::new() 创建集合的语法格式如下</p>
-<div class="language-text highlight"><pre><span></span><code>let mut hash_set_name = HashSet::new();
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">hash_set_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HashSet</span>::<span class="n">new</span><span class="p">();</span>
+</span></code></pre></div>
 <p>new() 方法会创建一个空的集合。但这个空的集合是不能立即使用的，因为它还没指定数据类型。当我们给集合添加了元素之后才能正常使用。</p>
 <p>结构体 HashSet 同时提供了大量的方法用于操作集合中的元素，我们将常用的几个方法罗列于此</p>
 <p><img alt="" src="https://pic4.zhimg.com/v2-02546c0dff00702ef686bbd9239b001b_b.jpg" /></p>
 <h3 id="2032-insert">20.3.2 插入一个值到集合中 insert()</h3>
 <p>insert() 用于插入一个值到集合中。</p>
 <p>insert() 方法的函数原型如下</p>
-<div class="language-text highlight"><pre><span></span><code>pub fn insert(&amp;mut self, value: T) -&gt; bool
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">insert</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">value</span>: <span class="nc">T</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">bool</span>
+</span></code></pre></div>
 <p>insert() 用于插入一个值到集合中，如果集合中已经存在指定的值，则返回 false，否则返回 true。</p>
 <blockquote>
 <p>注意： 集合中不允许出现重复的值，因此如果集合中已经存在相同的值，则会插入失败。  </p>
 </blockquote>
-<div class="language-text highlight"><pre><span></span><code>use std::collections::HashSet;
-
-fn main() {
-    let mut languages = HashSet::new();
-    languages.insert(&quot;Python&quot;);
-    languages.insert(&quot;Rust&quot;);
-    languages.insert(&quot;Ruby&quot;);
-    languages.insert(&quot;PHP&quot;);
-
-    languages.insert(&quot;Rust&quot;); // 插入失败但不会引发异常
-
-    println!(&quot;{:?}&quot;,languages);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">collections</span>::<span class="n">HashSet</span><span class="p">;</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">languages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HashSet</span>::<span class="n">new</span><span class="p">();</span>
+</span><span id="__span-39-5"><a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Python&quot;</span><span class="p">);</span>
+</span><span id="__span-39-6"><a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Rust&quot;</span><span class="p">);</span>
+</span><span id="__span-39-7"><a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Ruby&quot;</span><span class="p">);</span>
+</span><span id="__span-39-8"><a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;PHP&quot;</span><span class="p">);</span>
+</span><span id="__span-39-9"><a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a>
+</span><span id="__span-39-10"><a id="__codelineno-39-10" name="__codelineno-39-10" href="#__codelineno-39-10"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Rust&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 插入失败但不会引发异常</span>
+</span><span id="__span-39-11"><a id="__codelineno-39-11" name="__codelineno-39-11" href="#__codelineno-39-11"></a>
+</span><span id="__span-39-12"><a id="__codelineno-39-12" name="__codelineno-39-12" href="#__codelineno-39-12"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">languages</span><span class="p">);</span>
+</span><span id="__span-39-13"><a id="__codelineno-39-13" name="__codelineno-39-13" href="#__codelineno-39-13"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>{&quot;Python&quot;, &quot;PHP&quot;, &quot;Rust&quot;, &quot;Ruby&quot;}
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="o">{</span><span class="s2">&quot;Python&quot;</span>,<span class="w"> </span><span class="s2">&quot;PHP&quot;</span>,<span class="w"> </span><span class="s2">&quot;Rust&quot;</span>,<span class="w"> </span><span class="s2">&quot;Ruby&quot;</span><span class="o">}</span>
+</span></code></pre></div>
 <h3 id="2033-len">20.3.3 获取集合的长度 len()</h3>
 <p>len() 方法用于获取集合的长度，也就是集合中元素的个数。</p>
 <p>len() 方法的函数原型如下</p>
-<div class="language-text highlight"><pre><span></span><code>pub fn len(&amp;self) -&gt; usize
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">len</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">usize</span>
+</span></code></pre></div>
 <p>注意： usize 是一个指针长度类型，这个由编译时的电脑 CPU 的构架决定。</p>
 <h3 id="2034">20.3.4 范例</h3>
-<div class="language-text highlight"><pre><span></span><code>use std::collections::HashSet;
-fn main() {
-   let mut languages = HashSet::new();
-   languages.insert(&quot;Python&quot;);
-   languages.insert(&quot;Rust&quot;);
-   languages.insert(&quot;Ruby&quot;);
-   languages.insert(&quot;PHP&quot;);
-   println!(&quot;size of the set is {}&quot;,languages.len());
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">collections</span>::<span class="n">HashSet</span><span class="p">;</span>
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">languages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HashSet</span>::<span class="n">new</span><span class="p">();</span>
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Python&quot;</span><span class="p">);</span>
+</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Rust&quot;</span><span class="p">);</span>
+</span><span id="__span-42-6"><a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Ruby&quot;</span><span class="p">);</span>
+</span><span id="__span-42-7"><a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;PHP&quot;</span><span class="p">);</span>
+</span><span id="__span-42-8"><a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;size of the set is {}&quot;</span><span class="p">,</span><span class="n">languages</span><span class="p">.</span><span class="n">len</span><span class="p">());</span>
+</span><span id="__span-42-9"><a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>size of the set is 4
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>size<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span><span class="nb">set</span><span class="w"> </span>is<span class="w"> </span><span class="m">4</span>
+</span></code></pre></div>
 <h3 id="2035-iter">20.3.5 返回集合所有元素创建的迭代器 iter()</h3>
 <p>iter() 方法用于返回集合中所有元素组成的无序迭代器。</p>
 <p>iter() 方法的函数原型如下</p>
-<div class="language-text highlight"><pre><span></span><code>pub fn iter(&amp;self) -&gt; Iter
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">iter</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Iter</span>
+</span></code></pre></div>
 <blockquote>
 <p>注意: 迭代器元素的顺序是无序的，毫无规则的。而且每次调用 iter() 返回的元素顺序都可能不一样。  </p>
 </blockquote>
-<div class="language-text highlight"><pre><span></span><code>use std::collections::HashSet;
-fn main() {
-   let mut languages = HashSet::new();
-   languages.insert(&quot;Python&quot;);
-   languages.insert(&quot;Rust&quot;);
-   languages.insert(&quot;Ruby&quot;);
-   languages.insert(&quot;PHP&quot;);
-
-   for language in languages.iter() {
-      println!(&quot;{}&quot;,language);
-   }
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">collections</span>::<span class="n">HashSet</span><span class="p">;</span>
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">languages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HashSet</span>::<span class="n">new</span><span class="p">();</span>
+</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Python&quot;</span><span class="p">);</span>
+</span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Rust&quot;</span><span class="p">);</span>
+</span><span id="__span-45-6"><a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Ruby&quot;</span><span class="p">);</span>
+</span><span id="__span-45-7"><a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;PHP&quot;</span><span class="p">);</span>
+</span><span id="__span-45-8"><a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a>
+</span><span id="__span-45-9"><a id="__codelineno-45-9" name="__codelineno-45-9" href="#__codelineno-45-9"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">language</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">languages</span><span class="p">.</span><span class="n">iter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-45-10"><a id="__codelineno-45-10" name="__codelineno-45-10" href="#__codelineno-45-10"></a><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="n">language</span><span class="p">);</span>
+</span><span id="__span-45-11"><a id="__codelineno-45-11" name="__codelineno-45-11" href="#__codelineno-45-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-45-12"><a id="__codelineno-45-12" name="__codelineno-45-12" href="#__codelineno-45-12"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>PHP
-Python
-Rust
-Ruby
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>PHP
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>Python
+</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>Rust
+</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>Ruby
+</span></code></pre></div>
 <h3 id="2036-get">20.3.6 获取集合中指定值的一个引用 get()</h3>
 <p>get() 方法用于获取集合中指定值的一个引用。</p>
 <p>get() 方法的原型如下</p>
-<div class="language-text highlight"><pre><span></span><code>pub fn get&lt;Q:?Sized&gt;(&amp;self, value: &amp;Q) -&gt; Option&lt;&amp;T&gt;
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">get</span><span class="o">&lt;</span><span class="n">Q</span>:<span class="o">?</span><span class="nb">Sized</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">value</span>: <span class="kp">&amp;</span><span class="nc">Q</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">T</span><span class="o">&gt;</span>
+</span></code></pre></div>
 <p>如果值 value 存在于集合中则返回集合中的相应值的一个引用，否则返回 None。</p>
-<div class="language-text highlight"><pre><span></span><code>use std::collections::HashSet;
-fn main() {
-   let mut languages = HashSet::new();
-   languages.insert(&quot;Python&quot;);
-   languages.insert(&quot;Rust&quot;);
-   languages.insert(&quot;Ruby&quot;);
-   languages.insert(&quot;PHP&quot;);
-
-   match languages.get(&amp;&quot;Rust&quot;){
-      Some(value)=&gt;{
-         println!(&quot;found {}&quot;,value);
-      }
-      None =&gt;{
-         println!(&quot;not found&quot;);
-      }
-   }
-   println!(&quot;{:?}&quot;,languages);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">collections</span>::<span class="n">HashSet</span><span class="p">;</span>
+</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-48-3"><a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">languages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HashSet</span>::<span class="n">new</span><span class="p">();</span>
+</span><span id="__span-48-4"><a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Python&quot;</span><span class="p">);</span>
+</span><span id="__span-48-5"><a id="__codelineno-48-5" name="__codelineno-48-5" href="#__codelineno-48-5"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Rust&quot;</span><span class="p">);</span>
+</span><span id="__span-48-6"><a id="__codelineno-48-6" name="__codelineno-48-6" href="#__codelineno-48-6"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Ruby&quot;</span><span class="p">);</span>
+</span><span id="__span-48-7"><a id="__codelineno-48-7" name="__codelineno-48-7" href="#__codelineno-48-7"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;PHP&quot;</span><span class="p">);</span>
+</span><span id="__span-48-8"><a id="__codelineno-48-8" name="__codelineno-48-8" href="#__codelineno-48-8"></a>
+</span><span id="__span-48-9"><a id="__codelineno-48-9" name="__codelineno-48-9" href="#__codelineno-48-9"></a><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">languages</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="o">&amp;</span><span class="s">&quot;Rust&quot;</span><span class="p">){</span>
+</span><span id="__span-48-10"><a id="__codelineno-48-10" name="__codelineno-48-10" href="#__codelineno-48-10"></a><span class="w">        </span><span class="nb">Some</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+</span><span id="__span-48-11"><a id="__codelineno-48-11" name="__codelineno-48-11" href="#__codelineno-48-11"></a><span class="w">            </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;found {}&quot;</span><span class="p">,</span><span class="n">value</span><span class="p">);</span>
+</span><span id="__span-48-12"><a id="__codelineno-48-12" name="__codelineno-48-12" href="#__codelineno-48-12"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-48-13"><a id="__codelineno-48-13" name="__codelineno-48-13" href="#__codelineno-48-13"></a><span class="w">        </span><span class="nb">None</span><span class="w"> </span><span class="o">=&gt;</span><span class="p">{</span>
+</span><span id="__span-48-14"><a id="__codelineno-48-14" name="__codelineno-48-14" href="#__codelineno-48-14"></a><span class="w">            </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;not found&quot;</span><span class="p">);</span>
+</span><span id="__span-48-15"><a id="__codelineno-48-15" name="__codelineno-48-15" href="#__codelineno-48-15"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-48-16"><a id="__codelineno-48-16" name="__codelineno-48-16" href="#__codelineno-48-16"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-48-17"><a id="__codelineno-48-17" name="__codelineno-48-17" href="#__codelineno-48-17"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="n">languages</span><span class="p">);</span>
+</span><span id="__span-48-18"><a id="__codelineno-48-18" name="__codelineno-48-18" href="#__codelineno-48-18"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>found Rust
-{&quot;Python&quot;, &quot;Ruby&quot;, &quot;PHP&quot;, &quot;Rust&quot;}
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>found<span class="w"> </span>Rust
+</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a><span class="o">{</span><span class="s2">&quot;Python&quot;</span>,<span class="w"> </span><span class="s2">&quot;Ruby&quot;</span>,<span class="w"> </span><span class="s2">&quot;PHP&quot;</span>,<span class="w"> </span><span class="s2">&quot;Rust&quot;</span><span class="o">}</span>
+</span></code></pre></div>
 <h3 id="2037-contains">20.3.7 判断集合是否包含某个值 contains()</h3>
 <p>contains() 方法用于判断集合是否包含指定的值。</p>
 <p>contains() 方法的函数原型如下</p>
-<div class="language-text highlight"><pre><span></span><code>pub fn contains&lt;Q: ?Sized&gt;(&amp;self, value: &amp;Q) -&gt; bool
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">contains</span><span class="o">&lt;</span><span class="n">Q</span>: <span class="o">?</span><span class="nb">Sized</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">value</span>: <span class="kp">&amp;</span><span class="nc">Q</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">bool</span>
+</span></code></pre></div>
 <p>如果值 value 存在于集合中则返回 true ，否则返回 false。</p>
-<div class="language-text highlight"><pre><span></span><code>use std::collections::HashSet;
-
-fn main() {
-   let mut languages = HashSet::new();
-   languages.insert(&quot;Python&quot;);
-   languages.insert(&quot;Rust&quot;);
-   languages.insert(&quot;Ruby&quot;);
-
-   if languages.contains(&amp;&quot;Rust&quot;) {
-      println!(&quot;found language&quot;);
-   }  
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">collections</span>::<span class="n">HashSet</span><span class="p">;</span>
+</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>
+</span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-51-4"><a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">languages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HashSet</span>::<span class="n">new</span><span class="p">();</span>
+</span><span id="__span-51-5"><a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Python&quot;</span><span class="p">);</span>
+</span><span id="__span-51-6"><a id="__codelineno-51-6" name="__codelineno-51-6" href="#__codelineno-51-6"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Rust&quot;</span><span class="p">);</span>
+</span><span id="__span-51-7"><a id="__codelineno-51-7" name="__codelineno-51-7" href="#__codelineno-51-7"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Ruby&quot;</span><span class="p">);</span>
+</span><span id="__span-51-8"><a id="__codelineno-51-8" name="__codelineno-51-8" href="#__codelineno-51-8"></a>
+</span><span id="__span-51-9"><a id="__codelineno-51-9" name="__codelineno-51-9" href="#__codelineno-51-9"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">languages</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="o">&amp;</span><span class="s">&quot;Rust&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-51-10"><a id="__codelineno-51-10" name="__codelineno-51-10" href="#__codelineno-51-10"></a><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;found language&quot;</span><span class="p">);</span>
+</span><span id="__span-51-11"><a id="__codelineno-51-11" name="__codelineno-51-11" href="#__codelineno-51-11"></a><span class="w">    </span><span class="p">}</span><span class="w">  </span>
+</span><span id="__span-51-12"><a id="__codelineno-51-12" name="__codelineno-51-12" href="#__codelineno-51-12"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>found language
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>found<span class="w"> </span>language
+</span></code></pre></div>
 <h3 id="2038-remove">20.3.8 删除集合元素 remove()</h3>
 <p>remove() 方法用于从集合中删除指定的值。</p>
 <p>remove() 方法的原型如下</p>
-<div class="language-text highlight"><pre><span></span><code>pub fn remove(&amp;mut self, value: &amp;Q) -&gt; bool
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">remove</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">value</span>: <span class="kp">&amp;</span><span class="nc">Q</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">bool</span>
+</span></code></pre></div>
 <p>删除之前如果值 value 存在于集合中则返回 true，如果不存在则返回 false。</p>
-<div class="language-text highlight"><pre><span></span><code>use std::collections::HashSet;
-
-fn main() {
-   let mut languages = HashSet::new();
-   languages.insert(&quot;Python&quot;);
-   languages.insert(&quot;Rust&quot;);
-   languages.insert(&quot;Ruby&quot;);
-   println!(&quot;length of the Hashset: {}&quot;,languages.len());
-   languages.remove(&amp;&quot;Kannan&quot;);
-   println!(&quot;length of the Hashset after remove() : {}&quot;,languages.len());
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">collections</span>::<span class="n">HashSet</span><span class="p">;</span>
+</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>
+</span><span id="__span-54-3"><a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-54-4"><a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">languages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HashSet</span>::<span class="n">new</span><span class="p">();</span>
+</span><span id="__span-54-5"><a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Python&quot;</span><span class="p">);</span>
+</span><span id="__span-54-6"><a id="__codelineno-54-6" name="__codelineno-54-6" href="#__codelineno-54-6"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Rust&quot;</span><span class="p">);</span>
+</span><span id="__span-54-7"><a id="__codelineno-54-7" name="__codelineno-54-7" href="#__codelineno-54-7"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Ruby&quot;</span><span class="p">);</span>
+</span><span id="__span-54-8"><a id="__codelineno-54-8" name="__codelineno-54-8" href="#__codelineno-54-8"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;length of the Hashset: {}&quot;</span><span class="p">,</span><span class="n">languages</span><span class="p">.</span><span class="n">len</span><span class="p">());</span>
+</span><span id="__span-54-9"><a id="__codelineno-54-9" name="__codelineno-54-9" href="#__codelineno-54-9"></a><span class="w">    </span><span class="n">languages</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="o">&amp;</span><span class="s">&quot;Kannan&quot;</span><span class="p">);</span>
+</span><span id="__span-54-10"><a id="__codelineno-54-10" name="__codelineno-54-10" href="#__codelineno-54-10"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;length of the Hashset after remove() : {}&quot;</span><span class="p">,</span><span class="n">languages</span><span class="p">.</span><span class="n">len</span><span class="p">());</span>
+</span><span id="__span-54-11"><a id="__codelineno-54-11" name="__codelineno-54-11" href="#__codelineno-54-11"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>length of the Hashset: 3
-length of the Hashset after remove() : 3
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>length<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>Hashset:<span class="w"> </span><span class="m">3</span>
+</span><span id="__span-55-2"><a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a>length<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>Hashset<span class="w"> </span>after<span class="w"> </span>remove<span class="o">()</span><span class="w"> </span>:<span class="w"> </span><span class="m">3</span>
+</span></code></pre></div>
 
 
   

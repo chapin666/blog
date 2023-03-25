@@ -1347,12 +1347,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#176" class="md-nav__link">
     17.6 结构体中的方法
   </a>
@@ -1392,8 +1387,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#177" class="md-nav__link">
     17.7 结构体的静态方法
   </a>
@@ -1419,11 +1414,16 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#173_1" class="md-nav__link">
     17.3 范例
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1744,12 +1744,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#176" class="md-nav__link">
     17.6 结构体中的方法
   </a>
@@ -1789,8 +1784,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#177" class="md-nav__link">
     17.7 结构体的静态方法
   </a>
@@ -1816,11 +1811,16 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#173_1" class="md-nav__link">
     17.3 范例
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1842,8 +1842,6 @@
 
 
 
-  <h1>17-结构体</h1>
-
 <p>数组永远只能保存相同类型的元素。从某些方面说，数组是相同类型元素的集合。</p>
 <p>但世界并不是那么美好的，永远都是复制克隆类的东西，很多东西往往比较复杂。</p>
 <p>比如我们要描述一个人，它有着年龄，有着姓名，有着居住地址。如果我们要存储这些东西，数组是指望不上了。</p>
@@ -1854,12 +1852,12 @@
 <p>几乎所有有结构体这个概念的语言，定义结构体的关键字都是一样的，那就是struct。</p>
 <p>因为结构体是一个集合，也就是复合类型。结构体中的所有元素/字段也必须明确指明它的数据类型。</p>
 <p>定义一个结构体的语法格式如下</p>
-<div class="language-text highlight"><pre><span></span><code>struct Name_of_structure {
-   field1:data_type,
-   field2:data_type,
-   field3:data_type
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">struct</span> <span class="nc">Name_of_structure</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">   </span><span class="n">field1</span>:<span class="nc">data_type</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">   </span><span class="n">field2</span>:<span class="nc">data_type</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">   </span><span class="n">field3</span>:<span class="nc">data_type</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>定义一个结构体时：</p>
 <ul>
 <li>结构体名 Name_of_structure 和元素/字段名 fieldN 遵循普通变量的命名语法。</li>
@@ -1877,12 +1875,12 @@
 <p>创建结构体的实例或者说结构体初始化本质上就是创建一个变量。使用 let 关键字创建一个变量。</p>
 <p>创建结构体的一个实例和定义结构体的语法真的很类似。但说起来还是有点复杂，我们先看具体的语法</p>
 <h3 id="1721">17.2.1 结构体初始化语法</h3>
-<div class="language-text highlight"><pre><span></span><code>let instance_name = Name_of_structure {
-   field1:value1,
-   field2:value2,
-   field3:value3
-};
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">let</span><span class="w"> </span><span class="n">instance_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Name_of_structure</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">   </span><span class="n">field1</span>:<span class="nc">value1</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">   </span><span class="n">field2</span>:<span class="nc">value2</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">   </span><span class="n">field3</span>:<span class="nc">value3</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">};</span>
+</span></code></pre></div>
 <p>从语法中可以看出，初始化结构体时的等号右边，就是把定义语法中的元素类型换成了具体的值。</p>
 <p>结构体初始化，其实就是对结构体中的各个元素进行赋值。</p>
 <blockquote>
@@ -1891,31 +1889,31 @@
 <h3 id="1722">17.2.2 访问结构体实例元素的语法</h3>
 <p>如果要访问结构体实例的某个元素，我们可以使用 元素访问符，也就是 点号 ( . )</p>
 <p>具体的访问语法格式如下</p>
-<div class="language-text highlight"><pre><span></span><code>struct_name_instance.field_name
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">struct_name_instance</span><span class="p">.</span><span class="n">field_name</span>
+</span></code></pre></div>
 <p>例如，如果要访问 Employee 的实例 emp1 中的 name 元素，可以如下使用</p>
-<div class="language-text highlight"><pre><span></span><code>emp1.name
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>emp1.name
+</span></code></pre></div>
 <h3 id="1723">17.2.3 范例</h3>
 <p>下面的代码，我们定义了一个有三个元素的结构体 Employee，然后初始化一个实例 emp1，最后通过元素访问符来访问 emp1 的三个元素。</p>
-<div class="language-text highlight"><pre><span></span><code>struct Employee {
-   name:String,
-   company:String,
-   age:u32
-}
-
-fn main() {
-   let emp1 = Employee {
-      company:String::from(&quot;TutorialsPoint&quot;),
-      name:String::from(&quot;Mohtashim&quot;),
-      age:50
-   };
-   println!(&quot;Name is :{} company is {} age is {}&quot;,emp1.name,emp1.company,emp1.age);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">struct</span> <span class="nc">Employee</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">   </span><span class="n">name</span>:<span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">   </span><span class="n">company</span>:<span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">   </span><span class="n">age</span>:<span class="kt">u32</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">emp1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">      </span><span class="n">company</span>:<span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;TutorialsPoint&quot;</span><span class="p">),</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">      </span><span class="n">name</span>:<span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;Mohtashim&quot;</span><span class="p">),</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">      </span><span class="n">age</span>:<span class="mi">50</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">   </span><span class="p">};</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Name is :{} company is {} age is {}&quot;</span><span class="p">,</span><span class="n">emp1</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="n">emp1</span><span class="p">.</span><span class="n">company</span><span class="p">,</span><span class="n">emp1</span><span class="p">.</span><span class="n">age</span><span class="p">);</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>Name is :Mohtashim company is TutorialsPoint age is 50
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Name<span class="w"> </span>is<span class="w"> </span>:Mohtashim<span class="w"> </span>company<span class="w"> </span>is<span class="w"> </span>TutorialsPoint<span class="w"> </span>age<span class="w"> </span>is<span class="w"> </span><span class="m">50</span>
+</span></code></pre></div>
 <h2 id="173">17.3 修改结构体实例</h2>
 <p>修改结构体实例就是对结构体的个别元素 <strong>重新赋值</strong>。</p>
 <p>结构体实例默认是 <strong>不可修改的</strong>，因为结构体实例也是一个使用 let 定义的变量。</p>
@@ -1923,123 +1921,122 @@ fn main() {
 <p>因为没啥新的知识内容，我们就直接上范例吧。</p>
 <h3 id="1731">17.3.1 范例</h3>
 <p>下面的范例给 Employee 的实例 emp1 添加了 mut 关键字，因此我们可以修改 emp1 的内部元素。</p>
-<div class="language-text highlight"><pre><span></span><code>struct Employee {
-   name:String,
-   company:String,
-   age:u32
-}
-
-let mut emp1 = Employee {
-   company:String::from(&quot;TutorialsPoint&quot;),
-   name:String::from(&quot;Mohtashim&quot;),
-   age:50
-};
-emp1.age = 40;
-println!(&quot;Name is :{} company is {} age is 
-{}&quot;,emp1.name,emp1.company,emp1.age);
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">struct</span> <span class="nc">Employee</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">   </span><span class="n">name</span>:<span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">   </span><span class="n">company</span>:<span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">   </span><span class="n">age</span>:<span class="kt">u32</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">}</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">emp1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">   </span><span class="n">company</span>:<span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;TutorialsPoint&quot;</span><span class="p">),</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">   </span><span class="n">name</span>:<span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;Mohtashim&quot;</span><span class="p">),</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">   </span><span class="n">age</span>:<span class="mi">50</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="p">};</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="n">emp1</span><span class="p">.</span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">40</span><span class="p">;</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Name is :{} company is {} age is {}&quot;</span><span class="p">,</span><span class="n">emp1</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="n">emp1</span><span class="p">.</span><span class="n">company</span><span class="p">,</span><span class="n">emp1</span><span class="p">.</span><span class="n">age</span><span class="p">);</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>Name is :Mohtashim company is TutorialsPoint age is 40
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Name<span class="w"> </span>is<span class="w"> </span>:Mohtashim<span class="w"> </span>company<span class="w"> </span>is<span class="w"> </span>TutorialsPoint<span class="w"> </span>age<span class="w"> </span>is<span class="w"> </span><span class="m">40</span>
+</span></code></pre></div>
 <h2 id="174">17.4 结构体作为函数的参数</h2>
 <p>结构体的用途之一就是可以作为参数传递给函数。</p>
 <p>定一个结构体参数和定义其它类型的参数的语法是一样的。我们这里就不多介绍了，直接看范例</p>
 <p>下面的代码定义了一个函数 display ，它接受一个 Employee 结构体实例作为参数并输出结构体的所有元素</p>
-<div class="language-text highlight"><pre><span></span><code>fn display( emp:Employee) {
-   println!(&quot;Name is :{} company is {} age is 
-   {}&quot;,emp.name,emp.company,emp.age);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">fn</span> <span class="nf">display</span><span class="p">(</span><span class="w"> </span><span class="n">emp</span>:<span class="nc">Employee</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Name is :{} company is {} age is </span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="s">   {}&quot;</span><span class="p">,</span><span class="n">emp</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="n">emp</span><span class="p">.</span><span class="n">company</span><span class="p">,</span><span class="n">emp</span><span class="p">.</span><span class="n">age</span><span class="p">);</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>完整的可运行的实例代码如下</p>
-<div class="language-text highlight"><pre><span></span><code>//定义一个结构体
-struct Employee {
-   name:String,
-   company:String,
-   age:u32
-}
-fn main() {
-   //初始化结构体
-   let emp1 = Employee {
-      company:String::from(&quot;TutorialsPoint&quot;),
-      name:String::from(&quot;Mohtashim&quot;),
-      age:50
-   };
-   let emp2 = Employee{
-      company:String::from(&quot;TutorialsPoint&quot;),
-      name:String::from(&quot;Kannan&quot;),
-      age:32
-   };
-   //将结构体作为参数传递给 display
-   display(emp1);
-   display(emp2);
-}
-
-// 使用点号(.) 访问符访问结构体的元素并输出它么的值
-fn display( emp:Employee){
-   println!(&quot;Name is :{} company is {} age is 
-   {}&quot;,emp.name,emp.company,emp.age);
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">//定义一个结构体</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">struct</span> <span class="nc">Employee</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">   </span><span class="n">name</span>:<span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">   </span><span class="n">company</span>:<span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">   </span><span class="n">age</span>:<span class="kt">u32</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">}</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">   </span><span class="c1">//初始化结构体</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">emp1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">      </span><span class="n">company</span>:<span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;TutorialsPoint&quot;</span><span class="p">),</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">      </span><span class="n">name</span>:<span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;Mohtashim&quot;</span><span class="p">),</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">      </span><span class="n">age</span>:<span class="mi">50</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">   </span><span class="p">};</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">emp2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Employee</span><span class="p">{</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">      </span><span class="n">company</span>:<span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;TutorialsPoint&quot;</span><span class="p">),</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">      </span><span class="n">name</span>:<span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;Kannan&quot;</span><span class="p">),</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">      </span><span class="n">age</span>:<span class="mi">32</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">   </span><span class="p">};</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">   </span><span class="c1">//将结构体作为参数传递给 display</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">   </span><span class="n">display</span><span class="p">(</span><span class="n">emp1</span><span class="p">);</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">   </span><span class="n">display</span><span class="p">(</span><span class="n">emp2</span><span class="p">);</span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="p">}</span>
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>
+</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="c1">// 使用点号(.) 访问符访问结构体的元素并输出它么的值</span>
+</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="k">fn</span> <span class="nf">display</span><span class="p">(</span><span class="w"> </span><span class="n">emp</span>:<span class="nc">Employee</span><span class="p">){</span>
+</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Name is :{} company is {} age is </span>
+</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a><span class="s">   {}&quot;</span><span class="p">,</span><span class="n">emp</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="n">emp</span><span class="p">.</span><span class="n">company</span><span class="p">,</span><span class="n">emp</span><span class="p">.</span><span class="n">age</span><span class="p">);</span>
+</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>Name is :Mohtashim company is TutorialsPoint age is 50
-Name is :Kannan company is TutorialsPoint age is 32
-</code></pre></div>
-<h2 id="175">17.5 结构体实例作为函数的返回值</h2>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Name<span class="w"> </span>is<span class="w"> </span>:Mohtashim<span class="w"> </span>company<span class="w"> </span>is<span class="w"> </span>TutorialsPoint<span class="w"> </span>age<span class="w"> </span>is<span class="w"> </span><span class="m">50</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Name<span class="w"> </span>is<span class="w"> </span>:Kannan<span class="w"> </span>company<span class="w"> </span>is<span class="w"> </span>TutorialsPoint<span class="w"> </span>age<span class="w"> </span>is<span class="w"> </span><span class="m">32</span>
+</span></code></pre></div>
+<h1 id="175">17.5 结构体实例作为函数的返回值</h1>
 <p>Rust 中的结构体不仅仅可以作为函数的参数，还可以作为 函数的返回值。</p>
 <p>函数返回结构体实例需要实现两个地方： 1. 在 箭头 -&gt; 后面指定结构体作为一个返回参数。 2. 在函数的内部返回 结构体的实例</p>
 <h3 id="1751">17.5.1 结构体实例作为函数的返回值的语法格式</h3>
-<div class="language-text highlight"><pre><span></span><code>struct My_struct {}
-
-fn function_name([parameters]) -&gt; My_struct {
-   // 其它的函数逻辑
-   return My_struct_instance;
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">struct</span> <span class="nc">MyStruct</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">fn</span> <span class="nf">function_name</span><span class="p">([</span><span class="n">parameters</span><span class="p">])</span><span class="w"> </span>-&gt; <span class="nc">MyStruct</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">   </span><span class="c1">// 其它的函数逻辑</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="n">MyStruct_instance</span><span class="p">;</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="1752">17.5.2 范例</h3>
 <p>下面的代码，我们首先定义一个结构体 Employee ，接着定义一个方法 who_is_elder ，传入两个结构体 Employee 作为参数并返回年龄个大的那个。</p>
-<div class="language-text highlight"><pre><span></span><code>fn main() {
-
-   let emp1 = Employee{
-      company:String::from(&quot;TutorialsPoint&quot;),
-      name:String::from(&quot;Mohtashim&quot;),
-      age:50
-   };
-   let emp2 = Employee {
-      company:String::from(&quot;TutorialsPoint&quot;),
-      name:String::from(&quot;Kannan&quot;),
-      age:32
-   };
-   let elder = who_is_elder(emp1,emp2);
-   println!(&quot;elder is:&quot;);
-
-   display(elder);
-}
-
-//接受两个 Employee 的实例作为参数并返回年长的那个
-fn who_is_elder (emp1:Employee,emp2:Employee)-&gt;Employee {
-   if emp1.age&gt;emp2.age {
-      return emp1;
-   } else {
-      return emp2;
-   }
-}
-
-// 显示结构体的所有元素
-fn display( emp:Employee) {
-   println!(&quot;Name is :{} company is {} age is {}&quot;,emp.name,emp.company,emp.age);
-}
-
-// 定义一个结构体
-struct Employee {
-   name:String,
-   company:String,
-   age:u32
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">emp1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Employee</span><span class="p">{</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">      </span><span class="n">company</span>:<span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;TutorialsPoint&quot;</span><span class="p">),</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">      </span><span class="n">name</span>:<span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;Mohtashim&quot;</span><span class="p">),</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">      </span><span class="n">age</span>:<span class="mi">50</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">   </span><span class="p">};</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">emp2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">      </span><span class="n">company</span>:<span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;TutorialsPoint&quot;</span><span class="p">),</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">      </span><span class="n">name</span>:<span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;Kannan&quot;</span><span class="p">),</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">      </span><span class="n">age</span>:<span class="mi">32</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">   </span><span class="p">};</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">elder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">who_is_elder</span><span class="p">(</span><span class="n">emp1</span><span class="p">,</span><span class="n">emp2</span><span class="p">);</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;elder is:&quot;</span><span class="p">);</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">   </span><span class="n">display</span><span class="p">(</span><span class="n">elder</span><span class="p">);</span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="p">}</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="c1">//接受两个 Employee 的实例作为参数并返回年长的那个</span>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="k">fn</span> <span class="nf">who_is_elder</span><span class="w"> </span><span class="p">(</span><span class="n">emp1</span>:<span class="nc">Employee</span><span class="p">,</span><span class="n">emp2</span>:<span class="nc">Employee</span><span class="p">)</span>-&gt;<span class="nc">Employee</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="n">emp1</span><span class="p">.</span><span class="n">age</span><span class="o">&gt;</span><span class="n">emp2</span><span class="p">.</span><span class="n">age</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">emp1</span><span class="p">;</span>
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="w">   </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">emp2</span><span class="p">;</span>
+</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="p">}</span>
+</span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>
+</span><span id="__span-12-28"><a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="c1">// 显示结构体的所有元素</span>
+</span><span id="__span-12-29"><a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a><span class="k">fn</span> <span class="nf">display</span><span class="p">(</span><span class="w"> </span><span class="n">emp</span>:<span class="nc">Employee</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-30"><a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Name is :{} company is {} age is {}&quot;</span><span class="p">,</span><span class="n">emp</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="n">emp</span><span class="p">.</span><span class="n">company</span><span class="p">,</span><span class="n">emp</span><span class="p">.</span><span class="n">age</span><span class="p">);</span>
+</span><span id="__span-12-31"><a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a><span class="p">}</span>
+</span><span id="__span-12-32"><a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>
+</span><span id="__span-12-33"><a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a><span class="c1">// 定义一个结构体</span>
+</span><span id="__span-12-34"><a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a><span class="k">struct</span> <span class="nc">Employee</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-35"><a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a><span class="w">   </span><span class="n">name</span>:<span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-12-36"><a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a><span class="w">   </span><span class="n">company</span>:<span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-12-37"><a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a><span class="w">   </span><span class="n">age</span>:<span class="kt">u32</span>
+</span><span id="__span-12-38"><a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>elder is:
-Name is :Mohtashim company is TutorialsPoint age is 50
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>elder<span class="w"> </span>is:
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>Name<span class="w"> </span>is<span class="w"> </span>:Mohtashim<span class="w"> </span>company<span class="w"> </span>is<span class="w"> </span>TutorialsPoint<span class="w"> </span>age<span class="w"> </span>is<span class="w"> </span><span class="m">50</span>
+</span></code></pre></div>
 <h2 id="176">17.6 结构体中的方法</h2>
 <p>Rust 中的结构体可以定义方法 (method)。</p>
 <p>方法 (method) 是一段代码的逻辑组合，用于完成某项特定的任务或实现某项特定的功能。</p>
@@ -2052,151 +2049,152 @@ Name is :Mohtashim company is TutorialsPoint age is 50
 <p>结构体方法的 <strong>作用域</strong> 仅限于 <strong>结构体内部</strong>。</p>
 <p>与 C++ 语言中的结构体的方法不同的是，Rust 中的结构体方法只能定义在结构体的外面。</p>
 <p>在定义结构体方法时需要使用 impl 关键字，语法格式如下</p>
-<div class="language-text highlight"><pre><span></span><code>struct My_struct {}
-
-impl My_struct { 
-   // 属于结构体的所有其它代码
-}
-</code></pre></div>
-<p>impl 关键字最重要的作用，就是定义上面我们所说的方法的属主。所有被 impl My_struct 块包含的代码，都只属于 My_struct 这个结构。</p>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">struct</span> <span class="nc">MyStruct</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="k">impl</span><span class="w"> </span><span class="n">MyStruct</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">   </span><span class="c1">// 属于结构体的所有其它代码</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>impl 关键字最重要的作用，就是定义上面我们所说的方法的属主。所有被 impl MyStruct 块包含的代码，都只属于 MyStruct 这个结构。</p>
 <p>impl 关键字是 implement 的前 4 个字母的缩写。意思是 <strong>实现</strong>。</p>
 <p>结构体的普通方法（后面我们还会学到其它方法）时，第一个参数永远是 &amp;self 关键字。self 是"自我"的意思，&amp;self 永远表示着当前的结构体的一个实例。</p>
 <p>这是不是可以带来其它的结构体方法的解释：结构体的方法就是用来操作当前结构体的一个实例的。</p>
 <h3 id="1761">17.6.1 结构体方法的定义语法</h3>
 <p>定义结构体方法的语法格式如下</p>
-<div class="language-text highlight"><pre><span></span><code>struct My_struct {}
-impl My_struct {
-
-   // 定义一个结构体的普通方法
-   fn method_name(&amp;self[,other_parameters]) { 
-      //方法的具体逻辑代码
-   }
-
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">struct</span> <span class="nc">MyStruct</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">impl</span><span class="w"> </span><span class="n">MyStruct</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">   </span><span class="c1">// 定义一个结构体的普通方法</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">   </span><span class="k">fn</span> <span class="nf">method_name</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">[,</span><span class="n">other_parameters</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">      </span><span class="c1">//方法的具体逻辑代码</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>&amp;self 是结构体普通方法固定的第一个参数，其它参数则是可选的。</p>
 <p>即使结构体方法不需要传递任何参数，&amp;self 也是固定的，必须存在的。像下面这种定义方法是错误的</p>
-<div class="language-text highlight"><pre><span></span><code>struct My_struct {}
-impl My_struct {
-
-   //定义一个结构体的普通方法
-   fn method_name([other_parameters]) { 
-      //方法的具体逻辑代码
-   }
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">struct</span> <span class="nc">MyStruct</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="k">impl</span><span class="w"> </span><span class="n">MyStruct</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">   </span><span class="c1">//定义一个结构体的普通方法</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">   </span><span class="k">fn</span> <span class="nf">method_name</span><span class="p">([</span><span class="n">other_parameters</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">      </span><span class="c1">//方法的具体逻辑代码</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="1762">17.6.2 结构体方法内部访问结构体元素</h3>
 <p>因为我们在定义方法时固定传递了 &amp;self 关键字。而 &amp;self 关键字又代表了当前方法的属主。</p>
 <p>因此我们可以在方法内部使用 self, 来访问结构体的元素。</p>
 <p>详细的语法格式如下</p>
-<div class="language-text highlight"><pre><span></span><code>struct My_struct {
-   age: u32
-}
-
-impl My_struct {
-
-   //定义一个结构体的普通方法
-   fn method_name([other_parameters]) {
-
-      self.age = 28;
-
-      println!(&quot;{}&quot;,self.age);
-
-      //其它的具体逻辑代码
-   }
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">struct</span> <span class="nc">MyStruct</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">   </span><span class="n">age</span>: <span class="kt">u32</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="p">}</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="k">impl</span><span class="w"> </span><span class="n">MyStruct</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">   </span><span class="c1">//定义一个结构体的普通方法</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">   </span><span class="k">fn</span> <span class="nf">method_name</span><span class="p">([</span><span class="n">other_parameters</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">      </span><span class="bp">self</span><span class="p">.</span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">28</span><span class="p">;</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">      </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="bp">self</span><span class="p">.</span><span class="n">age</span><span class="p">);</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">      </span><span class="c1">//其它的具体逻辑代码</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="1763">17.6.3 结构体方法的调用语法</h3>
 <p>因为结构体的方法是有属主的，所以调用的时候必须先指定 <strong>属主</strong>，调用格式为 <strong>属主.方法名(方法参数)</strong>。</p>
 <p>详细的调用语法格式为</p>
-<div class="language-text highlight"><pre><span></span><code>My_struct.method_name([other_parameters])
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">MyStruct</span><span class="p">.</span><span class="n">method_name</span><span class="p">([</span><span class="n">other_parameters</span><span class="p">])</span>
+</span></code></pre></div>
 <blockquote>
 <p>注意 虽然定义方法时需要固定 &amp;self 作为第一个参数，但在调用的时候是 不需要也不能 传递的。这个参数的传递 Rust 编译器会 偷偷的 帮我们完成。  </p>
 </blockquote>
 <h3 id="1764">17.6.4 范例</h3>
 <p>下面的代码，我们首先定义了一个结构体 Rectangle 用于表示一个 长方形，它有宽高 两个元素 width 和 height。</p>
 <p>然后我们又为 结构体 Rectangle 定义了一个方法 area 用于计算当前 长方形实例 的面积。</p>
-<div class="language-text highlight"><pre><span></span><code>// 定义一个长方形结构体
-struct Rectangle {
-   width:u32, height:u32
-}
-
-// 为长方形结构体定义一个方法，用于计算当前长方形的面积
-impl Rectangle {
-   fn area(&amp;self)-&gt;u32 {
-      // 在方法内部，可以使用点号 `self.` 来访问当前结构体的元素。use the . operator to fetch the value of a field via the self keyword
-      self.width * self.height
-   }
-}
-
-fn main() {
-   // 创建 Rectangle 结构体的一个实例
-   let small = Rectangle {
-      width:10,
-      height:20
-   };
-
-   //计算并输出结构体的面积
-   println!(&quot;width is {} height is {} area of Rectangle 
-   is {}&quot;,small.width,small.height,small.area());
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1">// 定义一个长方形结构体</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="k">struct</span> <span class="nc">Rectangle</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">   </span><span class="n">width</span>:<span class="kt">u32</span><span class="p">,</span><span class="w"> </span><span class="n">height</span>:<span class="kt">u32</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="p">}</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="c1">// 为长方形结构体定义一个方法，用于计算当前长方形的面积</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="k">impl</span><span class="w"> </span><span class="n">Rectangle</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">   </span><span class="k">fn</span> <span class="nf">area</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span>-&gt;<span class="kt">u32</span> <span class="p">{</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">      </span><span class="c1">// 在方法内部，可以使用点号 `self.` 来访问当前结构体的元素。use the . operator to fetch the value of a field via the self keyword</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">      </span><span class="bp">self</span><span class="p">.</span><span class="n">width</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">height</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="p">}</span>
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="w">   </span><span class="c1">// 创建 Rectangle 结构体的一个实例</span>
+</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">small</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rectangle</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="w">      </span><span class="n">width</span>:<span class="mi">10</span><span class="p">,</span>
+</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="w">      </span><span class="n">height</span>:<span class="mi">20</span>
+</span><span id="__span-19-19"><a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="w">   </span><span class="p">};</span>
+</span><span id="__span-19-20"><a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>
+</span><span id="__span-19-21"><a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a><span class="w">   </span><span class="c1">//计算并输出结构体的面积</span>
+</span><span id="__span-19-22"><a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a><span class="w">   </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;width is {} height is {} area of Rectangle </span>
+</span><span id="__span-19-23"><a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a><span class="s">   is {}&quot;</span><span class="p">,</span><span class="n">small</span><span class="p">.</span><span class="n">width</span><span class="p">,</span><span class="n">small</span><span class="p">.</span><span class="n">height</span><span class="p">,</span><span class="n">small</span><span class="p">.</span><span class="n">area</span><span class="p">());</span>
+</span><span id="__span-19-24"><a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>width is 10 height is 20 area of Rectangle is 200
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>width<span class="w"> </span>is<span class="w"> </span><span class="m">10</span><span class="w"> </span>height<span class="w"> </span>is<span class="w"> </span><span class="m">20</span><span class="w"> </span>area<span class="w"> </span>of<span class="w"> </span>Rectangle<span class="w"> </span>is<span class="w"> </span><span class="m">200</span>
+</span></code></pre></div>
 <h2 id="177">17.7 结构体的静态方法</h2>
 <p>Rust 中的结构体还可以有静态方法。</p>
 <p>静态方法可以直接通过结构体名调用而无需先实例化。</p>
 <p>结构体的静态方法定义方式和普通方法类似，唯一的不同点是 <strong>不需要使用 &amp;self</strong> 作为参数。</p>
 <h3 id="1771">17.7.1 定义静态方法的语法</h3>
 <p>结构体静态方法的定义语法格式如下</p>
-<div class="language-text highlight"><pre><span></span><code>impl Structure_Name {
-
-   // Structure_Name 结构体的静态方法
-   fn method_name(param1: datatype, param2: datatype) -&gt; return_type {
-      // 方法内部逻辑
-   }
-
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">impl</span><span class="w"> </span><span class="n">Structure_Name</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">   </span><span class="c1">// Structure_Name 结构体的静态方法</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">   </span><span class="k">fn</span> <span class="nf">method_name</span><span class="p">(</span><span class="n">param1</span>: <span class="nc">datatype</span><span class="p">,</span><span class="w"> </span><span class="n">param2</span>: <span class="nc">datatype</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">return_type</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">      </span><span class="c1">// 方法内部逻辑</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>静态方法和其它普通方法一样，参数是可选的。也就是可以没有参数</p>
 <h3 id="1772">17.7.2 调用静态方法的语法</h3>
 <p>静态方法可以直接通过结构体名调用，而无需先实例化。</p>
 <p>结构体的静态方法需要使用 structure_name:: 语法来访问，详细的语法格式如下</p>
-<div class="language-text highlight"><pre><span></span><code>structure_name::method_name(v1,v2)
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">structure_name</span>::<span class="n">method_name</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span><span class="n">v2</span><span class="p">)</span>
+</span></code></pre></div>
 <h2 id="173_1">17.3 范例</h2>
+<hr />
 <p>下面的范例，我们为结构体 Point 定义了一个静态方法 getInstance()。</p>
-<div class="language-text highlight"><pre><span></span><code>getInstance() 是一个 工厂方法，它初始化并返回结构体 Point 的实例。
-
-//声明结构体 Point
-struct Point {
-   x: i32,
-   y: i32,
-}
-
-impl Point {
-   // 用于创建 Point 实例的静态方法
-   fn getInstance(x: i32, y: i32) -&gt; Point {
-      Point { x: x, y: y }
-   }
-   // 用于显示结构体元素的普通方法
-   fn display(&amp;self){
-      println!(&quot;x = {} y = {}&quot;,self.x,self.y );
-   }
-}
-fn main(){
-
-   // 调用静态方法
-   let p1 = Point::getInstance(10,20);
-   p1.display();
-
-}
-</code></pre></div>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">getInstance</span><span class="p">()</span><span class="w"> </span><span class="err">是一个</span><span class="w"> </span><span class="err">工厂方法，它初始化并返回结构体</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="err">的实例。</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="c1">//声明结构体 Point</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="k">struct</span> <span class="nc">Point</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">   </span><span class="n">x</span>: <span class="kt">i32</span><span class="p">,</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">   </span><span class="n">y</span>: <span class="kt">i32</span><span class="p">,</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="p">}</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="k">impl</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="w">   </span><span class="c1">// 用于创建 Point 实例的静态方法</span>
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="w">   </span><span class="k">fn</span> <span class="nf">getInstance</span><span class="p">(</span><span class="n">x</span>: <span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Point</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="w">      </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span>: <span class="nc">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="nc">y</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="w">   </span><span class="c1">// 用于显示结构体元素的普通方法</span>
+</span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="w">   </span><span class="k">fn</span> <span class="nf">display</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">){</span>
+</span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="w">      </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;x = {} y = {}&quot;</span><span class="p">,</span><span class="bp">self</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="bp">self</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-23-17"><a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-23-18"><a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a><span class="p">}</span>
+</span><span id="__span-23-19"><a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">(){</span>
+</span><span id="__span-23-20"><a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a>
+</span><span id="__span-23-21"><a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a><span class="w">   </span><span class="c1">// 调用静态方法</span>
+</span><span id="__span-23-22"><a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Point</span>::<span class="n">getInstance</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+</span><span id="__span-23-23"><a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a><span class="w">   </span><span class="n">p1</span><span class="p">.</span><span class="n">display</span><span class="p">();</span>
+</span><span id="__span-23-24"><a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a>
+</span><span id="__span-23-25"><a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-text highlight"><pre><span></span><code>x = 10 y = 20
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nv">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="nv">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">20</span>
+</span></code></pre></div>
 
 
   
