@@ -12,20 +12,20 @@
         <meta name="author" content="chapin666">
       
       
-        <link rel="canonical" href="http://chapin666.github.io/blog/rust/fromzero/023.html">
+        <link rel="canonical" href="http://chapin666.github.io/blog/aigc/sd/002.html">
       
       
-        <link rel="prev" href="022.html">
+        <link rel="prev" href="001.html">
       
       
-        <link rel="next" href="024.html">
+        <link rel="next" href="003.html">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
-        <title>23-IO - chapin666</title>
+        <title>硬核解读Stable Diffusion（2） - chapin666</title>
       
     
     
@@ -88,11 +88,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#231" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -122,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              23-IO
+              硬核解读Stable Diffusion（2）
             
           </span>
         </div>
@@ -218,6 +213,8 @@
         
   
   
+    
+  
 
 
   
@@ -229,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../aigc/sd/001.html" class="md-tabs__link">
+      <a href="001.html" class="md-tabs__link md-tabs__link--active">
         AIGC
       </a>
     </li>
@@ -287,8 +284,6 @@
         
   
   
-    
-  
 
 
   
@@ -300,7 +295,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="001.html" class="md-tabs__link md-tabs__link--active">
+      <a href="../../rust/fromzero/001.html" class="md-tabs__link">
         Rust
       </a>
     </li>
@@ -362,14 +357,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
       
       
       
@@ -378,7 +375,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           AIGC
@@ -389,14 +386,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
       
       
       
@@ -405,7 +404,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2_1">
           <span class="md-nav__icon md-icon"></span>
           Stable Diffusion
@@ -418,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aigc/sd/001.html" class="md-nav__link">
+      <a href="001.html" class="md-nav__link">
         硬核解读Stable Diffusion（1）
       </a>
     </li>
@@ -430,11 +429,19 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../aigc/sd/002.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="002.html" class="md-nav__link md-nav__link--active">
         硬核解读Stable Diffusion（2）
       </a>
+      
     </li>
   
 
@@ -446,7 +453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aigc/sd/003.html" class="md-nav__link">
+      <a href="003.html" class="md-nav__link">
         硬核解读Stable Diffusion（3）
       </a>
     </li>
@@ -1065,16 +1072,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
       
       
       
@@ -1083,7 +1088,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Rust
@@ -1094,16 +1099,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
       
       
       
@@ -1112,7 +1115,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5_1">
           <span class="md-nav__icon md-icon"></span>
           从零蛋开始学Rust
@@ -1125,7 +1128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="001.html" class="md-nav__link">
+      <a href="../../rust/fromzero/001.html" class="md-nav__link">
         01-语言简介
       </a>
     </li>
@@ -1139,7 +1142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="002.html" class="md-nav__link">
+      <a href="../../rust/fromzero/002.html" class="md-nav__link">
         02-开发环境配置
       </a>
     </li>
@@ -1153,7 +1156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="003.html" class="md-nav__link">
+      <a href="../../rust/fromzero/003.html" class="md-nav__link">
         03-Hello World
       </a>
     </li>
@@ -1167,7 +1170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="004.html" class="md-nav__link">
+      <a href="../../rust/fromzero/004.html" class="md-nav__link">
         04-数据类型
       </a>
     </li>
@@ -1181,7 +1184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="005.html" class="md-nav__link">
+      <a href="../../rust/fromzero/005.html" class="md-nav__link">
         05-变量
       </a>
     </li>
@@ -1195,7 +1198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="006.html" class="md-nav__link">
+      <a href="../../rust/fromzero/006.html" class="md-nav__link">
         06-常量
       </a>
     </li>
@@ -1209,7 +1212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="007.html" class="md-nav__link">
+      <a href="../../rust/fromzero/007.html" class="md-nav__link">
         07-字符串
       </a>
     </li>
@@ -1223,7 +1226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="008.html" class="md-nav__link">
+      <a href="../../rust/fromzero/008.html" class="md-nav__link">
         08-运算符
       </a>
     </li>
@@ -1237,7 +1240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="009.html" class="md-nav__link">
+      <a href="../../rust/fromzero/009.html" class="md-nav__link">
         09-条件判断
       </a>
     </li>
@@ -1251,7 +1254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="010.html" class="md-nav__link">
+      <a href="../../rust/fromzero/010.html" class="md-nav__link">
         10-循环语句
       </a>
     </li>
@@ -1265,7 +1268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="011.html" class="md-nav__link">
+      <a href="../../rust/fromzero/011.html" class="md-nav__link">
         11-函数
       </a>
     </li>
@@ -1279,7 +1282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="012.html" class="md-nav__link">
+      <a href="../../rust/fromzero/012.html" class="md-nav__link">
         12-元组
       </a>
     </li>
@@ -1293,7 +1296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="013.html" class="md-nav__link">
+      <a href="../../rust/fromzero/013.html" class="md-nav__link">
         13-数组
       </a>
     </li>
@@ -1307,7 +1310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="014.html" class="md-nav__link">
+      <a href="../../rust/fromzero/014.html" class="md-nav__link">
         14-所有权
       </a>
     </li>
@@ -1321,7 +1324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="015.html" class="md-nav__link">
+      <a href="../../rust/fromzero/015.html" class="md-nav__link">
         15-借用
       </a>
     </li>
@@ -1335,7 +1338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="016.html" class="md-nav__link">
+      <a href="../../rust/fromzero/016.html" class="md-nav__link">
         16-切片
       </a>
     </li>
@@ -1349,7 +1352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="017.html" class="md-nav__link">
+      <a href="../../rust/fromzero/017.html" class="md-nav__link">
         17-结构体
       </a>
     </li>
@@ -1363,7 +1366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="018.html" class="md-nav__link">
+      <a href="../../rust/fromzero/018.html" class="md-nav__link">
         18-枚举
       </a>
     </li>
@@ -1377,7 +1380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="019.html" class="md-nav__link">
+      <a href="../../rust/fromzero/019.html" class="md-nav__link">
         19-模块
       </a>
     </li>
@@ -1391,7 +1394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="020.html" class="md-nav__link">
+      <a href="../../rust/fromzero/020.html" class="md-nav__link">
         20-容器
       </a>
     </li>
@@ -1405,7 +1408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="021.html" class="md-nav__link">
+      <a href="../../rust/fromzero/021.html" class="md-nav__link">
         21-错误处理
       </a>
     </li>
@@ -1419,7 +1422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="022.html" class="md-nav__link">
+      <a href="../../rust/fromzero/022.html" class="md-nav__link">
         22-泛型
       </a>
     </li>
@@ -1431,115 +1434,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          23-IO
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="023.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/023.html" class="md-nav__link">
         23-IO
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#231" class="md-nav__link">
-    23.1 读取 和 写入 类型
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#232-read-trait" class="md-nav__link">
-    23.2 Read Trait 特质 / 标准输入流
-  </a>
-  
-    <nav class="md-nav" aria-label="23.2 Read Trait 特质 / 标准输入流">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#2321-stdin" class="md-nav__link">
-    23.2.1 范例：从命令行/标准输入流 stdin() 中读取数据
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#233-write-trait" class="md-nav__link">
-    23.3 Write Trait 特质 / 标准输出流
-  </a>
-  
-    <nav class="md-nav" aria-label="23.3 Write Trait 特质 / 标准输出流">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#2331-stdout" class="md-nav__link">
-    23.3.1 范例： 使用 stdout() 向标准输出写入内容
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#234" class="md-nav__link">
-    23.4 命令行参数
-  </a>
-  
-    <nav class="md-nav" aria-label="23.4 命令行参数">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#2341" class="md-nav__link">
-    23.4.1 范例：输出命令行传递的所有参数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2342" class="md-nav__link">
-    23.4.2 范例：从命令行读取多个参数
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1551,7 +1450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="024.html" class="md-nav__link">
+      <a href="../../rust/fromzero/024.html" class="md-nav__link">
         24-文件读写
       </a>
     </li>
@@ -1565,7 +1464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="025.html" class="md-nav__link">
+      <a href="../../rust/fromzero/025.html" class="md-nav__link">
         25-Cargo包管理器
       </a>
     </li>
@@ -1579,7 +1478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="026.html" class="md-nav__link">
+      <a href="../../rust/fromzero/026.html" class="md-nav__link">
         26-迭代器
       </a>
     </li>
@@ -1593,7 +1492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="027.html" class="md-nav__link">
+      <a href="../../rust/fromzero/027.html" class="md-nav__link">
         27-闭包
       </a>
     </li>
@@ -1607,7 +1506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="028.html" class="md-nav__link">
+      <a href="../../rust/fromzero/028.html" class="md-nav__link">
         28-智能指针
       </a>
     </li>
@@ -1621,7 +1520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="029.html" class="md-nav__link">
+      <a href="../../rust/fromzero/029.html" class="md-nav__link">
         29-多线程并发编程
       </a>
     </li>
@@ -1660,88 +1559,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#231" class="md-nav__link">
-    23.1 读取 和 写入 类型
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#232-read-trait" class="md-nav__link">
-    23.2 Read Trait 特质 / 标准输入流
-  </a>
-  
-    <nav class="md-nav" aria-label="23.2 Read Trait 特质 / 标准输入流">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#2321-stdin" class="md-nav__link">
-    23.2.1 范例：从命令行/标准输入流 stdin() 中读取数据
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#233-write-trait" class="md-nav__link">
-    23.3 Write Trait 特质 / 标准输出流
-  </a>
-  
-    <nav class="md-nav" aria-label="23.3 Write Trait 特质 / 标准输出流">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#2331-stdout" class="md-nav__link">
-    23.3.1 范例： 使用 stdout() 向标准输出写入内容
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#234" class="md-nav__link">
-    23.4 命令行参数
-  </a>
-  
-    <nav class="md-nav" aria-label="23.4 命令行参数">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#2341" class="md-nav__link">
-    23.4.1 范例：输出命令行传递的所有参数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2342" class="md-nav__link">
-    23.4.2 范例：从命令行读取多个参数
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1758,201 +1575,9 @@
 
 
 
-  <h1>23-IO</h1>
+  <h1>硬核解读Stable Diffusion（2）</h1>
 
-<p>本章节我们来讲讲 Rust 中的重要内容 <strong>IO 输入输出</strong>。也就是 Rust 语言如何从标准输入例如键盘中读取数据并将读取的数据显示出来。</p>
-<p>本章节我们会简单的介绍 Rust 语言 IO 输入输出的三大块内容：<strong>从标准输入读取数据</strong>、<strong>把数据写入标准输出</strong>、<strong>命令行参数</strong>。</p>
-<h2 id="231">23.1 读取 和 写入 类型</h2>
-<p>Rust 标准库通过两个特质 ( Trait ) 来组织 IO 输入输出</p>
-<ul>
-<li>
-<p>Read 特质用于 读  </p>
-</li>
-<li>
-<p>Write 特质用于 写</p>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>特质</th>
-<th>说明</th>
-<th>范例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Read</td>
-<td>包含了许多方法用于从输入流读取字节数据</td>
-<td>Stdin,File</td>
-</tr>
-<tr>
-<td>Write</td>
-<td>包含了许多方法用于向输出流中写入数据，包含字节数据和 UTF-8 数据两种格式</td>
-<td>Stdout,File</td>
-</tr>
-</tbody>
-</table>
-<h2 id="232-read-trait">23.2 Read Trait 特质 / 标准输入流</h2>
-<p>Read 特质是一个用于从输入流读取字节的组件。输入流包括 标准输入、键盘、鼠标、命令行、文件等等。</p>
-<p>Read 特质中的 <em>read_line()</em> 方法用于从输入流中读取一行的字符串数据。它的相关信息如下</p>
-<table>
-<thead>
-<tr>
-<th>rait 特质</th>
-<th>方法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Read</td>
-<td>read_line(&amp;mut line)-&gt;Result</td>
-<td>从输入流中读取一行的字符串数据并存储在 line 参数中。返回 Result 枚举，如果成功则返回读取的字节数。</td>
-</tr>
-</tbody>
-</table>
-<h3 id="2321-stdin">23.2.1 范例：从命令行/标准输入流 stdin() 中读取数据</h3>
-<p>Rust 程序可以在运行时接收用户输入的数据。</p>
-<p>接收的方式就是从标准输入流 （一般是键盘） 中读取用户输入的内容。</p>
-<p>下面的代码，从标准输入流/命令行 中读取用户的输入，并显示出来。</p>
-<div class="language-rust highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">(){</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">new</span><span class="p">();</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;请输入你的名字:&quot;</span><span class="p">);</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">b1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span>::<span class="n">io</span>::<span class="n">stdin</span><span class="p">().</span><span class="n">read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">line</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;你好 , {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">line</span><span class="p">);</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;读取的字节数为：{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">b1</span><span class="p">);</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
-</span></code></pre></div>
-<p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>请输入你的名字:
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>从零蛋开始教程
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>你好<span class="w"> </span>,<span class="w"> </span>从零蛋开始教程
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>读取的字节数为：13
-</span></code></pre></div>
-<p>标准库提供的 std::io::stdin() 会返回返回当前进程的标准输入流 stdin 的句柄。</p>
-<p>而 read_line() 则是标准入流 stdin 的句柄上的一个方法，用于从标准输入流读取一行的数据。</p>
-<p>read_line() 方法的返回值值一个 Result 枚举，而 unwrap() 则是一个帮助方法，用于简化可恢复错误的处理。它会返回 Result 中存储的实际值。</p>
-<blockquote>
-<p>注意: read_line() 方法会自动删除行尾的换行符 \n  </p>
-</blockquote>
-<h2 id="233-write-trait">23.3 Write Trait 特质 / 标准输出流</h2>
-<p>Write 特质是一个用于向输出流写入字节的组件。输出流包括 标准输出、命令行、文件 等等。</p>
-<p>Write 特质中的 write() 方法完成实际的输出操作。它的相关信息如下</p>
-<table>
-<thead>
-<tr>
-<th>Trait特质</th>
-<th>方法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Write</td>
-<td>write(&amp;buf) -&gt; Result</td>
-<td>把参数 buf 中的全部或部分字节写入底层的流。返回 Result 枚举，如果成功则返回写入的字节数。</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>注意: write() 方法并不会输出结束时自动追加换行符 \n。如果需要换行符则需要手动添加  </p>
-</blockquote>
-<h3 id="2331-stdout">23.3.1 范例： 使用 stdout() 向标准输出写入内容</h3>
-<p>我们之前用过的无数次的 print!() 宏和 println!() 宏都可以向标准输出写入内容。</p>
-<p>不过我们这次来一点不一样的，我们使用标准库 std::io 提供的 stdout().write() 方法来输出内容。</p>
-<div class="language-rust highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">io</span>::<span class="n">Write</span><span class="p">;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">b1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span>::<span class="n">io</span>::<span class="n">stdout</span><span class="p">().</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;从零蛋开始教程 &quot;</span><span class="p">.</span><span class="n">as_bytes</span><span class="p">()).</span><span class="n">unwrap</span><span class="p">();</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">b2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span>::<span class="n">io</span>::<span class="n">stdout</span><span class="p">().</span><span class="n">write</span><span class="p">(</span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;www.baidu.com&quot;</span><span class="p">).</span><span class="n">as_bytes</span><span class="p">()).</span><span class="n">unwrap</span><span class="p">();</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="n">std</span>::<span class="n">io</span>::<span class="n">stdout</span><span class="p">().</span><span class="n">write</span><span class="p">(</span><span class="fm">format!</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">写入的字节数为：{}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,(</span><span class="n">b1</span><span class="o">+</span><span class="n">b2</span><span class="p">)).</span><span class="n">as_bytes</span><span class="p">()).</span><span class="n">unwrap</span><span class="p">();</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
-</span></code></pre></div>
-<p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>从零蛋开始教程<span class="w"> </span>www.baidu.com
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>写入的字节数为：24
-</span></code></pre></div>
-<p>标准库提供的 std::io::stdout() 会返回返回当前进程的标准输出流 stdout 的句柄。</p>
-<p>而 write() 则是标准输出流 stdout 的句柄上的一个方法，用于向标准输出流写入字节流内容。</p>
-<p>write() 方法的返回值值一个 Result 枚举，而 unwrap() 则是一个帮助方法，用于简化可恢复错误的处理。它会返回 Result 中存储的实际值。</p>
-<blockquote>
-<p>注意: 和文件相关的 IO 我们会在下一个章节介绍。  </p>
-</blockquote>
-<h2 id="234">23.4 命令行参数</h2>
-<p>命令行参数是程序执行前就通过终端或命令行提示符或 Shell 传递给程序的参数。</p>
-<p>命令行参数有点类似于传递给函数的实参。</p>
-<p>比如我们之前见过的无数次的 main.exe 。之前我们运行它的时候没有传递任何参数</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>./main.exe
-</span></code></pre></div>
-<p>但实际上我们是可以传递一些参数的，不管程序使用与否，比如我们可以传递 2019 和 从零蛋开始教程 作为参数</p>
-<p>./main.exe 2019 从零蛋开始教程 如果要传递多个参数，多个参数之间必须使用 空格（ ' ' ） 分隔。如果参数里有空格，则参数必须使用 双引号（"）包起来。</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>./main.exe<span class="w"> </span><span class="m">2019</span><span class="w"> </span><span class="s2">&quot;从零蛋开始教程 简单编程&quot;</span>
-</span></code></pre></div>
-<p>Rust 语言在标准库中内置了 std::env::args() 函数返回所有的命令行参数。</p>
-<p>std::env::args() 返回的结果包含了程序名。例如上面的命令，std::env::args() 中存储的结果为</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">[</span><span class="s2">&quot;./main.exe&quot;</span>,<span class="s2">&quot;2019&quot;</span>,<span class="s2">&quot;从零蛋开始教程 简单编程&quot;</span><span class="o">]</span>
-</span></code></pre></div>
-<h3 id="2341">23.4.1 范例：输出命令行传递的所有参数</h3>
-<p>下面的代码，我们通过迭代 std::env::args() 来输出所有传递给命令行的参数。</p>
-<div class="language-rust highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">main</span><span class="p">.</span><span class="n">rs</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1">// main.rs</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">(){</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">cmd_line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span>::<span class="n">env</span>::<span class="n">args</span><span class="p">();</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;总共有 {} 个命令行参数&quot;</span><span class="p">,</span><span class="n">cmd_line</span><span class="p">.</span><span class="n">len</span><span class="p">());</span><span class="w"> </span><span class="c1">// 传递的参数个数</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">arg</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">cmd_line</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;[{}]&quot;</span><span class="p">,</span><span class="n">arg</span><span class="p">);</span><span class="w"> </span><span class="c1">// 迭代输出命令行传递的参数</span>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="p">}</span>
-</span></code></pre></div>
-<p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>cargo<span class="w"> </span>build
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span>Compiling<span class="w"> </span>guess-game-app<span class="w"> </span>v0.1.0<span class="w"> </span><span class="o">(</span>/Users/Admin/Downloads/guess-game-app<span class="o">)</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span>Finished<span class="w"> </span>dev<span class="w"> </span><span class="o">[</span>unoptimized<span class="w"> </span>+<span class="w"> </span>debuginfo<span class="o">]</span><span class="w"> </span>target<span class="o">(</span>s<span class="o">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.32s
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>$<span class="w"> </span>cargo<span class="w"> </span>run<span class="w"> </span><span class="m">1</span><span class="w"> </span>从零蛋开始教程<span class="w"> </span><span class="m">3</span><span class="w"> </span>简单编程
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span>Finished<span class="w"> </span>dev<span class="w"> </span><span class="o">[</span>unoptimized<span class="w"> </span>+<span class="w"> </span>debuginfo<span class="o">]</span><span class="w"> </span>target<span class="o">(</span>s<span class="o">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.04s
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">        </span>Running<span class="w"> </span><span class="sb">`</span>target/debug/guess-game-app<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="s1">&#39;从零蛋开始教程&#39;</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="s1">&#39;简单编程&#39;</span><span class="sb">`</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>总共有<span class="w"> </span><span class="m">5</span><span class="w"> </span>个命令行参数
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="o">[</span>target/debug/guess-game-app<span class="o">]</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="o">[</span><span class="m">1</span><span class="o">]</span>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="o">[</span>从零蛋开始教程<span class="o">]</span>
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="o">[</span><span class="m">3</span><span class="o">]</span>
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="o">[</span>简单编程<span class="o">]</span>
-</span></code></pre></div>
-<p>上面的程序，使用 cargo build 命令编译之后，就会生成一个可执行文件 main.exe 或 main。</p>
-<p>Rust 语言命令行参数和其它语言的命令行参数一样，都使用 空格（ ' ' ） 来分割所有的参数。例如上面我们传递的 1 从零蛋开始教程 3 简单编程 会通过空格分割成 ["1","从零蛋开始教程","3"," "简单编程"] 4 个参数。</p>
-<p>但实际上，我们的 std::env::args() 存储者 5 个参数，第一个参数是当前的程序名</p>
-<p>程序名是相当于当前的执行目录的。</p>
-<h3 id="2342">23.4.2 范例：从命令行读取多个参数</h3>
-<p>下面的代码从命令行读取多个以空格分开的参数，并统计这些参数的总和。</p>
-<div class="language-rust highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">(){</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">cmd_line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span>::<span class="n">env</span>::<span class="n">args</span><span class="p">();</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;总共有 {} 个命令行参数&quot;</span><span class="p">,</span><span class="n">cmd_line</span><span class="p">.</span><span class="n">len</span><span class="p">());</span><span class="w"> </span><span class="c1">// 传递的参数个数</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">has_read_first_arg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="c1">//迭代所有参数并计算它们的总和</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">arg</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">cmd_line</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">has_read_first_arg</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 跳过第一个参数，因为它的值是程序名</span>
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">            </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">arg</span><span class="p">.</span><span class="n">parse</span>::<span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="p">().</span><span class="n">unwrap</span><span class="p">();</span>
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">        </span><span class="n">has_read_first_arg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// 设置跳过第一个参数，这样接下来的参数都可以用于计算</span>
-</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;和值为:{}&quot;</span><span class="p">,</span><span class="n">sum</span><span class="p">);</span>
-</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="p">}</span>
-</span></code></pre></div>
-<p>编译运行以上 Rust 代码，输出结果如下</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span>cargo<span class="w"> </span>build
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span>Compiling<span class="w"> </span>guess-game-app<span class="w"> </span>v0.1.0<span class="w"> </span><span class="o">(</span>/Users/Admin/Downloads/guess-game-app<span class="o">)</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span>Finished<span class="w"> </span>dev<span class="w"> </span><span class="o">[</span>unoptimized<span class="w"> </span>+<span class="w"> </span>debuginfo<span class="o">]</span><span class="w"> </span>target<span class="o">(</span>s<span class="o">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span>.59s
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>$<span class="w"> </span>cargo<span class="w"> </span>run<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span>Finished<span class="w"> </span>dev<span class="w"> </span><span class="o">[</span>unoptimized<span class="w"> </span>+<span class="w"> </span>debuginfo<span class="o">]</span><span class="w"> </span>target<span class="o">(</span>s<span class="o">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.04s
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">        </span>Running<span class="w"> </span><span class="sb">`</span>target/debug/guess-game-app<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="sb">`</span>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>总共有<span class="w"> </span><span class="m">5</span><span class="w"> </span>个命令行参数
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>和值为:10
-</span></code></pre></div>
+
 
 
   
@@ -1981,7 +1606,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="022.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: 22-泛型" rel="prev">
+          <a href="001.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: 硬核解读Stable Diffusion（1）" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -1990,20 +1615,20 @@
                 <span class="md-footer__direction">
                   上一页
                 </span>
-                22-泛型
+                硬核解读Stable Diffusion（1）
               </div>
             </div>
           </a>
         
         
           
-          <a href="024.html" class="md-footer__link md-footer__link--next" aria-label="下一页: 24-文件读写" rel="next">
+          <a href="003.html" class="md-footer__link md-footer__link--next" aria-label="下一页: 硬核解读Stable Diffusion（3）" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   下一页
                 </span>
-                24-文件读写
+                硬核解读Stable Diffusion（3）
               </div>
             </div>
             <div class="md-footer__button md-icon">
