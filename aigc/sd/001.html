@@ -18,14 +18,14 @@
         <link rel="prev" href="../../index.html">
       
       
-        <link rel="next" href="002.html">
+        <link rel="next" href="../../codec/001.html">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
-        <title>stable diffusion 原理和使用方法详解 - chapin666</title>
+        <title>图解Stable Diffusion - chapin666</title>
       
     
     
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#01-stable-diffusion" class="md-skip">
+        <a href="#stable-diffusion" class="md-skip">
           跳转至
         </a>
       
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              stable diffusion 原理和使用方法详解
+              图解Stable Diffusion
             
           </span>
         </div>
@@ -430,12 +430,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          stable diffusion 原理和使用方法详解
+          图解Stable Diffusion
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="001.html" class="md-nav__link md-nav__link--active">
-        stable diffusion 原理和使用方法详解
+        图解Stable Diffusion
       </a>
       
         
@@ -452,63 +452,58 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#01-stable-diffusion" class="md-nav__link">
-    01 Stable Diffusion 是什么？
+  <a href="#stable-diffusion" class="md-nav__link">
+    Stable Diffusion组件
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#02-stable-diffusion" class="md-nav__link">
-    02 Stable Diffusion的原理是什么？
+  <a href="#diffusion" class="md-nav__link">
+    什么是Diffusion？
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#03-negative-prompt" class="md-nav__link">
-    03 什么是negative prompt  ？
+  <a href="#diffusion_1" class="md-nav__link">
+    Diffusion的工作原理
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#04-stable-diffusion" class="md-nav__link">
-    04 怎么玩Stable Diffusion  ？
+  <a href="#_1" class="md-nav__link">
+    移除噪声，绘制图像
   </a>
-  
-    <nav class="md-nav" aria-label="04 怎么玩Stable Diffusion  ？">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1text2img" class="md-nav__link">
-    1、文生图（text2img）
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#05" class="md-nav__link">
-    05 不好玩，出图效果鬼畜  ？
-  </a>
-  
-    <nav class="md-nav" aria-label="05 不好玩，出图效果鬼畜  ？">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2、下面列举下模型文件使用方法
+  <a href="#_2" class="md-nav__link">
+    加速：在压缩数据上扩散
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#transformer" class="md-nav__link">
+    文本编码器：一个Transformer语言模型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clip" class="md-nav__link">
+    CLIP是怎么训练的？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    文本信息喂入图像生成过程
+  </a>
   
 </li>
       
@@ -516,34 +511,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="002.html" class="md-nav__link">
-        硬核解读Stable Diffusion（1）
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="003.html" class="md-nav__link">
-        硬核解读Stable Diffusion（2）
-      </a>
     </li>
   
 
@@ -1654,63 +1621,58 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#01-stable-diffusion" class="md-nav__link">
-    01 Stable Diffusion 是什么？
+  <a href="#stable-diffusion" class="md-nav__link">
+    Stable Diffusion组件
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#02-stable-diffusion" class="md-nav__link">
-    02 Stable Diffusion的原理是什么？
+  <a href="#diffusion" class="md-nav__link">
+    什么是Diffusion？
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#03-negative-prompt" class="md-nav__link">
-    03 什么是negative prompt  ？
+  <a href="#diffusion_1" class="md-nav__link">
+    Diffusion的工作原理
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#04-stable-diffusion" class="md-nav__link">
-    04 怎么玩Stable Diffusion  ？
+  <a href="#_1" class="md-nav__link">
+    移除噪声，绘制图像
   </a>
-  
-    <nav class="md-nav" aria-label="04 怎么玩Stable Diffusion  ？">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1text2img" class="md-nav__link">
-    1、文生图（text2img）
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#05" class="md-nav__link">
-    05 不好玩，出图效果鬼畜  ？
-  </a>
-  
-    <nav class="md-nav" aria-label="05 不好玩，出图效果鬼畜  ？">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2、下面列举下模型文件使用方法
+  <a href="#_2" class="md-nav__link">
+    加速：在压缩数据上扩散
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#transformer" class="md-nav__link">
+    文本编码器：一个Transformer语言模型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clip" class="md-nav__link">
+    CLIP是怎么训练的？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    文本信息喂入图像生成过程
+  </a>
   
 </li>
       
@@ -1732,55 +1694,41 @@
 
 
 
-  <h1>stable diffusion 原理和使用方法详解</h1>
+  <h1>图解Stable Diffusion</h1>
 
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-NpM8yn.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-xz3s9O.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
-<p>人工智能创作内容（AIGC）大家一定都不陌生，它绝对是2022年AI领域最热门的话题之一。在ChatGPT出现之前，AI绘画就凭借其独特的创意与便捷的创作工具迅速走红，让AIGC 火爆出圈，广受关注。</p>
-<p>22年以来，以 Stable Diffusion、Midjourney、NovelAI 等为代表的文本生成图像的跨模态应用相继涌现。基于 Stable Diffusion 生成人和场景的效果都比较好，本文就带大家深入体验这款绘画软件。</p>
-<h2 id="01-stable-diffusion">01 Stable Diffusion 是什么？</h2>
-<hr />
-<p>简单来说Stable Diffusion是一个文本到图像的潜在扩散模型，由CompVis、Stability AI和LAION的研究人员和工程师创建。它使用来自LAION-5B数据库子集的512x512图像进行训练。使用这个模型，可以生成包括人脸在内的任何图像，因为有开源的预训练模型，所以我们也可以在自己的机器上运行它。</p>
-<p><strong><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-qWDymJ.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" />本文首先介绍什么是Stable Diffusion，并讨论它的主要组成部分。然后我们将使用模型以三种不同的方式创建图像，这三种方式从更简单到复杂。</strong></p>
-<p><strong>相关资源</strong></p>
-<p>这里简单罗列下stable diffusion相关的各类资源，包括代码、模型等等。</p>
-<ul>
-<li>官网：ommer-lab.com/research/</li>
-<li>论文：arxiv.org/abs/2112.1075</li>
-<li>Github地址：github.com/CompVis/stab</li>
-<li>模型下载地址：<ul>
-<li>huggingface.co/CompVis/</li>
-<li>huggingface.co/CompVis/</li>
-</ul>
-</li>
-</ul>
-<h2 id="02-stable-diffusion">02 Stable Diffusion的原理是什么？</h2>
-<hr />
-<p>图解Stable Diffusion</p>
 <p>AI模型最新展现出的图像生成能力远远超出人们的预期，直接根据文字描述就能创造出具有惊人视觉效果的图像，其背后的运行机制显得十分神秘与神奇，但确实影响了人类创造艺术的方式。</p>
 <p>Stable Diffusion的发布是AI图像生成发展过程中的一个里程碑，相当于给大众提供了一个可用的高性能模型，不仅生成的图像质量非常高，运行速度快，并且有资源和内存的要求也较低。</p>
 <p>相信只要试过AI图像生成的人都会想了解它到底是如何工作的，这篇文章就将为你揭开Stable Diffusion工作原理的神秘面纱。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-1lJI9w.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
-<p>Stable Diffusion从功能上来说主要包括两方面：1）其核心功能为仅根据文本提示作为输入来生成的图像（text2img）；2）你也可以用它对图像根据文字描述进行修改（即输入为文本+图像）。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-6IyEK3.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_01.png" /></p>
+<p>Stable Diffusion从功能上来说主要包括两方面：</p>
+<ol>
+<li>
+<p>其核心功能为仅根据文本提示作为输入来生成的图像（text2img）；</p>
+</li>
+<li>
+<p>你也可以用它对图像根据文字描述进行修改（即输入为文本+图像）。</p>
+</li>
+</ol>
+<p><img alt="" src="images/001_02.png" /></p>
 <p>下面将使用图示来辅助解释Stable Diffusion的组件，它们之间如何交互，以及图像生成选项及参数的含义。</p>
-<p>Stable Diffusion组件</p>
+<h2 id="stable-diffusion">Stable Diffusion组件</h2>
 <p>Stable Diffusion是一个由多个组件和模型组成的系统，而非单一的模型。</p>
 <p>当我们从模型整体的角度向模型内部观察时，可以发现，其包含一个文本理解组件用于将文本信息翻译成数字表示（numeric representation），以捕捉文本中的语义信息。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-xPoGxu.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_03.png" /></p>
 <p>虽然目前还是从宏观角度分析模型，后面才有更多的模型细节，但我们也可以大致推测这个文本编码器是一个特殊的Transformer语言模型（具体来说是CLIP模型的文本编码器）。</p>
-<p>模型的输入为一个文本线条光线，输出为一个数字列表，用来表征文本中的每个单词/token，即将每个token转换为一个向量。</p>
+<p>模型的输入为一个文本字符串，输出为一个数字列表，用来表征文本中的每个单词/token，即将每个token转换为一个向量。</p>
 <p>然后这些信息会被提交到图像生成器（image generator）中，它的内部也包含多个组件。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-7QiBdz.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_04.png" /></p>
 <p>图像生成器主要包括两个阶段：</p>
 <p><strong>1. Image information creator</strong></p>
 <p>这个组件是Stable Diffusion的独家秘方，相比之前的模型，它的很多性能增益都是在这里实现的。</p>
 <p>该组件运行多个steps来生成图像信息，其中steps也是Stable Diffusion接口和库中的参数，通常默认为50或100。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-HBz7DC.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_05.png" /></p>
 <p>图像信息创建器完全在图像信息空间（或潜空间）中运行，这一特性使得它比其他在像素空间工作的Diffusion模型运行得更快；从技术上来看，该组件由一个UNet神经网络和一个调度（scheduling）算法组成。</p>
 <p>扩散（diffusion）这个词描述了在该组件内部运行期间发生的事情，即对信息进行一步步地处理，并最终由下一个组件（图像解码器）生成高质量的图像。</p>
 <p><strong>2. 图像解码器</strong></p>
 <p>图像解码器根据从图像信息创建器中获取的信息画出一幅画，整个过程只运行一次即可生成最终的像素图像。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-PzPXmK.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_06.png" /></p>
 <p>可以看到，Stable Diffusion总共包含三个主要的组件，其中每个组件都拥有一个独立的神经网络：</p>
 <p>1）Clip Text用于文本编码。</p>
 <p>输入：文本</p>
@@ -1791,330 +1739,140 @@
 <p>3）自编码解码器（Autoencoder Decoder），使用处理过的信息矩阵绘制最终图像的解码器。</p>
 <p>输入：处理过的信息矩阵，维度为（4, 64, 64）</p>
 <p>输出：结果图像，各维度为（3，512，512），即（红/绿/蓝，宽，高）</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-HgkDyS.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
-<p>什么是Diffusion？</p>
+<p><img alt="" src="images/001_07.png" /></p>
+<h2 id="diffusion">什么是Diffusion？</h2>
 <p>扩散是在下图中粉红色的图像信息创建器组件中发生的过程，过程中包含表征输入文本的token嵌入，和随机的初始图像信息矩阵（也称之为latents），该过程会还需要用到图像解码器来绘制最终图像的信息矩阵。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-d5FHLu.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_08.png" /></p>
 <p>整个运行过程是step by step的，每一步都会增加更多的相关信息。</p>
 <p>为了更直观地感受整个过程，可以中途查看随机latents矩阵，并观察它是如何转化为视觉噪声的，其中视觉检查（visual inspection）是通过图像解码器进行的。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-5jCRzb.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_09.png" /></p>
 <p>整个diffusion过程包含多个steps，其中每个step都是基于输入的latents矩阵进行操作，并生成另一个latents矩阵以更好地贴合「输入的文本」和从模型图像集中获取的「视觉信息」。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-olKrav.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_10.png" /></p>
 <p>将这些latents可视化可以看到这些信息是如何在每个step中相加的。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-nnEeYQ.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_11.png" /></p>
 <p>整个过程就是从无到有，看起来相当激动人心。</p>
+<video src="./images/001_12.webm" controls>
+  你的浏览器不支持 <code>video</code> 标签。
+</video>
+
 <p>步骤2和4之间的过程转变看起来特别有趣，就好像图片的轮廓是从噪声中出现的。</p>
-<p>Diffusion的工作原理</p>
+<video src="./images/001_13.webm" controls>
+  你的浏览器不支持 <code>video</code> 标签。
+</video>
+
+<h2 id="diffusion_1">Diffusion的工作原理</h2>
 <p>使用扩散模型生成图像的核心思路还是基于已存在的强大的计算机视觉模型，只要输入足够大的数据集，这些模型可以学习任意复杂的操作。</p>
 <p>假设我们已经有了一张图像，生成产生一些噪声加入到图像中，然后就可以将该图像视作一个训练样例。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-u3O2oL.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_14.png" /></p>
 <p>使用相同的操作可以生成大量训练样本来训练图像生成模型中的核心组件。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-1bjJs3.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_15.png" /></p>
 <p>上述例子展示了一些可选的噪声量值，从原始图像(级别0，不含噪声)到噪声全部添加(级别4) ，从而可以很容易地控制有多少噪声添加到图像中。</p>
 <p>所以我们可以将这个过程分散在几十个steps中，对数据集中的每张图像都可以生成数十个训练样本。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-Nz32w0.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_16.png" /></p>
 <p>基于上述数据集，我们就可以训练出一个性能极佳的噪声预测器，每个训练step和其他模型的训练相似。当以某一种确定的配置运行时，噪声预测器就可以生成图像。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-MF6clu.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
-<p>移除噪声，绘制图像</p>
+<p><img alt="" src="images/001_17.png" /></p>
+<h2 id="_1">移除噪声，绘制图像</h2>
 <p>经过训练的噪声预测器可以对一幅添加噪声的图像进行去噪，也可以预测添加的噪声量。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-UUR7xD.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_18.png" /></p>
 <p>由于采样的噪声是可预测的，所以如果从图像中减去噪声，最后得到的图像就会更接近模型训练得到的图像。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-K70OaJ.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_19.png" /></p>
 <p>得到的图像并非是一张精确的原始图像，而是分布（distribution），即世界的像素排列，比如天空通常是蓝色的，人有两只眼睛，猫有尖耳朵等等，生成的具体图像风格完全取决于训练数据集。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-5hfi2I.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_20.png" /></p>
 <p>不止Stable Diffusion通过去噪进行图像生成，DALL-E 2和谷歌的Imagen模型都是如此。</p>
 <p>需要注意的是，到目前为止描述的扩散过程还没有使用任何文本数据生成图像。因此，如果我们部署这个模型的话，它能够生成很好看的图像，但用户没有办法控制生成的内容。</p>
 <p>在接下来的部分中，将会对如何将条件文本合并到流程中进行描述，以便控制模型生成的图像类型。</p>
-<p>加速：在压缩数据上扩散</p>
+<h2 id="_2">加速：在压缩数据上扩散</h2>
 <p>为了加速图像生成的过程，Stable Diffusion并没有选择在像素图像本身上运行扩散过程，而是选择在图像的压缩版本上运行，论文中也称之为「Departure to Latent Space」。</p>
 <p>整个压缩过程，包括后续的解压、绘制图像都是通过自编码器完成的，将图像压缩到潜空间中，然后仅使用解码器使用压缩后的信息来重构。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-nRXXqf.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_21.png" /></p>
 <p>前向扩散（forward diffusion）过程是在压缩latents完成的，噪声的切片（slices）是应用于latents上的噪声，而非像素图像，所以噪声预测器实际上是被训练用来预测压缩表示（潜空间）中的噪声。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-AMj2rp.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_22.png" /></p>
 <p>前向过程，即使用使用自编码器中的编码器来训练噪声预测器。一旦训练完成后，就可以通过运行反向过程（自编码器中的解码器）来生成图像。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-JIDG1P.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_23.png" /></p>
 <p>前向和后向过程如下所示，图中还包括了一个conditioning组件，用来描述模型应该生成图像的文本提示。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-PWJIdx.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
-<p>文本编码器：一个Transformer语言模型</p>
+<p><img alt="" src="images/001_24.png" /></p>
+<h2 id="transformer">文本编码器：一个Transformer语言模型</h2>
 <p>模型中的语言理解组件使用的是Transformer语言模型，可以将输入的文本提示转换为token嵌入向量。发布的Stable Diffusion模型使用 ClipText (基于 GPT 的模型) ，这篇文章中为了方便讲解选择使用 BERT模型。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-P79u2v.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_25.png" /></p>
 <p>Imagen论文中的实验表明，相比选择更大的图像生成组件，更大的语言模型可以带来更多的图像质量提升。</p>
 <p>早期的Stable Diffusion模型使用的是OpenAI发布的经过预训练的 ClipText 模型，而在Stable Diffusion V2中已经转向了最新发布的、更大的CLIP模型变体OpenClip.</p>
-<p><strong>CLIP是怎么训练的？</strong></p>
+<h2 id="clip">CLIP是怎么训练的？</h2>
 <p>CLIP需要的数据为图像及其标题，数据集中大约包含4亿张图像及描述。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-MobbfY.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_26.png" /></p>
 <p>数据集通过从网上抓取的图片以及相应的「alt」标签文本来收集的。</p>
 <p>CLIP 是图像编码器和文本编码器的组合，其训练过程可以简化为拍摄图像和文字说明，使用两个编码器对数据分别进行编码。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-yiy5vk.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_27.png" /></p>
 <p>然后使用余弦距离比较结果嵌入，刚开始训练时，即使文本描述与图像是相匹配的，它们之间的相似性肯定也是很低的。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-ab4WQY.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_28.png" /></p>
 <p>随着模型的不断更新，在后续阶段，编码器对图像和文本编码得到的嵌入会逐渐相似。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-qNBmHf.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_29.png" /></p>
 <p>通过在整个数据集中重复该过程，并使用大batch size的编码器，最终能够生成一个嵌入向量，其中狗的图像和句子「一条狗的图片」之间是相似的。</p>
 <p>就像在 word2vec 中一样，训练过程也需要包括不匹配的图片和说明的负样本，模型需要给它们分配较低的相似度分数。</p>
-<p>文本信息喂入图像生成过程</p>
+<h2 id="_3">文本信息喂入图像生成过程</h2>
 <p>为了将文本条件融入成为图像生成过程的一部分，必须调整噪声预测器的输入为文本。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-M1Am9i.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_30.png" /></p>
 <p>所有的操作都是在潜空间上，包括编码后的文本、输入图像和预测噪声。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-WOEeTK.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_31.png" /></p>
 <p>为了更好地了解文本token在 Unet 中的使用方式，还需要先了解一下 Unet模型。</p>
 <p><strong>Unet 噪声预测器中的层（无文本）</strong></p>
 <p>一个不使用文本的diffusion Unet，其输入输出如下所示：</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-RbFObs.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_32.png" /></p>
 <p>在模型内部，可以看到：</p>
 <p>1. Unet模型中的层主要用于转换latents；</p>
 <p>2. 每层都是在之前层的输出上进行操作；</p>
 <p>3. 某些输出（通过残差连接）将其馈送到网络后面的处理中</p>
 <p>4. 将时间步转换为时间步长嵌入向量，可以在层中使用。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-ctOV8r.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_33.png" /></p>
 <p><strong>Unet 噪声预测器中的层（带文本）</strong></p>
 <p>现在就需要将之前的系统改装成带文本版本的。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-KszWFT.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_34.png" /></p>
 <p>主要的修改部分就是增加对文本输入（术语：text conditioning）的支持，即在ResNet块之间添加一个注意力层。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-SiAQwC.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
+<p><img alt="" src="images/001_35.png" /></p>
 <p>需要注意的是，ResNet块没有直接看到文本内容，而是通过注意力层将文本在latents中的表征合并起来，然后下一个ResNet就可以在这一过程中利用上文本信息。</p>
-<p>参考资料：https://jalammar.github.io/illustrated-stable-diffusion/</p>
-<p>https://www.reddit.com/r/MachineLearning/comments/10dfex7/d_the_illustrated_stable_diffusion_video/</p>
-<h2 id="03-negative-prompt">03 什么是negative prompt  ？</h2>
-<hr />
-<p>首先我们简单解释一下什么是 negative prompt。与正常的文本到图像 prompt 类似，Negative Prompting 表示你不希望在结果图像中看到的术语。这个强大的功能允许用户从原始生成的图像中删除任何对象、样式或异常。尽管 Stable Diffusion 以人类语言的形式接受被称为 prompt 的输入，但它很难理解否定词，如「no, not, except, without」等。因此，用户需要使用 negative prompting 来完全控制 prompt。</p>
-<p>再就是关于 prompt 权重的问题。</p>
-<p>Prompt 权重是 Stable Diffusion 支持的一项技术，可以让用户精细地控制他们的 prompt。使用 prompt 权重，用户可以告诉 Stable Diffusion 哪里应该多关注，哪里应该少关注。</p>
-<p>例如 Prompt ：柴犬和北极熊（占 0.7）的混合体。由于给北极熊赋予了更多权重，所以在输出图像中看到北极熊特征占主导地位。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-cLBRAa.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
-<p>我们用 Stable Diffusion 2.0 来测试一下。先回到我的 VQGAN+CLIP prompt（参见：https://minimaxir.com/2021/08/vqgan-clip/），看看它生成的达利风格的赛博朋克森林是个什么样子：</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-etuame.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" />prompt：cyberpunk forest</p>
-<p>注：达利是西班牙超现实主义画家，代表作品有《记忆的永恒》等。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-QBYOEd.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
-<p>达利代表作品《记忆的永恒》。</p>
-<p>假如你想删除树或某种颜色(如绿色)，那么这两者（trees、green）就是在 negative prompt 中要写的内容。例如下图中，prompt 为「cyberpunk forest by Salvador Dali」；negative prompt 为 「trees, green」。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-IAMxLU.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
-<p>prompt：cyberpunk forest by Salvador Dali；negative prompt: trees, green</p>
-<p>虽然充斥着大量超现实主义赛博朋克隐喻，这依然是一片森林。</p>
-<p>从理论上来说，要改进上述图像，一个很流行的技巧是纳入更抽象的不良图像概念，如模糊和马赛克。但是，这些 negative prompt 是否比其他“成分”（如 4k hd）更好呢？negative prompt 如何与那些 positive promt addition 相互作用？我们来进一步实际测试一下。</p>
-<h2 id="04-stable-diffusion">04 怎么玩Stable Diffusion  ？</h2>
-<hr />
-<p>对于刚接触Stable Diffusion不久的用户而言，通常会存在以下一些痛点：</p>
-<p>1. 怎么玩？刚了解不久，这玩意到底应该怎么玩呢？</p>
-<p>2. 不好玩？会玩一点了，但出图的效果也就那样吧？</p>
-<p>3. 玩不转？比较会玩了，它还有啥有趣的功能应用？</p>
-<p>对于用户以上的痛点，本文将结合具体的案例进行针对性解答，为深感迷茫的你指点迷津。</p>
-<p><code>stable-diffusion-webui</code> 的功能很多，主要有如下 2 个：</p>
-<ul>
-<li>
-<p>文生图（text2img）：根据提示词（Prompt）的描述生成相应的图片。</p>
-</li>
-<li>
-<p>图生图（img2img）：将一张图片根据提示词（Prompt）描述的特点生成另一张新的图片。</p>
-</li>
-</ul>
-<blockquote>
-<p>注：本文只讲解文生图（<code>text2img</code>）功能，图生图（<code>img2img</code>）后续有机会再出文章，喜欢的请多多点赞关注支持一下 😃。</p>
-</blockquote>
-<h3 id="1text2img">1、文生图（<code>text2img</code>）</h3>
-<p>在开始使用文生图之前，有必要了解以下几个参数的含义：</p>
-<p>参数</p>
-<p>说明</p>
-<p>Prompt</p>
-<p>提示词（正向）</p>
-<p>Negative prompt</p>
-<p>消极的提示词（反向）</p>
-<p>Width &amp; Height</p>
-<p>要生成的图片尺寸。尺寸越大，越耗性能，耗时越久。</p>
-<p>CFG scale</p>
-<p>AI 对描述参数（Prompt）的倾向程度。值越小生成的图片越偏离你的描述，但越符合逻辑；值越大则生成的图片越符合你的描述，但可能不符合逻辑。</p>
-<p>Sampling method</p>
-<p>采样方法。有很多种，但只是采样算法上有差别，没有好坏之分，选用适合的即可。</p>
-<p>Sampling steps</p>
-<p>采样步长。太小的话采样的随机性会很高，太大的话采样的效率会很低，拒绝概率高(可以理解为没有采样到,采样的结果被舍弃了)。</p>
-<p>Seed</p>
-<p>随机数种子。生成每张图片时的随机种子，这个种子是用来作为确定扩散初始状态的基础。不懂的话，用随机的即可。</p>
-<p>接下来我们来生成一张赛博朋克风格的猫咪图片，配置以下参数后，点击 "Generate" 即可：</p>
-<ol>
-<li><code>Prompt：a cute cat, cyberpunk art, by Adam Marczyński, cyber steampunk 8 k 3 d, kerem beyit, very cute robot zen, beeple |Negative prompt：(deformed, distorted, disfigured:1.3), poorly drawn, bad anatomy, wrong anatomy, extra limb, missing limb, floating limbs, (mutated hands and fingers:1.4), disconnected limbs, mutation, mutated, ugly, disgusting, blurry, amputation, flowers, human, man, womanCFG scale：6.5Sampling method：Euler aSampling steps：26Seed：1791574510</code></li>
-</ol>
-<blockquote>
-<p>注：提示词（Prompt）越多，AI 绘图结果会更加精准，另外，目前中文提示词的效果不好，还得使用英文提示词。</p>
-</blockquote>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-EPQA3U.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
-<p><strong>下载安装后输入自定义prompt，也就是任意你想生成的图像内容，然后点击生成就好了。如果不满意，可以再次点击，每次将随机生成不同的图片，总有一些你感兴趣的。</strong></p>
-<p><strong><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-0EykxJ.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></strong></p>
-<h2 id="05">05 不好玩，出图效果鬼畜  ？</h2>
-<hr />
-<p>玩了好久了，用户的审美也进一步提升了，对AI绘画的要求也进一步提高，但是总感觉AI生成的图像也就那样，10张里面可能就1张能够上眼，其余的就有点辣眼睛了，比如下面这种：</p>
-<p><strong><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-EkRwve.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></strong></p>
-<p><strong><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-DGAk9G.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></strong></p>
-<p><strong>或是，这种（梅老板的球迷求轻喷）：</strong></p>
-<p><strong><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-2UPQb4.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></strong></p>
-<p>造成生成效果不理想的原因有很多，本文列举主要的三点原因，跟大家逐一分析。</p>
-<p><strong>1. 没有选择正确的模型版本</strong></p>
-<p><strong>不同stable diffusion版本由于finetune了不同的数据，所以各有所长，下面简单罗列下：</strong></p>
-<p><strong>模型版本特性总结</strong></p>
-<ul>
-<li>stable-diffusion-v1-4</li>
-<li>
-<p>擅长绘制风景类画，整体偏欧美风，具有划时代意义；</p>
-</li>
-<li>
-<p>stable-diffusion-v1-5</p>
-</li>
-<li>
-<p>同上，但生成的作品更具艺术性；</p>
-</li>
-<li>
-<p>stable-diffusion-2</p>
-</li>
-<li>
-<p>图像生成质量大幅提升，原生支持768x768等；</p>
-</li>
-<li>
-<p>waifu-diffusion</p>
-</li>
-<li>
-<p>设定随机种子后，每次将生成相同的图像，无随机性，可方便复现；</p>
-</li>
-<li>
-<p>Taiyi-Stable-Diffusion-1B-Chinese-v0.1</p>
-</li>
-<li>
-<p>擅长中文古诗词绘画，整体绘画风格更偏中国风；</p>
-</li>
-<li>
-<p>Taiyi-Stable-Diffusion-1B-Chinese-EN-v0.1</p>
-</li>
-<li>
-<p>同上，但额外支持英文输入；</p>
-</li>
-<li>
-<p>Stable_Diffusion_PaperCut_Model</p>
-</li>
-<li>
-<p>擅长剪纸画；</p>
-</li>
-<li>
-<p>trinart_characters_19.2m_stable_diffusion_v1</p>
-</li>
-<li>
-<p>擅长动漫角色绘制；</p>
-</li>
-<li>
-<p>trinart_derrida_characters_v2_stable_diffusion</p>
-</li>
-<li>
-<p>擅长动漫角色绘制，出图效果更稳定。</p>
-</li>
-<li>更多第三方模型请参考其他文章，本文不多做介绍。<img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-u7XOyX.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></li>
-</ul>
-<p><strong>从上可以看出，不同版本的AI绘画各有所长，使用时可以挑选合适的版本进行使用。</strong></p>
-<h3 id="2">2、下面列举下模型文件使用方法</h3>
-<p>眼尖的你可能发现了，上面截图里左上角 <code>Stable Diffusion checkpoint</code> 的值怎么跟之前截图里的不一样？这是因为我换了一个模型文件，还记得前面提到那个将近 4 个 G 大小的模型文件（<code>v1-5-pruned-emaonly.safetensors</code>）吗？那是 <code>stable-diffusion-webui</code> 的默认模型文件，用这个模型文件生成出来的图片比较丑，因此我换了另一个模型文件。模型文件下载的网站几个，比较出名的就是 <code>civitai</code>，这上面共享的都是别人训练好的模型。</p>
-<blockquote>
-<p>模型文件下载地址：</p>
-<p><code>civitai</code>：https://civitai.com/</p>
-<p>默认的 <code>v1-5-pruned-emaonly</code>：https://huggingface.co/runwayml/stable-diffusion-v1-5/tree/main</p>
-</blockquote>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-pPbODq.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
-<p>根据你要生成的图片风格（比如：动漫、风景），挑选合适的模型查看，前面那个文生图的例子，使用的就是这个 <code>Deliberate</code> 模型，直接点击 "Download Latest" 即可下载该模型文件。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-eAyfeb.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
-<blockquote>
-<p>注：模型文件有 2 种格式，分别是 <code>.ckpt</code>（Model PickleTensor） 和 <code>.safetensors</code>（Model SafeTensor），据说 <code>.safetensors</code> 更安全，这两种格式 <code>stable-diffusion-webui</code> 都支持，随意下载一种即可。</p>
-</blockquote>
-<p>将下载好的模型文件放到 <code>stable-diffusion-webui\models\Stable-diffusion</code> 目录下：</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-YdYzA0.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
-<p>放置好模型文件之后，需要重启一下 <code>stable-diffusion-webui</code>（执行 <code>webui-user.bat</code>）才能识别到。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-E4KtGy.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
-<p>这些模型文件一般会附带一组效果图，点击任意一张，就可以看到生成该效果图的一些参数配置：</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-oje4vO.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
-<p>把这些参数配置到 <code>stable-diffusion-webui</code> 中，点击 "Generate" 就可以生成类似效果的图片了。</p>
-<blockquote>
-<p>注：因为 AI 绘图带有随机性质，所以生成出来的图片跟效果图不一定完全一样。</p>
-</blockquote>
-<p>文生图功能有很多东西可以发掘，你可以用它来生成世界上独一无二的图片，而要用好文生图功能，提示词（Prompt）是必须掌握的重中之重，它是有语法规则的，具体接着往下看。</p>
-<p><strong>2. 输入的prompt不够明确</strong></p>
-<p>从模型的角度而言，它生成的图像和用户输入的prompt相关。但从用户的角度而言，AI虽然生成了相关的图像，但是生成的图像艺术性不佳（个人主观），不够惊艳，不具美感，有些有明显的细节错误，完全不是用户想要的。</p>
-<p>这个矛盾的根源来源于：用户潜在地带入了个人的审美（比较心理），希望AI生成的图像能更好看些，至少没有明显的绘画细节错误。但训练的数据里却没有告诉AI哪些图片才更好看，只是采用CLIP的对比损失，这样就注定了AI绘画的定位就类似搜索里的语义初召。</p>
-<p>正如引入强化学习的ChatGPT，经过pairwise排序学习后，模型才能更好地把握生成的质量，也就有了更惊艳的效果。所以，对stable diffusion改进引入排序学习后，相信AI绘画基本具备给生成的图像进行艺术性打分了，但至少目前还不行。</p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-Y7aqmK.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
-<p><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-6TMz8v.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></p>
-<p>使用AI绘画现阶段的建议如下：输入更加详细的prompt，让AI更加了解你具体想生成什么，想达到什么效果，也就是限制AI绘画的发挥空间，避免它随意乱发挥。不知道prompt奥妙的，可以参考下面这个网站，里面收集了各式各样的AI艺术绘画，喜欢的可以研究捣鼓下：</p>
-<p><strong><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-u07569.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></strong></p>
-<p><strong>https://tag.muhou.net（复制到浏览器打开）</strong></p>
-<p><strong><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-PyTYZV.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></strong></p>
-<p><strong><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-7nXHJ4.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></strong></p>
-<p>关于如何构思prompt提示语，可以从如下几个问题入手：</p>
-<p>你想要一张照片，还是一幅画（photo/painting）</p>
-<p>你想要什么内容，比如：人物，动物，还是风景（person/animal/landscape）</p>
-<p>需要什么样的细节，比如：</p>
-<p>环境，室内/室外/水下/太空（indoor/outdoor/underwater/in space）</p>
-<p>视角，正面/侧面/俯视（front/side/overhead）</p>
-<p>背景，纯色/星系/森林（solid color/nebula/forest）</p>
-<p>打光，柔光/环境光/环形光/霓虹（soft/ambient/ring light/neon）</p>
-<p>颜色调性，鲜活/暗黑/柔和（vibrant/dark/pastel）</p>
-<p>需要怎样的艺术风格，比如：3D渲染/电影海报/毕加索（3D render/movie poster/Picasso）</p>
-<p>观察者镜头选择，比如：微距/长焦（macro/telephoto）</p>
-<p>如何组织语言：</p>
-<p>把想画的内容和形式用只言片语一条一条列出来，而不是企图用一条完整通顺的话来描述</p>
-<p>只言片语的顺序很重要，越想强调的越放到前面</p>
-<p>提示语涉及哪些修饰形容角度：</p>
-<p>摄影（视角/主题类型/相机类型/镜头类型/用光）</p>
-<p>艺术（表现形式/媒体形式）</p>
-<p>艺术家（人像/景观/恐怖/二次元/科幻/游戏概念）</p>
-<p>插画（3D/各类风格/角色设计）</p>
-<p>情绪（各种正面的/各种负面的）</p>
-<p>审美特点（活力感/暗黑系/历史感）</p>
-<p>以上各角度可以混合使用</p>
-<p>提示语还涉及哪些特殊词组：</p>
-<p>HDR, UHD, 64K</p>
-<p>highly detailed</p>
-<p>studio lighting</p>
-<p>professional</p>
-<p>trending on artstation</p>
-<p>unreal engine</p>
-<p>vivid colors</p>
-<p>bokeh</p>
-<p>high resolution scan</p>
-<p>sketch/painting</p>
-<p>stable diffusion 重点参数解析：</p>
-<p>CFG（classifier free guidance），数字越大越贴近提示语的描述</p>
-<p>step count，合适为佳，并非越大越好，需要测试</p>
-<p>seed，初始随机噪声值，设定同一seed，可以复原已出图片；注意某些seed值与特定提示语配合很好，更容易出效果</p>
-<p>如何优化提示语权重</p>
-<p>使用 ( ) 增强模型对特定词语的关注，使用 [ ] 减弱其关注</p>
-<p>多以使用多个 () 或 []，比如：((( )))、[[ ]] 等</p>
-<p>也可以使用 (word:1.5)、(word:0.25) 的方式增强或减弱某个词语的权重</p>
-<p>如何混合两个提示词</p>
-<p>提示编辑允许您开始对一张图片进行采样，但在中间切换到其他图片。其基本语法为 [from:to:when]</p>
-<p>比如：a [fantasy:cyberpunk:16] landscape，16步之前是 a fantasy landscape，16步之后是 a cyberpunk landscape</p>
-<p>比如：a [mountain:lake:0.25]，假定sampler有100步，则前25步是 a mountain，后75步是 a lake</p>
-<p>补充信息</p>
-<p>提示语长度，旧版的 stable diffusion 有效token长度只有75，简单理解，只能支持70个左右的单词数量，新版的移除了token长度限制，但总体而言，不宜用特别长的提示语</p>
-<p><strong>3. 生成的参数未调好</strong></p>
-<p>一般生成都是有些参数可以调节的，比如：生成的图像高度（Width）和宽度（Height），生成迭代步数（Steps），图文相关性（CFG Scale），采样算法（Sampler），随机种子（Seed）等。</p>
-<p><strong>TT-SD的生成参数调节：</strong></p>
-<p><strong><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-eL1mEL.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></strong></p>
-<p><strong><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-NECs3u.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></strong></p>
-<p><strong>InvokeAI的生成参数调节：</strong></p>
-<p><strong><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-idV0yf.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></strong></p>
-<p><strong><img alt="人工智能Ai画画——stable diffusion 原理和使用方法详解！" src="//v.oh4k.com/muhou/2023/02/20230228-235620-B7Giog.png" title="人工智能Ai画画——stable diffusion 原理和使用方法详解！" /></strong></p>
-<p><strong>参数总结</strong></p>
-<p><strong>Steps-生成迭代步数</strong><strong>一般取50即可，若采样算法选DPMSolve++，此处取25就可取得50步的效果；</strong></p>
-<p><strong>CFG Scale-图文相关性</strong><strong>一般在6~20之间，太高了的话生成的艺术性太差，可以多设置看看；</strong></p>
-<p><strong>Sampler-采样算法</strong></p>
-<p><strong>不做推荐，针对不同需求可以多试试；</strong></p>
-<p><strong>Seed-随机种子</strong></p>
-<p><strong>设定随机种子后，每次将生成相同的图像，无随机性，可方便复现；</strong></p>
-<p><strong>Width-生成的图像宽度</strong></p>
-<p><strong>一般取512就好了，不建议1024x1024的大图，可以upscale实现高分辨重建；</strong></p>
-<p><strong>Height-生成的图像高度</strong></p>
-<p><strong>一般取512就好了，不建议1024x1024的大图，可以upscale实现高分辨重建；</strong></p>
-<p><strong>诀窍小结</strong></p>
-<p><strong>诀窍：选择正确的stable diffusion版本 + 输入合适的prompt + 生成参数调节 + 三分运气</strong><strong>总的来说，就算比较了解AI绘画，也几率会出残图，所以还看三分运气了，不想看运气的，每次批量生成10张+，从中选几个好的就完事了。</strong></p>
 
 
   
 
 
 
+
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+<script src="https://giscus.app/client.js" data-repo="chapin666/blog" data-repo-id="MDEwOlJlcG9zaXRvcnk5MTc1MTUyMg=="
+    data-category="Announcements" data-category-id="DIC_kwDOBXgEYs4CVK0Q" data-mapping="pathname" data-strict="0"
+    data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme"
+    data-lang="zh-CN" data-loading="lazy" crossorigin="anonymous" async>
+    </script>
+
+<!-- Synchronize Giscus theme with palette -->
+<script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+        giscus.setAttribute("data-theme", theme)
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function () {
+        var ref = document.querySelector("[data-md-component=palette]")
+        ref.addEventListener("change", function () {
+            var palette = __md_get("__palette")
+            if (palette && typeof palette.color === "object") {
+                var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+                /* Instruct Giscus to change theme */
+                var frame = document.querySelector(".giscus-frame")
+                frame.contentWindow.postMessage(
+                    { giscus: { setConfig: { theme } } },
+                    "https://giscus.app"
+                )
+            }
+        })
+    })
+</script>
 
                 
               </article>
@@ -2153,13 +1911,13 @@
         
         
           
-          <a href="002.html" class="md-footer__link md-footer__link--next" aria-label="下一页: 硬核解读Stable Diffusion（1）" rel="next">
+          <a href="../../codec/001.html" class="md-footer__link md-footer__link--next" aria-label="下一页: 第一讲：音频要素" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   下一页
                 </span>
-                硬核解读Stable Diffusion（1）
+                第一讲：音频要素
               </div>
             </div>
             <div class="md-footer__button md-icon">
