@@ -66,6 +66,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>http://chapin666.github.io/blog/codec/007_2.html</loc>
+         <lastmod>2023-04-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>http://chapin666.github.io/blog/ffmpeg/cmds/001.html</loc>
          <lastmod>2023-04-29</lastmod>
          <changefreq>daily</changefreq>

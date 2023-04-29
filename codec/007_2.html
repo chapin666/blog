@@ -1,0 +1,2260 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="WebRTC, 音视频, Rust, Golang, Node">
+      
+      
+        <meta name="author" content="chapin666">
+      
+      
+        <link rel="canonical" href="http://chapin666.github.io/blog/codec/007_2.html">
+      
+      
+        <link rel="prev" href="007_1.html">
+      
+      
+        <link rel="next" href="../ffmpeg/cmds/001.html">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
+    
+    
+      
+        <title>第七讲：分辨率与帧率·下篇 - chapin666</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-XC0L0QGG63"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-XC0L0QGG63",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-XC0L0QGG63",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="black">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../index.html" title="chapin666" class="md-header__button md-logo" aria-label="chapin666" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            chapin666
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第七讲：分辨率与帧率·下篇
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="black"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="black"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index.html" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../aigc/sd/001.html" class="md-tabs__link">
+        AIGC
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="001.html" class="md-tabs__link md-tabs__link--active">
+        AVCodec
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ffmpeg/cmds/001.html" class="md-tabs__link">
+        FFmpeg
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../webrtc/forcurious/001.html" class="md-tabs__link">
+        WebRTC
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../rust/fromzero/001.html" class="md-tabs__link">
+        Rust
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="chapin666" class="md-nav__button md-logo" aria-label="chapin666" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg>
+
+    </a>
+    chapin666
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          AIGC
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          AIGC
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          Stable Diffusion
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Stable Diffusion
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aigc/sd/001.html" class="md-nav__link">
+        图解Stable Diffusion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          AVCodec
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          AVCodec
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          音视频基础系列
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          音视频基础系列
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="001.html" class="md-nav__link">
+        第一讲：音频要素
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="002.html" class="md-nav__link">
+        第二讲：回声消除
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="003.html" class="md-nav__link">
+        第三讲：噪声抑制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="004.html" class="md-nav__link">
+        第四讲：音频自动增益控制 AGC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="005.html" class="md-nav__link">
+        第五讲：音频编解码的必要性解读与格式选取
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="006_1.html" class="md-nav__link">
+        第六讲：色彩和色彩空间·上篇
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="006_2.html" class="md-nav__link">
+        第六讲：色彩和色彩空间·中篇
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="006_3.html" class="md-nav__link">
+        第六讲：色彩和色彩空间·下篇
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="007_1.html" class="md-nav__link">
+        第七讲：分辨率与帧率·上篇
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          第七讲：分辨率与帧率·下篇
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="007_2.html" class="md-nav__link md-nav__link--active">
+        第七讲：分辨率与帧率·下篇
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    何谓按“一定频率”播放
+  </a>
+  
+    <nav class="md-nav" aria-label="何谓按“一定频率”播放">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1 帧率的定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2 帧率的影响
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    音视频处理路径上的帧率变化
+  </a>
+  
+    <nav class="md-nav" aria-label="音视频处理路径上的帧率变化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1 采集阶段
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2 前、后处理阶段
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3 编码阶段
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4 网络传输阶段
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5 解码、渲染阶段
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    帧率的选择
+  </a>
+  
+    <nav class="md-nav" aria-label="帧率的选择">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-rtc" class="md-nav__link">
+    1 RTC 场景
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    2 游戏场景
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    3 实际场景应用
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    总结
+  </a>
+  
+    <nav class="md-nav" aria-label="总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    思维导图：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          FFmpeg
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          FFmpeg
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          FFmpeg命令行工具
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          FFmpeg命令行工具
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ffmpeg/cmds/001.html" class="md-nav__link">
+        ffmpeg
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ffmpeg/cmds/002.html" class="md-nav__link">
+        ffprobe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ffmpeg/cmds/003.html" class="md-nav__link">
+        ffplay
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          FFmpeg SDK入门
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          FFmpeg SDK入门
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ffmpeg/sdk/001.html" class="md-nav__link">
+        FFmpeg SDK入门
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          WebRTC
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          WebRTC
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+          写给好奇者的webrtc系列
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          写给好奇者的webrtc系列
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrtc/forcurious/001.html" class="md-nav__link">
+        是什么，为什么，如何使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrtc/forcurious/002.html" class="md-nav__link">
+        信令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrtc/forcurious/003.html" class="md-nav__link">
+        连接
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrtc/forcurious/004.html" class="md-nav__link">
+        安全性
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrtc/forcurious/005.html" class="md-nav__link">
+        实时网络
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrtc/forcurious/006.html" class="md-nav__link">
+        媒体通信
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrtc/forcurious/007.html" class="md-nav__link">
+        数据通信
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrtc/forcurious/008.html" class="md-nav__link">
+        应用场景
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrtc/forcurious/009.html" class="md-nav__link">
+        调试
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrtc/forcurious/010.html" class="md-nav__link">
+        历史
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrtc/forcurious/011.html" class="md-nav__link">
+        常见问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrtc/forcurious/012.html" class="md-nav__link">
+        术语
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrtc/forcurious/013.html" class="md-nav__link">
+        Reference
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          WebRTC构建实时通信系列
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          WebRTC构建实时通信系列
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrtc/jsapi/001.html" class="md-nav__link">
+        概述及环境搭建（一）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrtc/jsapi/002.html" class="md-nav__link">
+        从摄像头获取视频流（二）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrtc/jsapi/003.html" class="md-nav__link">
+        RTCPeerConnection传输视频流（三）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrtc/jsapi/004.html" class="md-nav__link">
+        RTCDataChannel交换数据（四）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrtc/jsapi/005.html" class="md-nav__link">
+        搭建信令服务交换消息（五）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrtc/jsapi/006.html" class="md-nav__link">
+        对等连接和信令整合（六）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrtc/jsapi/007.html" class="md-nav__link">
+        data channel共享照片（七）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrtc/jsapi/008.html" class="md-nav__link">
+        总结（八）
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Rust
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Rust
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+          从零蛋开始学Rust
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          从零蛋开始学Rust
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/001.html" class="md-nav__link">
+        01-语言简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/002.html" class="md-nav__link">
+        02-开发环境配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/003.html" class="md-nav__link">
+        03-Hello World
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/004.html" class="md-nav__link">
+        04-数据类型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/005.html" class="md-nav__link">
+        05-变量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/006.html" class="md-nav__link">
+        06-常量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/007.html" class="md-nav__link">
+        07-字符串
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/008.html" class="md-nav__link">
+        08-运算符
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/009.html" class="md-nav__link">
+        09-条件判断
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/010.html" class="md-nav__link">
+        10-循环语句
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/011.html" class="md-nav__link">
+        11-函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/012.html" class="md-nav__link">
+        12-元组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/013.html" class="md-nav__link">
+        13-数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/014.html" class="md-nav__link">
+        14-所有权
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/015.html" class="md-nav__link">
+        15-借用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/016.html" class="md-nav__link">
+        16-切片
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/017.html" class="md-nav__link">
+        17-结构体
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/018.html" class="md-nav__link">
+        18-枚举
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/019.html" class="md-nav__link">
+        19-模块
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/020.html" class="md-nav__link">
+        20-容器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/021.html" class="md-nav__link">
+        21-错误处理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/022.html" class="md-nav__link">
+        22-泛型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/023.html" class="md-nav__link">
+        23-IO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/024.html" class="md-nav__link">
+        24-文件读写
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/025.html" class="md-nav__link">
+        25-Cargo包管理器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/026.html" class="md-nav__link">
+        26-迭代器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/027.html" class="md-nav__link">
+        27-闭包
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/028.html" class="md-nav__link">
+        28-智能指针
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/fromzero/029.html" class="md-nav__link">
+        29-多线程并发编程
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    何谓按“一定频率”播放
+  </a>
+  
+    <nav class="md-nav" aria-label="何谓按“一定频率”播放">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1 帧率的定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2 帧率的影响
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    音视频处理路径上的帧率变化
+  </a>
+  
+    <nav class="md-nav" aria-label="音视频处理路径上的帧率变化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1 采集阶段
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2 前、后处理阶段
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3 编码阶段
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4 网络传输阶段
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5 解码、渲染阶段
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    帧率的选择
+  </a>
+  
+    <nav class="md-nav" aria-label="帧率的选择">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-rtc" class="md-nav__link">
+    1 RTC 场景
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    2 游戏场景
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    3 实际场景应用
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    总结
+  </a>
+  
+    <nav class="md-nav" aria-label="总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    思维导图：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+
+  <h1>第七讲：分辨率与帧率·下篇</h1>
+
+<p>在视频系列的上一篇推文中，我们简单总结了色彩、像素、图像和视频等基础概念之间的关系。并且主要关注了两个组合：像素和图像，图像和视频之间的构成逻辑。我们先来简单回顾一下：</p>
+<p><strong>从像素到图像</strong>：一定数量、记录了不同色彩信息的像素组合，得到一帧完整的图像；</p>
+<p><strong>从图像到视频</strong>：一帧帧图像按一定频率连续播放，得到了视频。</p>
+<p>基于上述演变关系，我们也提出了一些疑问：何谓 “一定数量” 和 “一定频率 ”，以及它们对视频图像有什么影响？其中，关于 “一定数量” 的问题，我们已经通过学习 “分辨率” 的相关知识得到了解答，具体参阅【<a href="007_1.html">第七讲：分辨率与帧率·上篇</a>】。</p>
+<p>今天，我们继续来讨论另外一个问题：何谓 “一定频率” ？它对视频又有哪些具体的影响？</p>
+<h2 id="_1"><strong>何谓按“一定频率”播放</strong></h2>
+<p>在视频系列的第一篇推文中，我们简单讨论过 “视频是如何产生的”，当时提到了一个大家熟知的东西：“翻页动画”，或者说 “翻页连环画”，如下图：</p>
+<p><a href="images/007_2_1.gif"><img alt="图片" src="images/007_2_1.gif" /></a></p>
+<p>翻页动画非常直观地展示了图像到视频的演变关系，我们回顾一下当时的说明：</p>
+<blockquote>
+<p>翻页动画的每一页都是静态的图片，常态下平平无奇。但快速地拨动翻页，让每一页图片快速、连续地进行展示时，原本“静态”的图片在视觉上就变成了“动态”的。  </p>
+<p><strong>“静态图片”之所以会转变为“动态画面” ，是基于人眼的“视觉暂留”特性：</strong>  </p>
+<p>人眼看到物体时，物体首先成像于视网膜、并由视神经传入大脑，大脑才感知到物体的像。而当物体从视线中移去时，视神经对物体的印象不会立即消失，仍会延续几百毫秒。当旧图像消失、新图像出现出现的频率足够快时，前后图像在视觉上就产生了“连贯”感，形成了“动态画面”。<br />
+ 而这，也就是我们所说的<strong>“视频”</strong>。</p>
+</blockquote>
+<h3 id="1"><strong>1</strong> <strong>帧率的定义</strong></h3>
+<p>上述说明，其实是对 “一帧帧图像按一定频率连续播放，得到了视频” 的详细描述。如果取单位时间为 1s，当每 1s 播放的图像数量为 N 时，我们称图像帧播放的频率为 N 帧/s。更专业的说法是：视频的帧率为 N fps （Frame Per Second，帧每秒）。</p>
+<p>视频的帧率，即为对何为 ”一定频率“ 的解答。 如果某个视频的帧率为 15 fps ，意味着该视频的每一秒都包含 15 帧图像。当我们从该视频中提取出时长 1s 的片段，再进行分解，就可以得到 15 张独立的图片。如果分解得到的图片，如下所示（图片顺序为：从左至右，从上至下）：</p>
+<p><a href="images/007_2_2.png"><img alt="图片" src="images/007_2_2.png" /></a></p>
+<p>仅从上面图片来看，你认为它描述了一个怎样的动态过程呢？若仅作”推断“和”猜测“，或许不难。我们完全可以基于独立的图片内容，结合生活经验进行联想：以上描述的是一个点球射门的过程。但是，仅凭静态的图片，我们的大脑很难整理出动态的信息，更别说形成一个生动流畅的影像了。只有当这些图片按照 “帧率”的规则，如同 “翻页动画”的页面被拨动起来，一切才会变得不一样。</p>
+<p>帧率的定义，回答了关于 “一定频率” 的问题，但仅仅是解释了 “数量” 的定义，并没有描述 “数量” 的影响。帧率的高低变化，究竟会给视频带来哪些改变呢，我们接着往下看。</p>
+<h3 id="2"><strong>2</strong> <strong>帧率的影响</strong></h3>
+<p>沿用学习分辨率时的思路，我们通过直接观察不同帧率下的视频，来体验帧率差异带来的区别。下面是和前文相同的点球视频，在 1 fps、5 fps、10 fps、25 fps 等帧率下的表现。我们一一作对比和讨论。</p>
+<video src="./images/007_2_3.mp4" controls>
+  你的浏览器不支持 <code>video</code> 标签。
+</video>
+
+<p><strong>1 fps：</strong></p>
+<p>视频帧率为 1 fps 时，图像播放的频率为 1 秒 1 帧。9s 的射门过程，仅通过 9 帧图像来记录运动员的动作和足球的移动轨迹。此时，我们<strong>可以非常明显地感受到画面的停顿</strong>。由于图像之间的连贯性太差，我们不得不通过 “脑补“ 的方式，来想象帧与帧之间缺少的过程信息，帮助理解视频的内容。与其说这是视频，不如说是一页页点击播放的 PPT 更为恰当。</p>
+<p><strong>5 fps：</strong></p>
+<p>视频帧率为 5 fps 时，图像播放的频率为 1 秒 5 帧。相比 1 fps ，视频的停顿感得到了显著缓解，图像间的连贯性明显提升，那些在 1 fps 下必须依靠想象来理解的过程信息得以呈现。但是，仔细观察运动员的腿部甩动、足球腾空后的移动轨迹，仍有一卡一卡的、 ”不自然“ 的感觉。5 fps 似乎跨越了图像到视频的”鸿沟“，提升了视频流畅度，但还不足以 ”骗过“ 我们的大脑和眼睛。</p>
+<p><strong>10 fps：</strong></p>
+<p>视频帧率为 10 fps 时，图像播放的频率为 1 秒 10 帧。帧率相对于 5 fps 翻倍后，视频记录到运动员肢体动作、足球移动轨迹的更多细节， 流畅度进一步提升，“不自然感” 减轻。一般来说，10 fps 的视频已达到大脑和眼睛所认可的、基本的 ”流畅“。</p>
+<p><strong>25 fps：</strong></p>
+<p>视频帧率为 25 fps 时，图像播放的频率为 1 秒 25 帧。此时，原先卡顿、不自然等问题基本消失，视频观感 “丝滑”，比较符合我们对真实世界的运动场景的感受。现在，再回过头看看 5 fps 等低帧率的视频，可谓是 “天差地别”。</p>
+<p>从观感上有明显的停顿、画面不连贯、动作不自然，到最终的观感顺畅、自然丝滑。流畅度的提升，这就是帧率由低到高时视频最直观的改变。</p>
+<p>一般来说，足够的帧率配置是视频流畅的前提。但这里又引出一个问题：是否只要帧率足够，视频就一定是流畅的呢？</p>
+<h2 id="_2"><strong>音视频处理路径上的帧率变化</strong></h2>
+<p>假如有这样一个视频，它的帧率为 100 fps 。相对于前面 25 fps 的例子，帧率大小完全足够，理论上应该是流畅的。每秒播放 100 帧图像，正常情况下我们期望每 10ms 应播放一帧，但如果实际的播放情况如下：每 1000ms，前 100ms 播放 99 帧，后 900ms 播放剩余的 1 帧此时，数值统计上视频的帧率仍可能是 100 fps，但由于视频帧的播放间隔非常“不均匀”。前 100ms 包含了本应耗时 990ms 才播放完的内容，看起来将是 “快进加速” 的效果 ，而后 900ms 因为只有一帧图像，将出现画面的停滞。显然，这种情况下的观感仍然是卡顿、不流畅的，甚至可能比低帧率、但帧间隔均匀的视频体验更差。</p>
+<p>因此，除了足够的帧率配置，视频要流畅还要求帧间隔是均匀的。任意一个条件没有满足，就可能出现卡顿问题。那么，哪些情况会导致帧率发生改变、无法达到预期，或者帧间隔变得不均匀呢？要解答这个疑问，我们得继续研究：音视频处理路径上的帧率变化。</p>
+<p>通过上一篇推文，我们知道，分辨率在音视频数据处理路径上可能会发生改变，而作为视频的基础属性之一，帧率也免不了如此。细化到每个处理阶段来看，会涉及<strong>采集、渲染显示、前后处理、编解码、网络传输等环节</strong>，我们可以将各阶段输出的帧率进行区分，以方便描述。</p>
+<p><a href="images/007_2_4.png"><img alt="图片" src="images/007_2_4.png" /></a></p>
+<p><strong>视频处理过程中的常见帧率问题</strong></p>
+<p>理想情况下，我们希望上述各个环节输出的视频帧率相同，且帧间隔均匀稳定，以保证最终渲染出来的视频流畅度与原始采集的一致，但实际应用中却难以尽如人愿。常见的可能问题，比如：</p>
+<h3 id="1_1"><strong>1</strong> <strong>采集阶段</strong></h3>
+<p>因为设备性能问题或设备故障，导致摄像头的采集速度达不到预期，采集帧率会受损；如果摄像头采集帧率过高，每一帧图像的曝光时间不足，可能导致图像偏暗。根据环境亮度变化，可能需要动态地调整采集帧率、改善曝光，以保证采集画面的明亮度。</p>
+<h3 id="2_1"><strong>2</strong> <strong>前、后处理阶段</strong></h3>
+<p>裁剪缩放、美颜滤镜等操作需要对每一帧图像做处理，处理逻辑越复杂，则运算量越大、耗时越长，可能导致单位时间内无法完成预期帧数的处理。</p>
+<h3 id="3"><strong>3</strong> <strong>编码阶段</strong></h3>
+<p>因为设备性能问题，导致编码模块的工作效率达不到预期，编码帧率会受损；</p>
+<p>若上行带宽受限，为避免出现发送拥塞，可能需要动态调整编码帧率，以控制每秒发送的数据量，适应当前带宽。</p>
+<h3 id="4"><strong>4</strong> <strong>网络传输阶段</strong></h3>
+<p>传输链路不稳定，视频帧数据的流转出现延迟、拥塞、丢包，导致数据丢失或者传输不均匀（接收端长时间收不到数据，或者短时间内收到过多数据）。</p>
+<h3 id="5"><strong>5</strong> <strong>解码、渲染阶段</strong></h3>
+<p>上述的帧率变化，有一些是客观因素引入的被动损失，有一些是为了应对客观因素而执行的主动调整。而所提到的客观因素，主要受复杂的网络环境和各异的终端设备影响，这恰恰是 RTC 应用场景下的常态。 </p>
+<p>在这里，我们无法穷举所有可能导致帧率异常的原因，大家只要知道，<strong>帧率从定义上是基于“时间” 维度来计量的 “数量”</strong>，无论是被动的问题，还是主动的调整，任何会影响 “处理耗时”、“帧数量” 、“帧间隔” 的操作，最终都可能影响到帧率。而各阶段的帧率影响一环扣一环，最终体现到渲染显示上，就会出现 ”卡顿 “的问题。</p>
+<p>在开发音视频应用时，一般会通过渲染帧率来量化最终的用户体验（针对视频流畅度），如果遇到视频的 ”卡顿“ 问题，就需要沿着音视频的处理路径，排查是哪一个阶段出现了帧率异常。这就要求我们，在整个音视频数据处理链路、各个关键节点上做好帧率统计，这是个不小的工程。</p>
+<h2 id="_3"><strong>帧率的选择</strong></h2>
+<p>在了解帧率的定义和影响，以及它在音视频数据处理链路上可能的变化后，我们最后再来聊聊，RTC 场景下我们究竟需要多少的帧率。从前文对 1 fps ~ 25 fps 等帧率视频的对比，我们可以确定的是，适当提高帧率会带来更流畅的视频观感。但是否帧率就应该越高越好，仍值得商榷。基于前面的案例，我们再补充一个case，来看看 30 fps 配置下的表现。</p>
+<video src="./images/007_2_5.mp4" controls>
+  你的浏览器不支持 <code>video</code> 标签。
+</video>
+
+<p>如上，观察 30 fps 下的视频，再对比前文 1 fps ~ 25 fps 的视频，你的感受如何呢？</p>
+<p>你是否发现，帧率从 1 fps 提升到 15 fps 时，视频流畅度的确在明显提升，但在 15 fps 提升至 25 fps 时，差异感开始减弱。而 25 fps 到 30 fps 的变化，已经微乎其微。这表明，<strong>在超出一定范围后，提升帧率带来的体验优化收益降低。</strong>而与此同时，和音频采样率、位深、视频分辨率一样，视频帧率进一步提高，必然导致数据量增加、处理难度增加，这将给设备存储、传输带宽、设备性能带来挑战。</p>
+<p>看到这里，你可能会有疑问：15 fps 的默认帧率，是否太低了？尤其是比较熟悉电子游戏的小伙伴，肯定有了解，30 fps 对于游戏（尤其是动作类型）来说，可能只是一个“勉强能接受”的最低流畅配置，要保证标准的流畅体验可能需要 60 fps 或 更高。而对于一些第一人称类的游戏，甚至要求 &gt;100 fps 的配置来实现最佳体验。相比之下，15 fps ~ 30 fps 的确是相当 “简陋”。</p>
+<p>为什么会有这么大的差异呢？这主要<strong>和不同应用领域的图像生成逻辑有关</strong>。</p>
+<h3 id="1-rtc"><strong>1</strong> <strong>RTC 场景</strong></h3>
+<p>RTC 场景下，我们一般使用摄像机作为视频的采集源，在摄像机快门打开到关闭的持续时间内（也称曝光时间），被摄物体反射的光线得以进入镜头，并被感光元件记录，留下影像。此时，每帧图像所记录的，将是被摄物体在曝光的持续时间内，所有位置影像的完整组合。<strong>我们将其中的一帧单独拎出来，可以看到物体运动产生的 “拖影” 或 “残影”。</strong>参考下图中射门运动员右脚的位置（蓝框内），这是在该帧图像的曝光时间内，鞋子在所有位置的影像的组合。</p>
+<p><a href="images/007_2_6.png"><img alt="图片" src="images/007_2_6.png" /></a></p>
+<p>我们把这种现象称为 <strong>“动态模糊”</strong>。“动态模糊” 在生活中随处可见，现在就举起你的手，反复挥动，你立刻就能观察到手掌运动的 “拖影”。”动态模糊“ 符合人眼所看到的真实世界的效果，会让我们大脑认为该运动更“连贯自然”。</p>
+<h3 id="2_2"><strong>2</strong> <strong>游戏场景</strong></h3>
+<p>而游戏图像的生成逻辑不太一样。</p>
+<p>游戏需要实时响应玩家操作来确定画面内容，每一帧图像都由显卡实时计算生成，会准确地表示瞬时画面（可以理解为将摄相机的快门设置为无限快，每一帧的曝光时间无限接近于0），<strong>帧与帧之间就像是“闪现”一般，也就不存在“动态模糊”的效果</strong>。如果没有足够多的帧图像用于 “弥补” 缺失的过程信息，大脑就会认为其不连贯、不真实，流畅度体验就会大打折扣。我们可以通过下面几张图片，来帮助理解动态模糊。假设有两帧图像，记录了一个蓝色方块从画面左侧移动到右侧的过程。 </p>
+<p><a href="images/007_2_7.png"><img alt="图片" src="images/007_2_7.png" /></a></p>
+<p>图1：第一帧</p>
+<p><a href="images/007_2_8.png"><img alt="图片" src="images/007_2_8.png" /></a></p>
+<p>图2：第二帧 A（不包含动态模糊）</p>
+<p><a href="images/007_2_9.png"><img alt="图片" src="images/007_2_9.png" /></a>图3：第二帧 B（包含动态模糊）</p>
+<p>以上，图 2 第二帧 A 为游戏显示的逻辑，图 3 第二帧 B 即为摄像视频的逻辑。蓝色的拖影可以视为动态模糊的效果，它记录了方块移动过程的”轨迹“，让我们大脑在处理前后两帧图像时，更容易产生连贯感。</p>
+<p>另外，摄像头采集一般可以保证采集帧的间隔均匀，使视频得以稳定在某个帧率。而游戏图像通过实时演算得到，如果画面复杂度变化剧烈（比如出现频繁的动作场面、复杂环境纹理、多变的光线效果等），每帧计算耗时骤升，可能会导致大幅掉帧，掉帧前后的帧间隔差异会进一步加剧卡顿感。</p>
+<p>动态模糊和帧率稳定，使摄像机采集的视频在更低帧率上就实现了比较流畅的效果（实际上，24 fps 已经成为电影电视作品常用的帧率标准）。而电子游戏等动画的渲染，则需要用更高的帧率来实现相同的流畅度。值得一提的是，现在很多游戏也支持动态模糊的功能，可以在渲染每一帧画面时加入动态模糊的模拟，再配合帧率锁定的机制避免其忽高忽低，也能在有限帧率下实现更流畅、真实的游戏体验。</p>
+<p>了解到上面的差异，我们再回过头来看看 RTC 场景下常用的帧率配置：10 fps ~ 30 fps，是否就顺眼很多了呢？</p>
+<h3 id="3_1"><strong>3</strong> <strong>实际场景应用</strong></h3>
+<p>接下来，我们再进一步将帧率的选择，落地到实际场景中。</p>
+<p>大部分情况下，若视频直播场景的复杂度不高，比如常见的<strong>秀场单主播</strong>，直播画面大部分是相对静态的内容，15 fps 的流畅度可满足需求。如果直播过程中需要有复杂的运动场面，比如<strong>健身操、舞蹈等等，或者是户外纪录式直播</strong>，可以考虑更高的帧率配置，比如 25 fps ~ 30fps。如果是<strong>屏幕共享的直播场景</strong>，共享内容又是电子游戏等高帧率内容，那么 30 fps 以上可能更适合。</p>
+<p>当然，我们也不总是追求高帧率，也存在需要指定低帧率的时候。 </p>
+<p>比如<strong>教育场景</strong>，学生、老师的头像小窗口对画面动作细节的要求不高，可以使用 10 fps 甚至更低的帧率，优先保证带宽和降低设备性能消耗，以应对参差不齐的直播环境，保障连麦质量。同样是屏幕共享场景，如果共享内容是 PPT 等静态内容，对画面的清晰度将远高于流畅度，也可以考虑低帧率、高分辨率的配置。我们通过表格简单总结如下：</p>
+<p><a href="images/007_2_10.png"><img alt="图片" src="images/007_2_10.png" /></a>以上提供的配置比较粗略，只是作为最基础的参考。毕竟实际场景千万、需求侧重各异，具体问题仍需具体分析，正确的做法是在产品设计、研发阶段，就进行充分地测试、和对比，选择一个满足实际体验需求的方案，或者在产品上提供可动态修改配置的入口，方便后期的个性化定制。</p>
+<h2 id="_4"><strong>总结</strong></h2>
+<p>好了，关于何谓 “ 一定频率 ” 的问题，我们就讨论至此。希望大家通过本篇推文，能够进一步理解图像与视频之间的关系，也对 “ 帧率 ” 这个影响视频流畅度的关键指标有一定的了解，帮助大家选择适合自己产品的帧率配置。最后，我们通过一个思维导图，总结一下本文的主要内容：</p>
+<h3 id="_5"><strong>思维导图：</strong></h3>
+<p><a href="images/007_2_11.jpg"><img alt="图片" src="images/007_2_11.jpg" /></a></p>
+<p><a href="images/007_2_12.png"><img alt="图片" src="images/007_2_12.png" /></a></p>
+<p><strong>问</strong>_<strong>本期思考题</strong>_如果摄像头采集帧率过高，每一帧图像的曝光时间不足，可能导致图像偏暗。根据环境亮度变化，可能需要动态地调整采集帧率、改善曝光，以保证采集画面的明亮度”文中的这一段描述，该如何理解？</p>
+<p><strong><em>上期思考题揭秘 ⬇️</em></strong></p>
+<p>问：关于文中的举例，图像分辨率为 1280 x 720（宽 x 高，16:9），显示分辨率为 1080×1920（宽 x 高，9:16），有什么办法，可以实现全屏显示、不拉伸且不裁剪图像画面吗？</p>
+<p>答：可以将图像旋转90度或180度后，再进行渲染。</p>
+<p>一般在Android移动端的屏幕共享场景，可能会遇到类似情况：当分享端（推流侧）分享的画面，在竖屏应用和横屏应用之间切换时，系统提供的采集图像的分辨率也将在（高&gt;宽）或（宽&gt;高）之间变化，为了避免画面被裁剪，我们需要主动修改编码分辨率至相应比例。此时，拉流端需要根据解码分辨率的宽高情况，对应选择竖屏UI、或者横屏UI进行渲染，以实现全屏显示。</p>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="007_1.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: 第七讲：分辨率与帧率·上篇" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                第七讲：分辨率与帧率·上篇
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../ffmpeg/cmds/001.html" class="md-footer__link md-footer__link--next" aria-label="下一页: ffmpeg" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                ffmpeg
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 chapin666
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/chapin666" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.zhihu.com/people/chapin666" target="_blank" rel="noopener" title="www.zhihu.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.721 0C2.251 0 0 2.25 0 5.719V18.28C0 21.751 2.252 24 5.721 24h12.56C21.751 24 24 21.75 24 18.281V5.72C24 2.249 21.75 0 18.281 0zm1.964 4.078c-.271.73-.5 1.434-.68 2.11h4.587c.545-.006.445 1.168.445 1.171H9.384a58.104 58.104 0 0 1-.112 3.797h2.712c.388.023.393 1.251.393 1.266H9.183a9.223 9.223 0 0 1-.408 2.102l.757-.604c.452.456 1.512 1.712 1.906 2.177.473.681.063 2.081.063 2.081l-2.794-3.382c-.653 2.518-1.845 3.607-1.845 3.607-.523.468-1.58.82-2.64.516 2.218-1.73 3.44-3.917 3.667-6.497H4.491c0-.015.197-1.243.806-1.266h2.71c.024-.32.086-3.254.086-3.797H6.598c-.136.406-.158.447-.268.753-.594 1.095-1.603 1.122-1.907 1.155.906-1.821 1.416-3.6 1.591-4.064.425-1.124 1.671-1.125 1.671-1.125zM13.078 6h6.377v11.33h-2.573l-2.184 1.373-.401-1.373h-1.219zm1.313 1.219v8.86h.623l.263.937 1.455-.938h1.456v-8.86z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "toc.follow", "search.share", "header.autohide", "content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+    
+  </body>
+</html>
