@@ -25,7 +25,7 @@
     
     
       
-        <title>ffmpeg - chapin666</title>
+        <title>FFmpeg安装与测试 - chapin666</title>
       
     
     
@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#ffmpeg" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -117,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ffmpeg
+              FFmpeg安装与测试
             
           </span>
         </div>
@@ -721,14 +726,14 @@
       
       
         <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
-          FFmpeg命令行工具
+          FFmpeg基础
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4_1">
           <span class="md-nav__icon md-icon"></span>
-          FFmpeg命令行工具
+          FFmpeg基础
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -745,9 +750,120 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          FFmpeg安装与测试
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="001.html" class="md-nav__link md-nav__link--active">
-        ffmpeg
+        FFmpeg安装与测试
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ffmpeg" class="md-nav__link">
+    一、FFmpeg的下载
+  </a>
+  
+    <nav class="md-nav" aria-label="一、FFmpeg的下载">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-git" class="md-nav__link">
+    1.1 git命令下载源码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-httpwwwffmpegorgdownloadhtml" class="md-nav__link">
+    1.2 官网下载源码：http://www.ffmpeg.org/download.html
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    1.3 文件解压
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    1.4 目录分析
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ffmpeg_1" class="md-nav__link">
+    二、FFmpeg配置与安装
+  </a>
+  
+    <nav class="md-nav" aria-label="二、FFmpeg配置与安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-yasmlibx264libx265" class="md-nav__link">
+    2.1 安装依赖库yasm、libx264、libx265（后面会用到）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-libfdk-aac" class="md-nav__link">
+    2.2 配置命令及安装（尽可能多配置，比如libfdk-aac后面会用于音频编解码）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3 配置环境变量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    2.4 测试命令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-ffmpeg" class="md-nav__link">
+    2.5 配置环境变量（使得直接使用ffmpeg命令）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -761,7 +877,7 @@
   
     <li class="md-nav__item">
       <a href="002.html" class="md-nav__link">
-        ffprobe
+        FFmpeg命令学习
       </a>
     </li>
   
@@ -775,7 +891,49 @@
   
     <li class="md-nav__item">
       <a href="003.html" class="md-nav__link">
-        ffplay
+        音频基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="004.html" class="md-nav__link">
+        视频基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="005.html" class="md-nav__link">
+        H264结构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="006.html" class="md-nav__link">
+        H264流媒体协议解析
       </a>
     </li>
   
@@ -805,14 +963,14 @@
       
       
         <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
-          FFmpeg SDK入门
+          FFmpeg API
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_2">
           <span class="md-nav__icon md-icon"></span>
-          FFmpeg SDK入门
+          FFmpeg API
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -823,7 +981,133 @@
   
     <li class="md-nav__item">
       <a href="../sdk/001.html" class="md-nav__link">
-        FFmpeg SDK入门
+        文件和目录操作
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdk/001.html" class="md-nav__link">
+        打印音/视频Meta信息
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdk/001.html" class="md-nav__link">
+        抽取音频数据
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdk/001.html" class="md-nav__link">
+        将MP4转成FLV格式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdk/001.html" class="md-nav__link">
+        音视频裁剪
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdk/001.html" class="md-nav__link">
+        YUV视频流转RGB图像
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdk/001.html" class="md-nav__link">
+        YUV编码为H264
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdk/001.html" class="md-nav__link">
+        AAC解码为PCM数据
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdk/001.html" class="md-nav__link">
+        PCM转AAC数据
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdk/001.html" class="md-nav__link">
+        PCM转WAV
       </a>
     </li>
   
@@ -1733,6 +2017,103 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ffmpeg" class="md-nav__link">
+    一、FFmpeg的下载
+  </a>
+  
+    <nav class="md-nav" aria-label="一、FFmpeg的下载">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-git" class="md-nav__link">
+    1.1 git命令下载源码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-httpwwwffmpegorgdownloadhtml" class="md-nav__link">
+    1.2 官网下载源码：http://www.ffmpeg.org/download.html
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    1.3 文件解压
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    1.4 目录分析
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ffmpeg_1" class="md-nav__link">
+    二、FFmpeg配置与安装
+  </a>
+  
+    <nav class="md-nav" aria-label="二、FFmpeg配置与安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-yasmlibx264libx265" class="md-nav__link">
+    2.1 安装依赖库yasm、libx264、libx265（后面会用到）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-libfdk-aac" class="md-nav__link">
+    2.2 配置命令及安装（尽可能多配置，比如libfdk-aac后面会用于音频编解码）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3 配置环境变量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    2.4 测试命令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-ffmpeg" class="md-nav__link">
+    2.5 配置环境变量（使得直接使用ffmpeg命令）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1749,15 +2130,158 @@
 
 
 
-  <h1>ffmpeg</h1>
+  <h1>FFmpeg安装与测试</h1>
 
-
+<blockquote>
+<p>基于Ubuntu16.04</p>
+</blockquote>
+<h2 id="ffmpeg">一、FFmpeg的下载</h2>
+<h3 id="11-git">1.1 git命令下载源码</h3>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://git.ffmpeg.org/ffmpeg.git<span class="w"> </span>ffmpeg
+</span></code></pre></div>
+<h3 id="12-httpwwwffmpegorgdownloadhtml">1.2 官网下载源码：<a href="http://www.ffmpeg.org/download.html">http://www.ffmpeg.org/download.html</a></h3>
+<p><img alt="" src="images/001_1.png" /></p>
+<h3 id="13">1.3 文件解压</h3>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>tar<span class="w"> </span>-jxvf<span class="w"> </span>ffmpeg-snapshot-git.tar.bz2
+</span></code></pre></div>
+<h3 id="14">1.4 目录分析</h3>
+<p><img alt="" src="images/001_2.png" /></p>
+<blockquote>
+<p>1）libavcodec：音视频编解码库；（不做具体编解码操作，只是调用H264、H265...）</p>
+<p>2）libavdevice：音视频输出输入设备库；（sdl显示设备，alsa音频输出设备，opengl图形加速设备，v4l2视频设备（比如摄像头）...的采集）</p>
+<p>3）Libavfilter：音视频滤镜库，滤镜主要是用来实现图像的各种特殊效果；</p>
+<p>4）libavformat：音视频格式库，用于各种音视频封装格式的解析和封装；</p>
+<p>5）libavutil：音视频工具库，包含一些公共的工具函数；</p>
+<p>6）libpostproc：音视频后期效果处理库；  </p>
+<p>7）libavresample：音频重采样；</p>
+<p>8）libswresample：功能和libavresample十分类似，是FFmpeg相对早期的实现方法；</p>
+<p>9）libswscale：视频场景比例缩放、色彩映射转换库；</p>
+</blockquote>
+<h2 id="ffmpeg_1">二、FFmpeg配置与安装</h2>
+<h3 id="21-yasmlibx264libx265">2.1 安装依赖库yasm、libx264、libx265（后面会用到）</h3>
+<p><strong>1. yasm等库安装</strong></p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>sudo<span class="w"> </span>apt<span class="se">\-</span>get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>autoconf<span class="w"> </span>automake<span class="w"> </span>build-essential<span class="w"> </span>libass-dev<span class="w"> </span>libfreetype6-dev<span class="w"> </span>libtheora-dev<span class="w"> </span>libtool<span class="w"> </span>libvorbis-dev<span class="w"> </span>pkg-config<span class="w"> </span>texinfo<span class="w"> </span>zlib1g-dev
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libfdk-aac-dev
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libmp3lame-dev
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>yasm
+</span></code></pre></div>
+<p><strong>2. libx264安装</strong></p>
+<p>下载地址：<a href="http://www.videolan.org/developers/x264.html">http://www.videolan.org/developers/x264.html</a></p>
+<p>(1) 安装依赖</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>cmake
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>cmake<span class="se">\-</span>curses-gui
+</span></code></pre></div>
+<p>(2) 进入解压后的源代码目录</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>./configure<span class="w"> </span>--enable-shared<span class="w"> </span>--enable-static<span class="w"> </span>--disable-asm
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>sudo<span class="w"> </span>make<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>make<span class="w"> </span>install
+</span></code></pre></div>
+<p>(3) 查看文件</p>
+<p><img alt="" src="images/001_3.png" /></p>
+<p><strong>3.libx265安装</strong></p>
+<p>下载地址：<a href="http://www.videolan.org/developers/x265.html">http://www.videolan.org/developers/x265.html</a></p>
+<p>(1) 安装依赖，使得支持hg命令下载libx265</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>mercurial
+</span></code></pre></div>
+<p>(2) 进入./x265_2.9/build/linux目录</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>./make-Makefiles.bash
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>sudo<span class="w"> </span>make<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>make<span class="w"> </span>install
+</span></code></pre></div>
+<p>(3)查看文件</p>
+<p><img alt="" src="images/001_4.png" /></p>
+<h3 id="22-libfdk-aac">2.2 配置命令及安装（尽可能多配置，比如libfdk-aac后面会用于音频编解码）</h3>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>./configure<span class="w"> </span>--enable-shared<span class="w"> </span>--prefix<span class="o">=</span>/usr/local/ffmpeg<span class="w"> </span>--enable-gpl<span class="w"> </span><span class="se">\ </span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>--enable-libx264<span class="w">  </span>--enable-libx265<span class="w"> </span>--enable-debug<span class="w"> </span>--disable-optimizations<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>--enable-pthreads<span class="w"> </span>--enable-libass<span class="w"> </span>--enable-libfdk-aac<span class="w"> </span>--enable-libfreetype<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>--enable-libtheora<span class="w"> </span>--enable-libvorbis<span class="w"> </span>--enable-libmp3lame<span class="w"> </span>--enable-nonfree<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>--enable-gpl
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>sudo<span class="w"> </span>make<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>make<span class="w"> </span>install
+</span></code></pre></div>
+<p><img alt="" src="images/001_5.png" /></p>
+<h3 id="23">2.3 配置环境变量</h3>
+<p>ubuntu通过源码安装软件未进行环境变量配置，找不到启动路径。</p>
+<p>如果直接使用ffmpeg -version会报错：</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ffmpeg:<span class="w"> </span>error<span class="w"> </span><span class="k">while</span><span class="w"> </span>loading<span class="w"> </span>shared<span class="w"> </span>libraries:<span class="w"> </span>libavdevice.so.58:<span class="w"> </span>cannot<span class="w"> </span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>open<span class="w"> </span>shared<span class="w"> </span>object<span class="w"> </span>file:<span class="w"> </span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory
+</span></code></pre></div>
+<p>(1) 打开动态库配置文件</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>gedit<span class="w"> </span>/etc/ld.so.conf
+</span></code></pre></div>
+<p>(2) 添加路径信息</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>/usr/local/ffmpeg/lib/
+</span></code></pre></div>
+<p>(3) 更新配置文件</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sudo<span class="w"> </span>ldconfig
+</span></code></pre></div>
+<h3 id="24">2.4 测试命令</h3>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>/usr/local/ffmpeg/bin/ffmpeg<span class="w"> </span>-version
+</span></code></pre></div>
+<p><img alt="" src="images/001_6.png" /></p>
+<h3 id="25-ffmpeg">2.5 配置环境变量（使得直接使用ffmpeg命令）</h3>
+<p>(1) 临时设置：</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/ffmpeg/bin/:<span class="nv">$PATH</span>
+</span></code></pre></div>
+<p>(2) 当前用户的全局设置：</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>vi<span class="w"> </span>**~/.bashrc**
+</span></code></pre></div>
+<p>添加bin目录到环境变量文件中：</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/usr/local/ffmpeg/bin
+</span></code></pre></div>
+<p>使之生效：</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nb">source</span><span class="w"> </span>.bashrc
+</span></code></pre></div>
+<p>直接测试ffmpeg:</p>
+<p><img alt="" src="images/001_7.png" /></p>
+<p>(3) 所有用户的全局设置 </p>
+<p>修改 /etc/profile 即可，使用 source profile 生效</p>
 
 
   
 
 
 
+
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+<script src="https://giscus.app/client.js" data-repo="chapin666/blog" data-repo-id="MDEwOlJlcG9zaXRvcnk5MTc1MTUyMg=="
+    data-category="Announcements" data-category-id="DIC_kwDOBXgEYs4CVK0Q" data-mapping="pathname" data-strict="0"
+    data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme"
+    data-lang="zh-CN" data-loading="lazy" crossorigin="anonymous" async>
+    </script>
+
+<!-- Synchronize Giscus theme with palette -->
+<script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+        giscus.setAttribute("data-theme", theme)
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function () {
+        var ref = document.querySelector("[data-md-component=palette]")
+        ref.addEventListener("change", function () {
+            var palette = __md_get("__palette")
+            if (palette && typeof palette.color === "object") {
+                var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+                /* Instruct Giscus to change theme */
+                var frame = document.querySelector(".giscus-frame")
+                frame.contentWindow.postMessage(
+                    { giscus: { setConfig: { theme } } },
+                    "https://giscus.app"
+                )
+            }
+        })
+    })
+</script>
 
                 
               </article>
@@ -1796,13 +2320,13 @@
         
         
           
-          <a href="002.html" class="md-footer__link md-footer__link--next" aria-label="下一页: ffprobe" rel="next">
+          <a href="002.html" class="md-footer__link md-footer__link--next" aria-label="下一页: FFmpeg命令学习" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                ffprobe
+                FFmpeg命令学习
               </div>
             </div>
             <div class="md-footer__button md-icon">
