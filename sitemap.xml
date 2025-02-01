@@ -2,362 +2,294 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>http://chapin666.github.io/blog/index.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/aigc/sd/001.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/aigc/sd/002.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/aigc/sd/003.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/codec/001.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/codec/002.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/codec/003.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/codec/004.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/codec/005.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/codec/006_1.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/codec/006_2.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/codec/006_3.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/codec/007_1.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/codec/007_2.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/ffmpeg/cmds/001.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/ffmpeg/cmds/002.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/ffmpeg/cmds/003.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/ffmpeg/cmds/004.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/ffmpeg/cmds/005.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/ffmpeg/cmds/006.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/ffmpeg/sdk/001.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/golang/index.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
+    </url>
+    <url>
+         <loc>http://chapin666.github.io/blog/gstreamer/001.html</loc>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/001.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/002.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/003.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/004.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/005.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/006.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/007.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/008.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/009.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/010.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/011.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/012.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/013.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/014.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/015.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/016.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/017.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/018.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/019.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/020.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/021.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/022.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/023.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/024.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/025.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/026.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/027.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/028.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/rust/fromzero/029.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/webrtc/forcurious/001.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/webrtc/forcurious/002.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/webrtc/forcurious/003.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/webrtc/forcurious/004.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/webrtc/forcurious/005.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/webrtc/forcurious/006.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/webrtc/forcurious/007.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/webrtc/forcurious/008.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/webrtc/forcurious/009.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/webrtc/forcurious/010.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/webrtc/forcurious/011.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/webrtc/forcurious/012.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/webrtc/forcurious/013.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/webrtc/jsapi/001.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/webrtc/jsapi/002.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/webrtc/jsapi/003.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/webrtc/jsapi/004.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/webrtc/jsapi/005.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/webrtc/jsapi/006.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/webrtc/jsapi/007.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>http://chapin666.github.io/blog/webrtc/jsapi/008.html</loc>
-         <lastmod>2023-05-14</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-02-01</lastmod>
     </url>
 </urlset>
