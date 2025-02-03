@@ -12,13 +12,13 @@
         <meta name="author" content="chapin666">
       
       
-        <link rel="canonical" href="http://chapin666.github.io/blog/gstreamer/001.html">
+        <link rel="canonical" href="http://chapin666.github.io/blog/gstreamer/002.html">
       
       
-        <link rel="prev" href="../codec/007_2.html">
+        <link rel="prev" href="001.html">
       
       
-        <link rel="next" href="002.html">
+        <link rel="next" href="../ffmpeg/cmds/001.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Hello world! - chapin666</title>
+        <title>GStreamer概念 - chapin666</title>
       
     
     
@@ -124,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hello world!
+              GStreamer概念
             
           </span>
         </div>
@@ -973,6 +973,28 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="001.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hello world!
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -987,7 +1009,7 @@
           
   
   <span class="md-ellipsis">
-    Hello world!
+    GStreamer概念
     
   </span>
   
@@ -995,11 +1017,11 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="001.html" class="md-nav__link md-nav__link--active">
+      <a href="002.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Hello world!
+    GStreamer概念
     
   </span>
   
@@ -1031,7 +1053,7 @@
         <li class="md-nav__item">
   <a href="#hello-world" class="md-nav__link">
     <span class="md-ellipsis">
-      Hello world
+      手动 Hello World
     </span>
   </a>
   
@@ -1048,18 +1070,45 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gst_parse_launch" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      gst_parse_launch
+      元素创建
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#playbin" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      playbin
+      管道创建
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      性能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      错误检查
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gstreamer" class="md-nav__link">
+    <span class="md-ellipsis">
+      GStreamer 总线
     </span>
   </a>
   
@@ -1071,18 +1120,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
-      清理
+      练习
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
-      总结
+      结论
     </span>
   </a>
   
@@ -1092,28 +1141,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="002.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    GStreamer概念
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -3281,7 +3308,7 @@
         <li class="md-nav__item">
   <a href="#hello-world" class="md-nav__link">
     <span class="md-ellipsis">
-      Hello world
+      手动 Hello World
     </span>
   </a>
   
@@ -3298,18 +3325,45 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gst_parse_launch" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      gst_parse_launch
+      元素创建
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#playbin" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      playbin
+      管道创建
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      性能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      错误检查
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gstreamer" class="md-nav__link">
+    <span class="md-ellipsis">
+      GStreamer 总线
     </span>
   </a>
   
@@ -3321,18 +3375,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
-      清理
+      练习
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
-      总结
+      结论
     </span>
   </a>
   
@@ -3354,16 +3408,19 @@
 
 
 
-  <h1>Hello world!</h1>
+  <h1>GStreamer概念</h1>
 
 <h2 id="_1">目标</h2>
-<p>要获得对软件库的第一印象，没有什么比在屏幕上打印 “Hello World” 更好的了！</p>
-<p>但是由于我们正在处理多媒体框架，因此我们将播放视频。</p>
-<p>不要被下面的代码量吓到：只有 4 行代码可以做真正的工作。其余的是清理代码，在 C 语言中，这总是有点冗长。</p>
-<p>事不宜迟，为您的第一个 GStreamer 应用程序做好准备......</p>
-<h2 id="hello-world">Hello world</h2>
-<p>将此代码复制到名为 basic-tutorial-1.c 的文本文件中（或在 GStreamer 安装中找到它）。</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gst/gst.h&gt;</span>
+<p>上一个教程演示了如何自动构建管道。现在，我们将通过实例化每个元素并将它们全部链接在一起来手动构建管道。在此过程中，我们将学习：</p>
+<ul>
+<li>什么是 GStreamer 元素以及如何创建一个。</li>
+<li>如何将元素相互连接。</li>
+<li>如何自定义元素的行为。</li>
+<li>如何观察总线的错误情况并从 GStreamer 消息中提取信息。</li>
+</ul>
+<h2 id="hello-world">手动 Hello World</h2>
+<p>将此代码复制到名为 basic-tutorial-2.c 的文本文件中（或在 GStreamer 安装中找到它）。</p>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gst/gst.h&gt;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cp">#ifdef __APPLE__</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;TargetConditionals.h&gt;</span>
@@ -3372,123 +3429,206 @@
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kt">int</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nf">tutorial_main</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">{</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="n">GstElement</span><span class="w"> </span><span class="o">*</span><span class="n">pipeline</span><span class="p">;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="n">GstElement</span><span class="w"> </span><span class="o">*</span><span class="n">pipeline</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">sink</span><span class="p">;</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="n">GstBus</span><span class="w"> </span><span class="o">*</span><span class="n">bus</span><span class="p">;</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="n">GstMessage</span><span class="w"> </span><span class="o">*</span><span class="n">msg</span><span class="p">;</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="cm">/* Initialize GStreamer */</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="n">gst_init</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">argv</span><span class="p">);</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="cm">/* Build the pipeline */</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">  </span><span class="n">pipeline</span><span class="w"> </span><span class="o">=</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">      </span><span class="n">gst_parse_launch</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">      </span><span class="p">(</span><span class="s">&quot;playbin uri=https://gstreamer.freedesktop.org/data/media/sintel_trailer-480p.webm&quot;</span><span class="p">,</span>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">      </span><span class="nb">NULL</span><span class="p">);</span>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">  </span><span class="cm">/* Start playing */</span>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">  </span><span class="n">gst_element_set_state</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span><span class="w"> </span><span class="n">GST_STATE_PLAYING</span><span class="p">);</span>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">  </span><span class="cm">/* Wait until error or EOS */</span>
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">  </span><span class="n">bus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gst_element_get_bus</span><span class="p">(</span><span class="n">pipeline</span><span class="p">);</span>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">  </span><span class="n">msg</span><span class="w"> </span><span class="o">=</span>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">      </span><span class="n">gst_bus_timed_pop_filtered</span><span class="p">(</span><span class="n">bus</span><span class="p">,</span><span class="w"> </span><span class="n">GST_CLOCK_TIME_NONE</span><span class="p">,</span>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">      </span><span class="n">GST_MESSAGE_ERROR</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">GST_MESSAGE_EOS</span><span class="p">);</span>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">  </span><span class="cm">/* See next tutorial for proper error message handling/parsing */</span>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">GST_MESSAGE_TYPE</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">GST_MESSAGE_ERROR</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="n">g_printerr</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;An error occurred! Re-run with the GST_DEBUG=*:WARN &quot;</span>
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">        </span><span class="s">&quot;environment variable set for more details.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="n">GstStateChangeReturn</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="cm">/* Initialize GStreamer */</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="n">gst_init</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">argv</span><span class="p">);</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">  </span><span class="cm">/* Create the elements */</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">  </span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gst_element_factory_make</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;videotestsrc&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;source&quot;</span><span class="p">);</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">  </span><span class="n">sink</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gst_element_factory_make</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;autovideosink&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sink&quot;</span><span class="p">);</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">  </span><span class="cm">/* Create the empty pipeline */</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">  </span><span class="n">pipeline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gst_pipeline_new</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;test-pipeline&quot;</span><span class="p">);</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">pipeline</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">source</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">sink</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">    </span><span class="n">g_printerr</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Not all elements could be created.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">  </span><span class="cm">/* Build the pipeline */</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">  </span><span class="n">gst_bin_add_many</span><span class="w"> </span><span class="p">(</span><span class="n">GST_BIN</span><span class="w"> </span><span class="p">(</span><span class="n">pipeline</span><span class="p">),</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="n">sink</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">gst_element_link</span><span class="w"> </span><span class="p">(</span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="n">sink</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">TRUE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">    </span><span class="n">g_printerr</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Elements could not be linked.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="n">gst_object_unref</span><span class="w"> </span><span class="p">(</span><span class="n">pipeline</span><span class="p">);</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
 </span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">  </span><span class="cm">/* Free resources */</span>
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">  </span><span class="n">gst_message_unref</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">  </span><span class="n">gst_object_unref</span><span class="p">(</span><span class="n">bus</span><span class="p">);</span>
-</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">  </span><span class="n">gst_element_set_state</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span><span class="w"> </span><span class="n">GST_STATE_NULL</span><span class="p">);</span>
-</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">  </span><span class="n">gst_object_unref</span><span class="p">(</span><span class="n">pipeline</span><span class="p">);</span>
-</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="p">}</span>
-</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>
-</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="kt">int</span>
-</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
-</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="p">{</span>
-</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="cp">#if defined(__APPLE__) &amp;&amp; TARGET_OS_MAC &amp;&amp; !TARGET_OS_IPHONE</span>
-</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">gst_macos_main</span><span class="w"> </span><span class="p">((</span><span class="n">GstMainFunc</span><span class="p">)</span><span class="w"> </span><span class="n">tutorial_main</span><span class="p">,</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
-</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="cp">#else</span>
-</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">tutorial_main</span><span class="w"> </span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span>
-</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="cp">#endif</span>
-</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a><span class="p">}</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">  </span><span class="cm">/* Modify the source&#39;s properties */</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">  </span><span class="n">g_object_set</span><span class="p">(</span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pattern&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">  </span><span class="cm">/* Start playing */</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">  </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gst_element_set_state</span><span class="w"> </span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span><span class="w"> </span><span class="n">GST_STATE_PLAYING</span><span class="p">);</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">GST_STATE_CHANGE_FAILURE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">    </span><span class="n">g_printerr</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Unable to set the pipeline to the playing state.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">    </span><span class="n">gst_object_unref</span><span class="w"> </span><span class="p">(</span><span class="n">pipeline</span><span class="p">);</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="w">  </span><span class="cm">/* Wait until error or EOS */</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="w">  </span><span class="n">bus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gst_element_get_bus</span><span class="w"> </span><span class="p">(</span><span class="n">pipeline</span><span class="p">);</span>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="w">  </span><span class="n">msg</span><span class="w"> </span><span class="o">=</span>
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="w">      </span><span class="n">gst_bus_timed_pop_filtered</span><span class="w"> </span><span class="p">(</span><span class="n">bus</span><span class="p">,</span><span class="w"> </span><span class="n">GST_CLOCK_TIME_NONE</span><span class="p">,</span>
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="w">      </span><span class="n">GST_MESSAGE_ERROR</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">GST_MESSAGE_EOS</span><span class="p">);</span>
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="w">  </span><span class="cm">/* Parse message */</span>
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">msg</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="w">    </span><span class="n">GError</span><span class="w"> </span><span class="o">*</span><span class="n">err</span><span class="p">;</span>
+</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a><span class="w">    </span><span class="n">gchar</span><span class="w"> </span><span class="o">*</span><span class="n">debug_info</span><span class="p">;</span>
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>
+</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a><span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">GST_MESSAGE_TYPE</span><span class="w"> </span><span class="p">(</span><span class="n">msg</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a><span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="no">GST_MESSAGE_ERROR</span><span class="p">:</span>
+</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a><span class="w">        </span><span class="n">gst_message_parse_error</span><span class="w"> </span><span class="p">(</span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">err</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">debug_info</span><span class="p">);</span>
+</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a><span class="w">        </span><span class="n">g_printerr</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Error received from element %s: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a><span class="w">            </span><span class="n">GST_OBJECT_NAME</span><span class="w"> </span><span class="p">(</span><span class="n">msg</span><span class="o">-&gt;</span><span class="n">src</span><span class="p">),</span><span class="w"> </span><span class="n">err</span><span class="o">-&gt;</span><span class="n">message</span><span class="p">);</span>
+</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a><span class="w">        </span><span class="n">g_printerr</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Debugging information: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a><span class="w">            </span><span class="n">debug_info</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">debug_info</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;none&quot;</span><span class="p">);</span>
+</span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a><span class="w">        </span><span class="n">g_clear_error</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">err</span><span class="p">);</span>
+</span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a><span class="w">        </span><span class="n">g_free</span><span class="w"> </span><span class="p">(</span><span class="n">debug_info</span><span class="p">);</span>
+</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a><span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="no">GST_MESSAGE_EOS</span><span class="p">:</span>
+</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a><span class="w">        </span><span class="n">g_print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;End-Of-Stream reached.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-0-73"><a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a><span class="w">      </span><span class="k">default</span><span class="o">:</span>
+</span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a><span class="w">        </span><span class="cm">/* We should not reach here because we only asked for ERRORs and EOS */</span>
+</span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a><span class="w">        </span><span class="n">g_printerr</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Unexpected message received.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a><span class="w">    </span><span class="n">gst_message_unref</span><span class="w"> </span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+</span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-80"><a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a>
+</span><span id="__span-0-81"><a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a><span class="w">  </span><span class="cm">/* Free resources */</span>
+</span><span id="__span-0-82"><a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a><span class="w">  </span><span class="n">gst_object_unref</span><span class="w"> </span><span class="p">(</span><span class="n">bus</span><span class="p">);</span>
+</span><span id="__span-0-83"><a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a><span class="w">  </span><span class="n">gst_element_set_state</span><span class="w"> </span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span><span class="w"> </span><span class="n">GST_STATE_NULL</span><span class="p">);</span>
+</span><span id="__span-0-84"><a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a><span class="w">  </span><span class="n">gst_object_unref</span><span class="w"> </span><span class="p">(</span><span class="n">pipeline</span><span class="p">);</span>
+</span><span id="__span-0-85"><a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-86"><a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a><span class="p">}</span>
+</span><span id="__span-0-87"><a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a>
+</span><span id="__span-0-88"><a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a><span class="kt">int</span>
+</span><span id="__span-0-89"><a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+</span><span id="__span-0-90"><a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a><span class="p">{</span>
+</span><span id="__span-0-91"><a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a><span class="cp">#if defined(__APPLE__) &amp;&amp; TARGET_OS_MAC &amp;&amp; !TARGET_OS_IPHONE</span>
+</span><span id="__span-0-92"><a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">gst_macos_main</span><span class="w"> </span><span class="p">((</span><span class="n">GstMainFunc</span><span class="p">)</span><span class="w"> </span><span class="n">tutorial_main</span><span class="p">,</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+</span><span id="__span-0-93"><a id="__codelineno-0-93" name="__codelineno-0-93" href="#__codelineno-0-93"></a><span class="cp">#else</span>
+</span><span id="__span-0-94"><a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">tutorial_main</span><span class="w"> </span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span>
+</span><span id="__span-0-95"><a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a><span class="cp">#endif</span>
+</span><span id="__span-0-96"><a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>按照在 <a href="https://gstreamer.freedesktop.org/documentation/installing/on-linux.html?gi-language=c">Linux 上安装</a>、<a href="https://gstreamer.freedesktop.org/documentation/installing/on-mac-osx.html?gi-language=c#InstallingonMacOSX-Run">在 Mac OS X 上安装</a>或<a href="https://gstreamer.freedesktop.org/documentation/installing/on-windows.html?gi-language=c">在 Windows 上安装</a>中的说明进行编译。如果您遇到编译错误，请仔细检查这些部分中给出的说明。</p>
-<p>如果一切正常，请启动可执行文件！您应该会看到一个弹出窗口，其中包含直接从 Internet 播放的视频以及音频。 祝贺！</p>
 <blockquote>
 <p>需要帮助？</p>
 <p>如果您需要编译此代码的帮助，请参阅针对您的平台构建教程部分：Linux、Mac OS X 或 Windows 上，或在 Linux 上使用以下特定命令：</p>
-<p><code>gcc basic-tutorial-1.c -o basic-tutorial-1 `pkg-config --cflags --libs gstreamer-1.0`</code></p>
+<p><code>gcc basic-tutorial-2.c -o basic-tutorial-2 `pkg-config --cflags --libs gstreamer-1.0`</code></p>
 <p>如果您需要运行此代码的帮助，请参阅适用于您的平台的运行教程部分：Linux、Mac OS X 或 Windows 的</p>
 <p>必需安装的库：gstreamer-1.0</p>
 </blockquote>
-<p>本教程将打开一个窗口显示电影，并附带音频。媒体是从 Internet 获取的，因此该窗口可能需要几秒钟才能显示，具体取决于您的连接速度。此外，没有延迟管理（缓冲），因此在连接速度较慢的情况下，电影可能会在几秒钟后停止。了解基本教程 12：流式处理如何解决此问题。</p>
 <h2 id="_2">代码走查</h2>
-<p>让我们回顾一下这些代码行，看看它们有什么作用：</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">  </span><span class="cm">/* Initialize GStreamer */</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="n">gst_init</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">argv</span><span class="p">);</span>
+<p>这些元素是 GStreamer 的基本构造块。当数据通过过滤器元素从源元素（数据生产者）流向下游流向接收器元素（数据使用者）时，它们会对其进行处理。</p>
+<p><img alt="示例管道" src="images/002_01.png" /></p>
+<h3 id="_3">元素创建</h3>
+<p>我们将跳过 GStreamer 初始化，因为它与上一个教程相同：</p>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cm">/* Create the elements */</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gst_element_factory_make</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;videotestsrc&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;source&quot;</span><span class="p">);</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">sink</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gst_element_factory_make</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;autovideosink&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sink&quot;</span><span class="p">);</span>
 </span></code></pre></div>
-<p>这必须始终是您的第一个 GStreamer 命令。除其他外， gst_init()：
-- 初始化所有内部结构
-- 检查哪些插件可用
-- 执行任何用于 GStreamer 的命令行选项</p>
-<p>如果您始终传递命令行参数 argc 和 argv 到 gst_init() 您的应用程序将自动受益于 GStreamer 标准命令行选项（更多内容请参阅基本教程 10：GStreamer 工具）</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w"> </span><span class="cm">/* Build the pipeline */</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="n">pipeline</span><span class="w"> </span><span class="o">=</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">      </span><span class="n">gst_parse_launch</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">      </span><span class="p">(</span><span class="s">&quot;playbin uri=https://gstreamer.freedesktop.org/data/media/sintel_trailer-480p.webm&quot;</span><span class="p">,</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">      </span><span class="nb">NULL</span><span class="p">);</span>
+<p>如这段代码所示，可以使用 gst_element_factory_make() 创建新元素。第一个参数是要创建的元素的类型（基本教程 14：方便的元素展示了一些常见的类型，基础教程 10:GStreamer 工具展示了如何获取所有可用类型的列表）。第二个参数是我们想给这个特定实例指定的名称。如果您没有保留指针，命名您的元素对于以后检索它们很有用（以及获得更有意义的调试输出）。但是，如果您为名称传递 NULL，GStreamer 将为您提供唯一的名称。</p>
+<p>在本教程中，我们将创建两个元素：videotestsrc 和 autovideosink。没有 filter 元素。因此，管道将如下所示：</p>
+<p><img alt="alt text" src="images/002_02.png" /></p>
+<p>videoTestsrc 是一个源元素（它生成数据），用于创建测试视频模式。此元素对于调试目的（和教程）很有用，在实际应用程序中通常找不到。</p>
+<p>autovideosink 是一个 sink 元素（它使用数据），它显示在 一个窗口接收到的图像。存在多个视频接收器， 取决于操作系统，具有不同的功能范围。 autoVideosink 会自动选择并实例化最佳代码，因此您不必担心细节，并且您的代码与平台无关。</p>
+<h3 id="_4">管道创建</h3>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cm">/* Create the empty pipeline */</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">pipeline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gst_pipeline_new</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;test-pipeline&quot;</span><span class="p">);</span>
 </span></code></pre></div>
-<p>这行是本教程的核心，并举例说明了两个关键点：gst_parse_launch() 和 playbin。</p>
-<h3 id="gst_parse_launch">gst_parse_launch</h3>
-<p>GStreamer 是一个旨在处理多媒体流的框架。媒体从“源”元素（生产者）向下传播到“接收器”元素（消费者），通过一系列执行各种任务的中间元素。所有互连元素的集合称为“管道”。</p>
-<p>在 GStreamer 中，您通常通过手动组装 单个元素，但是，当管道足够简单时，您确实 不需要任何高级功能，您可以采用快捷方式： gst_parse_launch() 中。</p>
-<p>此函数采用管道的文本表示并将其转换为实际的管道，这非常方便。事实上，此函数非常方便，有一个完全围绕它构建的工具，您将非常熟悉它（请参阅基本教程 10：GStreamer 工具以了解 gst-launch-1.0 和 gst-launch-1.0 语法）。</p>
-<h3 id="playbin">playbin</h3>
-<p>那么，我们要求 gst_parse_launch（） 为我们构建什么样的管道呢？这里进入了第二个关键点：我们正在构建一个由名为 playbin 的单个元素组成的管道。</p>
-<p>Playbin 是一个特殊的元素，它既是源又是 sink，是一个完整的管道。在内部，它创建并连接播放媒体所需的所有元素，因此您不必担心。</p>
-<p>它不允许手动管道那样的控制粒度，但是，它仍然允许足够的自定义以满足广泛的应用程序。包括本教程。</p>
-<p>在这个例子中，我们只向 playbin 传递了一个参数，即我们想要播放的媒体的 URI。试着把它改成别的呢！无论是 http:// 还是 file://，playbin 都会透明地实例化相应的 GStreamer 源！</p>
-<p>如果键入了错误的 URI，或者文件不存在，或者缺少插件，GStreamer 提供了多种通知机制，但在此示例中，我们唯一要做的就是出错时退出，因此不要期望有太多反馈。</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w">  </span><span class="cm">/* Start playing */</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="n">gst_element_set_state</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span><span class="w"> </span><span class="n">GST_STATE_PLAYING</span><span class="p">);</span>
+<p>GStreamer 中的所有元素通常必须先包含在管道中才能使用，因为它负责一些计时和消息传递功能。我们使用 gst_pipeline_new() 创建管道。</p>
+<p><div class="language-C highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cm">/* Build the pipeline */</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">gst_bin_add_many</span><span class="w"> </span><span class="p">(</span><span class="n">GST_BIN</span><span class="w"> </span><span class="p">(</span><span class="n">pipeline</span><span class="p">),</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="n">sink</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">gst_element_link</span><span class="w"> </span><span class="p">(</span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="n">sink</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">TRUE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="n">g_printerr</span><span class="p">(</span><span class="s">&quot;Elements could not be linked.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="n">gst_object_unref</span><span class="p">(</span><span class="n">pipeline</span><span class="p">);</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>这行突出显示了另一个有趣的概念：状态。每个 GStreamer 元素都有一个关联的状态，您或多或少可以将其视为常规 DVD 播放器中的 Play/Pause 按钮。现在，可以说，除非您将管道设置为 PLAYING 状态，否则播放不会开始。</p>
-<p>在这一行中，gst_element_set_state() 将 pipeline （记住我们唯一的元素）设置为 PLAYING 状态，从而开始播放。</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w"> </span><span class="cm">/* Wait until error or EOS */</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="n">bus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gst_element_get_bus</span><span class="p">(</span><span class="n">pipeline</span><span class="p">);</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="n">msg</span><span class="w"> </span><span class="o">=</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">      </span><span class="n">gst_bus_timed_pop_filtered</span><span class="p">(</span><span class="n">bus</span><span class="p">,</span><span class="w"> </span><span class="n">GST_CLOCK_TIME_NONE</span><span class="p">,</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">      </span><span class="n">GST_MESSAGE_ERROR</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">GST_MESSAGE_EOS</span><span class="p">);</span>
+管道是一种特殊类型的 bin，它是用于包含其他元素的元素。因此，所有适用于 bin 的方法也适用于管道。</p>
+<p>在我们的例子中，我们调用 gst_bin_add_many() 将元素添加到管道中（注意强制转换）。此函数接受要添加的元素列表，以 NULL 结尾。可以使用 gst_bin_add() 添加单个元素。</p>
+<p>但是，这些元素尚未相互链接。为此，我们需要使用 gst_element_link()。它的第一个参数是源，第二个参数是目标。顺序很重要，因为必须按照数据流建立链接（即，从源元素到接收器元素）。请记住，只有位于同一 bin 中的元素才能链接在一起，因此请记住在尝试链接它们之前将它们添加到管道中！</p>
+<h3 id="_5">性能</h3>
+<p>GStreamer 元素都是一种特殊类型的 GObject，它是提供属性设施的实体。</p>
+<p>大多数 GStreamer 元素都具有可自定义的属性：可以修改这些属性以更改元素的行为（可写属性）或查询以了解元素的内部状态（可读属性）。</p>
+<p>使用 g_object_get() 读取属性，使用 g_object_set() 写入属性。</p>
+<p>g_object_set() 接受以 NULL 结尾的属性-名称、属性-值对列表，因此可以一次性更改多个属性。</p>
+<p>这就是属性处理方法具有 g_ 前缀的原因。</p>
+<p>回到上面示例中的内容，</p>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cm">/* Modify the source&#39;s properties */</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">g_object_set</span><span class="w"> </span><span class="p">(</span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pattern&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
 </span></code></pre></div>
-<p>这些行将等待，直到发生错误或找到流的末尾。gst_element_get_bus() 检索管道的总线，并且 gst_bus_timed_pop_filtered() 将阻塞，直到您通过该总线收到 ERROR 或 EOS （End-Of-Stream）。不要太担心这条线路，GStreamer 总线在基本教程 2：GStreamer 概念中进行了解释。</p>
-<p>就是这样！从这时起，GStreamer 会处理所有事情。当媒体到达其末尾 （EOS） 或遇到错误（尝试关闭视频窗口或拔下网线）时，执行将结束。始终可以通过在控制台中按 control-C 来停止应用程序。</p>
-<h2 id="_3">清理</h2>
-<p>但是，在终止应用程序之前，我们需要做一些事情来正确整理自己。</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">  </span><span class="cm">/* Free resources */</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="n">gst_message_unref</span><span class="w"> </span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="n">gst_object_unref</span><span class="w"> </span><span class="p">(</span><span class="n">bus</span><span class="p">);</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="n">gst_element_set_state</span><span class="w"> </span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span><span class="w"> </span><span class="n">GST_STATE_NULL</span><span class="p">);</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="n">gst_object_unref</span><span class="w"> </span><span class="p">(</span><span class="n">pipeline</span><span class="p">);</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<p>上面的代码行更改了 videotestsrc 的 “pattern” 属性，该属性控制元素输出的测试视频的类型。尝试不同的值！</p>
+<p>元素公开的所有属性的名称和可能的值可以使用基础教程 10：GStreamer 工具中描述的 gst-inspect-1.0 工具找到，也可以在该元素的文档中找到（这里是 videotestsrc）。</p>
+<h3 id="_6">错误检查</h3>
+<p>此时，我们已经构建和设置了整个管道，本教程的其余部分与上一个教程非常相似，但我们将添加更多错误检查：</p>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cm">/* Start playing */</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gst_element_set_state</span><span class="w"> </span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span><span class="w"> </span><span class="n">GST_STATE_PLAYING</span><span class="p">);</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">GST_STATE_CHANGE_FAILURE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="n">g_printerr</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Unable to set the pipeline to the playing state.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="n">gst_object_unref</span><span class="w"> </span><span class="p">(</span><span class="n">pipeline</span><span class="p">);</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>请始终阅读您使用的函数的文档，以了解是否应该在使用它们后释放它们返回的对象。</p>
-<p>在这种情况下，gst_bus_timed_pop_filtered() 返回了一条消息，该消息需要使用 gst_message_unref() 释放（有关消息的更多信息，请参阅 基本教程 2：GStreamer 概念）。</p>
-<p>gst_element_get_bus() 添加了对必须使用 gst_object_unref() 释放的总线的引用。将管道设置为 NULL 状态将 确保它释放已分配的所有资源（有关状态的更多信息，请参阅 基本教程 3：动态管道）。最后，取消引用管道将销毁它及其所有内容。</p>
-<h2 id="_4">总结</h2>
-<p>您的第一个教程 GStreamer 就这样结束了。我们希望它的简洁可以作为这个框架有多么强大的示例！</p>
-<p>让我们回顾一下。今天我们了解到：
-- 如何使用 gst_init() 初始化 GStreamer。
-- 如何使用 gst_parse_launch() 从文本描述快速构建管道。
-- 如何使用 playbin 创建自动播放管道。
-- 如何使用 gst_element_set_state() 通知 GStreamer 开始回放。
-- 如何坐下来放松，而 GStreamer 使用 gst_element_get_bus() 和 gst_bus_timed_pop_filtered() 处理一切。</p>
-<p>下一个教程将继续介绍更多基本的 GStreamer 元素，并向您展示如何手动构建管道。</p>
+<p>我们调用 gst_element_set_state()，但这次我们检查其返回值是否有错误。更改状态是一个微妙的过程，基础教程 3：动态管道中提供了更多详细信息。</p>
+<p><div class="language-C highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cm">/* Wait until error or EOS */</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">bus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gst_element_get_bus</span><span class="w"> </span><span class="p">(</span><span class="n">pipeline</span><span class="p">);</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">msg</span><span class="w"> </span><span class="o">=</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="n">gst_bus_timed_pop_filtered</span><span class="w"> </span><span class="p">(</span><span class="n">bus</span><span class="p">,</span><span class="w"> </span><span class="n">GST_CLOCK_TIME_NONE</span><span class="p">,</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="n">GST_MESSAGE_ERROR</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">GST_MESSAGE_EOS</span><span class="p">);</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="cm">/* Parse message */</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">msg</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="n">GError</span><span class="w"> </span><span class="o">*</span><span class="n">err</span><span class="p">;</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="n">gchar</span><span class="w"> </span><span class="o">*</span><span class="n">debug_info</span><span class="p">;</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">GST_MESSAGE_TYPE</span><span class="w"> </span><span class="p">(</span><span class="n">msg</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="no">GST_MESSAGE_ERROR</span><span class="p">:</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">        </span><span class="n">gst_message_parse_error</span><span class="w"> </span><span class="p">(</span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">err</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">debug_info</span><span class="p">);</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">        </span><span class="n">g_printerr</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Error received from element %s: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">            </span><span class="n">GST_OBJECT_NAME</span><span class="w"> </span><span class="p">(</span><span class="n">msg</span><span class="o">-&gt;</span><span class="n">src</span><span class="p">),</span><span class="w"> </span><span class="n">err</span><span class="o">-&gt;</span><span class="n">message</span><span class="p">);</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">        </span><span class="n">g_printerr</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Debugging information: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">            </span><span class="n">debug_info</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">debug_info</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;none&quot;</span><span class="p">);</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">        </span><span class="n">g_clear_error</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">err</span><span class="p">);</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">        </span><span class="n">g_free</span><span class="w"> </span><span class="p">(</span><span class="n">debug_info</span><span class="p">);</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="no">GST_MESSAGE_EOS</span><span class="p">:</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="w">        </span><span class="n">g_print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;End-Of-Stream reached.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="w">      </span><span class="k">default</span><span class="o">:</span>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="w">        </span><span class="cm">/* We should not reach here because we only asked for ERRORs and EOS */</span>
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="w">        </span><span class="n">g_printerr</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Unexpected message received.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="w">    </span><span class="n">gst_message_unref</span><span class="w"> </span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="p">}</span>
+</span></code></pre></div>
+gst_bus_timed_pop_filtered() 等待执行结束，并返回我们之前忽略的 GstMessage。当 GStreamer 遇到错误条件或 EOS 时，我们要求 gst_bus_timed_pop_filtered() 返回，因此我们需要检查发生了哪一个，并在屏幕上打印一条消息（您的应用程序可能希望执行更复杂的操作）。</p>
+<p>GstMessage 是一种非常通用的结构，几乎可以传递任何类型的信息。幸运的是，GStreamer 为每种消息提供了一系列解析函数。</p>
+<p>在这种情况下，一旦我们知道消息包含错误（通过使用 GST_MESSAGE_TYPE() 宏），我们可以使用 gst_message_parse_error() 返回 GLib GError 错误结构和用于调试的字符串。检查代码以查看如何使用和稍后释放这些内容。</p>
+<h3 id="gstreamer">GStreamer 总线</h3>
+<p>在这一点上，值得更正式地介绍 GStreamer 总线。它是负责将元素生成的 GstMessage按顺序传递到应用程序线程的对象。最后一点很重要，因为实际的媒体流是在应用程序以外的另一个线程中完成的。</p>
+<p>消息可以从总线同步提取 gst_bus_timed_pop_filtered() 及其同级，或者异步使用 signals（在下一个教程中所示）。您的应用程序应始终关注总线，以收到错误和其他与播放相关的问题的通知。</p>
+<p>代码的其余部分是清理序列，这与基本教程 1：Hello world！ 中的相同。</p>
+<h2 id="_7">练习</h2>
+<p>如果您想练习，请尝试以下练习：添加视频滤镜元素。 用 vertigoTV 以获得良好的效果。您需要创建它，将其添加到管道中，并将其与其他元素链接。</p>
+<p>根据您的平台和可用插件，您可能会收到 “negotiation” 错误，因为 sink 不理解过滤器正在生成什么（有关协商的更多信息，请参阅基本教程 6：媒体格式和 Pad 功能）。在这种情况下，请尝试在 filter （即，构建一个包含 4 个元素的管道。更多信息 videoconvert 在基础教程 14：方便的元素中）。</p>
+<h2 id="_8">结论</h2>
+<p>本教程展示了：</p>
+<ul>
+<li>如何使用 gst_element_factory_make() 创建元素</li>
+<li>如何使用 gst_pipeline_new() 创建空管道</li>
+<li>如何使用 gst_bin_add_many() 将元素添加到管道中</li>
+<li>如何使用 gst_element_link() 将元素彼此链接</li>
+</ul>
+<p>两个教程中的第一个教程到此结束，专门介绍基本的 GStreamer 概念。第二个教程接下来。</p>
+<p>请记住，本页附带了本教程，您应该可以找到本教程的完整源代码以及构建本教程所需的任何附件。</p>
 <p>很高兴您来到这里，很快再见！</p>
 
 
@@ -3568,7 +3708,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../codec/007_2.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: 第七讲：分辨率与帧率·下篇">
+          <a href="001.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: Hello world!">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3578,20 +3718,20 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                第七讲：分辨率与帧率·下篇
+                Hello world!
               </div>
             </div>
           </a>
         
         
           
-          <a href="002.html" class="md-footer__link md-footer__link--next" aria-label="下一页: GStreamer概念">
+          <a href="../ffmpeg/cmds/001.html" class="md-footer__link md-footer__link--next" aria-label="下一页: 安装与测试">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                GStreamer概念
+                安装与测试
               </div>
             </div>
             <div class="md-footer__button md-icon">
