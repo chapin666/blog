@@ -192,4 +192,3 @@
 - [Logstash Filebeat 安装配置之使用 Kibana 分析日志数据](https://www.renwole.com/archives/661)
 - [Kubernetes容器集群中的日志系统集成实践](http://dockone.io/article/1600)
 - [ELK-使用消息队列进行扩展 Logstash](http://jaminzhang.github.io/elk/ELK-use-MQ-to-scale-Logstash/)
-
