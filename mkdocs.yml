@@ -1,0 +1,170 @@
+nav:
+  - 个人介绍:
+      - 首页: index.md
+  - 音视频:
+      - 总览: audio.md
+      - WebRTC:
+          - 写给好奇者的 WebRTC:
+              - 是什么、为什么、如何使用: webrtc/forcurious/001.md
+              - 信令: webrtc/forcurious/002.md
+              - 连接: webrtc/forcurious/003.md
+              - 安全性: webrtc/forcurious/004.md
+              - 实时网络: webrtc/forcurious/005.md
+              - 媒体通信: webrtc/forcurious/006.md
+              - 数据通信: webrtc/forcurious/007.md
+              - 应用场景: webrtc/forcurious/008.md
+              - 调试: webrtc/forcurious/009.md
+              - 历史: webrtc/forcurious/010.md
+              - 常见问题: webrtc/forcurious/011.md
+              - 术语: webrtc/forcurious/012.md
+              - Reference: webrtc/forcurious/013.md
+          - WebRTC JS API 实战:
+              - 概述及环境搭建（一）: webrtc/jsapi/001.md
+              - 从摄像头获取视频流（二）: webrtc/jsapi/002.md
+              - RTCPeerConnection 传输视频流（三）: webrtc/jsapi/003.md
+              - RTCDataChannel 交换数据（四）: webrtc/jsapi/004.md
+              - 搭建信令服务交换消息（五）: webrtc/jsapi/005.md
+              - 对等连接和信令整合（六）: webrtc/jsapi/006.md
+              - Data Channel 共享照片（七）: webrtc/jsapi/007.md
+              - 总结（八）: webrtc/jsapi/008.md
+      - AVCodec 音视频基础:
+          - 第一讲：音频要素: codec/001.md
+          - 第二讲：回声消除: codec/002.md
+          - 第三讲：噪声抑制: codec/003.md
+          - 第四讲：音频自动增益控制 AGC: codec/004.md
+          - 第五讲：音频编解码的必要性解读与格式选取: codec/005.md
+          - 第六讲：色彩和色彩空间·上篇: codec/006_1.md
+          - 第六讲：色彩和色彩空间·中篇: codec/006_2.md
+          - 第六讲：色彩和色彩空间·下篇: codec/006_3.md
+          - 第七讲：分辨率与帧率·上篇: codec/007_1.md
+          - 第七讲：分辨率与帧率·下篇: codec/007_2.md
+      - GStreamer 基础:
+          - Hello world!: gstreamer/001.md
+          - GStreamer 概念: gstreamer/002.md
+          - 动态管道: gstreamer/003.md
+          - 时间管理: gstreamer/004.md
+          - GUI 工具包集成: gstreamer/005.md
+          - 媒体格式和 Pad Capabilities: gstreamer/006.md
+          - 多线程和磁盘可用性: gstreamer/007.md
+          - 简化管道: gstreamer/008.md
+          - 媒体信息收集: gstreamer/009.md
+          - GStreamer 工具: gstreamer/010.md
+          - 调试工具: gstreamer/011.md
+          - Streaming: gstreamer/012.md
+          - 回放加速: gstreamer/013.md
+          - 便捷的元素: gstreamer/014.md
+          - 特定于平台的元素: gstreamer/015.md
+  - 语言实战:
+      - 总览: language.md
+      - Rust 从零上手:
+          - 01-语言简介: rust/fromzero/001.md
+          - 02-开发环境配置: rust/fromzero/002.md
+          - 03-Hello World: rust/fromzero/003.md
+          - 04-数据类型: rust/fromzero/004.md
+          - 05-变量: rust/fromzero/005.md
+          - 06-常量: rust/fromzero/006.md
+          - 07-字符串: rust/fromzero/007.md
+          - 08-运算符: rust/fromzero/008.md
+          - 09-条件判断: rust/fromzero/009.md
+          - 10-循环语句: rust/fromzero/010.md
+          - 11-函数: rust/fromzero/011.md
+          - 12-元组: rust/fromzero/012.md
+          - 13-数组: rust/fromzero/013.md
+          - 14-所有权: rust/fromzero/014.md
+          - 15-借用: rust/fromzero/015.md
+          - 16-切片: rust/fromzero/016.md
+          - 17-结构体: rust/fromzero/017.md
+          - 18-枚举: rust/fromzero/018.md
+          - 19-模块: rust/fromzero/019.md
+          - 20-容器: rust/fromzero/020.md
+          - 21-错误处理: rust/fromzero/021.md
+          - 22-泛型: rust/fromzero/022.md
+          - 23-IO: rust/fromzero/023.md
+          - 24-文件读写: rust/fromzero/024.md
+          - 25-Cargo 包管理器: rust/fromzero/025.md
+          - 26-迭代器: rust/fromzero/026.md
+          - 27-闭包: rust/fromzero/027.md
+          - 28-智能指针: rust/fromzero/028.md
+          - 29-多线程并发编程: rust/fromzero/029.md
+      - Golang Playground: golang/index.md
+  - 电子书:
+      - 总览: library.md
+
+site_name: chapin666
+site_author: chapin666
+site_description: WebRTC, 音视频, Rust, Golang, Node
+site_url: http://chapin666.github.io/blog
+copyright: Copyright &copy; 2026 chapin666
+
+theme:
+  custom_dir: overrides
+  name: material
+  language: zh
+  icon:
+    logo: material/home
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue grey
+      accent: cyan
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs # 栏头加标签（一级导航）
+    # - navigation.tabs.sticky # 固定（浏览时不收起）标签
+    # - navigation.sections
+    # - navigation.expand
+    - navigation.path
+    - navigation.top # 一键回顶部
+    # - toc.integrate
+    - toc.follow
+    - search.share # 搜索分享
+    - header.autohide
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+    - navigation.footer
+
+markdown_extensions:
+  - admonition # 提示块
+  - footnotes # 脚注
+  - attr_list # 属性列表
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.details
+
+extra_css:
+  - assets/stylesheets/custom.css
+
+plugins:
+  - search
+  - offline
+  - tags
+
+extra:
+  generator: false
+  analytics:
+    provider: google
+    property: G-XC0L0QGG63
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/chapin666
+    - icon: simple/zhihu
+      link: https://www.zhihu.com/people/chapin666
