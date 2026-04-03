@@ -103,27 +103,27 @@ hide:
       <article>
         <h3>WebRTC JS API 实战</h3>
         <p>8 个 Demo：采集、信令、RTCPeerConnection、DataChannel。</p>
-        <a href="webrtc/jsapi/001.html">打开</a>
+        <a href="webrtc/jsapi/001.html">阅读</a>
       </article>
       <article>
         <h3>AVCodec 音视频基础</h3>
         <p>音频要素、AEC/AGC、色彩、帧率等媒体基础。</p>
-        <a href="codec/001.html">打开</a>
+        <a href="codec/001.html">阅读</a>
       </article>
       <article>
         <h3>GStreamer Notes</h3>
         <p>流水线、调试、Streaming 的 15 篇记录。</p>
-        <a href="gstreamer/001.html">打开</a>
+        <a href="gstreamer/001.html">阅读</a>
       </article>
       <article>
         <h3>Rust 从零上手</h3>
         <p>29 节课程 + 练习，覆盖所有权、并发、智能指针。</p>
-        <a href="rust/fromzero/001.html">打开</a>
+        <a href="rust/fromzero/001.html">阅读</a>
       </article>
       <article>
         <h3>Golang Playground</h3>
         <p>语法速查、脚本、并发 Demo。</p>
-        <a href="golang/index.html">打开</a>
+        <a href="golang/index.html">阅读</a>
       </article>
     </div>
   </section>
