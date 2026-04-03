@@ -1,0 +1,4760 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="WebRTC, 音视频, Rust, Golang, Node">
+      
+      
+        <meta name="author" content="chapin666">
+      
+      
+        <link rel="canonical" href="http://chapin666.github.io/blog/webrtc/forcurious/006.html">
+      
+      
+        <link rel="prev" href="005.html">
+      
+      
+        <link rel="next" href="007.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>媒体通信 - chapin666</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-XC0L0QGG63"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-XC0L0QGG63",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-XC0L0QGG63",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="chapin666" class="md-header__button md-logo" aria-label="chapin666" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            chapin666
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              媒体通信
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../index.html" class="md-tabs__link">
+          
+  
+  
+  个人介绍
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../audio.html" class="md-tabs__link">
+          
+  
+  
+  音视频
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../language.html" class="md-tabs__link">
+          
+  
+  
+  语言实战
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../library.html" class="md-tabs__link">
+          
+  
+  
+  电子书
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="chapin666" class="md-nav__button md-logo" aria-label="chapin666" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+
+    </a>
+    chapin666
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    个人介绍
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    个人介绍
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    音视频
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    音视频
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../audio.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WebRTC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    WebRTC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    写给好奇者的 WebRTC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    写给好奇者的 WebRTC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="001.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    是什么、为什么、如何使用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="002.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    信令
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="003.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    连接
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="004.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安全性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="005.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    实时网络
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    媒体通信
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="006.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    媒体通信
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#webrtc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        我可以从 WebRTC 的媒体通信中得到什么？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        它是如何工作的？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        延迟与质量
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="延迟与质量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        现实世界的局限性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        视频是复杂的
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        视频 101
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="视频 101">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        有损和无损压缩
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        帧内和帧间压缩
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        帧间压缩
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        视频很脆弱
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rtp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RTP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#packet-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Packet Format（包格式）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Packet Format（包格式）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-v" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version (V)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#padding-p" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Padding (P)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extension-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extension (X)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csrc-count-cc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSRC count (CC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marker-m" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Marker (M)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payload-type-pt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Payload Type (PT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequence-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequence Number
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timestamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timestamp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synchronization-source-ssrc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synchronization Source (SSRC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contributing-source-csrc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contributing Source (CSRC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Payload
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extensions（扩展）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rtcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RTCP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RTCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#packet-format_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Packet Format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Packet Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-v_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version (V)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#padding-p_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Padding (P)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reception-report-count-rc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reception Report Count (RC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packet-type-pt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Packet Type (PT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firpli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整的帧内请求（FIR）和图片丢失指示（PLI）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negative-acknowledgements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Negative ACKnowledgements（否定确认）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sender-and-receiver-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sender and Receiver Reports（发送方和接收方报告）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rtprtcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RTP/RTCP 是如何协作解决问题的
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RTP/RTCP 是如何协作解决问题的">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forward-error-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forward Error Correction（前向纠错）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自适应比特率和带宽估计
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        识别和传递网络状态
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="识别和传递网络状态">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#receiver-reports-sender-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receiver Reports / Sender Reports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tmmbrtmmbnremb-twcc-gcc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TMMBR，TMMBN，REMB 和 TWCC, 与 GCC 配合
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TMMBR，TMMBN，REMB 和 TWCC, 与 GCC 配合">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-congestion-control-gcc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Congestion Control (GCC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tmmbr-tmmbn-and-remb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TMMBR, TMMBN, and REMB
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#twcc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        传输范围内的拥塞控制（TWCC）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        生成带宽估计值
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="007.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据通信
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="008.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应用场景
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="009.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    调试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="010.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    历史
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="011.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    常见问题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="012.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="013.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WebRTC JS API 实战
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    WebRTC JS API 实战
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jsapi/001.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概述及环境搭建（一）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jsapi/002.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    从摄像头获取视频流（二）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jsapi/003.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RTCPeerConnection 传输视频流（三）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jsapi/004.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RTCDataChannel 交换数据（四）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jsapi/005.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    搭建信令服务交换消息（五）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jsapi/006.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    对等连接和信令整合（六）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jsapi/007.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Channel 共享照片（七）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jsapi/008.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总结（八）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AVCodec 音视频基础
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AVCodec 音视频基础
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codec/001.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一讲：音频要素
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codec/002.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二讲：回声消除
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codec/003.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三讲：噪声抑制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codec/004.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四讲：音频自动增益控制 AGC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codec/005.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五讲：音频编解码的必要性解读与格式选取
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codec/006_1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六讲：色彩和色彩空间·上篇
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codec/006_2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六讲：色彩和色彩空间·中篇
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codec/006_3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六讲：色彩和色彩空间·下篇
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codec/007_1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第七讲：分辨率与帧率·上篇
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codec/007_2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第七讲：分辨率与帧率·下篇
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GStreamer 基础
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GStreamer 基础
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gstreamer/001.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hello world!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gstreamer/002.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GStreamer 概念
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gstreamer/003.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    动态管道
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gstreamer/004.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    时间管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gstreamer/005.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GUI 工具包集成
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gstreamer/006.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    媒体格式和 Pad Capabilities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gstreamer/007.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    多线程和磁盘可用性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gstreamer/008.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    简化管道
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gstreamer/009.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    媒体信息收集
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gstreamer/010.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GStreamer 工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gstreamer/011.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    调试工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gstreamer/012.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Streaming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gstreamer/013.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回放加速
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gstreamer/014.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    便捷的元素
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gstreamer/015.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    特定于平台的元素
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    语言实战
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    语言实战
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rust 从零上手
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rust 从零上手
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/001.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01-语言简介
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/002.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02-开发环境配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/003.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03-Hello World
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/004.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04-数据类型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/005.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05-变量
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/006.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06-常量
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/007.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07-字符串
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/008.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08-运算符
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/009.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09-条件判断
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/010.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10-循环语句
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/011.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11-函数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/012.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12-元组
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/013.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13-数组
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/014.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14-所有权
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/015.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15-借用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/016.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16-切片
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/017.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17-结构体
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/018.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18-枚举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/019.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19-模块
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/020.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20-容器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/021.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21-错误处理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/022.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22-泛型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/023.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23-IO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/024.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24-文件读写
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/025.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25-Cargo 包管理器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/026.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26-迭代器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/027.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27-闭包
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/028.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28-智能指针
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/fromzero/029.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    29-多线程并发编程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../golang/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Golang Playground
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电子书
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    电子书
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../library.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#webrtc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        我可以从 WebRTC 的媒体通信中得到什么？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        它是如何工作的？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        延迟与质量
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="延迟与质量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        现实世界的局限性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        视频是复杂的
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        视频 101
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="视频 101">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        有损和无损压缩
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        帧内和帧间压缩
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        帧间压缩
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        视频很脆弱
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rtp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RTP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#packet-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Packet Format（包格式）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Packet Format（包格式）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-v" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version (V)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#padding-p" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Padding (P)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extension-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extension (X)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csrc-count-cc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSRC count (CC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marker-m" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Marker (M)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payload-type-pt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Payload Type (PT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequence-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequence Number
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timestamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timestamp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synchronization-source-ssrc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synchronization Source (SSRC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contributing-source-csrc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contributing Source (CSRC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Payload
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extensions（扩展）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rtcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RTCP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RTCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#packet-format_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Packet Format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Packet Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-v_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version (V)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#padding-p_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Padding (P)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reception-report-count-rc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reception Report Count (RC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packet-type-pt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Packet Type (PT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firpli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整的帧内请求（FIR）和图片丢失指示（PLI）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negative-acknowledgements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Negative ACKnowledgements（否定确认）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sender-and-receiver-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sender and Receiver Reports（发送方和接收方报告）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rtprtcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RTP/RTCP 是如何协作解决问题的
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RTP/RTCP 是如何协作解决问题的">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forward-error-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forward Error Correction（前向纠错）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自适应比特率和带宽估计
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        识别和传递网络状态
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="识别和传递网络状态">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#receiver-reports-sender-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receiver Reports / Sender Reports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tmmbrtmmbnremb-twcc-gcc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TMMBR，TMMBN，REMB 和 TWCC, 与 GCC 配合
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TMMBR，TMMBN，REMB 和 TWCC, 与 GCC 配合">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-congestion-control-gcc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Congestion Control (GCC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tmmbr-tmmbn-and-remb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TMMBR, TMMBN, and REMB
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#twcc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        传输范围内的拥塞控制（TWCC）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        生成带宽估计值
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+  <nav class="md-path" aria-label="导航栏" >
+    <ol class="md-path__list">
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../audio.html" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    音视频
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="001.html" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    WebRTC
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="001.html" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    写给好奇者的 WebRTC
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">媒体通信</h1>
+<h2 id="webrtc">我可以从 WebRTC 的媒体通信中得到什么？</h2>
+<p>WebRTC 允许你发送和接收无限多条音频和视频流。你可以在通话期间随时添加和删除这些流。这些流可以全部独立，也可以捆绑在一起！你甚至可以将网络摄像头的音频和视频放到你桌面的视频中，然后将此视频以 feed 的形式发送出去。</p>
+<p>WebRTC 协议与编解码器无关。底层传输支持所有格式的内容，即使是还不存在的格式！ 但是，你正与之通信的 WebRTC Agent 可能没有必要的工具来接受它。</p>
+<p>WebRTC 针对动态网络状况也有对应的处理方案。在通话过程中，带宽可能会增加或减少。甚至可能突然间大量丢包。该协议对所有这类问题的处理都做了相应的设计。WebRTC 根据网络状况作出响应，并尝试利用可用资源为你提供最佳体验。</p>
+<h2 id="_2">它是如何工作的？</h2>
+<p>WebRTC 使用<a href="https://tools.ietf.org/html/rfc1889">RFC 1889</a>中定义的两个既有协议 RTP 和 RTCP。</p>
+<p>RTP（实时传输协议 /Real-time Transport Protocol）是承载媒体的协议。它为视频的实时传输而设计。它没有规定有关延迟或可靠性的任何规则，但是为你提供了实现这些规则的工具。RTP 提供了流的设计，因此你可以通过一个连接发布多个媒体源。它还为你提供了完善媒体传递途径所需的计时和排序信息。</p>
+<p>RTCP（RTP 控制协议 /RTP Control Protocol）是用于传达有关呼叫的元数据的协议。其格式非常灵活，并允许你可以添加所需的任何元数据。这点被用来传达有关呼叫的统计信息。也是处理分组丢失和实现拥塞控制的必备特性。它为你提供了响应变化的网络状况所必需的双向通信能力。</p>
+<h2 id="_3">延迟与质量</h2>
+<p>实时媒体就是要在延迟和质量之间进行权衡。你愿意忍受的延迟时间越长，可以预期的视频质量就越高。</p>
+<h3 id="_4">现实世界的局限性</h3>
+<p>下面这些限制都是由现实世界的局限性引起的。它们都是你需要考虑的网络特性。</p>
+<h3 id="_5">视频是复杂的</h3>
+<p>传输视频并不容易。要存储 30 分钟未经压缩的 720p 的 8-bit 视频，你需要大约 110GB。按照这个数据，4 人电话会议就开不成了。我们需要一种缩小容量的方法，而答案就是视频压缩。但是，这并非没有缺点。</p>
+<h2 id="101">视频 101</h2>
+<p>我们不会深入介绍视频压缩，只需要让大家足以理解为什么 RTP 是这么设计的。视频压缩会将视频编码为一种新格式，这样可以需要较少的 bit 数来表示同一视频。</p>
+<h3 id="_6">有损和无损压缩</h3>
+<p>你可以将视频编码为无损（无信息丢失）或有损（信息可能丢失）压缩。由于无损编码需要将更多的数据发送到对端，这样会导致更高的流延迟和更多的丢包，因此 RTP 通常使用有损压缩，即使这样可能会导致视频质量不佳。</p>
+<h3 id="_7">帧内和帧间压缩</h3>
+<p>视频压缩有两种类型。首先是帧内压缩。帧内压缩减少了用于描述单个视频帧的 bit 数。相同的技术被用来压缩静态图片，例如 JPEG 压缩方法。</p>
+<p>第二种类型是帧间压缩。由于视频是由许多图片组成的，因此我们需要寻找无需将相同信息发送两次的方式。</p>
+<h3 id="_8">帧间压缩</h3>
+<p>帧有三种类型：</p>
+<ul>
+<li><strong>I 帧</strong> - 一张完整的图片，无需任何其他内容即可解码。</li>
+<li><strong>P 帧</strong> - 一张图片的一部分，仅包含对之前图片的修改。</li>
+<li><strong>B 帧</strong> - 一张图片的一部分，包含对之前图片和将来图片的修改。</li>
+</ul>
+<p>以下是对这三种类型帧的图解。</p>
+<p><img alt="帧类型" src="images/06-frame-types.png" title="帧类型" /></p>
+<h3 id="_9">视频很脆弱</h3>
+<p>压缩后的视频是有状态的，（视频解码）非常依赖其上下文，这使得视频很难通过 Internet 进行传输。想像一下，如果 I 帧的一部分丢失了会怎样？这样 P 帧如何知道要修改的内容？ 随着视频压缩变得越来越复杂，这成为一个更大的问题。幸运的是，RTP 和 RTCP 对此都有解决方案。</p>
+<h2 id="rtp">RTP</h2>
+<h3 id="packet-format">Packet Format（包格式）</h3>
+<p>每个 RTP 数据包都具有以下结构：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> 0                   1                   2                   3
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>|V=2|P|X|  CC   |M|     PT      |       Sequence Number         |
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>|                           Timestamp                           |
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>|           Synchronization Source (SSRC) identifier            |
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>|            Contributing Source (CSRC) identifiers             |
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>|                             ....                              |
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>|                            Payload                            |
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></code></pre></div>
+<h4 id="version-v">Version (V)</h4>
+<p><code>Version</code> 总是 <code>2</code>。</p>
+<h4 id="padding-p">Padding (P)</h4>
+<p><code>Padding</code> 是控制有效载荷是否具有填充值的布尔值。</p>
+<p>有效负载的最后一个字节包含添加了多少填充字节的计数。</p>
+<h4 id="extension-x">Extension (X)</h4>
+<p>如果设置的话，RTP 报头将有扩展段（可选）。这点将在下面更详细地描述。</p>
+<h4 id="csrc-count-cc">CSRC count (CC)</h4>
+<p>在 <code>SSRC</code> 之后，有效负载之前的 <code>CSRC</code> 标识符的数量。</p>
+<h4 id="marker-m">Marker (M)</h4>
+<p>标记位没有预设含义，用户可以根据自己的需求随意使用它。</p>
+<p>在某些情况下，它是在用户讲话时设置的。它还通常用于标记关键帧。</p>
+<h4 id="payload-type-pt">Payload Type (PT)</h4>
+<p><code>Payload Type</code>（负载类型）是此数据包所承载的编解码器的一个唯一标识符。</p>
+<p>对于 WebRTC，<code>Payload Type</code> 是动态的。一个呼叫中的 VP8 的 PT 可能与另一个呼叫中的不同。呼叫中的 offerer 确定 <code>Payload Type</code> 到 <code>Session Description</code>（会话描述符）中的编解码器的映射。</p>
+<h4 id="sequence-number">Sequence Number</h4>
+<p><code>Sequence Number</code>（序列号）用于对流中的数据包进行排序。每次发送数据包时，<code>Sequence Number</code> 都会增加 1。</p>
+<p>RTP 被设计为可以在有损网络上使用。这为接收器提供了一种检测数据包何时丢失的方法。</p>
+<h4 id="timestamp">Timestamp</h4>
+<p>此数据包的采样时刻。这不是全局时钟，而是在当前媒体流中所经过的时间。举例来说，如果多个 RTP 包都属于同一视频帧，那么它们可能具有相同的时间戳。</p>
+<h4 id="synchronization-source-ssrc">Synchronization Source (SSRC)</h4>
+<p><code>SSRC</code> 是此流的唯一标识符。这使你可以在单个 RTP 流上传输多个媒体流。</p>
+<h4 id="contributing-source-csrc">Contributing Source (CSRC)</h4>
+<p>一个列表，用于表示哪些 <code>SSRC</code> 参与到了这个数据包中。</p>
+<p>这通常用于语音指示器。假设在服务器端，你将多个音频源组合到一个单独的 RTP 流中。然后，你可以在此字段中表示 " 输入流 A 和 C 此时正在讲话 "。</p>
+<h4 id="payload">Payload</h4>
+<p>实际有效负载数据。如果设置了填充（padding）标记，则可能以添加的填充字节数结尾。</p>
+<h3 id="extensions">Extensions（扩展）</h3>
+<h2 id="rtcp">RTCP</h2>
+<h3 id="packet-format_1">Packet Format</h3>
+<p>每个 RTCP 数据包都具有以下结构：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a> 0                   1                   2                   3
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>|V=2|P|    RC   |       PT      |             length            |
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>|                            Payload                            |
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></code></pre></div>
+<h4 id="version-v_1">Version (V)</h4>
+<p><code>Version</code> 总是 <code>2</code>。</p>
+<h4 id="padding-p_1">Padding (P)</h4>
+<p><code>Padding</code> 是控制有效载荷是否具有填充值的布尔值。</p>
+<p>有效负载的最后一个字节包含添加了多少填充字节的计数。</p>
+<h4 id="reception-report-count-rc">Reception Report Count (RC)</h4>
+<p>此数据包中的报告数。单个 RTCP 数据包可以包含多个事件。</p>
+<h4 id="packet-type-pt">Packet Type (PT)</h4>
+<p>指示 RTCP 数据包类型的唯一标识符。WebRTC Agent 不需要支持所有这些类型，并且 Agent 之间的支持能力可以是不同的。下面这些是你可能经常看到的类型：</p>
+<ul>
+<li><code>192</code> - 完整的帧内请求（FIR）-</li>
+<li><code>193</code> - 否定确认（NACK）</li>
+<li><code>200</code> - 发送方报告</li>
+<li><code>201</code> - 接收方报告</li>
+<li><code>205</code> - 通用 RTP 反馈</li>
+<li><code>206</code> - 有效负载特定反馈</li>
+</ul>
+<p>这些分组类型的意义将在下面更详细地描述。</p>
+<h3 id="firpli">完整的帧内请求（FIR）和图片丢失指示（PLI）</h3>
+<p><code>FIR</code> 和 <code>PLI</code> 消息的目的是类似的。这些消息都是向发送方请求一个完整的关键帧。
+<code>PLI</code> 用于解码器得到了部分帧，但却无法解码的情况。
+之所以会发生这种情况，是因为你有很多数据包丢失，或者解码器崩溃了。</p>
+<p>根据<a href="https://tools.ietf.org/html/rfc5104#section-4.3.1.2">RFC 5104</a>，当数据包或帧丢失时，不应使用 <code>FIR</code>，那是 <code>PLI</code> 的任务。用 <code>FIR</code> 请求关键帧适用于丢包以外的其他原因（例如，当新成员进入视频会议时）。他们需要一个完整的关键帧才能开始对视频流进行解码，解码器将丢弃一些帧，直到关键帧到达为止。</p>
+<p>对于接收方来说，在连接建立后立即请求一个完整的关键帧是个好主意，这可以最大程度地减少连接建立和在用户屏幕上显示图像之间的延迟。</p>
+<p><code>PLI</code> 数据包是 " 有效负载特定反馈 " 消息的组成部分。</p>
+<p>在实践中，能够同时处理 <code>PLI</code> 和 <code>FIR</code> 数据包的软件在两种场景下的行为是相同的。它会向编码器发送信号以产生新的完整关键帧。</p>
+<h3 id="negative-acknowledgements">Negative ACKnowledgements（否定确认）</h3>
+<p><code>NACK</code> 请求发送方重新发送单个 RTP 数据包。这通常是由于 RTP 数据包丢失而引起的，但是也可能由于延迟而发生。</p>
+<p>与请求重新发送整个帧相比，<code>NACK</code> 的带宽使用效率要高得多。由于 RTP 将数据包分解成很小的块，因此你实际上只是在请求丢失的一个很小的部分。接收方使用 SSRC 和序列号制作 RTCP 消息。如果发送方没有可用于重新发送的 RTP 数据包，那么它只会忽略该消息。</p>
+<h3 id="sender-and-receiver-reports">Sender and Receiver Reports（发送方和接收方报告）</h3>
+<p>这些报告用于在 Agent 之间发送统计信息。它传达了实际接收到的和抖动的数据包数量。</p>
+<p>这些报告可用于诊断以及控制拥塞。</p>
+<h2 id="rtprtcp">RTP/RTCP 是如何协作解决问题的</h2>
+<p>RTP 和 RTCP 需要协同解决网络引起的所有问题。这些技术仍在不断进化中！</p>
+<h3 id="forward-error-correction">Forward Error Correction（前向纠错）</h3>
+<p>简称为 FEC。处理丢包的另一种方法。FEC 指的是发送方多次重复发送相同的数据，甚至是在接收方没有要求的情况下发送。这是在 RTP 协议层级完成的，甚至也可以在编解码器以下的层级完成。</p>
+<p>在呼叫的数据丢包率比较稳定的情况下，作为延迟处理方案，FEC 比 NACK 好的多。对于 NACK，必须先请求，然后重新传输丢失的数据包，数据往返的时间对性能的影响可能是很明显的。</p>
+<h3 id="_10">自适应比特率和带宽估计</h3>
+<p>正如<a href="005.html">搭建实时网络</a>章节中讨论的那样，网络是不可预测且不可靠的。带宽的可用性在整个会话中可能会多次变化。
+在一秒钟之内看到可用的带宽急剧变化（差别达到数量级），这样的情况并不少见。</p>
+<p>这里的主要思路是根据预测的，当前的和将来的可用网络带宽来调整编码比特率。
+这样可以确保传输质量最佳的视频和音频信号，并且不会因为网络拥塞而断开连接。
+对网络行为建模并尝试对其进行预测的启发式方法称为带宽估计。</p>
+<p>这里有很多细微的差别，因此，让我们来探索一下更多细节。</p>
+<h2 id="_11">识别和传递网络状态</h2>
+<p>RTP/RTCP 可能运行在各种不同的网络上，因此，通讯中出现丢包是很常见的。建立在 UDP 传输协议之上，没有内置的丢包重传机制，更不用说处理拥塞控制了。</p>
+<p>为了给用户提供最好的体验，WebRTC 必须评估网络路径的质量，并且随时适应网络质量的波动。要监控的关键特征包括： 带宽（在每个方向上，因为双向带宽可能是不对称的）、往返时间和抖动。它需要考虑数据包丢失，并随时传递这些属性特征的变化情况。</p>
+<p>这些协议有两个主要目标： </p>
+<ol>
+<li>评估网络支持的可用带宽（双向） </li>
+<li>发送者和接收者之间的通信网络特性 </li>
+</ol>
+<p>RTP/RTCP 有三种不同的方法来解决这个问题。他们都有自己的优点和缺点， 总的来说，每一代都比其上一代有所改进。使用哪种实现方式主要取决于客户可用的软件堆栈和可用的基础库。 </p>
+<h3 id="receiver-reports-sender-reports">Receiver Reports / Sender Reports</h3>
+<p>第一种实现是一对接收者报告及其补充——发送者报告。这些 RTCP 消息在 <a href="https://tools.ietf.org/html/rfc3550#section-6.4">RFC 3550</a> 中定义，并且是 负责在端点之间传递网络状态。 Receiver Reports 侧重于 关于网络的通信质量（包括丢包、往返时间和抖动），可以配合其他算法，利用这些报告信息进行评估。 </p>
+<p>Sender / Receiver Reports（SR 和 RR）共同描绘了网络质量。他们是以每个 SSRC 为粒度按计划发送，作为评估可用带宽的输入数据。这些评估是由发送者在收到 RR 数据后做出的，其中包含 以下字段：</p>
+<ul>
+<li><strong>Fraction Lost(丢包率)</strong> - 自上次接收者报告以来丢失了数据包的百分比。</li>
+<li><strong>Cumulative Number of Packets Lost(累计丢包数)</strong> - 在整个通话过程中丢了多少包。</li>
+<li><strong>Extended Highest Sequence Number Received(接收到的最高序列号扩展)</strong> - 接收到的最后一个序列号，以及它的重置次数。</li>
+<li><strong>到达间隔抖动（Interarrival Jitter）</strong> - 整个通话过程中的抖动滚动。（译注：RTP 数据包到达时间的统计方差的估计值，以时间戳为单位进行度量，并表示为无符号整数。）</li>
+<li><strong>上次发送方报告时间戳（Last Sender Report Timestamp）</strong> - 已知的最后一次的发送方报告的时间戳，用于往返时间的计算。</li>
+</ul>
+<p>发送方和接收方报告（SR 和 RR）配合，可以计算往返时间。</p>
+<p>发送方在 SR 中包含其本地时间 <code>sendertime1</code>。
+当接收方获得 SR 数据包时，发回 RR。
+除了其他一些信息，RR 还要包括刚从发送方接收到的 <code>sendertime1</code>。
+在接收 SR 和发送 RR 之间，会有一个延迟。因此，RR 还包括 " 自上次发送方报告以来的延迟 " 时间 - <code>DLSR</code>（delay since last sender report）。
+<code>DLSR</code> 用于在该过程的稍后阶段调整往返时间的估计。
+一旦发送者接收到 RR，它就从当前时间 <code>sendertime2</code> 中减去 <code>sendertime1</code> 和 <code>DLSR</code>。
+这个时间增量称为往返传播延迟或往返时间。</p>
+<p><code>rtt（往返时间） = sendertime2 - sendertime1 - DLSR</code></p>
+<p>换个简单的说法来解释，就是这样：
+- 我看了看表，向你发送了一条消息，说这是下午 4 点 20 分 42 秒 420 毫秒。
+- 你再将相同的时间戳发回给我。
+- （返回的消息中）还包括了从阅读我的消息到发回消息所花费的时间，例如 5 毫秒。
+- 收到时间后，我会再次看时钟。
+- 现在我的表是下午 4 点 20 分 42 秒 690 毫秒。
+- 这意味着消息需要 265 毫秒（690-420-5）才能到达你，并返回到我。
+- 因此，往返时间为 265 毫秒。</p>
+<p><img alt="往返时间" src="images/06-rtt.png" title="往返时间" /></p>
+<!-- Missing: What is an example congestion-control alg that pairs with RR/SR? -->
+
+<h3 id="tmmbrtmmbnremb-twcc-gcc">TMMBR，TMMBN，REMB 和 TWCC, 与 GCC 配合</h3>
+<h4 id="google-congestion-control-gcc">Google Congestion Control (GCC)</h4>
+<p>Google 拥塞控制 (GCC) 算法（在<a href="https://tools.ietf.org/html/draft-ietf-rmcat-gcc-02">draft-ietf-rmcat-gcc-02</a>) 解决了带宽估计的挑战。 它与各种其他协议配合，以应对相应的通信需求。 因此，它非常适合在任一接收端（当使用 TMMBR/TMMBN 或 REMB 运行时）或发送端（当使用 TWCC 运行时）。</p>
+<p>为了估算可用带宽，GCC 关注数据包丢失和帧到达时间的波动作为其两个主要指标。 它通过两个链接的控制器运行这些指标：
+基于损失的 (loss-based) 控制器和基于延迟的 (delay-based) 控制器。</p>
+<p>GCC 的第一个控制器是基于丢失的控制器，原理很简单：</p>
+<ul>
+<li>如果丢包率超过 10%，带宽估计会降低</li>
+<li>如果丢包率在 2-10% 之间，带宽估计保持不变</li>
+<li>如果丢包率低于 2%，带宽估计会增加</li>
+</ul>
+<p>频繁地进行丢包测量。 根据配对的通信协议，丢包可能是明确传达的（如 TWCC）或推断的（如 TMMBR/TMMBN 和 REMB）。 这些百分比是在大约一秒的时间窗口内评估的。</p>
+<p>第二个控制器与基于丢失的控制器合作，并关注数据包的变化到达时间。这种基于延迟的控制器旨在识别网络链接何时变得越来越拥挤，甚至可能在丢包发生之前就降低带宽估计。理论上，路径上最繁忙的网络接口将继续将数据包排队直到接口耗尽其缓冲区内的容量。如果该接口继续接收超过它能够发送的流量，它将被迫丢弃缓冲空间中无法容纳的所有数据包。这种类型的数据包丢失对于低延迟 / 实时通信场景尤其具有破坏性，同时它也会降低该链路上所有通信的吞吐量，所以最好应该避免。因此，GCC 试图在丢包实际发生之前，弄清楚网络链接是否越来越大队列深度。如果它观察到，随着时间的推移排队延迟增加了，它将主动减少带宽使用。</p>
+<p>为了实现这一点，GCC 尝试通过测量往返时间的微量增加，来推断队列深度的增加。 它记录帧的“到达间隔时间”，<code>t(i) - t(i-1)</code>：即两组数据包（通常是连续的视频帧）的到达时间差。这些数据包组经常
+以固定的时间间隔出发（例如，对于 24 fps 的视频，每 1/24 秒）。 因此，测量到达间隔时间，就像记录第一个数据包组（即帧）的开始和下一个数据包组的第一帧之间的时间差一样简单。</p>
+<p>在下图中，数据包间延迟增加的中位数为 +20 毫秒，这是一个明确的指标网络拥塞。</p>
+<p><img alt="TWCC with delay" src="images/06-twcc.png" title="TWCC with delay" /></p>
+<p>如果到达间隔时间随着时间的推移而增加，则假定连接网络接口上的队列深度增加并被认为是网络拥塞的证据。 （注意：GCC 足够聪明，可以控制这些测量以应对帧字节大小的波动。）GCC 使用 <a href="https://en.wikipedia.org/wiki/Kalman_filter">Kalman 滤波器</a>改进其延迟测量，并在标记拥塞之前多次测量网络往返时间（及其变化）。可以将 GCC 的卡尔曼滤波器视为代替线性回归：即使在抖动将噪声添加到时序测量中时，也有助于做出准确的预测。在标记拥塞时，GCC 将降低可用比特率。或者，在稳定的网络条件下，它可以缓慢增加其带宽评估以测试更高的负载值。</p>
+<h4 id="tmmbr-tmmbn-and-remb">TMMBR, TMMBN, and REMB</h4>
+<p>对于 TMMBR/TMMBN 和 REMB，接收方首先估计可用的入口带宽（使用 GCC 等协议），然后将这些带宽评估值传达给远程发送者。他们不需要交换有关丢包的详细信息或有关网络拥塞的其他质量（因为在接收端进行操作可以直接测量到达的间隔时间和丢包） 而是只交换带宽评估值本身：</p>
+<ul>
+<li><strong>TMMBR（临时最大媒体码率请求）</strong> - 单个 SSRC 请求码率的尾数 / 指数。（译注：接收端当前带宽受限，告诉发送端控制码率。）</li>
+<li><strong>TMMBN（临时最大媒体码率通知）</strong> - （发送端）通知（接收端）已经收到 TMMBR 的消息。</li>
+<li><strong>REMB（接收方估计的最大码率）</strong> - 整个会话中请求码率的尾数 / 指数。</li>
+</ul>
+<p>TMMBR 和 TMMBN 是先出现的，它们在<a href="https://tools.ietf.org/html/rfc5104">RFC 5104</a>中定义。REMB 是后来出现的，是在<a href="https://tools.ietf.org/html/draft-alvestrand-rmcat-remb-03">draft-alvestrand-rmcat-remb</a>中提交的一个草案，但从未被标准化。</p>
+<p>使用 REMB 的会话如下图所示：</p>
+<p><img alt="REMB" src="images/06-remb.png" title="REMB" /></p>
+<p>这个方法在纸面上看起来效果很好。发送方从接收方接收估计值，然后将编码器比特率设置为接收到的值。啊哈！我们已经根据网络条件作出了调节。</p>
+<p>然而，在实践中，REMB 方法有几个缺点。</p>
+<p>首先就是编码器效率低下。当您为编码器设置比特率时，它不一定 输出您要求的确切比特率。编码可能会输出更多或更少的位，具体取决于 编码器设置和被编码的帧。</p>
+<p>举例来说，x264 编码器，配置为 <code>tune=zerolatency</code>，跟指定的目标比特率相比，其输出可能会产生明显的偏离。下面是一种可能的场景：</p>
+<ul>
+<li>假设我们一开始将比特率设置为 1000kbps。</li>
+<li>由于没有很多高频特征值需要编码，编码器只能输出 700kbps。（亦称为：" 凝视一堵墙 "。）</li>
+<li>我们再假设接收方获得了 700kbps 的视频，没有发生数据包丢失，然后它将应用 REMB 的规则 1，把输入比特率提升 8％。</li>
+<li>接收方向发送方发送了一个 REMB 包，建议将输入比特率提高到 756kbps（700kbps * 1.08）。</li>
+<li>发送方将编码器的比特率设置为 756kbps。</li>
+<li>编码器输出更低的比特率。</li>
+<li>这个过程会继续重复进行，这样，比特率会被降低到绝对最小值。</li>
+</ul>
+<p>你可以看到，这会导致编码器多次触发参数调整；同时用户会惊讶的发现，虽然连接状况良好，但视频质量看起来却让人难以接受。</p>
+<h3 id="twcc">传输范围内的拥塞控制（TWCC）</h3>
+<p>Transport Wide Congestion Control 是 RTCP 网络状态的最新发展
+沟通。 它定义在<a href="https://datatracker.ietf.org/doc/html/draft-holmer-rmcat-transport-wide-cc-extensions-01">draft-holmer-rmcat-transport-wide-cc-extensions-01</a>, 但一直未被标准化。</p>
+<p>TWCC 使用了一个非常简单的原理：</p>
+<p><img alt="TWCC" src="images/06-twcc-idea.png" title="TWCC" /></p>
+<p>使用 REMB，接收方以可用的下载比特率指示发送方。它使用关于推断的数据包丢失的精确测量和仅它具有的关于数据包间到达时间的数据。</p>
+<p>TWCC 可以看作是 SR/RR 和 REMB 协议的混合方法。它将带宽估计带回发送方（类似于 SR/RR），但其带宽估计技术更类似于 REMB 生成。</p>
+<p>使用 TWCC，接收方让发送方知道每个数据包的到达时间。这是足以让发送者测量数据包之间到达延迟的变化，以及识别哪些数据包丢失或到达太晚而不能提供音频 / 视频源。随着这些数据的频繁交换，发送方能够快速调整以适应不断变化的网络条件，并使用诸如 GCC 的算法改变其输出带宽。</p>
+<p>发送者跟踪发送的数据包、它们的序列号、大小和时间戳。当发送方接收到来自接收方的 RTCP 消息时，它会将发送包间延迟与接收延迟进行比较。如果接收延迟增加，则表明网络拥塞，发送方必须采取纠正措施。</p>
+<p>通过向发送者提供原始数据，TWCC 提供了实时网络状况的绝佳视图： </p>
+<ul>
+<li>几乎是即时的丢包行为，具体到单个丢包 </li>
+<li>准确的发送比特率 </li>
+<li>准确的接收比特率 </li>
+<li>抖动测量 </li>
+<li>发送和接收数据包延迟之间的差异 </li>
+<li>描述网络如何容忍突发或稳定的带宽传输</li>
+</ul>
+<p>TWCC 最重要的贡献之一是它为 WebRTC 开发人员提供的灵活性。通过将拥塞控制算法整合到发送端，它允许简单的客户端代码被广泛使用，并且随着时间的推移需要最少的增强。然后可以在它们直接控制的硬件上更快地迭代复杂的拥塞控制算法（如第 8 节中讨论的选择性转发单元）。对于浏览器和移动设备，这意味着这些客户端可以从算法增强中受益，而无需等待标准化或浏览器更新（这可能需要很长时间才能被广泛使用）。</p>
+<h2 id="_12">生成带宽估计值</h2>
+<p>部署最多的实现是“A Google Congestion Control Algorithm for Real-Time Communication”，定义在
+<a href="https://tools.ietf.org/html/draft-alvestrand-rmcat-congestion-02">draft-alvestrand-rmcat-congestion</a>。</p>
+<p>GCC 有几种替代方案，例如 </p>
+<ul>
+<li><a href="https://tools.ietf.org/html/draft-zhu-rmcat-nada-04">NADA: A Unified Congestion Control Scheme forReal-Time Media</a> </li>
+<li><a href="https://tools.ietf.org/html/draft-johansson-rmcat-scream-cc-05">SCReAM - 自时钟多媒体速率适应</a>。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="005.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: 实时网络">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                实时网络
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="007.html" class="md-footer__link md-footer__link--next" aria-label="下一页: 数据通信">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                数据通信
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 chapin666
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/chapin666" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.zhihu.com/people/chapin666" target="_blank" rel="noopener" title="www.zhihu.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.721 0C2.251 0 0 2.25 0 5.719V18.28C0 21.751 2.252 24 5.721 24h12.56C21.751 24 24 21.75 24 18.281V5.72C24 2.249 21.75 0 18.281 0zm1.964 4.078q-.408 1.096-.68 2.11h4.587c.545-.006.445 1.168.445 1.171H9.384a58 58 0 0 1-.112 3.797h2.712c.388.023.393 1.251.393 1.266H9.183a9.2 9.2 0 0 1-.408 2.102l.757-.604c.452.456 1.512 1.712 1.906 2.177.473.681.063 2.081.063 2.081l-2.794-3.382c-.653 2.518-1.845 3.607-1.845 3.607-.523.468-1.58.82-2.64.516 2.218-1.73 3.44-3.917 3.667-6.497H4.491c0-.015.197-1.243.806-1.266h2.71c.024-.32.086-3.254.086-3.797H6.598c-.136.406-.158.447-.268.753-.594 1.095-1.603 1.122-1.907 1.155.906-1.821 1.416-3.6 1.591-4.064.425-1.124 1.671-1.125 1.671-1.125M13.078 6h6.377v11.33h-2.573l-2.184 1.373-.401-1.373h-1.219zm1.313 1.219v8.86h.623l.263.937 1.455-.938h1.456v-8.86z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "toc.follow", "search.share", "header.autohide", "content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
